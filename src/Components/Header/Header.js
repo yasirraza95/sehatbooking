@@ -123,6 +123,11 @@ export default function Header() {
                       </a>
                     </li>
                     <li>
+                      <a className="dropdown-item" href="/blood-tips">
+                        Blood Tips
+                      </a>
+                    </li>
+                    <li>
                       <a className="dropdown-item" href="/faqs">
                         FAQ
                       </a>
@@ -222,7 +227,7 @@ export default function Header() {
                 </a>
 
                 {/* <div>
-            <img src={ProfileIcon} alt="Avatar" class="avatar"/>
+            <img src={ProfileIcon} alt="Avatar" className="avatar"/>
             </div> */}
               </div>
               <button

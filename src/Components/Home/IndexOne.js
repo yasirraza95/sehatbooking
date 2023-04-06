@@ -21,10 +21,6 @@ export default function IndexOne() {
       <TopBar />
       <Header />
       <section className="banner bg-img dark-overlay dark-overlay">
-        {/* <div className="Blad-image">
-          <img className="blad" src="https://res.cloudinary.com/dll4d2yu7/image/upload/v1679220124/Sehatbooking/logo_yqgytd.png" alt="Logo" />
-
-          </div> */}
         <div className="container">
           <div className="row">
             <div className="col-lg-12">

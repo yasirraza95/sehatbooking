@@ -36,7 +36,7 @@ function TopBar() {
                                             <p className="neutral-bottom">Follow Now</p>
                                             <div className="social">
                                                 <a href="https://www.facebook.com/">
-                                                    <i class="fab fa-facebook-f">
+                                                    <i className="fab fa-facebook-f">
                                                     </i>
 
                                                 </a>
@@ -49,7 +49,7 @@ function TopBar() {
 
                                                 </a>
                                                 <a href="https://www.pinterest.com/">
-                                                    <i class="fab fa-pinterest"></i>
+                                                    <i className="fab fa-pinterest"></i>
 
                                                 </a>
                                             </div>

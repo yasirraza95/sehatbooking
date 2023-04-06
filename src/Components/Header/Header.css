@@ -13,6 +13,9 @@
   margin-bottom: 0px !important;
   border: 1px solid transparent;
 }
+ul.navbar-nav {
+  margin-bottom: -10px;
+}
   @media (max-width: 991px) {
     .topbar {
       padding-top: 10px;
