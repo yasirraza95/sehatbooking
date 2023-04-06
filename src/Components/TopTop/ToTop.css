@@ -1,0 +1,17 @@
+svg.svg-inline--fa.fa-angles-up {
+    position: fixed;
+    height: 45px;
+    width: 30px;
+    bottom: 20px;
+    right: 17px;
+    z-index: 20;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #ea062b;;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: ease-in-out 0.5s;
+}

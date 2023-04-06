@@ -1,0 +1,348 @@
+section.banner.bg-img.dark-overlay.dark-overlay{
+    background-image: url("https://res.cloudinary.com/dll4d2yu7/image/upload/v1679134771/Sehatbooking/banner-bg_gvahu2.png");
+}
+.banner {
+    padding: 140px 0px;
+}
+.dark-overlay {
+    position: relative;
+    z-index: 1;
+}
+
+.dark-overlay::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: -1;
+}
+.dark-overlay::after {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.bg-img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+h2, h2 > a, h2 > span {
+    font-size: 48px;
+    line-height: 66px;
+    font-weight: 700;
+    color: #111111;
+    margin-top: -12px;
+    margin-bottom: 28px;
+}
+.banner .breadcrumb {
+    margin-bottom: -5px;
+}
+
+.breadcrumb {
+    justify-content: center;
+    margin: 0px;
+    row-gap: 10px;
+}
+.banner .breadcrumb .breadcrumb-item {
+    padding-right: 10px;
+}
+.banner .breadcrumb .breadcrumb-item::before {
+    padding-right: 10px;
+}
+.breadcrumb .breadcrumb-item::before {
+    color: #ffffff;
+    padding-right: 16px;
+    padding-left: 0px;
+}
+.breadcrumb .breadcrumb-item {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 0px;
+    padding-right: 16px;
+    padding-left: 0px;
+}
+
+.breadcrumb .breadcrumb-item:nth-last-of-type(1) {
+    padding-right: 0px;
+}
+.breadcrumb .active {
+    color: #ea062b;
+}
+
+
+/* FAQS SECTION START CSS */
+.section-space {
+    padding: 116px 0px;
+}
+.section-inner-space {
+    margin-bottom: 60px;
+}
+.section-header p {
+    text-align: center;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #ea062b;
+}
+p.descender, th.descender, td.descender, li.descender, input.descender, textarea.descender, select.descender, label.descender, blockquote.descender, .span.descender {
+    margin-bottom: 15px;
+}
+.section-header h2 {
+    text-align: center;
+}
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+.faq-wrapper-alt .accordion-item {
+    margin-bottom: 16px;
+}
+.faq-wrapper--tertiary .accordion-item {
+    margin-bottom: 25px;
+    border: 0px solid transparent;
+    background-color: #ffffff;
+    box-shadow: 0px 16px 35px 0px rgba(0, 0, 0, 0.15);
+}
+.faq-wrapper-alt h2 {
+    margin: 0px;
+}
+.faq-wrapper--tertiary .accordion-button {
+    box-shadow: 0px 0px 0px;
+    padding: 14px 25px;
+    font-size: 20px;
+    padding-right: 40px;
+    background-color: #ea062b;
+    border: none;
+    color: #ffffff;
+    position: relative;
+}
+.faq-wrapper--tertiary .accordion-button::after {
+    background-size: 0px 0px;
+    position: absolute;
+    left: unset;
+    right: 20px;
+    font-size: 16px;
+    line-height: 16px;
+    top: 50%;
+    width: auto;
+    height: auto;
+    transform: translateY(-50%);
+    font-family: "FontAwesome";
+    content: "\f078";
+    font-weight: 900;
+    color: #ffffff;
+}
+.faq-wrapper--tertiary .accordion-body {
+    padding: 25px;
+    background-color: #ffffff;
+    position: relative;
+    line-height: normal;
+}
+.faq-wrapper--tertiary .accordion-body p {
+    margin-bottom: 29px;
+}
+.faq-wrapper-alt h2 {
+    margin: 0px;
+}
+.faq-wrapper--tertiary .collapsed {
+    background-color: #ffffff;
+    color: #111111;
+}
+.faq-wrapper--tertiary .accordion-button {
+    box-shadow: 0px 0px 0px;
+    padding: 14px 25px;
+    font-size: 20px;
+    padding-right: 40px;
+    background-color: #ea062b;
+    border: none;
+    color: #ffffff;
+    position: relative;
+}
+.faq-wrapper--tertiary .collapsed::after {
+    font-family: "FontAwesome";
+    content: "\f078";
+    font-weight: 900;
+    color: #111111;
+}
+.accordion-item:first-of-type .accordion-button {
+    border-top-left-radius: var(--bs-accordion-inner-border-radius);
+    border-top-right-radius: var(--bs-accordion-inner-border-radius);
+}
+
+button:focus:not(:focus-visible) {
+    outline: 0;
+}
+.faq-wrapper--tertiary .collapsed {
+    background-color: #ffffff;
+    color: #111111;
+}
+
+
+
+
+/* Call Now Section Start */
+section.call.dark-overlay.bg-img{
+    background-image: url("https://res.cloudinary.com/dll4d2yu7/image/upload/v1679139907/Sehatbooking/call-now-bg_koxqbd.png");
+}
+.call {
+    padding: 107px 0px 90px;
+}
+.dark-overlay {
+    position: relative;
+    z-index: 1;
+}
+.bg-img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.call-area .icon-box {
+    width: 80px;
+    min-width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px;
+    margin: 0px auto;
+    position: relative;
+    top: -126px;
+    margin-bottom: -82px;
+    transform: rotate(45deg);
+    background-color: #ea062b;
+    box-shadow: 0px 9px 52px 0px rgba(0, 0, 0, 0.07);
+    transition: all 0.3s ease-out;
+}
+
+.call-area {
+    padding: 80px;
+    border: 10px solid #ea062b;
+    text-align: center;
+}
+.call-area .group a:hover {
+    color: #ea062b;
+}
+.call-area .icon-box:hover {
+    transform: rotate(0deg);
+    background-color: #ffffff;
+}
+.call-area:hover .icon-box i {
+    transform: rotate(0deg);
+    color: #ea062b;
+}
+.call-area h2 {
+    text-align: center;
+    color: #ffffff;
+}
+a, button {
+    font-size: 18px;
+    line-height: 28px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 700;
+    display: inline-block;
+    border: 0px;
+    outline: 0px;
+    transition: all 0.3s ease-out;
+}
+.call-area .icon-box i {
+    font-size: 30px;
+    line-height: 1;
+    color: #ffffff;
+    transform: rotate(-45deg);
+    transition: all 0.3s ease-out;
+}
+.call-area p {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #ffffff;
+}
+p.descender, th.descender, td.descender, li.descender, input.descender, textarea.descender, select.descender, label.descender, blockquote.descender, .span.descender {
+    margin-bottom: 15px;
+}
+p.primary, th.primary, td.primary, li.primary, input.primary, textarea.primary, select.primary, label.primary, blockquote.primary, .span.primary {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #ea062b;
+}
+.call-area .group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: -6px 0px -4px;
+}
+.call-area .group a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.call-area .group a i {
+    font-size: 14px;
+}
+.fa-solid, .fas {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+.fa-location-dot:before, .fa-map-marker-alt:before {
+    content: "\f3c5";
+}
+.dark-overlay::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+.input-question input, .input textarea {
+    background-color: #ffffff;
+    border: 1px solid transparent;
+    margin-bottom: 0px !important;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+.input-question {
+    margin-bottom: 20px !important;
+}
+.input-question input, .input textarea {
+    background-color: #f1f1f1;
+    border: 1px solid transparent;
+    margin-bottom: 0px !important;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+.input-question  input, .input textarea {
+    padding: 14px 20px;
+    background-color: #ffffff;
+    margin: 0px;
+}
+.input-group-column .input-question {
+    flex-grow: 1;
+    flex-basis: 0px;
+    min-width: 0px;
+}
+.input-question textarea {
+    max-height: 180px;
+}
+.input-question input, .input-question textarea {
+    padding: 14px 20px;
+    background-color: #ffffff;
+    margin: 0px;
+}

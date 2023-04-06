@@ -1,0 +1,39 @@
+.privacy-area .group {
+    margin-bottom: 25px;
+}
+.privacy-area .group h3 {
+    margin-top: -8px;
+    margin-bottom: 18px;
+    color: #111111;
+}
+.privacy-area .group h4 {
+    margin-bottom: 26px;
+}
+h3, h3 > a, h3 > span {
+    font-size: 36px;
+    line-height: 48px;
+    font-weight: 600;
+    color: #ea062b;
+    margin-top: -8px;
+    margin-bottom: 30px;
+}
+h4, h4 > a, h4 > span {
+    font-size: 30px;
+    line-height: 42px;
+    font-weight: 600;
+    color: #111111;
+    margin-top: -8px;
+    margin-bottom: 30px;
+}
+ul, ol {
+    list-style-type: none;
+    list-style-position: inside;
+    margin: 0px;
+    padding: 0px;
+}
+.privacy-area {
+    text-align: start;
+}
+.privacy-area .group li i {
+    color: #ea062b;
+}

@@ -1,0 +1,242 @@
+
+
+.registration-area__form {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  text-align: left;
+  border: 1px solid rgb(202, 202, 202);
+  padding: 60px 40px;
+}
+@media (max-width: 1199px) {
+  .registration-area__form {
+    padding: 40px 15px;
+  }
+}
+.registration-area__form .registration-area__form-single {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+@media (max-width: 767px) {
+  .registration-area__form .registration-area__form-single {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
+.registration-area__form .registration-area__form-single__inner {
+  flex-grow: 1;
+}
+@media (max-width: 767px) {
+  .registration-area__form .registration-area__form-single__inner {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+.registration-area__form .secondary {
+  margin-bottom: -5px;
+  margin-top: 15px;
+  min-width: 160px;
+  font-weight: 600;
+}
+@media (max-width: 767px) {
+  .registration-area__form .secondary {
+    width: 100%;
+    margin-top: -5px;
+  }
+}
+.registration-area__form .input {
+  margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+  .registration-area__form .input {
+    margin-bottom: 15px;
+  }
+}
+.registration-area__form .input label {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+.registration-area__form .input input,
+.registration-area__form .input textarea,
+.registration-area__form .input .nice-select {
+  border: 1px solid rgb(202, 202, 202);
+  background-color: #f1f1f1;;
+  padding: 6px 15px;
+  margin: 0px;
+}
+.registration-area__form .input .nice-select {
+  width: 100%;
+  min-height: 42px;
+  border-radius: 0px;
+  z-index: unset;
+}
+.registration-area__form .input .nice-select .list {
+  max-height: 200px;
+  background-color: #ffffff;
+  overflow-y: auto;
+}
+@media (max-width: 767px) {
+  .registration-area__form .input .nice-select .list {
+    min-width: 100%;
+  }
+}
+.registration-area__form .input .nice-select .list .option:first-of-type {
+  display: none;
+}
+.registration-area__form .input .nice-select .list li {
+  margin-bottom: 0px;
+}
+.registration-area__form .input .nice-select .list::-webkit-scrollbar {
+  width: 5px;
+}
+.registration-area__form .input .nice-select .list::-webkit-scrollbar-track {
+  background-color: #cae6f7;
+  border-radius: 5px;
+}
+.registration-area__form .input .nice-select .list::-webkit-scrollbar-button, .registration-area__form .input .nice-select .list::-webkit-scrollbar-thumb {
+  background-color: #ea062b;
+  border-radius: 5px;
+}
+.registration-area__form .input .nice-select::after {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f107";
+  right: 15px;
+}
+.registration-area__form .input-group-column--secondary {
+  flex-direction: column;
+  gap: 0px;
+}
+.registration-area__form .input-group-column--secondary .input {
+  width: 100%;
+}
+.registration-area__form .input-group-column--secondary .registration-input-button .button {
+  z-index: 1;
+  padding: 6px 20px 8px;
+  width: 100%;
+  justify-content: space-between;
+}
+.button--effect:hover::after {
+  left: 200%;
+  opacity: 1;
+}
+p.secondary, th.secondary, td.secondary, li.secondary, input.secondary, textarea.secondary, select.secondary, label.secondary, blockquote.secondary, .span.secondary {
+    font-size: 18px;
+    line-height: 30px;
+    color: #ffffff;
+    margin-top: -7px;
+}
+input#regiFName:focus {
+  background: #fff;
+  border: 1px solid #e2e0e0;
+}
+input#regiLName:focus {
+  background: #fff;
+  border: 1px solid #e2e0e0;
+}
+select#regiMonth:focus {
+  background: #fff;
+  border: 1px solid #e2e0e0;
+}
+select#regiDay:focus {
+  background: #fff;
+  border: 1px solid #e2e0e0;
+}
+select#regiYear:focus {
+  background: #fff;
+  border: 1px solid #e2e0e0;
+}
+select#regiGroup:focus {
+  background: #fff;
+  border: 1px solid #e2e0e0;
+}
+select#regiLastMonth:focus {
+  background: #fff;
+  border: 1px solid #e2e0e0;
+}
+select#regiLastDay:focus {
+  background: #fff;
+  border: 1px solid #e2e0e0;
+}
+select#regiLastYear:focus {
+  background: #fff;
+  border: 1px solid #e2e0e0;
+}
+input#regiNumber:focus {
+  background: #fff;
+  border: 1px solid #e2e0e0;
+}
+input#regiAddress:focus {
+  background: #fff;
+  border: 1px solid #e2e0e0;
+}
+input#regiCity:focus {
+  background: #fff;
+  border: 1px solid #e2e0e0;
+}
+input#regiState:focus {
+  background: #fff;
+  border: 1px solid #e2e0e0;
+}
+
+select#regiGroup {
+    border: 1px solid rgb(202, 202, 202);
+    background-color: #f1f1f1;;
+    padding: 6px 15px;
+    margin: 0px;
+    width: 100%;
+}
+select#regiMonth {
+    border: 1px solid rgb(202, 202, 202);
+    background-color: #f1f1f1;;
+    padding: 6px 15px;
+    margin: 0px;
+}
+select#regiDay{
+    border: 1px solid rgb(202, 202, 202);
+    background-color: #f1f1f1;;
+    padding: 6px 15px;
+    margin: 0px;
+}
+select#regiYear {
+    border: 1px solid rgb(202, 202, 202);
+    background-color: #f1f1f1;;
+    padding: 6px 15px;
+    margin: 0px;
+}
+select#regiLastMonth{
+    border: 1px solid rgb(202, 202, 202);
+    background-color: #f1f1f1;
+    padding: 6px 15px;
+    margin: 0px;
+}
+select#regiLastDay{
+    border: 1px solid rgb(202, 202, 202);
+    background-color: #f1f1f1;
+    padding: 6px 15px;
+    margin: 0px;
+}
+select#regiLastYear{
+    border: 1px solid rgb(202, 202, 202);
+    background-color: #f1f1f1;
+    padding: 6px 15px;
+    margin: 0px;
+}
+select#regiCountry{
+    border: 1px solid rgb(202, 202, 202);
+    background-color: #f1f1f1;
+    padding: 6px 15px;
+    margin: 0px;
+    width: 100%;
+}
+.input .nice-select .option:hover {
+    background-color: #ea062b;
+    color: #ffffff;
+}
+p.secondary {
+  color: #000;
+}
