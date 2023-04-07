@@ -1,16 +1,16 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import AboutUs from './Components/AboutUs/AboutUs';
-import Campaign from './Components/Campaign/Campaign';
-import ContactUs from './Components/ContactUs/ContactUs';
-import ForgotPass from './Components/ForgotPass/ForgotPass';
-import Faqs from './Components/Home/Faqs';
-import IndexOne from './Components/Home/IndexOne';
-import Login from './Components/Login/Login';
-import PrivacyPolicy from './Components/PrivacyPolicy/PrivacyPolicy';
-import Register from './Components/Register/Register';
-import TermsConditions from './Components/TermsConditions/TermsConditions';
-import BloodTips from './Components/BloodTips/BloodTips';
+import AboutUs from './components/AboutUs/AboutUs';
+import Campaign from './components/Campaign/Campaign';
+import ContactUs from './components/ContactUs/ContactUs';
+import ForgotPass from './components/ForgotPass/ForgotPass';
+import Faqs from './components/Home/Faqs';
+import IndexOne from './components/Home/IndexOne';
+import Login from './components/Login/Login';
+import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy';
+import Register from './components/Register/Register';
+import TermsConditions from './components/TermsConditions/TermsConditions';
+import BloodTips from './components/BloodTips/BloodTips';
 function App() {
   return (
     <div className="App">

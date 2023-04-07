@@ -1,21 +1,26 @@
-import { faArrowRightToBracket, faHeart, faPlay, faStar } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
-import Footer from '../Footer/Footer'
-import Header from '../Header/Header'
-import TopBar from '../HomeTopBar/TopBar'
-import ToTop from '../TopTop/ToTop'
-import './IndexOne.css';
-import DoctorOne from '../Images/Doctor1.jpg'
-import DoctorTwo from '../Images/Doctor2.jpg'
-import DoctorThree from '../Images/Doctor3.jpg'
-import HeartIcon from '../Images/heart.png'
-import FirstAidIcon from '../Images/first-aid.png'
-import TubeIcon from '../Images/tube.png'
-import BloodDonate from '../Images/blood-donate.jpg'
-import slideImage1 from '../Images/patient-donating-blood-at-hospital.jpg'
-import slideImage2 from '../Images/doctor-taking-blood-samples.jpg'
-import slideImage3 from '../Images/6-1.jpg'
+import {
+  faArrowRightToBracket,
+  faHeart,
+  faPlay,
+  faStar,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
+import TopBar from "../HomeTopBar/TopBar";
+import ToTop from "../TopTop/ToTop";
+import "./IndexOne.css";
+import DoctorOne from "../Images/Doctor1.jpg";
+import DoctorTwo from "../Images/Doctor2.jpg";
+import DoctorThree from "../Images/Doctor3.jpg";
+import HeartIcon from "../Images/heart.png";
+import FirstAidIcon from "../Images/first-aid.png";
+import TubeIcon from "../Images/tube.png";
+import BloodDonate from "../Images/blood-donate.jpg";
+import slideImage1 from "../Images/patient-donating-blood-at-hospital.jpg";
+import slideImage2 from "../Images/doctor-taking-blood-samples.jpg";
+import slideImage3 from "../Images/6-1.jpg";
 
 export default function IndexOne() {
   return (
@@ -24,73 +29,97 @@ export default function IndexOne() {
       <Header />
 
       {/* <!-- ==== hero section start ==== --> */}
-		<section className="hero-slider-area">
-            <div className="hero-slider owl-carousel owl-theme">
-				<div className="hero-slider-item bg-img" data-background={slideImage1}>
-                    <div className="container">
-                        <div className="hero-slider-content">
-                            <div className="intro-video">
-                                <div className="d-flex align-items-center">
-                                    <a href="https://www.youtube.com/watch?v=NtETKgSE7i0"
-                                    title="YouTube video player" className="video-btn video-popup-btn">
-                                        <span>
-                                            <i className="fa-solid fa-play"></i>
-                                        </span>
-                                    </a>
-                                    <span>Intro Video</span>
-                                </div>
-                            </div>
-                            <h3>Donate blood,save life !</h3>
-                            <h1>Donate Blood And Inspires Others.</h1>
-                            <a href="services.html" className="button button--effect">Explore Now</a>
-                        </div>
-                    </div>
+      <section className="hero-slider-area">
+        <div className="hero-slider owl-carousel owl-theme">
+          <div
+            className="hero-slider-item bg-img"
+            data-background={slideImage1}
+          >
+            <div className="container">
+              <div className="hero-slider-content">
+                <div className="intro-video">
+                  <div className="d-flex align-items-center">
+                    <a
+                      href="https://www.youtube.com/watch?v=NtETKgSE7i0"
+                      title="YouTube video player"
+                      className="video-btn video-popup-btn"
+                    >
+                      <span>
+                        <i className="fa-solid fa-play"></i>
+                      </span>
+                    </a>
+                    <span>Intro Video</span>
+                  </div>
                 </div>
-
-				<div className="hero-slider-item bg-img" data-background={slideImage2}>
-                    <div className="container">
-                        <div className="hero-slider-content animation-style-two">
-                            <div className="intro-video">
-                                <div className="d-flex align-items-center">
-                                    <a href="https://www.youtube.com/watch?v=NtETKgSE7i0"
-                                    title="YouTube video player" className="video-btn video-popup-btn">
-                                        <span>
-                                            <i className="fa-solid fa-play"></i>
-                                        </span>
-                                    </a>
-                                    <span>Intro Video</span>
-                                </div>
-                            </div>
-                            <h3>Donate blood,save life !</h3>
-                            <h1>Donate Blood And Inspires Others.</h1>
-                            <a href="services.html" className="button button--effect">Explore Now</a>
-                        </div>
-                    </div>
-                </div>
-
-				<div className="hero-slider-item bg-img" data-background={slideImage3}>
-                    <div className="container">
-                        <div className="hero-slider-content animation-style-three">
-                            <div className="intro-video">
-                                <div className="d-flex align-items-center">
-                                    <a href="https://www.youtube.com/watch?v=NtETKgSE7i0"
-                                    title="YouTube video player" className="video-btn video-popup-btn">
-                                        <span>
-                                            <i className="fa-solid fa-play"></i>
-                                        </span>
-                                    </a>
-                                    <span>Intro Video</span>
-                                </div>
-                            </div>
-                            <h3>Donate blood,save life !</h3>
-                            <h1>Donate Blood And Inspires Others.</h1>
-                            <a href="services.html" className="button button--effect">Explore Now</a>
-                        </div>
-                    </div>
-                </div>
+                <h3>Donate blood,save life !</h3>
+                <h1>Donate Blood And Inspires Others.</h1>
+                <a href="services.html" className="button button--effect">
+                  Explore Now
+                </a>
+              </div>
             </div>
-		</section>
-		{/* <!-- ==== #hero section end ==== --> */}
+          </div>
+
+          <div
+            className="hero-slider-item bg-img"
+            data-background={slideImage2}
+          >
+            <div className="container">
+              <div className="hero-slider-content animation-style-two">
+                <div className="intro-video">
+                  <div className="d-flex align-items-center">
+                    <a
+                      href="https://www.youtube.com/watch?v=NtETKgSE7i0"
+                      title="YouTube video player"
+                      className="video-btn video-popup-btn"
+                    >
+                      <span>
+                        <i className="fa-solid fa-play"></i>
+                      </span>
+                    </a>
+                    <span>Intro Video</span>
+                  </div>
+                </div>
+                <h3>Donate blood,save life !</h3>
+                <h1>Donate Blood And Inspires Others.</h1>
+                <a href="services.html" className="button button--effect">
+                  Explore Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className="hero-slider-item bg-img"
+            data-background={slideImage3}
+          >
+            <div className="container">
+              <div className="hero-slider-content animation-style-three">
+                <div className="intro-video">
+                  <div className="d-flex align-items-center">
+                    <a
+                      href="https://www.youtube.com/watch?v=NtETKgSE7i0"
+                      title="YouTube video player"
+                      className="video-btn video-popup-btn"
+                    >
+                      <span>
+                        <i className="fa-solid fa-play"></i>
+                      </span>
+                    </a>
+                    <span>Intro Video</span>
+                  </div>
+                </div>
+                <h3>Donate blood,save life !</h3>
+                <h1>Donate Blood And Inspires Others.</h1>
+                <a href="services.html" className="button button--effect">
+                  Explore Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <!-- ==== #hero section end ==== --> */}
 
       {/* <section className="section-content-block section-secondary-bg">
         <div className="container">
@@ -158,92 +187,136 @@ export default function IndexOne() {
         </div>
       </section> */}
 
-{/* <!-- ==== overview section start ==== --> */}
-        <section className="overview">
-            <div className="container">
-                <div className="explore-area wow fadeInUp">
-                    <div className="explore-area__single">
-                        <div className="explore-area__single-content">
-                            <h4><a href="register.html">Regsiter Now</a></h4>
-                            <p className="neutral-bottom">Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain,</p>
-                        </div>
-                        <a href="/register"><FontAwesomeIcon icon={faArrowRightToBracket} /></a>
-                    </div>
-                    <div className="explore-area__single explore-area__single--secondary">
-                        <div className="explore-area__single-content">
-                            <h4><a href="donate-now.html">Donate Now</a></h4>
-                            <p className="neutral-bottom">Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain,</p>
-                        </div>
-                        <a href="/register"><FontAwesomeIcon icon={faArrowRightToBracket} /></a>
-                    </div>
-                </div>
-                <div className="overview-area section-space">
-                    <div className="row neutral-row justify-content-center">
-                        <div className="col-sm-6 col-md-6 col-lg-4 align-center row-item">
-                            <div className="overview-area__single img-effect">
-                                <div className="overview-area__single-content">
-                                    <div className="poster">
-                                        <a href="service-details.html">
-                                            <img src={BloodDonate} alt="Blood Donor"/>
-                                        </a>
-                                    </div>
-                                    <div className="icon-box-wrapper">
-                                        <div className="icon-box">
-                                            <img src={FirstAidIcon} alt="First Aid"/>
-                                        </div>
-                                    </div>
-                                    <h5>Become a Donor</h5>
-                                    <p className="neutral-bottom">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give pleasure</p>
-                                </div>
-                                <a href="service-details.html" className="button button--secondary button--effect">Read More</a>
-                            </div>
-                        </div>
-                        <div className="col-sm-6 col-md-6 col-lg-4 row-item align-center">
-                            <div className="overview-area__single img-effect wow fadeInUp">
-                                <div className="overview-area__single-content">
-                                    <div className="poster">
-                                        <a href="service-details.html">
-                                            <img src={BloodDonate} alt="Give Blood"/>
-                                        </a>
-                                    </div>
-                                    <div className="icon-box-wrapper">
-                                        <div className="icon-box">
-                                            <img src={TubeIcon} alt="Tube"/>
-                                        </div>
-                                    </div>
-                                    <h5>Why Give Blood?</h5>
-                                    <p className="neutral-bottom">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give pleasure</p>
-                                </div>
-                                <a href="service-details.html" className="button button--secondary button--effect">Read More</a>
-                            </div>
-                        </div>
-                        <div className="col-sm-6 col-md-6 col-lg-4 row-item align-center">
-                            <div className="overview-area__single img-effect wow fadeInUp" data-wow-delay="0.2s">
-                                <div className="overview-area__single-content">
-                                    <div className="poster">
-                                        <a href="service-details.html">
-                                            <img src={BloodDonate} alt="Blood Donation"/>
-                                        </a>
-                                    </div>
-                                    <div className="icon-box-wrapper">
-                                        <div className="icon-box">
-                                            <img src={HeartIcon} alt="Heart"/>
-                                        </div>
-                                    </div>
-                                    <h5>How Donations Helps</h5>
-                                    <p className="neutral-bottom">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give pleasure</p>
-                                </div>
-                                <a href="service-details.html" className="button button--secondary button--effect">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      {/* <!-- ==== overview section start ==== --> */}
+      <section className="overview">
+        <div className="container">
+          <div className="explore-area wow fadeInUp">
+            <div className="explore-area__single">
+              <div className="explore-area__single-content">
+                <h4>
+                  <a href="register.html">Regsiter Now</a>
+                </h4>
+                <p className="neutral-bottom">
+                  Nor again is there anyone who loves or pursues or desires to
+                  obtain pain of itself, because it is pain,
+                </p>
+              </div>
+              <a href="/register">
+                <FontAwesomeIcon icon={faArrowRightToBracket} />
+              </a>
             </div>
-        </section>
-        {/* <!-- ==== #overview section end ==== --> */}
+            <div className="explore-area__single explore-area__single--secondary">
+              <div className="explore-area__single-content">
+                <h4>
+                  <a href="donate-now.html">Donate Now</a>
+                </h4>
+                <p className="neutral-bottom">
+                  Nor again is there anyone who loves or pursues or desires to
+                  obtain pain of itself, because it is pain,
+                </p>
+              </div>
+              <a href="/register">
+                <FontAwesomeIcon icon={faArrowRightToBracket} />
+              </a>
+            </div>
+          </div>
+          <div className="overview-area section-space">
+            <div className="row neutral-row justify-content-center">
+              <div className="col-sm-6 col-md-6 col-lg-4 align-center row-item">
+                <div className="overview-area__single img-effect">
+                  <div className="overview-area__single-content">
+                    <div className="poster">
+                      <a href="service-details.html">
+                        <img src={BloodDonate} alt="Blood Donor" />
+                      </a>
+                    </div>
+                    <div className="icon-box-wrapper">
+                      <div className="icon-box">
+                        <img src={FirstAidIcon} alt="First Aid" />
+                      </div>
+                    </div>
+                    <h5>Become a Donor</h5>
+                    <p className="neutral-bottom">
+                      But I must explain to you how all this mistaken idea of
+                      denouncing pleasure and praising pain was born and I will
+                      give pleasure
+                    </p>
+                  </div>
+                  <a
+                    href="service-details.html"
+                    className="button button--secondary button--effect"
+                  >
+                    Read More
+                  </a>
+                </div>
+              </div>
+              <div className="col-sm-6 col-md-6 col-lg-4 row-item align-center">
+                <div className="overview-area__single img-effect wow fadeInUp">
+                  <div className="overview-area__single-content">
+                    <div className="poster">
+                      <a href="service-details.html">
+                        <img src={BloodDonate} alt="Give Blood" />
+                      </a>
+                    </div>
+                    <div className="icon-box-wrapper">
+                      <div className="icon-box">
+                        <img src={TubeIcon} alt="Tube" />
+                      </div>
+                    </div>
+                    <h5>Why Give Blood?</h5>
+                    <p className="neutral-bottom">
+                      But I must explain to you how all this mistaken idea of
+                      denouncing pleasure and praising pain was born and I will
+                      give pleasure
+                    </p>
+                  </div>
+                  <a
+                    href="service-details.html"
+                    className="button button--secondary button--effect"
+                  >
+                    Read More
+                  </a>
+                </div>
+              </div>
+              <div className="col-sm-6 col-md-6 col-lg-4 row-item align-center">
+                <div
+                  className="overview-area__single img-effect wow fadeInUp"
+                  data-wow-delay="0.2s"
+                >
+                  <div className="overview-area__single-content">
+                    <div className="poster">
+                      <a href="service-details.html">
+                        <img src={BloodDonate} alt="Blood Donation" />
+                      </a>
+                    </div>
+                    <div className="icon-box-wrapper">
+                      <div className="icon-box">
+                        <img src={HeartIcon} alt="Heart" />
+                      </div>
+                    </div>
+                    <h5>How Donations Helps</h5>
+                    <p className="neutral-bottom">
+                      But I must explain to you how all this mistaken idea of
+                      denouncing pleasure and praising pain was born and I will
+                      give pleasure
+                    </p>
+                  </div>
+                  <a
+                    href="service-details.html"
+                    className="button button--secondary button--effect"
+                  >
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <!-- ==== #overview section end ==== --> */}
 
-{/* Reviews Section Start */}
-{/* Review Section End  */}
+      {/* Reviews Section Start */}
+      {/* Review Section End  */}
       {/* <!-- ==== call now section start ==== --> */}
       {/* <section className="call dark-overlay bg-img">
         <div className="container">
@@ -276,9 +349,8 @@ export default function IndexOne() {
       </section> */}
       {/* <!-- ==== #call now section end ==== --> */}
 
-
       {/* <!-- ==== testimonial section start ==== --> */}
-        {/* <section className="testimonial section-space">
+      {/* <section className="testimonial section-space">
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12">
@@ -432,8 +504,7 @@ export default function IndexOne() {
                 </div>
             </div>
         </section> */}
-        {/* <!-- ==== testimonial section end ==== --> */}
-
+      {/* <!-- ==== testimonial section end ==== --> */}
 
       {/* <!-- ==== donor section end ==== --> */}
       <section className="donor dark-overlay section-space bg-img">
@@ -441,10 +512,16 @@ export default function IndexOne() {
           <div className="row">
             <div className="col-lg-12">
               <div className="donor-area">
-                <p className="primary neutral-ascender descender">Blood Owner</p>
+                <p className="primary neutral-ascender descender">
+                  Blood Owner
+                </p>
                 <h2>We Are Blood Donor Group</h2>
-                <a href="https://www.youtube.com/watch?v=NtETKgSE7i0" target="_blank"
-                  title="YouTube video player" className="video-btn-two video-popup-btn">
+                <a
+                  href="https://www.youtube.com/watch?v=NtETKgSE7i0"
+                  target="_blank"
+                  title="YouTube video player"
+                  className="video-btn-two video-popup-btn"
+                >
                   <span>
                     <FontAwesomeIcon icon={faPlay} />
                   </span>
@@ -455,8 +532,6 @@ export default function IndexOne() {
         </div>
       </section>
       {/* <!-- ==== #donor section end ==== --> */}
-
-
 
       {/* <!-- ==== appointment section start ==== --> */}
       <section className="appointment section-space-bottom">
@@ -469,14 +544,38 @@ export default function IndexOne() {
                     <div className="appointment-area__single appointment-area__content">
                       <h4>Current Blood Request</h4>
                       <ul>
-                        <li><FontAwesomeIcon icon={faHeart} />B+ Washington, USA (13.02.2022)</li>
-                        <li><FontAwesomeIcon icon={faHeart} />O- Washington, USA (13.02.2022)</li>
-                        <li><FontAwesomeIcon icon={faHeart} />B- Washington, USA (13.02.2022)</li>
-                        <li><FontAwesomeIcon icon={faHeart} />AB- Washington, USA (13.02.2022)</li>
-                        <li><FontAwesomeIcon icon={faHeart} />O+ Washington, USA (13.02.2022)</li>
-                        <li><FontAwesomeIcon icon={faHeart} />B+ Washington, USA (13.02.2022)</li>
-                        <li><FontAwesomeIcon icon={faHeart} />AB+ Washington, USA (13.02.2022)</li>
-                        <li><FontAwesomeIcon icon={faHeart} />B+ Washington, USA (13.02.2022)</li>
+                        <li>
+                          <FontAwesomeIcon icon={faHeart} />
+                          B+ Washington, USA (13.02.2022)
+                        </li>
+                        <li>
+                          <FontAwesomeIcon icon={faHeart} />
+                          O- Washington, USA (13.02.2022)
+                        </li>
+                        <li>
+                          <FontAwesomeIcon icon={faHeart} />
+                          B- Washington, USA (13.02.2022)
+                        </li>
+                        <li>
+                          <FontAwesomeIcon icon={faHeart} />
+                          AB- Washington, USA (13.02.2022)
+                        </li>
+                        <li>
+                          <FontAwesomeIcon icon={faHeart} />
+                          O+ Washington, USA (13.02.2022)
+                        </li>
+                        <li>
+                          <FontAwesomeIcon icon={faHeart} />
+                          B+ Washington, USA (13.02.2022)
+                        </li>
+                        <li>
+                          <FontAwesomeIcon icon={faHeart} />
+                          AB+ Washington, USA (13.02.2022)
+                        </li>
+                        <li>
+                          <FontAwesomeIcon icon={faHeart} />
+                          B+ Washington, USA (13.02.2022)
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -486,18 +585,38 @@ export default function IndexOne() {
                       <form action="#" method="post" name="appointmentForm">
                         <div className="input-group-column">
                           <div className="input">
-                            <input type="text" name="appointment__name" id="appointmentName" placeholder="Your Name" required />
+                            <input
+                              type="text"
+                              name="appointment__name"
+                              id="appointmentName"
+                              placeholder="Your Name"
+                              required
+                            />
                           </div>
                           <div className="input">
-                            <input type="number" name="appointment__number" id="appointmentNumber" placeholder="Phone Number" required />
+                            <input
+                              type="number"
+                              name="appointment__number"
+                              id="appointmentNumber"
+                              placeholder="Phone Number"
+                              required
+                            />
                           </div>
                         </div>
                         <div className="input">
-                          <input type="email" name="appointment__email" id="appointmentEmail" placeholder="Your Email" required />
+                          <input
+                            type="email"
+                            name="appointment__email"
+                            id="appointmentEmail"
+                            placeholder="Your Email"
+                            required
+                          />
                         </div>
                         <div className="input">
                           <select className="select-donation-type">
-                            <option data-display="Donation Type">Donation Type</option>
+                            <option data-display="Donation Type">
+                              Donation Type
+                            </option>
                             <option value="free">Free Donation</option>
                             <option value="health">Health Checkup</option>
                             <option value="paid">Paid Donation</option>
@@ -505,9 +624,20 @@ export default function IndexOne() {
                         </div>
 
                         <div className="input">
-                          <textarea name="appointment__message" id="appointmentMessage" cols="30" rows="10" placeholder="Your Message"></textarea>
+                          <textarea
+                            name="appointment__message"
+                            id="appointmentMessage"
+                            cols="30"
+                            rows="10"
+                            placeholder="Your Message"
+                          ></textarea>
                         </div>
-                        <button type="submit" className="button button--tertiary button--effect">Submit Now</button>
+                        <button
+                          type="submit"
+                          className="button button--tertiary button--effect"
+                        >
+                          Submit Now
+                        </button>
                       </form>
                     </div>
                   </div>
@@ -526,7 +656,9 @@ export default function IndexOne() {
             <div className="col-lg-12">
               <div className="team-area">
                 <div className="section-header section-inner-space">
-                  <p className="primary neutral-ascender descender">Team Members</p>
+                  <p className="primary neutral-ascender descender">
+                    Team Members
+                  </p>
                   <h2 className="neutral-descender">Meet Volunteers</h2>
                 </div>
                 <div className="row neutral-row justify-content-center">
@@ -535,19 +667,17 @@ export default function IndexOne() {
                       <div className="poster">
                         <img src={DoctorOne} alt="Nora" />
                         <div className="social social--secondary">
-                        <a href="https://www.facebook.com/" target="_blank">
-                            <i className="fab fa-facebook-f">
-                            </i>
+                          <a href="https://www.facebook.com/" target="_blank">
+                            <i className="fab fa-facebook-f"></i>
                           </a>
                           <a href="https://www.twitter.com/" target="_blank">
-                          <i className="bi bi-twitter"></i>
+                            <i className="bi bi-twitter"></i>
                           </a>
                           <a href="https://www.instagram.com/" target="_blank">
-                          <i className="bi bi-instagram"></i>
+                            <i className="bi bi-instagram"></i>
                           </a>
                           <a href="https://www.pinterest.com/" target="_blank">
-                          <i className="fab fa-pinterest"></i>
-
+                            <i className="fab fa-pinterest"></i>
                           </a>
                         </div>
                       </div>
@@ -560,19 +690,17 @@ export default function IndexOne() {
                       <div className="poster">
                         <img src={DoctorTwo} alt="Alex Joshan Deo" />
                         <div className="social social--secondary">
-                        <a href="https://www.facebook.com/" target="_blank">
-                            <i className="fab fa-facebook-f">
-                            </i>
+                          <a href="https://www.facebook.com/" target="_blank">
+                            <i className="fab fa-facebook-f"></i>
                           </a>
                           <a href="https://www.twitter.com/" target="_blank">
-                          <i className="bi bi-twitter"></i>
+                            <i className="bi bi-twitter"></i>
                           </a>
                           <a href="https://www.instagram.com/" target="_blank">
-                          <i className="bi bi-instagram"></i>
+                            <i className="bi bi-instagram"></i>
                           </a>
                           <a href="https://www.pinterest.com/" target="_blank">
-                          <i className="fab fa-pinterest"></i>
-
+                            <i className="fab fa-pinterest"></i>
                           </a>
                         </div>
                       </div>
@@ -581,23 +709,24 @@ export default function IndexOne() {
                     </div>
                   </div>
                   <div className="col-sm-6 col-md-6 col-lg-4 row-item align-center">
-                    <div className="team-area__single img-effect wow fadeInUp" data-wow-delay="0.2s">
+                    <div
+                      className="team-area__single img-effect wow fadeInUp"
+                      data-wow-delay="0.2s"
+                    >
                       <div className="poster">
                         <img src={DoctorThree} alt="Alex Joshi Deon" />
                         <div className="social social--secondary">
                           <a href="https://www.facebook.com/" target="_blank">
-                            <i className="fab fa-facebook-f">
-                            </i>
+                            <i className="fab fa-facebook-f"></i>
                           </a>
                           <a href="https://www.twitter.com/" target="_blank">
-                          <i className="bi bi-twitter"></i>
+                            <i className="bi bi-twitter"></i>
                           </a>
                           <a href="https://www.instagram.com/" target="_blank">
-                          <i className="bi bi-instagram"></i>
+                            <i className="bi bi-instagram"></i>
                           </a>
                           <a href="https://www.pinterest.com/" target="_blank">
-                          <i className="fab fa-pinterest"></i>
-
+                            <i className="fab fa-pinterest"></i>
                           </a>
                         </div>
                       </div>
@@ -613,7 +742,6 @@ export default function IndexOne() {
       </section>
       {/* <!-- ==== #team section end ==== --> */}
 
-
       {/* <!-- ==== cta section start ==== --> */}
       <section className="cta">
         <div className="container">
@@ -624,12 +752,23 @@ export default function IndexOne() {
                   <div className="col-md-9">
                     <div className="cta-area__content">
                       <h2>Let's change the world, Join us now!</h2>
-                      <p className="neutral-bottom">Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but occasionally circumstances occur in which toil and pain can procure reat pleasure but occasionally circumstances occur.</p>
+                      <p className="neutral-bottom">
+                        Nor again is there anyone who loves or pursues or
+                        desires to obtain pain of itself, because it is pain,
+                        but occasionally circumstances occur in which toil and
+                        pain can procure reat pleasure but occasionally
+                        circumstances occur.
+                      </p>
                     </div>
                   </div>
                   <div className="col-md-3">
                     <div className="cta-area__btn text-start text-md-end">
-                      <a href="contact-us.html" className="button button--quaternary button--effect">Contact Us</a>
+                      <a
+                        href="contact-us.html"
+                        className="button button--quaternary button--effect"
+                      >
+                        Contact Us
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -643,5 +782,5 @@ export default function IndexOne() {
       <ToTop />
       <Footer />
     </>
-  )
+  );
 }

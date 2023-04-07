@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.css";
-import ProfileIcon from '../Images/sehatbooking-logo-3.png'
+import ProfileIcon from "../Images/sehatbooking-logo-3.png";
+import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <>
@@ -10,83 +11,34 @@ export default function Header() {
         <nav className="navbar navbar-expand-xl">
           <div className="container">
             <a className="navbar-brandd" href="/">
-            <img src="https://res.cloudinary.com/dll4d2yu7/image/upload/v1679762718/Sehatbooking/sehatbooking-logolight_lktywq.png" alt="Logo" className="sehat-logo"/>
+              <img
+                src="https://res.cloudinary.com/dll4d2yu7/image/upload/v1679762718/Sehatbooking/sehatbooking-logolight_lktywq.png"
+                alt="Logo"
+                className="sehat-logo"
+              />
             </a>
             <div
               className="collapse navbar-collapse justify-content-center order-3 order-xl-2"
               id="primaryNav"
             >
               <ul className="navbar-nav">
-              <li className="nav-item">
-                  <a className="nav-link active" href="/">
-                    Home
-                  </a>
-                </li>
-                {/* <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle active"
-                    href=""
-                  >
-                    Home
-                  </a>
-                  <ul
-                    className="dropdown-menu"
-                    aria-labelledby="navbarHomeDropdown"
-                  >
-                    <li>
-                      <a className="dropdown-item active" href="/">
-                        Home One
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="/">
-                        Home Two
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="/">
-                        Home Three
-                      </a>
-                    </li>
-                  </ul>
-                </li> */}
                 <li className="nav-item">
-                  <a className="nav-link" href="/blood-tips">
+                  <Link to="/" className="nav-link active">
+                    Home
+                  </Link>
+                </li>
+
+                <li className="nav-item">
+                  <Link to="/blood-tips" className="nav-link">
                     Donation Tips
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/find-donor">
+                  <Link to="/find-donor" className="nav-link">
                     Find Donor
-                  </a>
+                  </Link>
                 </li>
-                {/* <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href=""
-                    id="navbarCampaignDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Campaign
-                  </a>
-                  <ul
-                    className="dropdown-menu"
-                    aria-labelledby="navbarCampaignDropdown"
-                  >
-                    <li>
-                      <a className="dropdown-item" href="campaigns.html">
-                        Campaigns
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="campaign-details.html">
-                        Campaign Details
-                      </a>
-                    </li>
-                  </ul>
-                </li> */}
+
                 <li className="nav-item dropdown">
                   <a
                     className="nav-link dropdown-toggle"
@@ -96,123 +48,49 @@ export default function Header() {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    Pages
+                    Miscs.
                   </a>
                   <ul
                     className="dropdown-menu"
                     aria-labelledby="navbarDropdown"
                   >
                     <li>
-                      <a className="dropdown-item" href="services.html">
-                        Our Services
-                      </a>
+                      <Link to="/about-us" className="dropdown-item">
+                        About Us
+                      </Link>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="service-details.html">
-                        Service Details
-                      </a>
+                      <Link to="/how-to" className="dropdown-item">
+                        How To
+                      </Link>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="team.html">
-                        Team Members
-                      </a>
+                      <Link to="/faqs" className="dropdown-item">
+                        FAQs
+                      </Link>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="donate-now.html">
-                        Donate Now
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="gallery.html">
-                        Photo Gallery
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="/register">
-                        Registration Now
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="/faqs">
-                        FAQ
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="/privacy-policy">
+                      <Link to="/privacy-policy" className="dropdown-item">
                         Privacy Policy
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="/terms-conditions">
+                      <Link to="/terms-conditions" className="dropdown-item">
                         Terms & Conditions
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="404.html">
-                        Error
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </li>
-                {/* <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href=""
-                    id="navbarBlogDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Blog
-                  </a>
-                  <ul
-                    className="dropdown-menu"
-                    aria-labelledby="navbarBlogDropdown"
-                  >
-                    <li>
-                      <a className="dropdown-item" href="blog.html">
-                        Blog
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="blog-two.html">
-                        Blog Two
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="blog-three.html">
-                        Blog Three
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="blog-details.html">
-                        Blog Details
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="blog-details-two.html">
-                        Blog Details Two
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        className="dropdown-item"
-                        href="blog-details-three.html"
-                      >
-                        Blog Details Three
-                      </a>
-                    </li>
-                  </ul>
-                </li> */}
+
                 <li className="nav-item">
-                  <a className="nav-link" href="/contact-us">
+                  <Link to="/contact-us" className="nav-link">
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="/booking">
-                    Booking
-                  </a>
+                  <Link to="/appointment" className="nav-link">
+                    Appointment
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -228,14 +106,13 @@ export default function Header() {
                                 <option value="germany">Germany</option>
                             </select> */}
                 <a
-                  href=""
+                  href="javascript:void(0)"
                   className="d-none d-xl-block open-sidenav"
                 >
                   <span className="icon-bar top-bar"></span>
                   <span className="icon-bar middle-bar"></span>
                   <span className="icon-bar bottom-bar"></span>
                 </a>
-
               </div>
               <button
                 className="navbar-toggler"
@@ -280,49 +157,73 @@ export default function Header() {
       <div className="sidenav d-none d-xl-block">
         <div className="navbar-inner">
           <div className="close-sidebar-wrapper">
-            <a href="" className="close-sidebar">
+            <a href="javascript:void(0)" className="close-sidebar">
               <i className="fa-solid fa-xmark"></i>
             </a>
           </div>
           <div className="intro">
             <a href="/">
-              <img src="assets/images/logo.png" alt="Logo" className="logo" />
+              <img
+                src="https://res.cloudinary.com/dll4d2yu7/image/upload/v1679762718/Sehatbooking/sehatbooking-logolight_lktywq.png"
+                alt="Logo"
+                className="logo"
+              />
             </a>
           </div>
           <ul>
             <li>
-              <a href="/">
+              <Link to="/">
                 <i className="fa-solid fa-angle-right"></i> Home
-              </a>
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/blood-tips">
+                <i className="fa-solid fa-angle-right"></i> Donation Tips
+              </Link>
             </li>
             <li>
-              <a href="/about-us">
+              <Link to="/find-donor">
+                <i className="fa-solid fa-angle-right"></i> Find Donor
+              </Link>
+            </li>
+            <li>
+              <Link to="/about-us">
                 <i className="fa-solid fa-angle-right"></i> About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="campaign.html">
-                <i className="fa-solid fa-angle-right"></i> Campaign
-              </a>
+              <Link to="/how-to">
+                <i className="fa-solid fa-angle-right"></i> How To
+              </Link>
             </li>
             <li>
-              <a href="blog.html">
-                <i className="fa-solid fa-angle-right"></i> Blog
-              </a>
+              <Link to="/faqs">
+                <i className="fa-solid fa-angle-right"></i> FAQs
+              </Link>
             </li>
             <li>
-              <a href="blog-details.html">
-                <i className="fa-solid fa-angle-right"></i> Blog Details
-              </a>
+              <Link to="/privacy-policy">
+                <i className="fa-solid fa-angle-right"></i> Privacy Policy
+              </Link>
             </li>
             <li>
-              <a href="contact-us.html">
+              <Link to="/terms-conditions">
+                <i className="fa-solid fa-angle-right"></i> Terms & Conditions
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact-us">
                 <i className="fa-solid fa-angle-right"></i> Contact Us
-              </a>
+              </Link>
             </li>
-          
+            <li>
+              <Link to="/appointment">
+                <i className="fa-solid fa-angle-right"></i> Appointment
+              </Link>
+            </li>
           </ul>
-          <form action="#" method="post">
+          {/* <form action="#" method="post">
             <div className="input-group-btn input-group-btn--secondary">
               <input
                 type="email"
@@ -335,7 +236,7 @@ export default function Header() {
                 <i className="fa-solid fa-paper-plane"></i>
               </button>
             </div>
-          </form>
+          </form> */}
         </div>
       </div>
       {/* <!-- ==== sidenav end ==== --> */}
