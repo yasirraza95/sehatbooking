@@ -10,6 +10,7 @@ import Login from './Components/Login/Login';
 import PrivacyPolicy from './Components/PrivacyPolicy/PrivacyPolicy';
 import Register from './Components/Register/Register';
 import TermsConditions from './Components/TermsConditions/TermsConditions';
+import BloodTips from './Components/BloodTips/BloodTips';
 function App() {
   return (
     <div className="App">
@@ -26,7 +27,7 @@ function App() {
     <Route path="/register" element={<Register />} />
     <Route path="/contact-us" element={<ContactUs />} />
     <Route path="/campaign" element={<Campaign />} />
-
+    <Route path="/blood-tips" element={<BloodTips />} />
     </Routes>
     </BrowserRouter>
     </div>

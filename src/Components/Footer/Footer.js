@@ -15,8 +15,8 @@ export default function Footer() {
                     <p className="address">Duis aute irure dolor in reprehenderit velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat</p>
 
                     <div className="address">
-                      <p><strong>Phone :</strong> +1(456)657-887, 999</p>
-                      <p><strong>Email :</strong>  contactblood@gmail.com</p>
+                      <p><strong>Phone :</strong> +92-348-1586695</p>
+                      <p><strong>Email :</strong>  sehatbooking@gmail.com</p>
                     </div>
                   </div>
                 </div>
@@ -129,9 +129,9 @@ export default function Footer() {
                   </div>
                   <div className="col-lg-6 row-item">
                     <div className="footer-area__bottom-right">
-                      <div className="social social--secondary">
+                      {/* <div className="social social--secondary">
                         <a href="https://www.facebook.com/">
-                          <i class="fab fa-facebook-f">
+                          <i className="fab fa-facebook-f">
                           </i>
                         </a>
                         <a href="https://www.twitter.com/">
@@ -141,9 +141,9 @@ export default function Footer() {
                           <i className="bi bi-instagram"></i>
                         </a>
                         <a href="https://www.pinterest.com/">
-                        <i class="fab fa-pinterest"></i>
+                        <i className="fab fa-pinterest"></i>
                         </a>
-                      </div>
+                      </div> */}
                       <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">
                           <li className="breadcrumb-item"><a href="/privacy-policy">Privacy Policy</a></li>

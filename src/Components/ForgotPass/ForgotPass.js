@@ -24,9 +24,9 @@ export default function ForgotPass() {
                 {/* <!-- Logo wrapper // --> */}
 
                 {/* <!-- // Non-form side --> */}
-                <div id="non-form-side-forgot" className="col-md-4 col-lg-4 col-xl-4 d-none d-md-flex nm-aic nm-vh-100">
+                {/* <div id="non-form-side-forgot" className="col-md-4 col-lg-4 col-xl-4 d-none d-md-flex nm-aic nm-vh-100">
                     <div  className="overlay"></div>
-                </div>
+                </div> */}
                 {/* <!-- Non-form Side // --> */}
 
                 {/* <!-- // Form side --> */}
