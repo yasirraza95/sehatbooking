@@ -17,7 +17,12 @@ export default function Header() {
               id="primaryNav"
             >
               <ul className="navbar-nav">
-                <li className="nav-item dropdown">
+              <li className="nav-item">
+                  <a className="nav-link active" href="/">
+                    Home
+                  </a>
+                </li>
+                {/* <li className="nav-item dropdown">
                   <a
                     className="nav-link dropdown-toggle active"
                     href=""
@@ -44,13 +49,18 @@ export default function Header() {
                       </a>
                     </li>
                   </ul>
-                </li>
+                </li> */}
                 <li className="nav-item">
-                  <a className="nav-link" href="/about-us">
-                    About Us
+                  <a className="nav-link" href="/blood-tips">
+                    Donation Tips
                   </a>
                 </li>
-                <li className="nav-item dropdown">
+                <li className="nav-item">
+                  <a className="nav-link" href="/find-donor">
+                    Find Donor
+                  </a>
+                </li>
+                {/* <li className="nav-item dropdown">
                   <a
                     className="nav-link dropdown-toggle"
                     href=""
@@ -76,7 +86,7 @@ export default function Header() {
                       </a>
                     </li>
                   </ul>
-                </li>
+                </li> */}
                 <li className="nav-item dropdown">
                   <a
                     className="nav-link dropdown-toggle"
@@ -123,11 +133,6 @@ export default function Header() {
                       </a>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="/blood-tips">
-                        Blood Tips
-                      </a>
-                    </li>
-                    <li>
                       <a className="dropdown-item" href="/faqs">
                         FAQ
                       </a>
@@ -149,7 +154,7 @@ export default function Header() {
                     </li>
                   </ul>
                 </li>
-                <li className="nav-item dropdown">
+                {/* <li className="nav-item dropdown">
                   <a
                     className="nav-link dropdown-toggle"
                     href=""
@@ -198,25 +203,30 @@ export default function Header() {
                       </a>
                     </li>
                   </ul>
-                </li>
+                </li> */}
                 <li className="nav-item">
                   <a className="nav-link" href="/contact-us">
                     Contact Us
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/booking">
+                    Booking
                   </a>
                 </li>
               </ul>
             </div>
             <div className="navbar-out order-2 order-xl-3">
               <div className="navbar-out__group">
-                <a href="" className="search-icon">
+                {/* <a href="" className="search-icon">
                   <i className="fa-solid fa-magnifying-glass"></i>
-                </a>
-                <select className="select-language" style={{display: "none"}}>
+                </a> */}
+                {/* <select className="select-language" style={{display: "none"}}>
                                 <option value="english">English</option>
                                 <option value="spanish">Spanish</option>
                                 <option value="china">China</option>
                                 <option value="germany">Germany</option>
-                            </select>
+                            </select> */}
                 <a
                   href=""
                   className="d-none d-xl-block open-sidenav"
@@ -226,9 +236,6 @@ export default function Header() {
                   <span className="icon-bar bottom-bar"></span>
                 </a>
 
-                {/* <div>
-            <img src={ProfileIcon} alt="Avatar" className="avatar"/>
-            </div> */}
               </div>
               <button
                 className="navbar-toggler"

@@ -12,28 +12,85 @@ import DoctorThree from '../Images/Doctor3.jpg'
 import HeartIcon from '../Images/heart.png'
 import FirstAidIcon from '../Images/first-aid.png'
 import TubeIcon from '../Images/tube.png'
-import TubeTest from '../Images/tube-test.jpg'
 import BloodDonate from '../Images/blood-donate.jpg'
-import DonorHelp from '../Images/donor-help.jpg'
+import slideImage1 from '../Images/patient-donating-blood-at-hospital.jpg'
+import slideImage2 from '../Images/doctor-taking-blood-samples.jpg'
+import slideImage3 from '../Images/6-1.jpg'
+
 export default function IndexOne() {
   return (
     <>
       <TopBar />
       <Header />
-      <section className="banner bg-img dark-overlay dark-overlay">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="banner-area">
-                <div className="banner-area__content">
-                  <h2>Home</h2>
+
+      {/* <!-- ==== hero section start ==== --> */}
+		<section className="hero-slider-area">
+            <div className="hero-slider owl-carousel owl-theme">
+				<div className="hero-slider-item bg-img" data-background={slideImage1}>
+                    <div className="container">
+                        <div className="hero-slider-content">
+                            <div className="intro-video">
+                                <div className="d-flex align-items-center">
+                                    <a href="https://www.youtube.com/watch?v=NtETKgSE7i0"
+                                    title="YouTube video player" className="video-btn video-popup-btn">
+                                        <span>
+                                            <i className="fa-solid fa-play"></i>
+                                        </span>
+                                    </a>
+                                    <span>Intro Video</span>
+                                </div>
+                            </div>
+                            <h3>Donate blood,save life !</h3>
+                            <h1>Donate Blood And Inspires Others.</h1>
+                            <a href="services.html" className="button button--effect">Explore Now</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
+
+				<div className="hero-slider-item bg-img" data-background={slideImage2}>
+                    <div className="container">
+                        <div className="hero-slider-content animation-style-two">
+                            <div className="intro-video">
+                                <div className="d-flex align-items-center">
+                                    <a href="https://www.youtube.com/watch?v=NtETKgSE7i0"
+                                    title="YouTube video player" className="video-btn video-popup-btn">
+                                        <span>
+                                            <i className="fa-solid fa-play"></i>
+                                        </span>
+                                    </a>
+                                    <span>Intro Video</span>
+                                </div>
+                            </div>
+                            <h3>Donate blood,save life !</h3>
+                            <h1>Donate Blood And Inspires Others.</h1>
+                            <a href="services.html" className="button button--effect">Explore Now</a>
+                        </div>
+                    </div>
+                </div>
+
+				<div className="hero-slider-item bg-img" data-background={slideImage3}>
+                    <div className="container">
+                        <div className="hero-slider-content animation-style-three">
+                            <div className="intro-video">
+                                <div className="d-flex align-items-center">
+                                    <a href="https://www.youtube.com/watch?v=NtETKgSE7i0"
+                                    title="YouTube video player" className="video-btn video-popup-btn">
+                                        <span>
+                                            <i className="fa-solid fa-play"></i>
+                                        </span>
+                                    </a>
+                                    <span>Intro Video</span>
+                                </div>
+                            </div>
+                            <h3>Donate blood,save life !</h3>
+                            <h1>Donate Blood And Inspires Others.</h1>
+                            <a href="services.html" className="button button--effect">Explore Now</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
-      {/* <!-- ==== #banner section end ==== --> */}
+		</section>
+		{/* <!-- ==== #hero section end ==== --> */}
 
       {/* <section className="section-content-block section-secondary-bg">
         <div className="container">

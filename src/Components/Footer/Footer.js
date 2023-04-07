@@ -129,7 +129,7 @@ export default function Footer() {
                   </div>
                   <div className="col-lg-6 row-item">
                     <div className="footer-area__bottom-right">
-                      <div className="social social--secondary">
+                      {/* <div className="social social--secondary">
                         <a href="https://www.facebook.com/">
                           <i className="fab fa-facebook-f">
                           </i>
@@ -143,7 +143,7 @@ export default function Footer() {
                         <a href="https://www.pinterest.com/">
                         <i className="fab fa-pinterest"></i>
                         </a>
-                      </div>
+                      </div> */}
                       <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">
                           <li className="breadcrumb-item"><a href="/privacy-policy">Privacy Policy</a></li>
