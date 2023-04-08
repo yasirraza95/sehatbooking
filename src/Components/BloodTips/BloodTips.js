@@ -17,6 +17,12 @@ export default function BloodTips() {
                                 <div className="banner-area__content">
                                     <h2>Blood Tips</h2>
                                 </div>
+                                <nav aria-label="breadcrumb">
+                                        <ol className="breadcrumb">
+                                            <li className="breadcrumb-item"><a href="/">Home</a></li>
+                                            <li className="breadcrumb-item active" aria-current="page">Find Tips</li>
+                                        </ol>
+                                    </nav>
                             </div>
                         </div>
                     </div>
@@ -24,7 +30,7 @@ export default function BloodTips() {
             </section>
 
             {/* <!-- ==== privacy section start ==== --> */}
-            <section className="privacy section-space">
+            <section className="blood-tips section-space">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">

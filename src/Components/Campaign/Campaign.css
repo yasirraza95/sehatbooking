@@ -3055,7 +3055,7 @@
  .navbar li {
    margin: 0px;
  }
- .navbar::after {
+ /* .navbar::after {
    content: "";
    position: absolute;
    top: 0px;
@@ -3065,7 +3065,7 @@
    max-height: 100px;
    background-color: #ea062b;
    z-index: -1;
- }
+ } */
  @media (min-width: 1800px) {
    .navbar::after {
      width: 31%;
