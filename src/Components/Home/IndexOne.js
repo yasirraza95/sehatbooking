@@ -517,7 +517,7 @@ export default function IndexOne() {
                 </p>
                 <h2>We Are Blood Donor Group</h2>
                 <a
-                  href="https://www.youtube.com/watch?v=NtETKgSE7i0"
+                  href="https://res.cloudinary.com/dll4d2yu7/video/upload/v1680968157/Sehatbooking/blood-21617_blxgln.mp4"
                   target="_blank"
                   title="YouTube video player"
                   className="video-btn-two video-popup-btn"

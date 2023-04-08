@@ -11,7 +11,8 @@ import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
 import Register from "./Components/Register/Register";
 import TermsConditions from "./Components/TermsConditions/TermsConditions";
 import BloodTips from "./Components/BloodTips/BloodTips";
-
+import FindDonor from "./Components/FindDonor/FindDonor";
+import Appointment from "./Components/Appoinment/Appointment";
 function App() {
   return (
     <div className="App">
@@ -29,6 +30,8 @@ function App() {
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/campaign" element={<Campaign />} />
           <Route path="/blood-tips" element={<BloodTips />} />
+          <Route path="/find-donor" element={<FindDonor />} />
+          <Route path="/appointment" element={<Appointment />} />
         </Routes>
       </BrowserRouter>
     </div>

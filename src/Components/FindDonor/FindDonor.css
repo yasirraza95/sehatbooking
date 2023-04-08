@@ -1,0 +1,18 @@
+.section-space {
+    padding: 116px 0px;
+}
+select.selectpicker {
+    width: 100%;
+}
+p.donorLabel {
+    display: flex;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.wordbreak {
+    display: inherit;
+}
+svg.svg-inline--fa.fa-mobile-screen-button {
+    color: #000;
+    margin-right: 80px;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.css";
 import ProfileIcon from "../Images/sehatbooking-logo-3.png";
+import MenuLogo from "../Images/sehatbooking-logo.png";
 import { Link } from "react-router-dom";
 export default function Header() {
   return (
@@ -23,9 +24,12 @@ export default function Header() {
             >
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link to="/" className="nav-link active">
+                  {/* <Link to="/" className="nav-link active">
                     Home
-                  </Link>
+                  </Link> */}
+                  <a href="/" className="nav-link active">
+                    Home
+                  </a>
                 </li>
 
                 <li className="nav-item">
@@ -87,8 +91,8 @@ export default function Header() {
                     Contact Us
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link to="/appointment" className="nav-link">
+                <li className="nav-item appointment">
+                  <Link to="/appointment" className="nav-link" id="app-item">
                     Appointment
                   </Link>
                 </li>
@@ -164,7 +168,7 @@ export default function Header() {
           <div className="intro">
             <a href="/">
               <img
-                src="https://res.cloudinary.com/dll4d2yu7/image/upload/v1679762718/Sehatbooking/sehatbooking-logolight_lktywq.png"
+                src={MenuLogo}
                 alt="Logo"
                 className="logo"
               />
