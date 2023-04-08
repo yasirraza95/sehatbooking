@@ -27,7 +27,7 @@ export default function IndexOne() {
     <>
       <TopBar />
       <Header />
-
+    
       {/* <!-- ==== hero section start ==== --> */}
       <section className="hero-slider-area">
         <div className="hero-slider owl-carousel owl-theme">
