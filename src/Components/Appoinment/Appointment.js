@@ -4,6 +4,9 @@ import Header from '../Header/Header'
 import './Appointment.css';
 import Footer from '../Footer/Footer';
 import ToTop from '../TopTop/ToTop';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClock } from '@fortawesome/free-solid-svg-icons';
+import clockImage from "../Images/clockimg.gif";
 export default function Appointment() {
     return (
         <>
@@ -35,6 +38,7 @@ export default function Appointment() {
             {/* <!-- ==== Appointment section start ==== --> */}
             <section className="registration section-space">
                 <div className="container">
+                    <img className="clock" src={clockImage} alt='responsive'/>
                     <div className="row">
                         <div className="col-lg-12">
                             {/* <div className="registration-area wow fadeInUp">
@@ -267,87 +271,7 @@ export default function Appointment() {
                                 </div>
                             </div> */}
                             <div className="wrap mt-5">
-                                <h1> We'll be here <strong>Soon</strong></h1>
-
-                                <div className="countdown">
-                                    <div className="bloc-time hours" data-init-value="72">
-                                        <span className="count-title">Hours</span>
-
-                                        <div className="figure hours hours-1">
-                                            <span className="top">2</span>
-                                            <span className="top-back">
-                                                <span>2</span>
-                                            </span>
-                                            <span className="bottom">2</span>
-                                            <span className="bottom-back">
-                                                <span>2</span>
-                                            </span>
-                                        </div>
-
-                                        <div className="figure hours hours-2">
-                                            <span className="top">4</span>
-                                            <span className="top-back">
-                                                <span>4</span>
-                                            </span>
-                                            <span className="bottom">4</span>
-                                            <span className="bottom-back">
-                                                <span>4</span>
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    <div className="bloc-time min" data-init-value="0">
-                                        <span className="count-title">Minutes</span>
-
-                                        <div className="figure min min-1">
-                                            <span className="top">0</span>
-                                            <span className="top-back">
-                                                <span>0</span>
-                                            </span>
-                                            <span className="bottom">0</span>
-                                            <span className="bottom-back">
-                                                <span>0</span>
-                                            </span>
-                                        </div>
-
-                                        <div className="figure min min-2">
-                                            <span className="top">0</span>
-                                            <span className="top-back">
-                                                <span>0</span>
-                                            </span>
-                                            <span className="bottom">0</span>
-                                            <span className="bottom-back">
-                                                <span>0</span>
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    <div className="bloc-time sec" data-init-value="0">
-                                        <span className="count-title">Seconds</span>
-
-                                        <div className="figure sec sec-1">
-                                            <span className="top">0</span>
-                                            <span className="top-back">
-                                                <span>0</span>
-                                            </span>
-                                            <span className="bottom">0</span>
-                                            <span className="bottom-back">
-                                                <span>0</span>
-                                            </span>
-                                        </div>
-
-                                        <div className="figure sec sec-2">
-                                            <span className="top">0</span>
-                                            <span className="top-back">
-                                                <span>0</span>
-                                            </span>
-                                            <span className="bottom">0</span>
-                                            <span className="bottom-back">
-                                                <span>0</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
+                                <h1> Coming <strong>Soon</strong></h1>
                             </div>
                         </div>
                     </div>
