@@ -5,7 +5,7 @@ import {
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import TopBar from "../HomeTopBar/TopBar";
@@ -23,13 +23,109 @@ import slideImage2 from "../Images/doctor-taking-blood-samples.jpg";
 import slideImage3 from "../Images/6-1.jpg";
 
 export default function IndexOne() {
+  // useEffect(() => {
+  //   return () => {
+  //     <>
+  //       <section className="hero-slider-area">
+  //         <div className="hero-slider owl-carousel owl-theme">
+  //           <div
+  //             className="hero-slider-item bg-img"
+  //             data-background={slideImage1}
+  //           >
+  //             <div className="container">
+  //               <div className="hero-slider-content">
+  //                 <div className="intro-video">
+  //                   <div className="d-flex align-items-center">
+  //                     <a
+  //                       href="https://www.youtube.com/watch?v=NtETKgSE7i0"
+  //                       title="YouTube video player"
+  //                       className="video-btn video-popup-btn"
+  //                     >
+  //                       <span>
+  //                         <i className="fa-solid fa-play"></i>
+  //                       </span>
+  //                     </a>
+  //                     <span>Intro Video</span>
+  //                   </div>
+  //                 </div>
+  //                 <h3>Donate blood,save life !</h3>
+  //                 <h1>Donate Blood And Inspires Others.</h1>
+  //                 <a href="services.html" className="button button--effect">
+  //                   Explore Now
+  //                 </a>
+  //               </div>
+  //             </div>
+  //           </div>
+
+  //           <div
+  //             className="hero-slider-item bg-img"
+  //             data-background={slideImage2}
+  //           >
+  //             <div className="container">
+  //               <div className="hero-slider-content animation-style-two">
+  //                 <div className="intro-video">
+  //                   <div className="d-flex align-items-center">
+  //                     <a
+  //                       href="https://www.youtube.com/watch?v=NtETKgSE7i0"
+  //                       title="YouTube video player"
+  //                       className="video-btn video-popup-btn"
+  //                     >
+  //                       <span>
+  //                         <i className="fa-solid fa-play"></i>
+  //                       </span>
+  //                     </a>
+  //                     <span>Intro Video</span>
+  //                   </div>
+  //                 </div>
+  //                 <h3>Donate blood,save life !</h3>
+  //                 <h1>Donate Blood And Inspires Others.</h1>
+  //                 <a href="services.html" className="button button--effect">
+  //                   Explore Now
+  //                 </a>
+  //               </div>
+  //             </div>
+  //           </div>
+
+  //           <div
+  //             className="hero-slider-item bg-img"
+  //             data-background={slideImage3}
+  //           >
+  //             <div className="container">
+  //               <div className="hero-slider-content animation-style-three">
+  //                 <div className="intro-video">
+  //                   <div className="d-flex align-items-center">
+  //                     <a
+  //                       href="https://www.youtube.com/watch?v=NtETKgSE7i0"
+  //                       title="YouTube video player"
+  //                       className="video-btn video-popup-btn"
+  //                     >
+  //                       <span>
+  //                         <i className="fa-solid fa-play"></i>
+  //                       </span>
+  //                     </a>
+  //                     <span>Intro Video</span>
+  //                   </div>
+  //                 </div>
+  //                 <h3>Donate blood,save life !</h3>
+  //                 <h1>Donate Blood And Inspires Others.</h1>
+  //                 <a href="services.html" className="button button--effect">
+  //                   Explore Now
+  //                 </a>
+  //               </div>
+  //             </div>
+  //           </div>
+  //         </div>
+  //       </section>
+  //     </>
+  //   };
+  // }, []);
   return (
     <>
       <TopBar />
       <Header />
-    
+
       {/* <!-- ==== hero section start ==== --> */}
-      <section className="hero-slider-area">
+      {/* <section className="hero-slider-area">
         <div className="hero-slider owl-carousel owl-theme">
           <div
             className="hero-slider-item bg-img"
@@ -118,7 +214,7 @@ export default function IndexOne() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <!-- ==== #hero section end ==== --> */}
 
       {/* <section className="section-content-block section-secondary-bg">
