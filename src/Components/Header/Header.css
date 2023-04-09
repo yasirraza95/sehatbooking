@@ -711,6 +711,9 @@ a#app-item:hover {
   min-width: 14rem;
 }
 
+ul.sideMenu {
+  text-align: left;
+}
 .navbar-inner .intro {
   width: 100%;
   text-align: center;

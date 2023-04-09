@@ -13,6 +13,8 @@ import TermsConditions from './Components/TermsConditions/TermsConditions';
 import BloodTips from './Components/BloodTips/BloodTips';
 import FindDonor from './Components/FindDonor/FindDonor';
 import Appointment from './Components/Appoinment/Appointment';
+import Profile from './Components/Profile/Profile';
+import HowTo from './Components/How to/HowTo';
 function App() {
   return (
     <div className="App">
@@ -32,6 +34,8 @@ function App() {
     <Route path="/blood-tips" element={<BloodTips />} />
     <Route path="/find-donor" element={<FindDonor />} />
     <Route path="/appointment" element={<Appointment />} />
+    <Route path="/profile" element={<Profile />} />
+    <Route path="/how-to" element={<HowTo />} />
     </Routes>
     </BrowserRouter>
     </div>

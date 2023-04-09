@@ -97,7 +97,7 @@ export default function Header() {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/find-donor" className="nav-link">
+                  <Link to="/profile" className="nav-link">
                     <div className="circle">
                       <span className="circle-inner" data-hover="Profile">SB</span>
                     </div>
@@ -181,7 +181,7 @@ export default function Header() {
               />
             </a>
           </div>
-          <ul>
+          <ul className="sideMenu">
             <li>
               <Link to="/">
                 <i className="fa-solid fa-angle-right"></i> Home
