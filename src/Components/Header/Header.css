@@ -24,6 +24,13 @@ ol.breadcrumb {
   box-shadow: 0px 9px 52px 0px rgba(0, 0, 0, 0.07);
 }
 
+.navbar-out {
+  align-items: center;
+  display: flex;
+  gap: 30px;
+  margin-right: -49px !important;
+}
+
 ul.navbar-nav {
   margin-bottom: -10px;
 }
@@ -1058,70 +1065,130 @@ div#primaryNav {
     width: 20% !important;
   }
 }
+
 @media (max-width: 2560px) {
-img.sehat-logo{
-  margin-left: -93rem !important;
+  img.sehat-logo {
+    margin-left: -93rem !important;
+  }
 }
-}
+
 @media (max-width: 1440px) {
-  img.sehat-logo{
+  img.sehat-logo {
     margin-left: -9rem !important;
   }
+}
+
+@media (max-width: 1600px) {
+  img.sehat-logo {
+    margin-left: -4rem !important;
   }
-  
-  @media (max-width: 1600px) {
-    img.sehat-logo{
-      margin-left: -4rem !important;
-    }
-    }
+}
+
 @media (max-width: 1024px) {
   .navbar-out.order-2.order-xl-3::after {
     width: 30% !important;
   }
 }
+
 @media (max-width: 1024px) {
-  img.sehat-logo{
+  img.sehat-logo {
     margin-left: -36rem !important;
   }
+}
+
+@media (max-width: 768px) {
+  img.sehat-logo {
+    margin-left: -26rem !important;
   }
+}
 
-  @media (max-width: 768px) {
-    img.sehat-logo{
-      margin-left: -26rem !important;
-    }
-    }
-    @media (max-width: 425px) {
-      .navbar-out.order-2.order-xl-3::after {
-        width: 40% !important;
-      }
-    }
-    @media (max-width: 425px) {
-      img.sehat-logo{
-        margin-left: -11rem !important;
-      }
-      }
+@media (max-width: 425px) {
+  .navbar-out.order-2.order-xl-3::after {
+    width: 40% !important;
+  }
+}
 
-      @media (max-width: 375px) {
-        .navbar-out.order-2.order-xl-3::after {
-          width: 40% !important;
-        }
-      }
-      @media (max-width: 375px) {
-        img.sehat-logo{
-          margin-left: -10rem !important;
-          width: 10rem;
-        }
-        }
+@media (max-width: 425px) {
+  img.sehat-logo {
+    margin-left: -11rem !important;
+  }
+}
 
-        
-      @media (max-width: 320px) {
-        .navbar-out.order-2.order-xl-3::after {
-          width: 40% !important;
-        }
-      }
-      @media (max-width: 320px) {
-        img.sehat-logo{
-          margin-left: -8rem !important;
-          width: 10rem;
-        }
-        }
+@media (max-width: 375px) {
+  .navbar-out.order-2.order-xl-3::after {
+    width: 40% !important;
+  }
+}
+
+@media (max-width: 375px) {
+  img.sehat-logo {
+    margin-left: -10rem !important;
+    width: 10rem;
+  }
+}
+
+
+@media (max-width: 320px) {
+  .navbar-out.order-2.order-xl-3::after {
+    width: 40% !important;
+  }
+}
+
+@media (max-width: 320px) {
+  img.sehat-logo {
+    margin-left: -8rem !important;
+    width: 10rem;
+  }
+}
+
+.circle {
+  display: inline-block;
+  background-color: #ea062b;
+  /* margin: 10px; */
+  border-radius: 50%;
+  margin-left: 39px;
+  margin-top: -25px;
+  margin-bottom: -19px;
+}
+.circle-inner {
+  color: white;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center !important;
+  text-decoration: none;
+  height: 67px;
+  width: 71px;
+  font-size: 27px;
+}
+div#primaryNav {
+  margin-left: 121px;
+}
+
+
+.circle-inner {
+  position: relative;
+  border-bottom: 1px dotted black;
+}
+
+.circle-inner:before {
+  content: attr(data-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: 100px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 0;
+  transition: opacity 1s ease-in-out;
+
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 110%;
+}
+
+.circle-inner:hover:before {
+  opacity: 1;
+  visibility: visible;
+}

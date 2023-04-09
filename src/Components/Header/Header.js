@@ -96,6 +96,13 @@ export default function Header() {
                     Appointment
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link to="/find-donor" className="nav-link">
+                    <div className="circle">
+                      <span className="circle-inner" data-hover="Profile">SB</span>
+                    </div>
+                  </Link>
+                </li>
               </ul>
             </div>
             <div className="navbar-out order-2 order-xl-3">
