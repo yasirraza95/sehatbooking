@@ -94,6 +94,7 @@ button.btn.btn-primary.nm-hvr.nm-btn-1:hover::after {
 a.nm-fs-1.nm-fw-bd {
     color: #ea062b;
     text-decoration: none;
+    font-size: 16px;
 }
 a.nm-fs-1.nm-fw-bd:hover {
     color: #1e2022;

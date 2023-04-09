@@ -279,6 +279,7 @@ export default function Appointment() {
             </section>
             {/* <!-- ==== #Appointment section end ==== --> */}
             <ToTop/>
+            <Footer/>
         </>
     )
 }

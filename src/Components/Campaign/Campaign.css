@@ -3138,11 +3138,12 @@
    }
  }
  
- .navbar-out {
+ /* .navbar-out {
    display: flex;
    align-items: center;
    gap: 30px;
- }
+ } */
+
  @media (max-width: 767px) {
    .navbar-out {
      gap: 20px;
