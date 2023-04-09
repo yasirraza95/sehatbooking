@@ -125,7 +125,7 @@ export default function IndexOne() {
       <Header />
 
       {/* <!-- ==== hero section start ==== --> */}
-      {/* <section className="hero-slider-area">
+      <section className="hero-slider-area">
         <div className="hero-slider owl-carousel owl-theme">
           <div
             className="hero-slider-item bg-img"
@@ -214,7 +214,7 @@ export default function IndexOne() {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
       {/* <!-- ==== #hero section end ==== --> */}
 
       {/* <section className="section-content-block section-secondary-bg">

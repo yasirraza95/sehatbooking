@@ -33,14 +33,14 @@ export default function Header() {
                 </li>
 
                 <li className="nav-item">
-                  <Link to="/blood-tips" className="nav-link">
+                  <a href="/blood-tips" className="nav-link">
                     Donation Tips
-                  </Link>
+                  </a>
                 </li>
                 <li className="nav-item">
-                  <Link to="/find-donor" className="nav-link">
+                  <a href="/find-donor" className="nav-link">
                     Find Donor
-                  </Link>
+                  </a>
                 </li>
 
                 <li className="nav-item dropdown">
@@ -59,29 +59,29 @@ export default function Header() {
                     aria-labelledby="navbarDropdown"
                   >
                     <li>
-                      <Link to="/about-us" className="dropdown-item">
+                      <a href="/about-us" className="dropdown-item">
                         About Us
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/how-to" className="dropdown-item">
+                      <a href="/how-to" className="dropdown-item">
                         How To
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/faqs" className="dropdown-item">
+                      <a href="/faqs" className="dropdown-item">
                         FAQs
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/privacy-policy" className="dropdown-item">
+                      <a href="/privacy-policy" className="dropdown-item">
                         Privacy Policy
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="/terms-conditions" className="dropdown-item">
+                      <a href="/terms-conditions" className="dropdown-item">
                         Terms & Conditions
-                      </Link>
+                      </a>
                     </li>
                   </ul>
                 </li>
@@ -99,7 +99,9 @@ export default function Header() {
                 <li className="nav-item">
                   <Link to="/profile" className="nav-link">
                     <div className="circle">
-                      <span className="circle-inner" data-hover="Profile">SB</span>
+                      <span className="circle-inner" data-hover="Profile">
+                        SB
+                      </span>
                     </div>
                   </Link>
                 </li>
@@ -174,64 +176,60 @@ export default function Header() {
           </div>
           <div className="intro">
             <a href="/">
-              <img
-                src={MenuLogo}
-                alt="Logo"
-                className="logo"
-              />
+              <img src={MenuLogo} alt="Logo" className="logo" />
             </a>
           </div>
           <ul className="sideMenu">
             <li>
-              <Link to="/">
+              <a href="/">
                 <i className="fa-solid fa-angle-right"></i> Home
-              </Link>
+              </a>
             </li>
 
             <li>
-              <Link to="/blood-tips">
+              <a href="/blood-tips">
                 <i className="fa-solid fa-angle-right"></i> Donation Tips
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/find-donor">
+              <a href="/find-donor">
                 <i className="fa-solid fa-angle-right"></i> Find Donor
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/about-us">
+              <a href="/about-us">
                 <i className="fa-solid fa-angle-right"></i> About Us
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/how-to">
+              <a href="/how-to">
                 <i className="fa-solid fa-angle-right"></i> How To
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/faqs">
+              <a href="/faqs">
                 <i className="fa-solid fa-angle-right"></i> FAQs
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/privacy-policy">
+              <a href="/privacy-policy">
                 <i className="fa-solid fa-angle-right"></i> Privacy Policy
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/terms-conditions">
+              <a href="/terms-conditions">
                 <i className="fa-solid fa-angle-right"></i> Terms & Conditions
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/contact-us">
+              <a href="/contact-us">
                 <i className="fa-solid fa-angle-right"></i> Contact Us
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/appointment">
+              <a href="/appointment">
                 <i className="fa-solid fa-angle-right"></i> Appointment
-              </Link>
+              </a>
             </li>
           </ul>
           {/* <form action="#" method="post">
