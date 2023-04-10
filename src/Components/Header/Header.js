@@ -2,8 +2,26 @@ import React from "react";
 import "./Header.css";
 import ProfileIcon from "../Images/sehatbooking-logo-3.png";
 import MenuLogo from "../Images/sehatbooking-logo.png";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import $ from "jquery";
+
 export default function Header() {
+  // const sideBarClick = (e) => {
+  //   let currentClass = e.target.className;
+  //   console.log(e.target.className);
+  //   // open sidenav
+  //   $(".open-sidenav").on("click", function () {
+  //     $(this).toggleClass("toggle-active");
+  //     $(".sidenav").addClass("sidenav-active");
+  //   });
+
+  //   // close sidenav
+  //   $(".close-sidebar").on("click", function () {
+  //     $(".sidenav").removeClass("sidenav-active");
+  //     $(".open-sidenav").toggleClass("toggle-active");
+  //   });
+  // };
+
   return (
     <>
       {/* <!-- ==== #header start ==== --> */}
@@ -24,23 +42,28 @@ export default function Header() {
             >
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  {/* <Link to="/" className="nav-link active">
+                  <NavLink
+                    to="/"
+                    activeclassname="nav-link active"
+                    className="nav-link"
+                  >
                     Home
-                  </Link> */}
-                  <a href="/" className="nav-link active">
-                    Home
-                  </a>
+                  </NavLink>
                 </li>
 
                 <li className="nav-item">
-                  <a href="/blood-tips" className="nav-link">
+                  <NavLink
+                    to="/blood-tips"
+                    activeclassname="nav-link active"
+                    className="nav-link"
+                  >
                     Donation Tips
-                  </a>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <a href="/find-donor" className="nav-link">
+                  <NavLink to="/find-donor" className="nav-link">
                     Find Donor
-                  </a>
+                  </NavLink>
                 </li>
 
                 <li className="nav-item dropdown">
@@ -59,51 +82,51 @@ export default function Header() {
                     aria-labelledby="navbarDropdown"
                   >
                     <li>
-                      <a href="/about-us" className="dropdown-item">
+                      <NavLink to="/about-us" className="dropdown-item">
                         About Us
-                      </a>
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="/how-to" className="dropdown-item">
+                      <NavLink to="/how-to" className="dropdown-item">
                         How To
-                      </a>
+                      </NavLink>
                     </li>
-                    <li>
-                      <a href="/faqs" className="dropdown-item">
+                    {/* <li>
+                      <NavLink to="/faqs" className="dropdown-item">
                         FAQs
-                      </a>
-                    </li>
+                      </NavLink>
+                    </li> */}
                     <li>
-                      <a href="/privacy-policy" className="dropdown-item">
+                      <NavLink to="/privacy-policy" className="dropdown-item">
                         Privacy Policy
-                      </a>
+                      </NavLink>
                     </li>
                     <li>
-                      <a href="/terms-conditions" className="dropdown-item">
+                      <NavLink to="/terms-conditions" className="dropdown-item">
                         Terms & Conditions
-                      </a>
+                      </NavLink>
                     </li>
                   </ul>
                 </li>
 
                 <li className="nav-item">
-                  <Link to="/contact-us" className="nav-link">
+                  <NavLink to="/contact-us" className="nav-link">
                     Contact Us
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item appointment">
-                  <Link to="/appointment" className="nav-link" id="app-item">
+                  <NavLink to="/appointment" className="nav-link" id="app-item">
                     Appointment
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link to="/profile" className="nav-link">
+                  <NavLink to="/profile" className="nav-link">
                     <div className="circle">
                       <span className="circle-inner" data-hover="Profile">
                         SB
                       </span>
                     </div>
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </div>
@@ -118,14 +141,15 @@ export default function Header() {
                                 <option value="china">China</option>
                                 <option value="germany">Germany</option>
                             </select> */}
-                <a
-                  href="javascript:void(0)"
+                <Link
+                  to={void 0}
                   className="d-none d-xl-block open-sidenav"
+                  // onClick={(e) => sideBarClick(e)}
                 >
                   <span className="icon-bar top-bar"></span>
                   <span className="icon-bar middle-bar"></span>
                   <span className="icon-bar bottom-bar"></span>
-                </a>
+                </Link>
               </div>
               <button
                 className="navbar-toggler"
@@ -170,9 +194,12 @@ export default function Header() {
       <div className="sidenav d-none d-xl-block">
         <div className="navbar-inner">
           <div className="close-sidebar-wrapper">
-            <a href="javascript:void(0)" className="close-sidebar">
+            {/* <a href="javascript:void(0)" className="close-sidebar">
               <i className="fa-solid fa-xmark"></i>
-            </a>
+            </a> */}
+            <Link to={void 0} className="close-sidebar">
+              <i className="fa-solid fa-xmark"></i>
+            </Link>
           </div>
           <div className="intro">
             <a href="/">
@@ -181,55 +208,55 @@ export default function Header() {
           </div>
           <ul className="sideMenu">
             <li>
-              <a href="/">
+              <NavLink to="/">
                 <i className="fa-solid fa-angle-right"></i> Home
-              </a>
+              </NavLink>
             </li>
 
             <li>
-              <a href="/blood-tips">
+              <NavLink to="/blood-tips">
                 <i className="fa-solid fa-angle-right"></i> Donation Tips
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="/find-donor">
+              <NavLink to="/find-donor">
                 <i className="fa-solid fa-angle-right"></i> Find Donor
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="/about-us">
+              <NavLink to="/about-us">
                 <i className="fa-solid fa-angle-right"></i> About Us
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="/how-to">
+              <NavLink to="/how-to">
                 <i className="fa-solid fa-angle-right"></i> How To
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="/faqs">
+              <NavLink to="/faqs">
                 <i className="fa-solid fa-angle-right"></i> FAQs
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="/privacy-policy">
+              <NavLink to="/privacy-policy">
                 <i className="fa-solid fa-angle-right"></i> Privacy Policy
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="/terms-conditions">
+              <NavLink to="/terms-conditions">
                 <i className="fa-solid fa-angle-right"></i> Terms & Conditions
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="/contact-us">
+              <NavLink to="/contact-us">
                 <i className="fa-solid fa-angle-right"></i> Contact Us
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="/appointment">
+              <NavLink to="/appointment">
                 <i className="fa-solid fa-angle-right"></i> Appointment
-              </a>
+              </NavLink>
             </li>
           </ul>
           {/* <form action="#" method="post">

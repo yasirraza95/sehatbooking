@@ -21,104 +21,21 @@ import BloodDonate from "../Images/blood-donate.jpg";
 import slideImage1 from "../Images/patient-donating-blood-at-hospital.jpg";
 import slideImage2 from "../Images/doctor-taking-blood-samples.jpg";
 import slideImage3 from "../Images/6-1.jpg";
+import useImportScript from "../../utils/useImportScript";
 
 export default function IndexOne() {
-  // useEffect(() => {
-  //   return () => {
-  //     <>
-  //       <section className="hero-slider-area">
-  //         <div className="hero-slider owl-carousel owl-theme">
-  //           <div
-  //             className="hero-slider-item bg-img"
-  //             data-background={slideImage1}
-  //           >
-  //             <div className="container">
-  //               <div className="hero-slider-content">
-  //                 <div className="intro-video">
-  //                   <div className="d-flex align-items-center">
-  //                     <a
-  //                       href="https://www.youtube.com/watch?v=NtETKgSE7i0"
-  //                       title="YouTube video player"
-  //                       className="video-btn video-popup-btn"
-  //                     >
-  //                       <span>
-  //                         <i className="fa-solid fa-play"></i>
-  //                       </span>
-  //                     </a>
-  //                     <span>Intro Video</span>
-  //                   </div>
-  //                 </div>
-  //                 <h3>Donate blood,save life !</h3>
-  //                 <h1>Donate Blood And Inspires Others.</h1>
-  //                 <a href="services.html" className="button button--effect">
-  //                   Explore Now
-  //                 </a>
-  //               </div>
-  //             </div>
-  //           </div>
+  useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
+  useImportScript("/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
+  useImportScript("/assets/vendor/nice-select/js/jquery.nice-select.min.js");
+  useImportScript("/assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js");
+  useImportScript("/assets/vendor/slick/js/slick.js");
+  useImportScript("/assets/vendor/odometer/js/odometer.min.js");
+  useImportScript("/assets/vendor/viewport-js/viewport.jquery.js");
+  useImportScript("/assets/vendor/owl-carousel/js/owl.carousel.min.js");
+  useImportScript("/assets/vendor/wow/wow.min.js");
+  useImportScript("/assets/js/plugin.js");
+  useImportScript("/assets/js/main.js");
 
-  //           <div
-  //             className="hero-slider-item bg-img"
-  //             data-background={slideImage2}
-  //           >
-  //             <div className="container">
-  //               <div className="hero-slider-content animation-style-two">
-  //                 <div className="intro-video">
-  //                   <div className="d-flex align-items-center">
-  //                     <a
-  //                       href="https://www.youtube.com/watch?v=NtETKgSE7i0"
-  //                       title="YouTube video player"
-  //                       className="video-btn video-popup-btn"
-  //                     >
-  //                       <span>
-  //                         <i className="fa-solid fa-play"></i>
-  //                       </span>
-  //                     </a>
-  //                     <span>Intro Video</span>
-  //                   </div>
-  //                 </div>
-  //                 <h3>Donate blood,save life !</h3>
-  //                 <h1>Donate Blood And Inspires Others.</h1>
-  //                 <a href="services.html" className="button button--effect">
-  //                   Explore Now
-  //                 </a>
-  //               </div>
-  //             </div>
-  //           </div>
-
-  //           <div
-  //             className="hero-slider-item bg-img"
-  //             data-background={slideImage3}
-  //           >
-  //             <div className="container">
-  //               <div className="hero-slider-content animation-style-three">
-  //                 <div className="intro-video">
-  //                   <div className="d-flex align-items-center">
-  //                     <a
-  //                       href="https://www.youtube.com/watch?v=NtETKgSE7i0"
-  //                       title="YouTube video player"
-  //                       className="video-btn video-popup-btn"
-  //                     >
-  //                       <span>
-  //                         <i className="fa-solid fa-play"></i>
-  //                       </span>
-  //                     </a>
-  //                     <span>Intro Video</span>
-  //                   </div>
-  //                 </div>
-  //                 <h3>Donate blood,save life !</h3>
-  //                 <h1>Donate Blood And Inspires Others.</h1>
-  //                 <a href="services.html" className="button button--effect">
-  //                   Explore Now
-  //                 </a>
-  //               </div>
-  //             </div>
-  //           </div>
-  //         </div>
-  //       </section>
-  //     </>
-  //   };
-  // }, []);
   return (
     <>
       <TopBar />

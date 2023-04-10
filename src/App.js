@@ -15,6 +15,7 @@ import FindDonor from "./Components/FindDonor/FindDonor";
 import Appointment from "./Components/Appoinment/Appointment";
 import Profile from "./Components/Profile/Profile";
 import HowTo from "./Components/How to/HowTo";
+
 function App() {
   return (
     <div className="App">
@@ -23,14 +24,14 @@ function App() {
           <Route path="/" element={<IndexOne />} />
           <Route path="/login" element={<Login />} />
           <Route path="/index-one" element={<IndexOne />} />
-          <Route path="/faqs" element={<Faqs />} />
+          {/* <Route path="/faqs" element={<Faqs />} /> */}
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/forgot-pass" element={<ForgotPass />} />
           <Route path="/register" element={<Register />} />
           <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/campaign" element={<Campaign />} />
+          {/* <Route path="/campaign" element={<Campaign />} /> */}
           <Route path="/blood-tips" element={<BloodTips />} />
           <Route path="/find-donor" element={<FindDonor />} />
           <Route path="/appointment" element={<Appointment />} />

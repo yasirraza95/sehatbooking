@@ -5,8 +5,23 @@ import TopBar from "../HomeTopBar/TopBar";
 import "./Login.css";
 import ForgotPass from "../Images/forgotPassword-icon.png";
 import ToTop from "../TopTop/ToTop";
+import useImportScript from "../../utils/useImportScript";
 // import LoginHeader from './LoginHeader.js---';
 export default function Login() {
+  useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
+  useImportScript("/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
+  useImportScript("/assets/vendor/nice-select/js/jquery.nice-select.min.js");
+  useImportScript(
+    "/assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"
+  );
+  useImportScript("/assets/vendor/slick/js/slick.js");
+  useImportScript("/assets/vendor/odometer/js/odometer.min.js");
+  useImportScript("/assets/vendor/viewport-js/viewport.jquery.js");
+  useImportScript("/assets/vendor/owl-carousel/js/owl.carousel.min.js");
+  useImportScript("/assets/vendor/wow/wow.min.js");
+  useImportScript("/assets/js/plugin.js");
+  useImportScript("/assets/js/main.js");
+
   return (
     <>
       {/* <LoginHeader /> */}
@@ -52,33 +67,33 @@ export default function Login() {
               <div className="contact-area">
                 <div className="contact-area__content">
                   <div className="row neutral-row">
-                      <div className="contact-area-singlee contact-area__content-form">
-                        <h4 className="descender" style={{ color: "#000" }}>
-                          Login Form
-                        </h4>
-                        <form action="#" name="contact__Form">
-                          <div className="input" id="fields">
-                            <input
-                              type="text"
-                              name="contact_f_name"
-                              id="contactFName"
-                              placeholder="Your Email"
-                              required=""
-                              className="input"
-                            />
-                          </div>
-                          <div className="input" id="fields">
-                            <input
-                              type="password"
-                              name="contact_l_name"
-                              id="contactLName"
-                              placeholder="Password"
-                              required=""
-                              className="input"
-                            />
-                          </div>
-                          <div className="text-center">
-                            <div className="btn-group">
+                    <div className="contact-area-singlee contact-area__content-form">
+                      <h4 className="descender" style={{ color: "#000" }}>
+                        Login Form
+                      </h4>
+                      <form action="#" name="contact__Form">
+                        <div className="input" id="fields">
+                          <input
+                            type="text"
+                            name="contact_f_name"
+                            id="contactFName"
+                            placeholder="Your Email"
+                            required=""
+                            className="input"
+                          />
+                        </div>
+                        <div className="input" id="fields">
+                          <input
+                            type="password"
+                            name="contact_l_name"
+                            id="contactLName"
+                            placeholder="Password"
+                            required=""
+                            className="input"
+                          />
+                        </div>
+                        <div className="text-center">
+                          <div className="btn-group">
                             <button
                               type="submit"
                               className="button button--effect"
@@ -99,11 +114,10 @@ export default function Login() {
                                 style={{ width: "15px", color: "#fff" }}
                               />
                             </button>
-                            </div>
                           </div>
-                        </form>
-                      </div>
-                    
+                        </div>
+                      </form>
+                    </div>
 
                     {/* <div className="col-lg-5 row-item mt-5">
                       <img
@@ -119,7 +133,7 @@ export default function Login() {
           </div>
         </div>
       </section>
-      <ToTop/>
+      <ToTop />
       <Footer />
     </>
   );
