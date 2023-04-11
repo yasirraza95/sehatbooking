@@ -3,7 +3,7 @@ import useImportScript from "../../utils/useImportScript";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import TopBar from "../HomeTopBar/TopBar";
-import ToTop from "../TopTop/ToTop";
+// import ToTop from "../TopTop/ToTop";
 import "./TermsConditions.css";
 
 export default function TermsConditions() {
@@ -226,7 +226,7 @@ export default function TermsConditions() {
         </div>
       </section>
       {/* <!-- ==== #terms section end ==== --> */}
-      <ToTop />
+      {/* <ToTop /> */}
       <Footer />
     </>
   );

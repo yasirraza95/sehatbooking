@@ -1,5 +1,5 @@
 import React from "react";
-import './DonateProcess.css';
+import "./DonateProcess.css";
 
 export default function DonateProcess() {
   return (

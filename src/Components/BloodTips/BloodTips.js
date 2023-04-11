@@ -3,7 +3,7 @@ import Header from "../Header/Header";
 import TopBar from "../HomeTopBar/TopBar";
 import "./BloodTips.css";
 import Footer from "../Footer/Footer";
-import ToTop from "../TopTop/ToTop";
+// import ToTop from "../TopTop/ToTop";
 import useImportScript from "../../utils/useImportScript";
 export default function BloodTips() {
   useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
@@ -179,7 +179,7 @@ export default function BloodTips() {
         </div>
       </section>
       {/* <!-- ==== #privacy section end ==== --> */}
-      <ToTop />
+      {/* <ToTop /> */}
       <Footer />
     </>
   );

@@ -6,7 +6,7 @@ import { Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMobileScreenButton } from "@fortawesome/free-solid-svg-icons";
 import Footer from "../Footer/Footer";
-import ToTop from "../TopTop/ToTop";
+// import ToTop from "../TopTop/ToTop";
 import useImportScript from "../../utils/useImportScript";
 
 export default function FindDonor() {
@@ -766,7 +766,7 @@ export default function FindDonor() {
         </div>
       </section>
       {/* <!-- ==== #Find Donor section end ==== --> */}
-      <ToTop />
+      {/* <ToTop /> */}
       <Footer />
     </>
   );

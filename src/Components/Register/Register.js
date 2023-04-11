@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import TopBar from "../HomeTopBar/TopBar";
-import ToTop from "../TopTop/ToTop";
+// import ToTop from "../TopTop/ToTop";
 import "./Register.css";
 import VisibleFields from "../VisibleFields/VisibleFields";
 import useImportScript from "../../utils/useImportScript";
@@ -424,7 +424,7 @@ export default function Register() {
         </div>
       </section>
       {/* <!-- ==== #registration section end ==== --> */}
-      <ToTop />
+      {/* <ToTop /> */}
       <Footer />
     </>
   );

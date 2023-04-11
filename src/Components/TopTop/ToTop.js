@@ -16,14 +16,14 @@ export default function ToTop() {
     );
   };
 
-$(window).on("scroll", function () {
-      $(this).scrollTop() > 300
-        ? $(".back-to-top").fadeIn()
-        : $(".back-to-top").fadeOut();
-    });
+  $(window).on("scroll", function () {
+    $(this).scrollTop() > 300
+      ? $(".back-to-top").fadeIn()
+      : $(".back-to-top").fadeOut();
+  });
   return (
     <div className="back-to-top" onClick={backToTop}>
-    <FontAwesomeIcon icon={faAnglesUp} />
-  </div>
+      <FontAwesomeIcon icon={faAnglesUp} />
+    </div>
   );
 }

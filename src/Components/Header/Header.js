@@ -3,7 +3,7 @@ import "./Header.css";
 import ProfileIcon from "../Images/sehatbooking-logo-3.png";
 import MenuLogo from "../Images/sehatbooking-logo.png";
 import { Link, NavLink } from "react-router-dom";
-import $ from "jquery";
+// import $ from "jquery";
 
 export default function Header() {
   // const sideBarClick = (e) => {

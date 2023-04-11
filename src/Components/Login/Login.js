@@ -4,7 +4,7 @@ import Header from "../Header/Header";
 import TopBar from "../HomeTopBar/TopBar";
 import "./Login.css";
 import ForgotPass from "../Images/forgotPassword-icon.png";
-import ToTop from "../TopTop/ToTop";
+// import ToTop from "../TopTop/ToTop";
 import useImportScript from "../../utils/useImportScript";
 // import LoginHeader from './LoginHeader.js---';
 export default function Login() {
@@ -133,7 +133,7 @@ export default function Login() {
           </div>
         </div>
       </section>
-      <ToTop />
+      {/* <ToTop /> */}
       <Footer />
     </>
   );

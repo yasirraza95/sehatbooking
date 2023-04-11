@@ -1,7 +1,7 @@
 import React from "react";
 import TopBar from "../HomeTopBar/TopBar";
 import Header from "../Header/Header";
-import ToTop from "../TopTop/ToTop";
+// import ToTop from "../TopTop/ToTop";
 import Footer from "../Footer/Footer";
 import VisibleFields from "../VisibleFields/VisibleFields";
 import useImportScript from "../../utils/useImportScript";
@@ -364,7 +364,7 @@ export default function Profile() {
         </div>
       </section>
       {/* <!-- ==== #registration section end ==== --> */}
-      <ToTop />
+      {/* <ToTop /> */}
       <Footer />
     </>
   );

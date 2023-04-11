@@ -3,7 +3,7 @@ import TopBar from "../HomeTopBar/TopBar";
 import Header from "../Header/Header";
 import "./Appointment.css";
 import Footer from "../Footer/Footer";
-import ToTop from "../TopTop/ToTop";
+// import ToTop from "../TopTop/ToTop";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 import clockImage from "../Images/clockimg.gif";
@@ -302,7 +302,7 @@ export default function Appointment() {
         </div>
       </section>
       {/* <!-- ==== #Appointment section end ==== --> */}
-      <ToTop />
+      {/* <ToTop /> */}
       <Footer />
     </>
   );
