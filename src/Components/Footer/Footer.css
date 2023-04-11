@@ -909,14 +909,22 @@ textarea:focus {
       font-size: 30px;
     }
   }
-
-  
+@media (max-width:1024px){
+  ul.navbar-nav {
+    display: none !important;
+    padding-bottom: 10px !important;
+  }
+}
   button.button.button--effect::before {
     left: -50%;
   }
   button.button.button--effect::after {
     left: -100%;
   }
+  button.button.button--effect:hover {
+    color: #ea062b!important;
+    background-color: #ffffff !important;
+}
   button.button.button--effect:hover::before {
     left: 120%;
     opacity: 0;

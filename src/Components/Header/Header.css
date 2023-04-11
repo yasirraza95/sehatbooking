@@ -41,19 +41,21 @@ ul.navbar-nav {
     margin-top: -1px;
 } */
 a#app-item {
-  color: #fff;
+  color: #fff !important;
   background-color: #ea062b;
   margin-bottom: 9px;
   margin-top: -1px;
 }
 
-a#app-item {
-  color: #fff;
-}
-
 a#app-item:hover {
+  text-decoration: none !important;
+  color: #000 !important;
+}
+a#navbarDropdown {
   text-decoration: none;
-  color: #000;
+}
+a#app-item {
+  text-decoration: none;
 }
 
 @media (max-width: 991px) {
