@@ -1,4 +1,5 @@
 import React from "react";
+import useImportScript from "../../utils/useImportScript";
 import DonateProcess from "../DonateProcess/DonateProcess";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
@@ -7,6 +8,20 @@ import Slider from "../Slider/Slider";
 import "./AboutUs.css";
 
 export default function AboutUs() {
+  useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
+  useImportScript("/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
+  useImportScript("/assets/vendor/nice-select/js/jquery.nice-select.min.js");
+  useImportScript(
+    "/assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"
+  );
+  useImportScript("/assets/vendor/slick/js/slick.js");
+  useImportScript("/assets/vendor/odometer/js/odometer.min.js");
+  useImportScript("/assets/vendor/viewport-js/viewport.jquery.js");
+  useImportScript("/assets/vendor/owl-carousel/js/owl.carousel.min.js");
+  useImportScript("/assets/vendor/wow/wow.min.js");
+  useImportScript("/assets/js/plugin.js");
+  useImportScript("/assets/js/main.js");
+
   return (
     <>
       <TopBar />
@@ -400,48 +415,7 @@ export default function AboutUs() {
                   </p>
                   <h2 className="neutral-descender">Donation Process</h2>
                 </div>
-                {/* <div className="row">
-                                <div className="col-md-6 col-xl-5">
-                                    <div className="process-area__single">
-                                        <div className="process-area__single-item">
-                                            <h5>Registration</h5>
-                                            <p className="neutral-bottom">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ipsam voluptatem</p>
-                                            <div className="text">
-                                                <p className="tertiary">01</p>
-                                            </div>
-                                            <span className="arrow"></span>
-                                        </div>
-                                        <div className="process-area__single-item">
-                                            <h5>Donation</h5>
-                                            <p className="neutral-bottom">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ipsam voluptatem</p>
-                                            <div className="text">
-                                                <p className="tertiary">03</p>
-                                            </div>
-                                            <span className="arrow"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-md-6 col-xl-5 offset-xl-2">
-                                    <div className="process-area__single process-area__single--secondary">
-                                        <div className="process-area__single-item process-area__single-item--secondary">
-                                            <h5>Screening test</h5>
-                                            <p className="neutral-bottom">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ipsam voluptatem</p>
-                                            <div className="text">
-                                                <p className="tertiary">02</p>
-                                            </div>
-                                            <span className="arrow"></span>
-                                        </div>
-                                        <div className="process-area__single-item process-area__single-item--secondary">
-                                            <h5>Rest & Refresh</h5>
-                                            <p className="neutral-bottom">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur ipsam voluptatem</p>
-                                            <div className="text text-alt">
-                                                <p className="tertiary">04</p>
-                                            </div>
-                                            <span className="arrow"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> */}
+
                 <DonateProcess />
               </div>
             </div>
