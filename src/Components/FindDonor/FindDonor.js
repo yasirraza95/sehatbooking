@@ -51,7 +51,11 @@ export default function FindDonor() {
                                     <div className="panel-body">
                                         <div className="col-md-4">
                                             <p className="donorLabel">City</p>
-                                            <select className="selectpicker">
+                                            {/* <select className="selectpicker">
+                                            
+                                            </select> */}
+                                             <div className="input">
+                                                <select className="select-donation-type">
                                                 <option value="">Select City</option>
                                                 <optgroup label="Popular Cities">
                                                     <option value="405">Islamabad</option>
@@ -464,12 +468,14 @@ export default function FindDonor() {
                                                     <option value="399">Yazman mandi</option>
                                                     <option value="400">Zahir pir</option>
                                                 </optgroup>
-                                            </select>
+                                                </select>
+                                            </div>
                                         </div>
                                         <div className="col-md-4">
                                             <p className="donorLabel">City Area</p>
-                                            <select className="selectpicker">
-                                                <option value="">Select City Area</option>
+                                             <div className="input">
+                                                <select className="select-donation-type">
+                                                    <option data-display="Select City Area">Select City Area</option>
                                                 <option value="1">A.F.O.H.S</option>
                                                 <option value="2">Ahsanabad</option>
                                                 <option value="3">Amir Khusro</option>
@@ -567,11 +573,13 @@ export default function FindDonor() {
                                                 <option value="95">Taiser Town</option>
                                                 <option value="96">Timber Merchants Co-operative Society</option>
                                                 <option value="97">Zamzama</option>
-                                            </select>
+                                                </select>
+                                            </div>
                                         </div>
                                         <div className="col-md-4">
                                             <p className="donorLabel">Blood Group</p>
-                                            <select className="selectpicker">
+                                            <div className="input">
+                                                <select className="select-donation-type">
                                                 <option value="">Select Blood Group</option>
                                                 <option value="a-negative">A-</option>
                                                 <option value="a1">A1</option>
@@ -590,9 +598,10 @@ export default function FindDonor() {
                                                 <option value="o-negative">O-</option>
                                                 <option value="ab-positive">AB+</option>
                                                 <option value="ab-negative">AB-</option>
-                                            </select>
+                                                </select>
+                                            </div>
                                         </div>
-                                    <button className="button button--effect">Search</button>
+                                        <button className="button button--effect">Search</button>
                                     </div>
                                 </div>
                             </div>
@@ -674,8 +683,8 @@ export default function FindDonor() {
                 </div>
             </section>
             {/* <!-- ==== #Find Donor section end ==== --> */}
-            <ToTop/>
-            <Footer/>
+            <ToTop />
+            <Footer />
 
         </>
     )
