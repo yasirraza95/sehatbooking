@@ -557,7 +557,7 @@ export default function IndexOne() {
                 <div className="row neutral-row">
                   <div className="col-lg-6 row-item">
                     <div className="appointment-area__single appointment-area__content">
-                      <h4>Current Blood Request</h4>
+                      <h4>Recent Blood Request</h4>
                       <ul>
                         <li>
                           <FontAwesomeIcon icon={faHeart} />
@@ -595,7 +595,44 @@ export default function IndexOne() {
                     </div>
                   </div>
                   <div className="col-lg-6 row-item">
-                    <div className="appointment-area__single appointment-area__form">
+                    <div className="appointment-area__single appointment-area__content">
+                      <h4>Emergency Blood Request</h4>
+                      <ul>
+                        <li>
+                          <FontAwesomeIcon icon={faHeart} />
+                          B+ Washington, USA (13.02.2022)
+                        </li>
+                        <li>
+                          <FontAwesomeIcon icon={faHeart} />
+                          O- Washington, USA (13.02.2022)
+                        </li>
+                        <li>
+                          <FontAwesomeIcon icon={faHeart} />
+                          B- Washington, USA (13.02.2022)
+                        </li>
+                        <li>
+                          <FontAwesomeIcon icon={faHeart} />
+                          AB- Washington, USA (13.02.2022)
+                        </li>
+                        <li>
+                          <FontAwesomeIcon icon={faHeart} />
+                          O+ Washington, USA (13.02.2022)
+                        </li>
+                        <li>
+                          <FontAwesomeIcon icon={faHeart} />
+                          B+ Washington, USA (13.02.2022)
+                        </li>
+                        <li>
+                          <FontAwesomeIcon icon={faHeart} />
+                          AB+ Washington, USA (13.02.2022)
+                        </li>
+                        <li>
+                          <FontAwesomeIcon icon={faHeart} />
+                          B+ Washington, USA (13.02.2022)
+                        </li>
+                      </ul>
+                    </div>
+                    {/* <div className="appointment-area__single appointment-area__form">
                       <h4>Request Appointment Here</h4>
                       <form action="#" method="post" name="appointmentForm">
                         <div className="input-group-column">
@@ -654,7 +691,7 @@ export default function IndexOne() {
                           Submit Now
                         </button>
                       </form>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
