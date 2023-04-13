@@ -5,21 +5,21 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import VisibleFields from "../VisibleFields/VisibleFields";
 import useImportScript from "../../utils/useImportScript";
-
+import "./Profile.css";
 export default function Profile() {
-  useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
-  useImportScript("/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
-  useImportScript("/assets/vendor/nice-select/js/jquery.nice-select.min.js");
-  useImportScript(
-    "/assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"
-  );
-  useImportScript("/assets/vendor/slick/js/slick.js");
-  useImportScript("/assets/vendor/odometer/js/odometer.min.js");
-  useImportScript("/assets/vendor/viewport-js/viewport.jquery.js");
-  useImportScript("/assets/vendor/owl-carousel/js/owl.carousel.min.js");
+  // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
+  // useImportScript("/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
+  // useImportScript("/assets/vendor/nice-select/js/jquery.nice-select.min.js");
+  // useImportScript(
+  //   "/assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"
+  // );
+  // useImportScript("/assets/vendor/slick/js/slick.js");
+  // useImportScript("/assets/vendor/odometer/js/odometer.min.js");
+  // useImportScript("/assets/vendor/viewport-js/viewport.jquery.js");
+  // useImportScript("/assets/vendor/owl-carousel/js/owl.carousel.min.js");
   useImportScript("/assets/vendor/wow/wow.min.js");
-  useImportScript("/assets/js/plugin.js");
-  useImportScript("/assets/js/main.js");
+  // useImportScript("/assets/js/plugin.js");
+  // useImportScript("/assets/js/main.js");
 
   return (
     <>
@@ -194,12 +194,9 @@ export default function Profile() {
                       <p className="secondary">Last Donate Date *</p>
                       <div className="registration-area__form-single__inner">
                         <div className="input-group-column">
-                          <div className="input">
-                            <label for="regiLastMonth">Month</label>
-                            <select
-                              className="select-last-month"
-                              id="regiLastMonth"
-                            >
+                          <div class="input">
+                            <label for="regiLastDay">Month</label>
+                            <select class="select-donation-type">
                               <option
                                 label=""
                                 selected
@@ -221,10 +218,7 @@ export default function Profile() {
                           </div>
                           <div className="input">
                             <label for="regiLastDay">Day</label>
-                            <select
-                              className="select-last-day"
-                              id="regiLastDay"
-                            >
+                            <select class="select-donation-type">
                               <option
                                 label=""
                                 selected
@@ -241,10 +235,7 @@ export default function Profile() {
                           </div>
                           <div className="input">
                             <label for="regiLastYear">Year</label>
-                            <select
-                              className="select-last-year"
-                              id="regiLastYear"
-                            >
+                            <select class="select-donation-type">
                               <option
                                 label=""
                                 selected
@@ -324,10 +315,7 @@ export default function Profile() {
                           </div>
                           <div className="input">
                             <label for="regiCountry">Country</label>
-                            <select
-                              className="select-regi-country"
-                              id="regiCountry"
-                            >
+                            <select class="select-donation-type">
                               <option
                                 label=""
                                 selected
@@ -347,7 +335,7 @@ export default function Profile() {
                           <div className="input registration-input-button mb-0">
                             <button
                               type="submit"
-                              className="button button--effect"
+                              className="button button--effect profile"
                             >
                               Submit
                               <i className="bi bi-arrow-right"></i>

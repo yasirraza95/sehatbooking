@@ -1,7 +1,9 @@
 import React from "react";
 import "./VisibleFields.css";
+import useImportScript from "../../utils/useImportScript";
 export default function VisibleFields() {
   const [visible, setVisible] = React.useState(false);
+useImportScript("/assets/vendor/wow/wow.min.js");
 
   return (
     <div>
@@ -19,7 +21,7 @@ export default function VisibleFields() {
           </div>
           <div className="input">
             <label for="regiCountry">Blood Group</label>
-            <select className="select-regi-country" id="regiCountry">
+            <select class="select-donation-type" id="regiCountry">
               <option label="" selected style={{ display: "none" }}></option>
               <option value="usa">Select Blood Group</option>
               <option value="A+">A+</option>
