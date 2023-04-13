@@ -10,6 +10,7 @@ import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import TopBar from "../HomeTopBar/TopBar";
 // import ToTop from "../TopTop/ToTop";
+
 import "./IndexOne.css";
 import DoctorOne from "../Images/Doctor1.jpg";
 import DoctorTwo from "../Images/Doctor2.jpg";
