@@ -42,5 +42,16 @@ select.select-donation-type:focus {
     background: #fff;
     border: 1px solid #e2e0e0;
   }
-  
+  .appointment-area__single.appointment-area__content.bg-red {
+    background-color: #ea062b;
+}
+h4.white {
+    color: #fff;
+}
+li.white {
+    color: #fff;
+}
+svg#white {
+    color: #fff;
+}
   
