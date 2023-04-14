@@ -62,6 +62,16 @@ export default function Appointment() {
           <img className="clock" src={clockImage} alt="responsive" />
           <div className="row">
             <div className="col-lg-12">
+            <div className="wrap mt-5">
+                <h1>
+                  {" "}
+                  Coming <strong>Soon</strong>
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
               {/* <div className="registration-area wow fadeInUp">
                                 <div className="section-header section-inner-space">
                                     <h2 className="neutral-bottom">Doctor Appointment Request Form
@@ -291,16 +301,7 @@ export default function Appointment() {
                                     </form>
                                 </div>
                             </div> */}
-              <div className="wrap mt-5">
-                <h1>
-                  {" "}
-                  Coming <strong>Soon</strong>
-                </h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            
       {/* <!-- ==== #Appointment section end ==== --> */}
       {/* <ToTop /> */}
       <Footer />

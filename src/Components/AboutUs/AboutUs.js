@@ -404,7 +404,7 @@ export default function AboutUs() {
       {/* <!-- ==== #call now section end ==== --> */}
 
       {/* <!-- ==== process section start ==== --> */}
-      <section className="process section-space">
+      {/* <section className="process section-space">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -421,7 +421,7 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <!-- ==== #process section end ==== --> */}
 
       {/* <!-- ==== team section start ==== --> */}
