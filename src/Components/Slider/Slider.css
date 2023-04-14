@@ -154,3 +154,21 @@ span.span {
     margin-left: 2px;
   }
 }
+@media (min-width: 425px) and (max-width: 767px) {
+  div#myCarousel {
+    width: 100% !important;
+    margin-left: 2px;
+  }
+}
+@media (min-width: 375px) and (max-width: 424px) {
+  div#myCarousel {
+    width: 100% !important;
+    margin-left: 2px;
+  }
+}
+@media (min-width: 320px) and (max-width: 374px) {
+  div#myCarousel {
+    width: 100% !important;
+    margin-left: 2px;
+  }
+}
