@@ -27,7 +27,7 @@ function App() {
             <Route path="/" element={<IndexOne />} />
             <Route path="/login" element={<Login />} />
             <Route path="/index-one" element={<IndexOne />} />
-            {/* <Route path="/faqs" element={<Faqs />} /> */}
+            <Route path="/faqs" element={<Faqs />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-conditions" element={<TermsConditions />} />
             <Route path="/about-us" element={<AboutUs />} />
