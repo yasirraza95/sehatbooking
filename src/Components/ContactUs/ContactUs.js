@@ -144,13 +144,14 @@ export default function ContactUs() {
                                 name="first_name"
                                 id="first_name"
                                 placeholder="First Name"
+                                value={values.first_name || ""}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
                                 required
                                 className="input"
                               />
-                              {touched.first_name && errors.first_name ? (
+                              {touched.first_name && errors.first_name && (
                                 <div>{errors.first_name}</div>
-                              ) : (
-                                ""
                               )}
                             </div>
                             <div className="input">
@@ -159,13 +160,14 @@ export default function ContactUs() {
                                 name="last_name"
                                 id="last_name"
                                 placeholder="Last Name"
+                                value={values.last_name || ""}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
                                 required
                                 className="input"
                               />
-                              {touched.last_name && errors.last_name ? (
+                              {touched.last_name && errors.last_name && (
                                 <div>{errors.last_name}</div>
-                              ) : (
-                                ""
                               )}
                             </div>
                           </div>
@@ -176,13 +178,14 @@ export default function ContactUs() {
                                 name="email"
                                 id="email"
                                 placeholder="Email"
+                                value={values.email || ""}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
                                 required
                                 className="input"
                               />
-                              {touched.email && errors.email ? (
+                              {touched.email && errors.email && (
                                 <div>{errors.email}</div>
-                              ) : (
-                                ""
                               )}
                             </div>
                             <div className="input">
@@ -191,13 +194,14 @@ export default function ContactUs() {
                                 name="subject"
                                 id="subject"
                                 placeholder="Subject"
+                                value={values.subject || ""}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
                                 required
                                 className="input"
                               />
-                              {touched.subject && errors.subject ? (
+                              {touched.subject && errors.subject && (
                                 <div>{errors.subject}</div>
-                              ) : (
-                                ""
                               )}
                             </div>
                           </div>
@@ -209,11 +213,13 @@ export default function ContactUs() {
                               rows="10"
                               className="input textarea"
                               placeholder="Message"
+                              required
+                              value={values.message || ""}
+                              onChange={handleChange}
+                              onBlur={handleBlur}
                             ></textarea>
-                            {touched.message && errors.message ? (
+                            {touched.message && errors.message && (
                               <div>{errors.message}</div>
-                            ) : (
-                              ""
                             )}
                           </div>
                           <button
