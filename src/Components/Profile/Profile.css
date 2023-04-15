@@ -1,0 +1,19 @@
+.dropdown .dropdown-toggle.active {
+    color: #ea062b !important;
+}
+button.button.button--effect.profile:hover {
+    color: #ffffff !important;
+    background-color: #111111 !important;
+}
+button.button.button--effect.profile {
+    padding: 13px 40px 15px;
+    background-color: #ea062b;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 9;
+    margin-left: 4px;
+}

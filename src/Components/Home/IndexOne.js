@@ -10,6 +10,7 @@ import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import TopBar from "../HomeTopBar/TopBar";
 // import ToTop from "../TopTop/ToTop";
+
 import "./IndexOne.css";
 import DoctorOne from "../Images/Doctor1.jpg";
 import DoctorTwo from "../Images/Doctor2.jpg";
@@ -595,103 +596,43 @@ export default function IndexOne() {
                     </div>
                   </div>
                   <div className="col-lg-6 row-item">
-                    <div className="appointment-area__single appointment-area__content">
-                      <h4>Emergency Blood Request</h4>
+                    <div className="appointment-area__single appointment-area__content bg-red">
+                      <h4 className="white">Emergency Blood Request</h4>
                       <ul>
-                        <li>
-                          <FontAwesomeIcon icon={faHeart} />
+                        <li className="white">
+                          <FontAwesomeIcon icon={faHeart} id="white" />
                           B+ Washington, USA (13.02.2022)
                         </li>
-                        <li>
-                          <FontAwesomeIcon icon={faHeart} />
+                        <li className="white">
+                          <FontAwesomeIcon icon={faHeart} id="white" />
                           O- Washington, USA (13.02.2022)
                         </li>
-                        <li>
-                          <FontAwesomeIcon icon={faHeart} />
+                        <li className="white">
+                          <FontAwesomeIcon icon={faHeart} id="white" />
                           B- Washington, USA (13.02.2022)
                         </li>
-                        <li>
-                          <FontAwesomeIcon icon={faHeart} />
+                        <li className="white">
+                          <FontAwesomeIcon icon={faHeart} id="white" />
                           AB- Washington, USA (13.02.2022)
                         </li>
-                        <li>
-                          <FontAwesomeIcon icon={faHeart} />
+                        <li className="white">
+                          <FontAwesomeIcon icon={faHeart} id="white" />
                           O+ Washington, USA (13.02.2022)
                         </li>
-                        <li>
-                          <FontAwesomeIcon icon={faHeart} />
+                        <li className="white">
+                          <FontAwesomeIcon icon={faHeart} id="white" />
                           B+ Washington, USA (13.02.2022)
                         </li>
-                        <li>
-                          <FontAwesomeIcon icon={faHeart} />
+                        <li className="white">
+                          <FontAwesomeIcon icon={faHeart} id="white" />
                           AB+ Washington, USA (13.02.2022)
                         </li>
-                        <li>
-                          <FontAwesomeIcon icon={faHeart} />
+                        <li className="white">
+                          <FontAwesomeIcon icon={faHeart} id="white" />
                           B+ Washington, USA (13.02.2022)
                         </li>
                       </ul>
                     </div>
-                    {/* <div className="appointment-area__single appointment-area__form">
-                      <h4>Request Appointment Here</h4>
-                      <form action="#" method="post" name="appointmentForm">
-                        <div className="input-group-column">
-                          <div className="input">
-                            <input
-                              type="text"
-                              name="appointment__name"
-                              id="appointmentName"
-                              placeholder="Your Name"
-                              required
-                            />
-                          </div>
-                          <div className="input">
-                            <input
-                              type="number"
-                              name="appointment__number"
-                              id="appointmentNumber"
-                              placeholder="Phone Number"
-                              required
-                            />
-                          </div>
-                        </div>
-                        <div className="input">
-                          <input
-                            type="email"
-                            name="appointment__email"
-                            id="appointmentEmail"
-                            placeholder="Your Email"
-                            required
-                          />
-                        </div>
-                        <div className="input">
-                          <select className="select-donation-type">
-                            <option data-display="Donation Type">
-                              Donation Type
-                            </option>
-                            <option value="free">Free Donation</option>
-                            <option value="health">Health Checkup</option>
-                            <option value="paid">Paid Donation</option>
-                          </select>
-                        </div>
-
-                        <div className="input">
-                          <textarea
-                            name="appointment__message"
-                            id="appointmentMessage"
-                            cols="30"
-                            rows="10"
-                            placeholder="Your Message"
-                          ></textarea>
-                        </div>
-                        <button
-                          type="submit"
-                          className="button button--tertiary button--effect"
-                        >
-                          Submit Now
-                        </button>
-                      </form>
-                    </div> */}
                   </div>
                 </div>
               </div>
