@@ -126,7 +126,7 @@ export default function ContactUs() {
                           </div>
                           <button
                             type="submit"
-                            className="button button--effect"
+                            className="button button--effect contact"
                           >
                             Submit Request<i className="bi bi-arrow-right"></i>
                           </button>

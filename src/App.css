@@ -10,21 +10,21 @@
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .styles-module_whatsappButton__tVits.floating-whatsapp-button {
-    margin-right: 56px !important;
+    margin-right: 2px !important;
   }
 }
 @media (min-width: 425px) and (max-width: 769px) {
   .styles-module_whatsappButton__tVits.floating-whatsapp-button {
-    margin-right: 40px !important;
+    margin-right: 0px !important;
   }
 }
 @media (min-width: 375px) and (max-width: 424px) {
   .styles-module_whatsappButton__tVits.floating-whatsapp-button {
-    margin-right: 36px !important;
+    margin-right: 1px !important;
   }
 }
 @media (min-width: 320px) and (max-width: 374px) {
   .styles-module_whatsappButton__tVits.floating-whatsapp-button {
-    margin-right: 62px !important;
+    margin-right: 0px !important;
   }
 }
