@@ -1,5 +1,13 @@
 import * as Yup from "yup";
 
+export const contactValidation = Yup.object().shape({
+  first_name: Yup.string().required("Please enter First Name"),
+  last_name: Yup.string().required("Please enter Last Name"),
+  email: Yup.string().required("Please enter Email Address"),
+  subject: Yup.string().required("Please enter Subject"),
+  message: Yup.string().required("Please enter Message"),
+});
+
 export const signImSchema = Yup.object({
   name: Yup.string()
     .min(2, "User Name must greater than 2")

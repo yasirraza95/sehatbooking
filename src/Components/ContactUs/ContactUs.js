@@ -1,9 +1,11 @@
 import React from "react";
 import useImportScript from "../../utils/useImportScript";
-import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 import TopBar from "../HomeTopBar/TopBar";
 import "./ContactUs.css";
+import { useFormik } from "formik";
+import { contactValidation } from "../../schema";
 
 export default function ContactUs() {
   useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
@@ -19,6 +21,70 @@ export default function ContactUs() {
   useImportScript("/assets/vendor/wow/wow.min.js");
   useImportScript("/assets/js/plugin.js");
   useImportScript("/assets/js/main.js");
+
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
+    useFormik({
+      initialValues: {
+        first_name: "",
+        last_name: "",
+        email: "",
+        subject: "",
+        message: "",
+      },
+      validationSchema: contactValidation,
+      onSubmit: (values, action) => {
+        console.log("testing");
+        // login(action);
+      },
+    });
+
+  const login = async (action) => {
+    console.log(values);
+    // setLoading(true);
+    try {
+      // const response = await UserService.login(values);
+      // action.resetForm();
+      // ctxDispatch({
+      //   type: "LOGIN",
+      //   accessToken: response.data.access_token,
+      //   id: response.data.user.id,
+      //   uName: response.data.user.username,
+      //   uType: response.data.user.user_type,
+      //   name:
+      //     response.data.user.first_name + " " + response.data.user.last_name,
+      // });
+      // navigate("/welcome", { replace: true });
+      // setLoading(false);
+      // console.log(response.data.access_token);
+    } catch (err) {
+      console.log(err);
+      // if (err?.response?.status === 401) {
+      // setLoading(false);
+      // toast.error("Username or Password is invalid !", {
+      //   position: "top-right",
+      //   autoClose: 3000,
+      //   hideProgressBar: true,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      //   theme: "colored",
+      // });
+      // } else {
+      // setLoading(false);
+      // toast.error("Something went wrong, try again", {
+      //   position: "top-right",
+      //   autoClose: 3000,
+      //   hideProgressBar: true,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      //   theme: "colored",
+      // });
+      // }
+    }
+  };
 
   return (
     <>
@@ -65,64 +131,90 @@ export default function ContactUs() {
                       <div className="contact-area-single contact-area__content-form">
                         <h4 className="descender">Get In Touch</h4>
                         <p>
-                          On the other hand, we denounce with righteous
-                          indignation and dislike men who are so beguiled and
-                          righteous indignation and dislike men by the charms
+                          We strive to respond to all inquiries in a timely
+                          manner and look forward to the opportunity to assist
+                          you with any questions, comments, or concerns you may
+                          have
                         </p>
-                        <form action="#" method="post" name="contact__Form">
+                        <form onSubmit={handleSubmit} noValidate>
                           <div className="input-group-column">
                             <div className="input">
                               <input
                                 type="text"
-                                name="contact_f_name"
-                                id="contactFName"
+                                name="first_name"
+                                id="first_name"
                                 placeholder="First Name"
                                 required
                                 className="input"
                               />
+                              {touched.first_name && errors.first_name ? (
+                                <div>{errors.first_name}</div>
+                              ) : (
+                                ""
+                              )}
                             </div>
                             <div className="input">
                               <input
                                 type="text"
-                                name="contact_l_name"
-                                id="contactLName"
+                                name="last_name"
+                                id="last_name"
                                 placeholder="Last Name"
                                 required
                                 className="input"
                               />
+                              {touched.last_name && errors.last_name ? (
+                                <div>{errors.last_name}</div>
+                              ) : (
+                                ""
+                              )}
                             </div>
                           </div>
                           <div className="input-group-column">
                             <div className="input">
                               <input
                                 type="email"
-                                name="contact_mail"
-                                id="contactMail"
+                                name="email"
+                                id="email"
                                 placeholder="Email"
                                 required
                                 className="input"
                               />
+                              {touched.email && errors.email ? (
+                                <div>{errors.email}</div>
+                              ) : (
+                                ""
+                              )}
                             </div>
                             <div className="input">
                               <input
                                 type="text"
-                                name="contact_subject"
-                                id="contactSubject"
+                                name="subject"
+                                id="subject"
                                 placeholder="Subject"
                                 required
                                 className="input"
                               />
+                              {touched.subject && errors.subject ? (
+                                <div>{errors.subject}</div>
+                              ) : (
+                                ""
+                              )}
                             </div>
                           </div>
                           <div className="input">
                             <textarea
-                              name="contact_message"
-                              id="contactMessage"
+                              name="message"
+                              id="message"
                               cols="30"
                               rows="10"
                               className="input textarea"
                               placeholder="Message"
                             ></textarea>
+                            {touched.message && errors.message ? (
+                              <div>{errors.message}</div>
+                            ) : (
+                              ""
+                            )}
                           </div>
                           <button
                             type="submit"
@@ -139,22 +231,23 @@ export default function ContactUs() {
                         <p className="secondary">Blood Excellence!</p>
                         <h4>Expanded Blood Donate Services Here</h4>
                         <p className="neutral-bottom">
-                          On the other hand, we denounce with righteous
-                          indignation and dislike men who are so beguiled and
-                          demoralized by the charms{" "}
+                          By donating blood, you have the opportunity to make a
+                          significant impact on the lives of others. We
+                          encourage everyone who is able to donate blood to
+                          consider doing so and join us in our efforts to
+                          improve the health and well-being of our community.
                         </p>
                         <div className="group">
                           <p className="secondary">
-                            <i className="bi bi-telephone-fill"></i> Emergency
-                            Line: (002) 012612457
+                            <i className="bi bi-telephone-fill"></i> 0345 -
+                            1234567
                           </p>
                           <p className="secondary">
-                            <i className="bi bi-geo-alt-fill"></i> Location:
-                            Street 68, Mahattan, New York
+                            <i className="bi bi-geo-alt-fill"></i>
+                            All over Pakistan
                           </p>
                           <p className="secondary">
-                            <i className="bi bi-clock-fill"></i> Mon - Fri: 8:00
-                            am - 7:00 pm
+                            <i className="bi bi-clock-fill"></i> 24 / 7
                           </p>
                         </div>
                       </div>
