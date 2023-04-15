@@ -1,0 +1,21 @@
+input#quickName{
+    background-color: #fff;
+    border: 1px solid transparent;
+    margin-bottom: 0px !important;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+input#quickMail{
+    background-color: #fff;
+    border: 1px solid transparent;
+    margin-bottom: 0px !important;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+textarea#quickMessage{
+    background-color: #fff;
+    border: 1px solid transparent;
+    margin-bottom: 0px !important;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}

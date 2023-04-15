@@ -8,7 +8,23 @@ import Blood from "../Images/blood.png";
 import TestBlood from "../Images/testBlood.jpg";
 import Doctor from "../Images/doctor.jpg";
 import Donate from "../Images/donate.jpg";
+import { Link } from 'react-router-dom';
+import useImportScript from '../../utils/useImportScript';
+import "./ServiceDetail.css";
 export default function ServiceDetail() {
+    useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
+    useImportScript("/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
+    useImportScript("/assets/vendor/nice-select/js/jquery.nice-select.min.js");
+    useImportScript(
+      "/assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"
+    );
+    useImportScript("/assets/vendor/slick/js/slick.js");
+    useImportScript("/assets/vendor/odometer/js/odometer.min.js");
+    useImportScript("/assets/vendor/viewport-js/viewport.jquery.js");
+    useImportScript("/assets/vendor/owl-carousel/js/owl.carousel.min.js");
+    useImportScript("/assets/vendor/wow/wow.min.js");
+    useImportScript("/assets/js/plugin.js");
+    useImportScript("/assets/js/main.js");
     return (
         <>
             <TopBar />
@@ -44,175 +60,175 @@ export default function ServiceDetail() {
             {/* <!-- ==== #banner section end ==== --> */}
 
             {/* <!-- ==== service details section start ==== --> */}
-            <section class="service-details section-space">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="service-details-area">
-                                <div class="row neutral-row">
-                                    <div class="col-lg-4 order-last order-lg-first row-item">
-                                        <div class="service-details-area__sidebar">
+            <section className="service-details section-space">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <div className="service-details-area">
+                                <div className="row neutral-row">
+                                    <div className="col-lg-4 order-last order-lg-first row-item">
+                                        <div className="service-details-area__sidebar">
                                             <div
-                                                class="sidebar-single sidebar-single--secondary categories--secondary wow fadeInUp">
+                                                className="sidebar-single sidebar-single--secondary categories--secondary wow fadeInUp">
                                                 <h4>Our Services</h4>
                                                 <ul>
-                                                    <li><a href="services.html">Blood Donation<i class="fa-solid fa-arrow-right-long"></i></a></li>
-                                                    <li><a href="services.html">Health Check<i class="fa-solid fa-arrow-right-long"></i></a></li>
-                                                    <li><a href="services.html">Blood Bank<i class="fa-solid fa-arrow-right-long"></i></a></li>
-                                                    <li><a href="services.html">Donate Process<i class="fa-solid fa-arrow-right-long"></i></a></li>
-                                                    <li><a href="services.html">All Services<i class="fa-solid fa-arrow-right-long"></i></a></li>
+                                                    <li><Link to="/our-services">Blood Donation<i className="fa-solid fa-arrow-right-long"></i></Link></li>
+                                                    <li><Link to="/our-services">Health Check<i className="fa-solid fa-arrow-right-long"></i></Link></li>
+                                                    <li><Link to="/our-services">Blood Bank<i className="fa-solid fa-arrow-right-long"></i></Link></li>
+                                                    <li><Link to="/our-services">Donate Process<i className="fa-solid fa-arrow-right-long"></i></Link></li>
+                                                    <li><Link to="/our-services">All Services<i className="fa-solid fa-arrow-right-long"></i></Link></li>
                                                 </ul>
                                             </div>
-                                            <div class="sidebar-single sidebar-single--secondary excellence wow fadeInUp">
+                                            <div className="sidebar-single sidebar-single--secondary excellence wow fadeInUp">
                                                 <h4>Blood Excellence</h4>
                                                 <h3>Expanded Blood Donate Services Here</h3>
                                                 <p>There are many variations of passages Lorem Ipsum available, but the majority suffered of alteration in some form,</p>
-                                                <a href="contact-us.html" class="button button--quinary button--effect">Contact Us</a>
+                                                <Link to="/contact-us" className="button button--quinary button--effect">Contact Us</Link>
                                             </div>
-                                            <div class="sidebar-single sidebar-single--secondary">
+                                            <div className="sidebar-single sidebar-single--secondary">
                                                 <h4>Leave a Message</h4>
                                                 <form action="#" method="post" name="quickMessage">
-                                                    <div class="input">
+                                                    <div className="input">
                                                         <input type="text" name="quick__name" id="quickName" placeholder="Your Name" required />
                                                     </div>
-                                                    <div class="input">
+                                                    <div className="input">
                                                         <input type="email" name="quick__mail" id="quickMail" placeholder="Email" required />
                                                     </div>
-                                                    <div class="input">
+                                                    <div className="input">
                                                         <textarea name="quick__message" id="quickMessage" cols="30" rows="10" placeholder="Message Details"></textarea>
                                                     </div>
-                                                    <button class="button button--effect">Send Message<i class="fa-solid fa-arrow-right-long"></i></button>
+                                                    <button className="button button--effect">Send Message<i className="fa-solid fa-arrow-right-long"></i></button>
                                                 </form>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-8 row-item">
-                                        <div class="service-details-area__content service-details-area__content-alt">
-                                            <div class="content-group-secondary group-space">
+                                    <div className="col-lg-8 row-item">
+                                        <div className="service-details-area__content service-details-area__content-alt">
+                                            <div className="content-group-secondary group-space">
                                                 <h2>Know More Us of Our Blood
                                                     Donate Services</h2>
                                                 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
 
-                                                <p class="neutral-bottom">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,</p>
+                                                <p className="neutral-bottom">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,</p>
                                             </div>
-                                            <div class="service-details-area__poster group-space wow fadeInUp">
+                                            <div className="service-details-area__poster group-space wow fadeInUp">
                                                 <img src={Donate} alt="Service Details" />
                                             </div>
-                                            <div class="content-group--secondary group-space">
-                                                <h2 class="descender">Your Blood Donate Can Change Someone’s Life</h2>
+                                            <div className="content-group--secondary group-space">
+                                                <h2 className="descender">Your Blood Donate Can Change Someone’s Life</h2>
                                                 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, </p>
 
-                                                <p class="neutral-bottom">sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                                                <p className="neutral-bottom">sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
                                             </div>
-                                            <div class="content-group--secondary group-space">
-                                                <h2 class="descender">Donation Process</h2>
-                                                <p class="neutral-bottom">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, eaque quae illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
+                                            <div className="content-group--secondary group-space">
+                                                <h2 className="descender">Donation Process</h2>
+                                                <p className="neutral-bottom">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, eaque quae illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
                                             </div>
-                                            <div class="group-item-wrapper group-space">
-                                                <div class="group-inner__item">
-                                                    <div class="wrapper">
-                                                        <div class="group-inner__item__inner">
+                                            <div className="group-item-wrapper group-space">
+                                                <div className="group-inner__item">
+                                                    <div className="wrapper">
+                                                        <div className="group-inner__item__inner">
                                                             <img src={Regsiter} alt="Registration" />
                                                         </div>
                                                     </div>
-                                                    <h4 class="neutral-bottom">Registration</h4>
+                                                    <h4 className="neutral-bottom">Registration</h4>
                                                 </div>
-                                                <div class="group-inner__item">
-                                                    <div class="wrapper">
-                                                        <div class="group-inner__item__inner">
+                                                <div className="group-inner__item">
+                                                    <div className="wrapper">
+                                                        <div className="group-inner__item__inner">
                                                             <img src={ScanTest} alt="Screen Test" />
                                                         </div>
                                                     </div>
-                                                    <h4 class="neutral-bottom">Screening Test</h4>
+                                                    <h4 className="neutral-bottom">Screening Test</h4>
                                                 </div>
-                                                <div class="group-inner__item">
-                                                    <div class="wrapper">
-                                                        <div class="group-inner__item__inner">
+                                                <div className="group-inner__item">
+                                                    <div className="wrapper">
+                                                        <div className="group-inner__item__inner">
                                                             <img src={Blood} alt="Blood Donate" />
                                                         </div>
                                                     </div>
-                                                    <h4 class="neutral-bottom">Blood Donate</h4>
+                                                    <h4 className="neutral-bottom">Blood Donate</h4>
                                                 </div>
                                             </div>
-                                            <div class="group-space">
+                                            <div className="group-space">
                                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration some form, by injected humour, or randomised words which don't look even slightly believable. If you are going use passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden</p>
 
-                                                <div class="img-group">
+                                                <div className="img-group">
                                                     <img src={TestBlood}
                                                         alt="Donate" />
                                                     <img src={Doctor}
                                                         alt="Donate" />
                                                 </div>
                                             </div>
-                                            <div class="wow fadeInUp">
+                                            <div className="wow fadeInUp">
                                                 <h2>Key Benefits</h2>
-                                                <div class="faq-wrapper faq-wrapper--secondary">
-                                                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                                                        <div class="accordion-item">
-                                                            <h6 class="accordion-header" id="flush-headingOne">
-                                                                <button class="accordion-button" type="button"
+                                                <div className="faq-wrapper faq-wrapper--secondary">
+                                                    <div className="accordion accordion-flush" id="accordionFlushExample">
+                                                        <div className="accordion-item">
+                                                            <h6 className="accordion-header" id="flush-headingOne">
+                                                                <button className="accordion-button" type="button"
                                                                     data-bs-toggle="collapse"
                                                                     data-bs-target="#flush-collapseOne" aria-expanded="true"
                                                                     aria-controls="flush-collapseOne">
                                                                     We Can Save More Lifes With Your Helping Hand.
                                                                 </button>
                                                             </h6>
-                                                            <div id="flush-collapseOne" class="accordion-collapse collapse show"
+                                                            <div id="flush-collapseOne" className="accordion-collapse collapse show"
                                                                 aria-labelledby="flush-headingOne"
                                                                 data-bs-parent="#accordionFlushExample">
-                                                                <div class="accordion-body">
-                                                                    <p class="neutral-bottom">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor labore dolore magna aliquyam erat, sed diam voluptua.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, diam voluptua.</p>
+                                                                <div className="accordion-body">
+                                                                    <p className="neutral-bottom">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor labore dolore magna aliquyam erat, sed diam voluptua.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, diam voluptua.</p>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="accordion-item">
-                                                            <h6 class="accordion-header" id="flush-headingTwo">
-                                                                <button class="accordion-button collapsed" type="button"
+                                                        <div className="accordion-item">
+                                                            <h6 className="accordion-header" id="flush-headingTwo">
+                                                                <button className="accordion-button collapsed" type="button"
                                                                     data-bs-toggle="collapse"
                                                                     data-bs-target="#flush-collapseTwo" aria-expanded="false"
                                                                     aria-controls="flush-collapseTwo">
                                                                     We Can Save More Lifes With Your Helping Hand.
                                                                 </button>
                                                             </h6>
-                                                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                                            <div id="flush-collapseTwo" className="accordion-collapse collapse"
                                                                 aria-labelledby="flush-headingTwo"
                                                                 data-bs-parent="#accordionFlushExample">
-                                                                <div class="accordion-body">
-                                                                    <p class="neutral-bottom">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor labore dolore magna aliquyam erat, sed diam voluptua.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, diam voluptua.</p>
+                                                                <div className="accordion-body">
+                                                                    <p className="neutral-bottom">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor labore dolore magna aliquyam erat, sed diam voluptua.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, diam voluptua.</p>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="accordion-item">
-                                                            <h6 class="accordion-header" id="flush-headingThree">
-                                                                <button class="accordion-button collapsed" type="button"
+                                                        <div className="accordion-item">
+                                                            <h6 className="accordion-header" id="flush-headingThree">
+                                                                <button className="accordion-button collapsed" type="button"
                                                                     data-bs-toggle="collapse"
                                                                     data-bs-target="#flush-collapseThree" aria-expanded="false"
                                                                     aria-controls="flush-collapseThree">
                                                                     We Can Save More Lifes With Your Helping Hand.
                                                                 </button>
                                                             </h6>
-                                                            <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                                            <div id="flush-collapseThree" className="accordion-collapse collapse"
                                                                 aria-labelledby="flush-headingThree"
                                                                 data-bs-parent="#accordionFlushExample">
-                                                                <div class="accordion-body">
-                                                                    <p class="neutral-bottom">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor labore dolore magna aliquyam erat, sed diam voluptua.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, diam voluptua.</p>
+                                                                <div className="accordion-body">
+                                                                    <p className="neutral-bottom">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor labore dolore magna aliquyam erat, sed diam voluptua.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, diam voluptua.</p>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="accordion-item">
-                                                            <h6 class="accordion-header" id="flush-headingFour">
-                                                                <button class="accordion-button collapsed" type="button"
+                                                        <div className="accordion-item">
+                                                            <h6 className="accordion-header" id="flush-headingFour">
+                                                                <button className="accordion-button collapsed" type="button"
                                                                     data-bs-toggle="collapse"
                                                                     data-bs-target="#flush-collapseFour" aria-expanded="false"
                                                                     aria-controls="flush-collapseFour">
                                                                     We Can Save More Lifes With Your Helping Hand.
                                                                 </button>
                                                             </h6>
-                                                            <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                                            <div id="flush-collapseFour" className="accordion-collapse collapse"
                                                                 aria-labelledby="flush-headingFour"
                                                                 data-bs-parent="#accordionFlushExample">
-                                                                <div class="accordion-body">
-                                                                    <p class="neutral-bottom">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor labore dolore magna aliquyam erat, sed diam voluptua.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, diam voluptua.</p>
+                                                                <div className="accordion-body">
+                                                                    <p className="neutral-bottom">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor labore dolore magna aliquyam erat, sed diam voluptua.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, diam voluptua.</p>
                                                                 </div>
                                                             </div>
                                                         </div>
