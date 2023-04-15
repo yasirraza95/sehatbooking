@@ -126,3 +126,7 @@ p, th, td, li, input, textarea, select, label, blockquote, .span {
 iframe {
     border: 0;
 }
+button.button.button--effect.contact:hover{
+    background-color: #000 !important;
+    color: #ffff !important;
+}
