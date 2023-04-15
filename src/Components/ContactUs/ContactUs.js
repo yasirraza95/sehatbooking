@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import useImportScript from "../../utils/useImportScript";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -6,6 +6,9 @@ import TopBar from "../HomeTopBar/TopBar";
 import "./ContactUs.css";
 import { useFormik } from "formik";
 import { contactValidation } from "../../schema";
+import GeneralService from "../../services/general.service";
+import { toast } from "react-toastify";
+import { Alert } from "react-bootstrap";
 
 export default function ContactUs() {
   useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
@@ -22,6 +25,9 @@ export default function ContactUs() {
   useImportScript("/assets/js/plugin.js");
   useImportScript("/assets/js/main.js");
 
+  const [submit, setSubmit] = useState("");
+  const [submitMessage, setSubmitMessage] = useState("");
+
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: {
@@ -33,56 +39,60 @@ export default function ContactUs() {
       },
       validationSchema: contactValidation,
       onSubmit: (values, action) => {
-        console.log("testing");
-        // login(action);
+        formSubmit(values, action);
       },
     });
 
-  const login = async (action) => {
-    console.log(values);
+  const formSubmit = async (values, action) => {
     // setLoading(true);
     try {
-      // const response = await UserService.login(values);
-      // action.resetForm();
-      // ctxDispatch({
-      //   type: "LOGIN",
-      //   accessToken: response.data.access_token,
-      //   id: response.data.user.id,
-      //   uName: response.data.user.username,
-      //   uType: response.data.user.user_type,
-      //   name:
-      //     response.data.user.first_name + " " + response.data.user.last_name,
+      const response = await GeneralService.contactUs(values);
+      const { data } = response;
+      const { response: message } = data;
+      // console.log(message);
+      setSubmitMessage(message);
+      setSubmit("success");
+      // toast.success(message, {
+      //   position: "bottom-center",
+      //   autoClose: 3000,
+      //   hideProgressBar: true,
+      //   closeOnClick: true,
+      //   progress: undefined,
+      //   theme: "colored",
       // });
-      // navigate("/welcome", { replace: true });
+      // action.resetForm();
       // setLoading(false);
-      // console.log(response.data.access_token);
     } catch (err) {
       console.log(err);
-      // if (err?.response?.status === 401) {
-      // setLoading(false);
-      // toast.error("Username or Password is invalid !", {
-      //   position: "top-right",
-      //   autoClose: 3000,
-      //   hideProgressBar: true,
-      //   closeOnClick: true,
-      //   pauseOnHover: true,
-      //   draggable: true,
-      //   progress: undefined,
-      //   theme: "colored",
-      // });
-      // } else {
-      // setLoading(false);
-      // toast.error("Something went wrong, try again", {
-      //   position: "top-right",
-      //   autoClose: 3000,
-      //   hideProgressBar: true,
-      //   closeOnClick: true,
-      //   pauseOnHover: true,
-      //   draggable: true,
-      //   progress: undefined,
-      //   theme: "colored",
-      // });
-      // }
+      if (err?.response?.status === 401) {
+        setSubmitMessage("Username or Password is invalid");
+        setSubmit("success");
+        // setLoading(false);
+        // toast.error("Username or Password is invalid !", {
+        //   position: "top-right",
+        //   autoClose: 3000,
+        //   hideProgressBar: true,
+        //   closeOnClick: true,
+        //   pauseOnHover: true,
+        //   draggable: true,
+        //   progress: undefined,
+        //   theme: "colored",
+        // });
+      } else {
+        setSubmitMessage("Something went wrong, try again");
+        setSubmit("danger");
+        // setLoading(false);
+        // toast.error("Something went wrong, try again", {
+        //   position: "top-right",
+        //   autoClose: 3000,
+        //   hideProgressBar: true,
+        //   closeOnClick: true,
+        //   pauseOnHover: true,
+        //   draggable: true,
+        //   progress: undefined,
+        //   theme: "colored",
+        // });
+      }
     }
   };
 
@@ -136,6 +146,13 @@ export default function ContactUs() {
                           you with any questions, comments, or concerns you may
                           have
                         </p>
+
+                        {submit && (
+                          <div className={`alert alert-${submit}`} role="alert">
+                            {submitMessage}
+                          </div>
+                        )}
+
                         <form onSubmit={handleSubmit} noValidate>
                           <div className="input-group-column">
                             <div className="input">
@@ -244,10 +261,10 @@ export default function ContactUs() {
                           improve the health and well-being of our community.
                         </p>
                         <div className="group">
-                          <p className="secondary">
+                          {/* <p className="secondary">
                             <i className="bi bi-telephone-fill"></i> 0345 -
                             1234567
-                          </p>
+                          </p> */}
                           <p className="secondary">
                             <i className="bi bi-geo-alt-fill"></i>
                             All over Pakistan

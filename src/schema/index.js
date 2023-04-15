@@ -3,7 +3,9 @@ import * as Yup from "yup";
 export const contactValidation = Yup.object().shape({
   first_name: Yup.string().required("Please enter First Name"),
   last_name: Yup.string().required("Please enter Last Name"),
-  email: Yup.string().required("Please enter Email Address"),
+  email: Yup.string()
+    .email("Please enter a valid Email Address")
+    .required("Please enter Email Address"),
   subject: Yup.string().required("Please enter Subject"),
   message: Yup.string().required("Please enter Message"),
 });

@@ -1,5 +1,7 @@
 import React from "react";
 import "./Footer.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Footer() {
   return (
@@ -224,6 +226,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </footer>
   );
 }

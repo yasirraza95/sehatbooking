@@ -234,7 +234,7 @@ const contactUs = (values) => {
   );
 };
 
-const UserService = {
+const GeneralService = {
   login,
   register,
   recRegister,
@@ -254,4 +254,4 @@ const UserService = {
   contactUs,
 };
 
-export default UserService;
+export default GeneralService;
