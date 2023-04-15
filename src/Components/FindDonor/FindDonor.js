@@ -20,7 +20,7 @@ export default function FindDonor() {
   // useImportScript("/assets/vendor/odometer/js/odometer.min.js");
   // useImportScript("/assets/vendor/viewport-js/viewport.jquery.js");
   // useImportScript("/assets/vendor/owl-carousel/js/owl.carousel.min.js");
-  useImportScript("/assets/vendor/wow/wow.min.js");
+  // useImportScript("/assets/vendor/wow/wow.min.js");
   // useImportScript("/assets/js/plugin.js");
   // useImportScript("/assets/js/main.js");
 
@@ -76,7 +76,7 @@ export default function FindDonor() {
                 >
                   <div className="panel-body">
                     <div className="col-md-4">
-                      <p className="donorLabel">City</p>
+                      {/* <p className="donorLabel">City</p> */}
                       <div className="input">
                         <select className="select-donation-type">
                           <option value="">Select City</option>
@@ -496,7 +496,7 @@ export default function FindDonor() {
 
                     </div>
                     <div className="col-md-4">
-                      <p className="donorLabel">City Area</p>
+                      {/* <p className="donorLabel">City Area</p> */}
                       <div className="input">
                         <select className="select-donation-type">
                           <option value="">Select City Area</option>
@@ -604,7 +604,7 @@ export default function FindDonor() {
 
                     </div>
                     <div className="col-md-4">
-                      <p className="donorLabel">Blood Group</p>
+                      {/* <p className="donorLabel">Blood Group</p> */}
                       <div className="input">
                         <select className="select-donation-type">
                         <option value="">Select Blood Group</option>

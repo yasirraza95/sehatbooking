@@ -17,6 +17,7 @@ import FindDonor from "./Components/FindDonor/FindDonor";
 import Appointment from "./Components/Appoinment/Appointment";
 import Profile from "./Components/Profile/Profile";
 import HowTo from "./Components/How to/HowTo";
+import OurServices from "./Components/OurServices/OurServices";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             <Route path="/appointment" element={<Appointment />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/how-to" element={<HowTo />} />
+            <Route path="/our-services" element={<OurServices />} />
           </Routes>
         </BrowserRouter>
       </div>

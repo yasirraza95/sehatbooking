@@ -69,7 +69,7 @@ export default function IndexOne() {
                 </div>
                 <h3>Donate blood,save life !</h3>
                 <h1>Donate Blood And Inspires Others.</h1>
-                <a href="services.html" className="button button--effect">
+                <a href="/our-services" className="button button--effect">
                   Explore Now
                 </a>
               </div>
@@ -98,7 +98,7 @@ export default function IndexOne() {
                 </div>
                 <h3>Donate blood,save life !</h3>
                 <h1>Donate Blood And Inspires Others.</h1>
-                <a href="services.html" className="button button--effect">
+                <a href="/our-services" className="button button--effect">
                   Explore Now
                 </a>
               </div>
@@ -127,7 +127,7 @@ export default function IndexOne() {
                 </div>
                 <h3>Donate blood,save life !</h3>
                 <h1>Donate Blood And Inspires Others.</h1>
-                <a href="services.html" className="button button--effect">
+                <a href="/our-services" className="button button--effect">
                   Explore Now
                 </a>
               </div>
@@ -757,7 +757,7 @@ export default function IndexOne() {
                   <div className="col-md-3">
                     <div className="cta-area__btn text-start text-md-end">
                       <a
-                        href="contact-us.html"
+                        href="/contact-us"
                         className="button button--quaternary button--effect"
                       >
                         Contact Us

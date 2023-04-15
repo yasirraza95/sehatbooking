@@ -951,6 +951,7 @@ input#newsletterEmail {
   flex-grow: 1;
   margin: 0px;
   outline: black;
+  border: transparent;
 }
 input#newsletterEmail:focus {
   outline: transparent !important;
