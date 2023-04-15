@@ -623,7 +623,9 @@ a#app-item {
 .nav-link.active {
   color: #ea062b !important;
 }
-
+ul.dropdown-menu {
+  margin-top: -9px !important;
+}
 .dropdown .dropdown-toggle {
   color: #111111 !important;
 }
