@@ -59,9 +59,9 @@ export default function Appointment() {
       {/* <!-- ==== Appointment section start ==== --> */}
       <section className="registration section-space">
         <div className="container">
-          <img className="clock" src={clockImage} alt="responsive" />
           <div className="row">
             <div className="col-lg-12">
+          <img className="clock" src={clockImage} alt="responsive" />
             <div className="wrap mt-5">
                 <h1>
                   {" "}
