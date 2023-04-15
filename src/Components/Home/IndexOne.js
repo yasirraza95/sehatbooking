@@ -23,6 +23,7 @@ import slideImage1 from "../Images/patient-donating-blood-at-hospital.jpg";
 import slideImage2 from "../Images/doctor-taking-blood-samples.jpg";
 import slideImage3 from "../Images/6-1.jpg";
 import useImportScript from "../../utils/useImportScript";
+import { Link } from "react-router-dom";
 
 export default function IndexOne() {
   useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
@@ -69,9 +70,9 @@ export default function IndexOne() {
                 </div>
                 <h3>Donate blood,save life !</h3>
                 <h1>Donate Blood And Inspires Others.</h1>
-                <a href="/our-services" className="button button--effect">
+                <Link to="/our-services" className="button button--effect">
                   Explore Now
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -98,9 +99,9 @@ export default function IndexOne() {
                 </div>
                 <h3>Donate blood,save life !</h3>
                 <h1>Donate Blood And Inspires Others.</h1>
-                <a href="/our-services" className="button button--effect">
+                <Link to="/our-services" className="button button--effect">
                   Explore Now
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -127,9 +128,9 @@ export default function IndexOne() {
                 </div>
                 <h3>Donate blood,save life !</h3>
                 <h1>Donate Blood And Inspires Others.</h1>
-                <a href="/our-services" className="button button--effect">
+                <Link to="/our-services" className="button button--effect">
                   Explore Now
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -258,12 +259,12 @@ export default function IndexOne() {
                       give pleasure
                     </p>
                   </div>
-                  <a
-                    href="service-details.html"
+                  <Link
+                    to="/service-detail"
                     className="button button--secondary button--effect"
                   >
                     Read More
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-sm-6 col-md-6 col-lg-4 row-item align-center">
@@ -286,12 +287,12 @@ export default function IndexOne() {
                       give pleasure
                     </p>
                   </div>
-                  <a
-                    href="service-details.html"
+                  <Link
+                    to="/service-detail"
                     className="button button--secondary button--effect"
                   >
                     Read More
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-sm-6 col-md-6 col-lg-4 row-item align-center">
@@ -317,12 +318,12 @@ export default function IndexOne() {
                       give pleasure
                     </p>
                   </div>
-                  <a
-                    href="service-details.html"
+                  <Link
+                    to="/service-detail"
                     className="button button--secondary button--effect"
                   >
                     Read More
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -756,12 +757,12 @@ export default function IndexOne() {
                   </div>
                   <div className="col-md-3">
                     <div className="cta-area__btn text-start text-md-end">
-                      <a
-                        href="/contact-us"
+                      <Link
+                        to="/contact-us"
                         className="button button--quaternary button--effect"
                       >
                         Contact Us
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

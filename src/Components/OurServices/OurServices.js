@@ -7,6 +7,7 @@ import HeartIcon from "../Images/heart.png";
 import FirstAidIcon from "../Images/first-aid.png";
 import TubeIcon from "../Images/tube.png";
 import useImportScript from '../../utils/useImportScript';
+import { Link } from 'react-router-dom';
 export default function OurServices() {
   useImportScript("/assets/vendor/wow/wow.min.js");
 
@@ -147,8 +148,8 @@ export default function OurServices() {
                                 </div>
                                 <div class="col-md-3">
                                     <div class="cta-area__btn text-start text-md-end">
-                                        <a href="contact-us.html" class="button button--quaternary button--effect">Contact
-                                            Us</a>
+                                        <Link to="/contact-us" class="button button--quaternary button--effect">Contact
+                                            Us</Link>
                                     </div>
                                 </div>
                             </div>

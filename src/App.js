@@ -18,6 +18,7 @@ import Appointment from "./Components/Appoinment/Appointment";
 import Profile from "./Components/Profile/Profile";
 import HowTo from "./Components/How to/HowTo";
 import OurServices from "./Components/OurServices/OurServices";
+import ServiceDetail from "./Components/ServiceDetail/ServiceDetail";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/how-to" element={<HowTo />} />
             <Route path="/our-services" element={<OurServices />} />
+            <Route path="/service-detail" element={<ServiceDetail />} />
           </Routes>
         </BrowserRouter>
       </div>
