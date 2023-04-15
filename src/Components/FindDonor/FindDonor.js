@@ -607,27 +607,27 @@ export default function FindDonor() {
                       {/* <p className="donorLabel">Blood Group</p> */}
                       <div className="input">
                         <select className="select-donation-type">
-                        <option value="">Select Blood Group</option>
-                        <option value="a-negative">A-</option>
-                        <option value="a1">A1</option>
-                        <option value="a1-positive">A1+</option>
-                        <option value="a1-negative">A1-</option>
-                        <option value="a2-positive">A2+</option>
-                        <option value="a2-negative">A2-</option>
-                        <option value="a1b-positive">A1B+</option>
-                        <option value="a1b-negative">A1B-</option>
-                        <option value="a2b-positive">A2B+</option>
-                        <option value="a2b-negative">A2B-</option>
-                        <option value="b-positive">B+</option>
-                        <option value="b-negative">B-</option>
-                        <option value="b1-positive">B1+</option>
-                        <option value="o-positive">O+</option>
-                        <option value="o-negative">O-</option>
-                        <option value="ab-positive">AB+</option>
-                        <option value="ab-negative">AB-</option>
+                          <option value="">Select Blood Group</option>
+                          <option value="a-negative">A-</option>
+                          <option value="a1">A1</option>
+                          <option value="a1-positive">A1+</option>
+                          <option value="a1-negative">A1-</option>
+                          <option value="a2-positive">A2+</option>
+                          <option value="a2-negative">A2-</option>
+                          <option value="a1b-positive">A1B+</option>
+                          <option value="a1b-negative">A1B-</option>
+                          <option value="a2b-positive">A2B+</option>
+                          <option value="a2b-negative">A2B-</option>
+                          <option value="b-positive">B+</option>
+                          <option value="b-negative">B-</option>
+                          <option value="b1-positive">B1+</option>
+                          <option value="o-positive">O+</option>
+                          <option value="o-negative">O-</option>
+                          <option value="ab-positive">AB+</option>
+                          <option value="ab-negative">AB-</option>
                         </select>
                       </div>
-                    
+
                     </div>
                     <button className="button button--effect">Search</button>
                   </div>
@@ -661,10 +661,11 @@ export default function FindDonor() {
                         <div className="wordbreak">Karachi, Bahadurabad</div>
                       </td>
                       <td>
-                        <a href="" onclick="show_registration_dialog()">
+                        <a href="#" onclick="show_registration_dialog()" data-toggle="modal" data-target=".login-register-form">
                           <FontAwesomeIcon icon={faMobileScreenButton} />
                         </a>{" "}
                       </td>
+
                     </tr>
                     <tr>
                       <td>
@@ -677,7 +678,7 @@ export default function FindDonor() {
                         <div className="wordbreak">Karachi, D.H.A</div>
                       </td>
                       <td>
-                        <a href="" onclick="show_registration_dialog()">
+                        <a href="#" onclick="show_registration_dialog()" data-toggle="modal" data-target=".login-register-form">
                           <FontAwesomeIcon icon={faMobileScreenButton} />
                         </a>{" "}
                       </td>
@@ -695,7 +696,7 @@ export default function FindDonor() {
                         </div>
                       </td>
                       <td>
-                        <a href="" onclick="show_registration_dialog()">
+                        <a href="#" onclick="show_registration_dialog()" data-toggle="modal" data-target=".login-register-form">
                           <FontAwesomeIcon icon={faMobileScreenButton} />
                         </a>{" "}
                       </td>
@@ -711,7 +712,7 @@ export default function FindDonor() {
                         <div className="wordbreak">Karachi, Saddar</div>
                       </td>
                       <td>
-                        <a href="" onclick="show_registration_dialog()">
+                        <a href="#" onclick="show_registration_dialog()" data-toggle="modal" data-target=".login-register-form">
                           <FontAwesomeIcon icon={faMobileScreenButton} />
                         </a>{" "}
                       </td>
@@ -727,7 +728,7 @@ export default function FindDonor() {
                         <div className="wordbreak">Karachi, Saddar</div>
                       </td>
                       <td>
-                        <a href="" onclick="show_registration_dialog()">
+                        <a href="#" onclick="show_registration_dialog()" data-toggle="modal" data-target=".login-register-form">
                           <FontAwesomeIcon icon={faMobileScreenButton} />
                         </a>{" "}
                       </td>
@@ -745,7 +746,7 @@ export default function FindDonor() {
                         </div>
                       </td>
                       <td>
-                        <a href="" onclick="show_registration_dialog()">
+                        <a href="#" onclick="show_registration_dialog()" data-toggle="modal" data-target=".login-register-form">
                           <FontAwesomeIcon icon={faMobileScreenButton} />
                         </a>{" "}
                       </td>
@@ -763,7 +764,7 @@ export default function FindDonor() {
                         </div>
                       </td>
                       <td>
-                        <a href="" onclick="show_registration_dialog()">
+                        <a href="#" onclick="show_registration_dialog()" data-toggle="modal" data-target=".login-register-form">
                           <FontAwesomeIcon icon={faMobileScreenButton} />
                         </a>{" "}
                       </td>
@@ -777,6 +778,63 @@ export default function FindDonor() {
       </section>
       {/* <!-- ==== #Find Donor section end ==== --> */}
       {/* <ToTop /> */}
+
+      <>
+        {/* <!-- Login / Register Modal--> */}
+        <div className="modal fade login-register-form" role="dialog">
+          <div className="modal-dialog modal-lg">
+            <div className="modal-content">
+              <div className="modal-header">
+                <button type="button" className="close" data-dismiss="modal">
+                  <span className="glyphicon glyphicon-remove"></span>
+                </button>
+                <ul className="nav nav-tabs">
+                  <li className="active"><a data-toggle="tab" href="#login-form"> Login <span className="glyphicon glyphicon-user"></span></a></li>
+                  <li><a data-toggle="tab" href="#registration-form"> Register <span className="glyphicon glyphicon-pencil"></span></a></li>
+                </ul>
+              </div>
+              <div className="modal-body">
+                <div className="tab-content">
+                  <div id="login-form" className="tab-pane fade in active">
+                    <form action="/">
+                      <div className="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" className="form-control" id="email" placeholder="Enter email" name="email" />
+                      </div>
+                      <div className="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" className="form-control" id="pwd" placeholder="Enter password" name="pwd" />
+                      </div>
+                      <div className="checkbox">
+                        <label><input type="checkbox" name="remember" /> Remember me</label>
+                      </div>
+                      <button type="submit" className="button button--effect popup">Login</button>
+                    </form>
+                  </div>
+                  <div id="registration-form" className="tab-pane fade">
+                    <form action="/">
+                      <div className="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" className="form-control" id="name" placeholder="Enter your name" name="name" />
+                      </div>
+                      <div className="form-group">
+                        <label for="newemail">Email:</label>
+                        <input type="email" className="form-control" id="newemail" placeholder="Enter new email" name="newemail" />
+                      </div>
+                      <div className="form-group">
+                        <label for="newpwd">Password:</label>
+                        <input type="password" className="form-control" id="newpwd" placeholder="New password" name="newpwd" />
+                      </div>
+                      <button type="submit" className="button button--effect popup">Register</button>
+                    </form>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
       <Footer />
     </>
   );

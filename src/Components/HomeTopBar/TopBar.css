@@ -80,3 +80,6 @@
 li.neutral-bottom {
     margin-bottom: 0px;
 }
+a#email:focus{
+    color: #fff !important;
+}
