@@ -1078,7 +1078,7 @@ div#primaryNav {
 
 @media (max-width: 2560px) {
   img.sehat-logo {
-    margin-left: -29rem !important;
+    margin-left: -53rem !important;
   }
 }
 
@@ -1087,6 +1087,19 @@ div#primaryNav {
     margin-left: -9rem !important;
   }
 }
+
+/* two Lines New Header Changes */
+@media (min-width: 1200px) and (max-width: 1600px) {
+    ul.navbar-nav {
+      margin-left: -37px;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1600px) {
+a.nav-link {
+  font-size: 15px;
+}
+}
+/* ------- */
 
 @media (max-width: 1600px) {
   img.sehat-logo {
