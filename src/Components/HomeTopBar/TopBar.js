@@ -19,7 +19,7 @@ function TopBar() {
                           </a>
                         </li>
                         <li className="neutral-bottom">
-                          <a href="mailto:company@domin.com">
+                          <a href="mailto:company@domin.com" id="email">
                             <i className="fa-solid fa-envelope"></i>
                             sehatbooking@gmail.com
                           </a>
