@@ -1075,10 +1075,25 @@ div#primaryNav {
     width: 20% !important;
   }
 }
+@media (min-width: 2801px) and (max-width: 3100px) {
+  img.sehat-logo {
+    margin-left: -61rem !important;
+  }
+}
 
-@media (max-width: 2560px) {
+@media (min-width: 2560px) and (max-width: 2800px) {
   img.sehat-logo {
     margin-left: -53rem !important;
+  }
+}
+@media (min-width: 1993px) and (max-width: 2200px) {
+  img.sehat-logo {
+    margin-left: -33rem !important;
+  }
+}
+@media (min-width: 2201px) and (max-width: 2559px) {
+  img.sehat-logo {
+    margin-left: -51rem !important;
   }
 }
 
@@ -1100,7 +1115,11 @@ a.nav-link {
 }
 }
 /* ------- */
-
+@media (max-width: 1992px) {
+  img.sehat-logo {
+    margin-left: -27rem !important;
+  }
+}
 @media (max-width: 1600px) {
   img.sehat-logo {
     margin-left: -4rem !important;
