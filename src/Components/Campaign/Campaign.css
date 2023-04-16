@@ -3143,16 +3143,29 @@
    align-items: center;
    gap: 30px;
  } */
-
- @media (max-width: 767px) {
+ @media (max-width: 1992px) {
+  .navbar-out{
+   gap: 20px;
+      margin-right: 10px !important;
+  }
+}
+ @media (max-width: 1024px) {
+ .navbar-out{
+  gap: 20px;
+     margin-right: 10px !important;
+ }
+}
+ @media (max-width: 768px) {
    .navbar-out {
      gap: 20px;
+     margin-right: 10px !important;
    }
  }
  @media (max-width: 424px) {
    .navbar-out {
      gap: 15px;
      margin: 1px 0px;
+     margin-right: 10px !important;
    }
  }
  
