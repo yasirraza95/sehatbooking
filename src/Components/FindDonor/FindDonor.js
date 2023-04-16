@@ -27,6 +27,12 @@ export default function FindDonor() {
   // useImportScript("/assets/js/plugin.js");
   // useImportScript("/assets/js/main.js");
 
+  const [loading, setLoading] = useState(false);
+  const [resultData, setResultData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalResults, setTotalResults] = useState("");
+  const [totalPages, setTotalPages] = useState("");
+  
   const [city, setCity] = useState([]);
   const [area, setArea] = useState([]);
   const [group, setGroup] = useState([]);
