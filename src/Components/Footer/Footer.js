@@ -216,7 +216,7 @@ export default function Footer() {
           <div className="row">
             <div className="col-lg-12">
               <p className="secondary-f neutral-bottom-footer">
-                Copyright © 2022{" "}
+                Copyright © 2023{" "}
                 <a href="https://themeforest.net/user/croptheme">
                   <strong>Sehat Booking</strong>
                 </a>

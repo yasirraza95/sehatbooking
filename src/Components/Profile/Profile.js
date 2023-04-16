@@ -17,7 +17,7 @@ export default function Profile() {
   // useImportScript("/assets/vendor/odometer/js/odometer.min.js");
   // useImportScript("/assets/vendor/viewport-js/viewport.jquery.js");
   // useImportScript("/assets/vendor/owl-carousel/js/owl.carousel.min.js");
-  useImportScript("/assets/vendor/wow/wow.min.js");
+  // useImportScript("/assets/vendor/wow/wow.min.js");
   // useImportScript("/assets/js/plugin.js");
   // useImportScript("/assets/js/main.js");
 
@@ -70,7 +70,7 @@ export default function Profile() {
                       <div className="registration-area__form-single__inner">
                         <div className="input-group-column">
                           <div className="input">
-                            <label for="regiFName">First Name</label>
+                            <label htmlFor="regiFName">First Name</label>
                             <input
                               type="text"
                               name="regi_f_name"
@@ -79,7 +79,7 @@ export default function Profile() {
                             />
                           </div>
                           <div className="input">
-                            <label for="regiLName">Last Name</label>
+                            <label htmlFor="regiLName">Last Name</label>
                             <input
                               type="text"
                               name="regi_l_name"
@@ -95,28 +95,7 @@ export default function Profile() {
                       <div className="registration-area__form-single__inner">
                         <div className="input-group-column">
                           <div className="input">
-                            <label for="regiMonth">Month</label>
-                            <select className="select-month" id="regiMonth">
-                              <option
-                                label=""
-                                style={{ display: "none" }}
-                              ></option>
-                              <option value="january">January</option>
-                              <option value="february">February</option>
-                              <option value="march">March</option>
-                              <option value="april">April</option>
-                              <option value="may">May</option>
-                              <option value="june">June</option>
-                              <option value="july">July</option>
-                              <option value="august">August</option>
-                              <option value="september">September</option>
-                              <option value="october">October</option>
-                              <option value="november">November</option>
-                              <option value="december">December</option>
-                            </select>
-                          </div>
-                          <div className="input">
-                            <label for="regiDay">Day</label>
+                            <label htmlFor="regiDay">Day</label>
                             <select className="select-day" id="regiDay">
                               <option
                                 label=""
@@ -132,7 +111,24 @@ export default function Profile() {
                             </select>
                           </div>
                           <div className="input">
-                            <label for="regiYear">Year</label>
+                            <label htmlFor="regiMonth">Month</label>
+                            <select className="select-month" id="regiMonth">
+                              <option value="january">January</option>
+                              <option value="february">February</option>
+                              <option value="march">March</option>
+                              <option value="april">April</option>
+                              <option value="may">May</option>
+                              <option value="june">June</option>
+                              <option value="july">July</option>
+                              <option value="august">August</option>
+                              <option value="september">September</option>
+                              <option value="october">October</option>
+                              <option value="november">November</option>
+                              <option value="december">December</option>
+                            </select>
+                          </div>
+                          <div className="input">
+                            <label htmlFor="regiYear">Year</label>
                             <select className="select-year" id="regiYear">
                               <option
                                 label=""
@@ -169,7 +165,7 @@ export default function Profile() {
                       <div className="registration-area__form-single__inner">
                         <div className="input-group-column">
                           <div className="input">
-                            <label for="regiGroup">Blood Group</label>
+                            <label htmlFor="regiGroup">Blood Group</label>
                             <select
                               className="select-blood-group"
                               id="regiGroup"
@@ -194,9 +190,9 @@ export default function Profile() {
                       <p className="secondary">Last Donate Date *</p>
                       <div className="registration-area__form-single__inner">
                         <div className="input-group-column">
-                          <div class="input">
-                            <label for="regiLastDay">Month</label>
-                            <select class="select-donation-type">
+                          <div className="input">
+                            <label htmlFor="regiLastDay">Month</label>
+                            <select className="select-donation-type">
                               <option
                                 label=""
                                 selected
@@ -217,8 +213,8 @@ export default function Profile() {
                             </select>
                           </div>
                           <div className="input">
-                            <label for="regiLastDay">Day</label>
-                            <select class="select-donation-type">
+                            <label htmlFor="regiLastDay">Day</label>
+                            <select className="select-donation-type">
                               <option
                                 label=""
                                 selected
@@ -234,8 +230,8 @@ export default function Profile() {
                             </select>
                           </div>
                           <div className="input">
-                            <label for="regiLastYear">Year</label>
-                            <select class="select-donation-type">
+                            <label htmlFor="regiLastYear">Year</label>
+                            <select className="select-donation-type">
                               <option
                                 label=""
                                 selected
@@ -271,7 +267,7 @@ export default function Profile() {
                       <div className="registration-area__form-single__inner">
                         <div className="input-group-column">
                           <div className="input">
-                            <label for="regiNumber">Number</label>
+                            <label htmlFor="regiNumber">Number</label>
                             <input
                               type="text"
                               name="regi_number"
@@ -315,7 +311,7 @@ export default function Profile() {
                           </div>
                           <div className="input">
                             <label for="regiCountry">Country</label>
-                            <select class="select-donation-type">
+                            <select className="select-donation-type">
                               <option
                                 label=""
                                 selected
