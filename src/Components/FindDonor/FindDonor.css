@@ -19,7 +19,7 @@ svg.svg-inline--fa.fa-mobile-screen-button {
 .modal-dialog.modal-lg {
     margin-top: 14%;
 }
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+ul.nav.nav-tabs.findDono>li.active>a, ul.nav.nav-tabs.findDono>li.active>a:focus, ul.nav.nav-tabs.findDono>li.active>a:hover {
     color: #fff;
     background-color: #ea062b !important;
     cursor: default;
@@ -32,7 +32,7 @@ button.close{
     opacity: .9;
     position: fixed;
 }
-.nav-tabs>li>a {
+ul.nav.nav-tabs.findDono>li>a {
     margin-right: 2px;
     line-height: 1.42857143;
     border: 1px solid transparent;

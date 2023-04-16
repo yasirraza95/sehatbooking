@@ -788,7 +788,7 @@ export default function FindDonor() {
                 <button type="button" className="close" data-dismiss="modal">
                   <span className="glyphicon glyphicon-remove"></span>
                 </button>
-                <ul className="nav nav-tabs">
+                <ul className="nav nav-tabs findDono">
                   <li className="active"><a data-toggle="tab" href="#login-form"> Login <span className="glyphicon glyphicon-user"></span></a></li>
                   <li><a data-toggle="tab" href="#registration-form"> Register <span className="glyphicon glyphicon-pencil"></span></a></li>
                 </ul>
