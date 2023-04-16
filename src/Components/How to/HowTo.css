@@ -1,0 +1,29 @@
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    color: #ea062b;
+    background-color: #fff !important;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+.nav-tabs>li {
+    float: left;
+    margin-bottom: 11px;
+}
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    color: #fff;
+}
+.nav-tabs>li>a:hover {
+    color: #ea062b;
+}
+ul.nav.nav-tabs.howTo {
+    display: inline-grid;
+}
+button.button.button--effect.howTo:hover{
+    background-color: #000 !important;
+    color: #fff !important;
+}
