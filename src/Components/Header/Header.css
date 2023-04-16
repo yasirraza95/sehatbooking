@@ -1097,6 +1097,7 @@ div#primaryNav {
   }
 }
 
+
 @media (max-width: 1440px) {
   img.sehat-logo {
     margin-left: -9rem !important;
@@ -1135,6 +1136,11 @@ a.nav-link {
 @media (max-width: 1024px) {
   img.sehat-logo {
     margin-left: -26rem !important;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1199px) {
+  img.sehat-logo {
+    margin-left: -30rem !important;
   }
 }
 
