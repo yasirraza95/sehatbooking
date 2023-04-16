@@ -10,6 +10,12 @@ export const contactValidation = Yup.object().shape({
   message: Yup.string().required("Please enter Message"),
 });
 
+export const donorSearch = Yup.object().shape({
+  city: Yup.string().required("Please select City"),
+  area: Yup.string().required("Please select City Area"),
+  group: Yup.string().required("Please select Blood Group"),
+});
+
 export const signImSchema = Yup.object({
   name: Yup.string()
     .min(2, "User Name must greater than 2")

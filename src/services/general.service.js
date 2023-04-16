@@ -113,13 +113,22 @@ const listGroups = () => {
   });
 };
 
-const listDonors = (pageNo) => {
+const listDonors = (pageNo, city, area, group) => {
   const headers = {
     "Content-Type": "application/json",
   };
-  return axios.get(`${API_URL}/list-donor?page=${pageNo}`, {
-    headers: headers,
-  });
+  if (city && area && group) {
+    return axios.get(
+      `${API_URL}/list-donor?page=${pageNo}&city=${city}&area=${area}&group=${group}`,
+      {
+        headers: headers,
+      }
+    );
+  } else {
+    return axios.get(`${API_URL}/list-donor?page=${pageNo}`, {
+      headers: headers,
+    });
+  }
 };
 
 const listCities = () => {

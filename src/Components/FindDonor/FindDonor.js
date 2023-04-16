@@ -13,6 +13,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import GeneralService from "../../services/general.service";
 import { useFormik } from "formik";
+import { donorSearch } from ".././../schema/index";
 
 export default function FindDonor() {
   // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
@@ -40,11 +41,11 @@ export default function FindDonor() {
   const [area, setArea] = useState([]);
   const [group, setGroup] = useState([]);
 
-  const getResultData = async () => {
+  const getResultData = async (page, city, area, group) => {
     setLoading(true);
 
     try {
-      const response = await GeneralService.listDonors(1);
+      const response = await GeneralService.listDonors(page, city, area, group);
       const { data } = response;
       const {
         response: res,
@@ -63,11 +64,17 @@ export default function FindDonor() {
       setLoading(false);
     } catch (err) {
       setLoading(false);
+      setResultData([]);
+      setCurrentPage(1);
+      setTotalResults(0);
+      setTotalPages(0);
+      setLimit(0);
     }
   };
 
-  const searchData = async (action) => {
-    getResultData();
+  const searchData = async (values, action) => {
+    console.log(values);
+    getResultData(1, values.city, values.area, values.group);
   };
 
   const changePagination = (e) => {
@@ -86,7 +93,7 @@ export default function FindDonor() {
       const results = [];
       res.map((value) => {
         results.push({
-          key: value.id,
+          key: value.name,
           value: value.name,
         });
       });
@@ -107,7 +114,7 @@ export default function FindDonor() {
       const results = [];
       res.map((value) => {
         results.push({
-          key: value.id,
+          key: value.name,
           value: value.name,
         });
       });
@@ -126,7 +133,7 @@ export default function FindDonor() {
     const results = [];
     res.map((value) => {
       results.push({
-        key: value.id,
+        key: value.name,
         value: value.name,
       });
     });
@@ -135,7 +142,7 @@ export default function FindDonor() {
 
   useEffect(() => {
     getCity();
-    getResultData();
+    getResultData(1);
   }, []);
 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
@@ -143,13 +150,14 @@ export default function FindDonor() {
       enableReinitialize: true,
 
       initialValues: {
-        fieldtype: "",
-        searchval: "",
+        city: "",
+        area: "",
+        group: "",
       },
-      // validationSchema: quizSearch,
+      validationSchema: donorSearch,
       onSubmit: (values, action) => {
         // action.resetForm();
-        searchData(action);
+        searchData(values, action);
       },
     });
 
@@ -210,7 +218,12 @@ export default function FindDonor() {
                           <select
                             className="select-donation-type"
                             name="city"
-                            onChange={(e) => changeCity(e)}
+                            id="city"
+                            value={values.city || ""}
+                            onChange={(e) => {
+                              changeCity(e);
+                              handleChange(e);
+                            }}
                           >
                             {city.map((res) => {
                               return (
@@ -220,9 +233,9 @@ export default function FindDonor() {
                               );
                             })}
                           </select>
-                          {errors.fieldtype && touched.fieldtype ? (
-                          <p className="help is-danger">{errors.fieldtype}</p>
-                        ) : null}
+                          {touched.city && errors.city && (
+                            <div>{errors.city}</div>
+                          )}
                         </div>
                       </div>
                       <div className="col-md-4">
@@ -231,7 +244,12 @@ export default function FindDonor() {
                           <select
                             className="select-donation-type"
                             name="area"
-                            onChange={(e) => fetchGroup(e)}
+                            id="area"
+                            value={values.area || ""}
+                            onChange={(e) => {
+                              fetchGroup(e);
+                              handleChange(e);
+                            }}
                           >
                             <option value="">Select City Area</option>
                             {area.map((res) => {
@@ -242,12 +260,21 @@ export default function FindDonor() {
                               );
                             })}
                           </select>
+                          {touched.area && errors.area && (
+                            <div>{errors.area}</div>
+                          )}
                         </div>
                       </div>
                       <div className="col-md-4">
                         {/* <p className="donorLabel">Blood Group</p> */}
                         <div className="input">
-                          <select className="select-donation-type">
+                          <select
+                            className="select-donation-type"
+                            name="group"
+                            id="group"
+                            onChange={handleChange}
+                            value={values.group || ""}
+                          >
                             <option value="">Select Blood Group</option>
                             {group.map((res) => {
                               return (
@@ -257,6 +284,9 @@ export default function FindDonor() {
                               );
                             })}
                           </select>
+                          {touched.group && errors.group && (
+                            <div>{errors.group}</div>
+                          )}
                         </div>
                       </div>
                       <button type="submit" className="button button--effect">
