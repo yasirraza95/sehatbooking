@@ -104,6 +104,33 @@ const listStates = () => {
   });
 };
 
+const listGroups = () => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.get(`${API_URL}/list-blood-gp`, {
+    headers: headers,
+  });
+};
+
+const listCities = () => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.get(`${API_URL}/list-cities`, {
+    headers: headers,
+  });
+};
+
+const getAreaByCity = (name) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.get(`${API_URL}/get-city-area-by-city/${name}`, {
+    headers: headers,
+  });
+};
+
 const getCityByStateId = (values) => {
   const headers = {
     "Content-Type": "application/json",
@@ -240,6 +267,9 @@ const GeneralService = {
   recRegister,
   showProfile,
   updateProfile,
+  getAreaByCity,
+  listCities,
+  listGroups,
   listStates,
   getCityByStateId,
   checkEmail,

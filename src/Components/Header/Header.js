@@ -61,9 +61,9 @@ export default function Header() {
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <a href="/find-donor" className="nav-link">
+                  <NavLink to="/find-donor" className="nav-link">
                     Find Donor
-                  </a>
+                  </NavLink>
                 </li>
 
                 <li className="nav-item dropdown">
@@ -219,9 +219,9 @@ export default function Header() {
               </NavLink>
             </li>
             <li>
-              <a href="/find-donor">
+              <NavLink to="/find-donor">
                 <i className="fa-solid fa-angle-right"></i> Find Donor
-              </a>
+              </NavLink>
             </li>
             <li>
               <NavLink to="/about-us">
