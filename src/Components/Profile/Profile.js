@@ -61,7 +61,7 @@ export default function Profile() {
             <div className="col-lg-12">
               <div className="registration-area wow fadeInUp">
                 <div className="section-header section-inner-space">
-                  <h2 className="neutral-bottom">Blad Ai Organization</h2>
+                  <h2 className="neutral-bottom">Sehat Booking</h2>
                 </div>
                 <div className="registration-area__form">
                   <form action="#" method="post" name="registration__form">
@@ -97,10 +97,6 @@ export default function Profile() {
                           <div className="input">
                             <label htmlFor="regiDay">Day</label>
                             <select className="select-day" id="regiDay">
-                              <option
-                                label=""
-                                style={{ display: "none" }}
-                              ></option>
                               <option value="saturday">Saturday</option>
                               <option value="sunday">Sunday</option>
                               <option value="monday">Monday</option>
@@ -130,11 +126,6 @@ export default function Profile() {
                           <div className="input">
                             <label htmlFor="regiYear">Year</label>
                             <select className="select-year" id="regiYear">
-                              <option
-                                label=""
-                                selected
-                                style={{ display: "none" }}
-                              ></option>
                               <option value="1990">1990</option>
                               <option value="1991">1991</option>
                               <option value="1992">1992</option>
@@ -191,13 +182,20 @@ export default function Profile() {
                       <div className="registration-area__form-single__inner">
                         <div className="input-group-column">
                           <div className="input">
+                            <label htmlFor="regiLastDay">Day</label>
+                            <select className="select-donation-type">
+                              <option value="saturday">Saturday</option>
+                              <option value="sunday">Sunday</option>
+                              <option value="monday">Monday</option>
+                              <option value="tuesday">Tuesday</option>
+                              <option value="wednesday">Wednesday</option>
+                              <option value="thursday">Thursday</option>
+                              <option value="friday">Friday</option>
+                            </select>
+                          </div>
+                          <div className="input">
                             <label htmlFor="regiLastDay">Month</label>
                             <select className="select-donation-type">
-                              <option
-                                label=""
-                                selected
-                                style={{ display: "none" }}
-                              ></option>
                               <option value="january">January</option>
                               <option value="february">February</option>
                               <option value="march">March</option>
@@ -213,30 +211,8 @@ export default function Profile() {
                             </select>
                           </div>
                           <div className="input">
-                            <label htmlFor="regiLastDay">Day</label>
-                            <select className="select-donation-type">
-                              <option
-                                label=""
-                                selected
-                                style={{ display: "none" }}
-                              ></option>
-                              <option value="saturday">Saturday</option>
-                              <option value="sunday">Sunday</option>
-                              <option value="monday">Monday</option>
-                              <option value="tuesday">Tuesday</option>
-                              <option value="wednesday">Wednesday</option>
-                              <option value="thursday">Thursday</option>
-                              <option value="friday">Friday</option>
-                            </select>
-                          </div>
-                          <div className="input">
                             <label htmlFor="regiLastYear">Year</label>
                             <select className="select-donation-type">
-                              <option
-                                label=""
-                                selected
-                                style={{ display: "none" }}
-                              ></option>
                               <option value="1990">1990</option>
                               <option value="1991">1991</option>
                               <option value="1992">1992</option>
