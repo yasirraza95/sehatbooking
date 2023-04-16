@@ -6,11 +6,13 @@ import { Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMobileScreenButton } from "@fortawesome/free-solid-svg-icons";
 import Footer from "../Footer/Footer";
+import Pagination from "react-js-pagination";
 // import ToTop from "../TopTop/ToTop";
 import useImportScript from "../../utils/useImportScript";
 import { useState } from "react";
 import { useEffect } from "react";
 import GeneralService from "../../services/general.service";
+import { useFormik } from "formik";
 
 export default function FindDonor() {
   // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
@@ -32,10 +34,47 @@ export default function FindDonor() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalResults, setTotalResults] = useState("");
   const [totalPages, setTotalPages] = useState("");
-  
+  const [limit, setLimit] = useState("");
+
   const [city, setCity] = useState([]);
   const [area, setArea] = useState([]);
   const [group, setGroup] = useState([]);
+
+  const getResultData = async () => {
+    setLoading(true);
+
+    try {
+      const response = await GeneralService.listDonors(1);
+      const { data } = response;
+      const {
+        response: res,
+        records,
+        total_pages,
+        current_page,
+        per_page,
+      } = data;
+      let resultData;
+      resultData = res;
+      setResultData(resultData);
+      setCurrentPage(current_page);
+      setTotalResults(records);
+      setTotalPages(total_pages);
+      setLimit(per_page);
+      setLoading(false);
+    } catch (err) {
+      setLoading(false);
+    }
+  };
+
+  const searchData = async (action) => {
+    getResultData();
+  };
+
+  const changePagination = (e) => {
+    setCurrentPage(e);
+    let pageNo = e;
+    getResultData(pageNo);
+  };
 
   const changeCity = (e) => {
     setArea([]);
@@ -80,23 +119,39 @@ export default function FindDonor() {
     }
   };
 
-  useEffect(() => {
-    const getCity = async () => {
-      setCity([]);
-      const { data } = await GeneralService.listCities();
-      const { response: res } = data;
-      const results = [];
-      res.map((value) => {
-        results.push({
-          key: value.id,
-          value: value.name,
-        });
+  const getCity = async () => {
+    setCity([]);
+    const { data } = await GeneralService.listCities();
+    const { response: res } = data;
+    const results = [];
+    res.map((value) => {
+      results.push({
+        key: value.id,
+        value: value.name,
       });
-      setCity([{ key: "", value: "Select City" }, ...results]);
-    };
+    });
+    setCity([{ key: "", value: "Select City" }, ...results]);
+  };
 
+  useEffect(() => {
     getCity();
+    getResultData();
   }, []);
+
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
+    useFormik({
+      enableReinitialize: true,
+
+      initialValues: {
+        fieldtype: "",
+        searchval: "",
+      },
+      // validationSchema: quizSearch,
+      onSubmit: (values, action) => {
+        // action.resetForm();
+        searchData(action);
+      },
+    });
 
   return (
     <>
@@ -142,71 +197,78 @@ export default function FindDonor() {
                     <strong className="generic-white">Refine Search</strong>
                   </h3>
                 </div>
-                <div
-                  id="donor_search"
-                  className="panel-collapse collapse in"
-                  style={{ height: "auto" }}
-                >
-                  <div className="panel-body">
-                    <div className="col-md-4">
-                      {/* <p className="donorLabel">City</p> */}
-                      <div className="input">
-                        <select
-                          className="select-donation-type"
-                          name="city"
-                          onChange={(e) => changeCity(e)}
-                        >
-                          {city.map((res) => {
-                            return (
-                              <option key={res.key} value={res.value}>
-                                {res.value}
-                              </option>
-                            );
-                          })}
-                        </select>
+                <form onSubmit={handleSubmit} noValidate>
+                  <div
+                    id="donor_search"
+                    className="panel-collapse collapse in"
+                    style={{ height: "auto" }}
+                  >
+                    <div className="panel-body">
+                      <div className="col-md-4">
+                        {/* <p className="donorLabel">City</p> */}
+                        <div className="input">
+                          <select
+                            className="select-donation-type"
+                            name="city"
+                            onChange={(e) => changeCity(e)}
+                          >
+                            {city.map((res) => {
+                              return (
+                                <option key={res.key} value={res.value}>
+                                  {res.value}
+                                </option>
+                              );
+                            })}
+                          </select>
+                          {errors.fieldtype && touched.fieldtype ? (
+                          <p className="help is-danger">{errors.fieldtype}</p>
+                        ) : null}
+                        </div>
                       </div>
-                    </div>
-                    <div className="col-md-4">
-                      {/* <p className="donorLabel">City Area</p> */}
-                      <div className="input">
-                        <select
-                          className="select-donation-type"
-                          name="area"
-                          onChange={(e) => fetchGroup(e)}
-                        >
-                          <option value="">Select City Area</option>
-                          {area.map((res) => {
-                            return (
-                              <option key={res.key} value={res.value}>
-                                {res.value}
-                              </option>
-                            );
-                          })}
-                        </select>
+                      <div className="col-md-4">
+                        {/* <p className="donorLabel">City Area</p> */}
+                        <div className="input">
+                          <select
+                            className="select-donation-type"
+                            name="area"
+                            onChange={(e) => fetchGroup(e)}
+                          >
+                            <option value="">Select City Area</option>
+                            {area.map((res) => {
+                              return (
+                                <option key={res.key} value={res.value}>
+                                  {res.value}
+                                </option>
+                              );
+                            })}
+                          </select>
+                        </div>
                       </div>
-                    </div>
-                    <div className="col-md-4">
-                      {/* <p className="donorLabel">Blood Group</p> */}
-                      <div className="input">
-                        <select className="select-donation-type">
-                          <option value="">Select Blood Group</option>
-                          {group.map((res) => {
-                            return (
-                              <option key={res.key} value={res.value}>
-                                {res.value}
-                              </option>
-                            );
-                          })}
-                        </select>
+                      <div className="col-md-4">
+                        {/* <p className="donorLabel">Blood Group</p> */}
+                        <div className="input">
+                          <select className="select-donation-type">
+                            <option value="">Select Blood Group</option>
+                            {group.map((res) => {
+                              return (
+                                <option key={res.key} value={res.value}>
+                                  {res.value}
+                                </option>
+                              );
+                            })}
+                          </select>
+                        </div>
                       </div>
+                      <button type="submit" className="button button--effect">
+                        Search
+                      </button>
                     </div>
-                    <button className="button button--effect">Search</button>
                   </div>
-                </div>
+                </form>
               </div>
               <div className="table-responsive">
                 <table className="table table-striped table-hover responsive">
-                  <tbody>
+                  <thead>
                     <tr>
                       <th>
                         <div className="wordbreak">Donor Name</div>
@@ -221,30 +283,59 @@ export default function FindDonor() {
                         <div className="wordbreak">Contact Donor</div>
                       </th>
                     </tr>
-                    <tr>
-                      <td>
-                        <div className="wordbreak">abcdef</div>
-                      </td>
-                      <td>
-                        <div className="wordbreak">A-</div>
-                      </td>
-                      <td>
-                        <div className="wordbreak">Karachi, Bahadurabad</div>
-                      </td>
-                      <td>
-                        <a
-                          href="#"
-                          onclick="show_registration_dialog()"
-                          data-toggle="modal"
-                          data-target=".login-register-form"
-                        >
-                          <FontAwesomeIcon icon={faMobileScreenButton} />
-                        </a>{" "}
-                      </td>
-                    </tr>
+                  </thead>
+                  <tbody>
+                    {resultData.length ? (
+                      resultData.map((row) => (
+                        <tr key={row.id}>
+                          <td>
+                            <div className="wordbreak">{`${row.first_name} ${row.last_name}`}</div>
+                          </td>
+                          <td>
+                            <div className="wordbreak">{row.blood_group}</div>
+                          </td>
+                          <td>
+                            <div className="wordbreak">
+                              {row.city_name}, {row.address}
+                            </div>
+                          </td>
+                          <td>
+                            <a
+                              href="#"
+                              onclick="show_registration_dialog()"
+                              data-toggle="modal"
+                              data-target=".login-register-form"
+                            >
+                              <FontAwesomeIcon icon={faMobileScreenButton} />
+                            </a>{" "}
+                          </td>
+                        </tr>
+                      ))
+                    ) : (
+                      <tr>
+                        <td colSpan="4">No record found</td>
+                      </tr>
+                    )}
                   </tbody>
                 </table>
               </div>
+              {/* {totalResults > limit && totalPages > 1 ? ( */}
+              <Pagination
+                activePage={currentPage}
+                itemsCountPerPage={parseInt(limit)}
+                totalItemsCount={totalResults}
+                onChange={(e) => {
+                  changePagination(e);
+                }}
+                pageRangeDisplayed={8}
+                itemClass="page-item"
+                linkClass="page-link"
+                firstPageText="First Page"
+                lastPageText="Last Page"
+              />
+              {/* ) : (
+                 ""
+               )} */}
             </div>
           </div>
         </div>

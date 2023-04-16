@@ -113,6 +113,15 @@ const listGroups = () => {
   });
 };
 
+const listDonors = (pageNo) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.get(`${API_URL}/list-donor?page=${pageNo}`, {
+    headers: headers,
+  });
+};
+
 const listCities = () => {
   const headers = {
     "Content-Type": "application/json",
@@ -268,6 +277,7 @@ const GeneralService = {
   showProfile,
   updateProfile,
   getAreaByCity,
+  listDonors,
   listCities,
   listGroups,
   listStates,
