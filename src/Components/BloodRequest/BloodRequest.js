@@ -119,13 +119,15 @@ export default function BloodRequest() {
                                                                 <option value="Khyber Pakhtunkhwa">Khyber Pakhtunkhwa</option>
                                                             </select>
                                                         </div>
+                                                        </div>
+                                                    <div className="input-group-column">
                                                         <div className="input">
-                                                        <div class="form-checkk">
-                                                                <input type="checkbox" value="" id="flexCheckDefault"/>
-                                                                    <label class="form-check-label" for="flexCheckDefault">
-                                                                        Default checkbox
-                                                                    </label>
-                                                                    </div>
+                                                            <div class="form-checkk">
+                                                                <input type="checkbox" value="" id="flexCheckDefault" />
+                                                                <label class="form-check-label" for="flexCheckDefault">
+                                                                    Default checkbox
+                                                                </label>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <button
