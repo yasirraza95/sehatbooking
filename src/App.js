@@ -20,6 +20,7 @@ import HowTo from "./Components/How to/HowTo";
 import OurServices from "./Components/OurServices/OurServices";
 import ServiceDetail from "./Components/ServiceDetail/ServiceDetail";
 import BloodRequest from "./Components/BloodRequest/BloodRequest";
+import ForgotToken from "./Components/ForgotToken/ForgotToken";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
             <Route path="/our-services" element={<OurServices />} />
             <Route path="/service-detail" element={<ServiceDetail />} />
             <Route path="/blood-request" element={<BloodRequest />} />
+            <Route path="/forgot-token" element={<ForgotToken />} />
           </Routes>
         </BrowserRouter>
       </div>
