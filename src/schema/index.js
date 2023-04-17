@@ -16,6 +16,13 @@ export const donorSearch = Yup.object().shape({
   group: Yup.string().required("Please select Blood Group"),
 });
 
+export const bloodRequest = Yup.object().shape({
+  state: Yup.string().required("Please select State"),
+  city: Yup.string().required("Please select City"),
+  area: Yup.string().required("Please select City Area"),
+  group: Yup.string().required("Please select Blood Group"),
+});
+
 export const signImSchema = Yup.object({
   name: Yup.string()
     .min(2, "User Name must greater than 2")

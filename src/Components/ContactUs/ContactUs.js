@@ -52,15 +52,7 @@ export default function ContactUs() {
       // console.log(message);
       setSubmitMessage(message);
       setSubmit("success");
-      // toast.success(message, {
-      //   position: "bottom-center",
-      //   autoClose: 3000,
-      //   hideProgressBar: true,
-      //   closeOnClick: true,
-      //   progress: undefined,
-      //   theme: "colored",
-      // });
-      // action.resetForm();
+      action.resetForm();
       // setLoading(false);
     } catch (err) {
       console.log(err);
@@ -68,30 +60,10 @@ export default function ContactUs() {
         setSubmitMessage("Username or Password is invalid");
         setSubmit("success");
         // setLoading(false);
-        // toast.error("Username or Password is invalid !", {
-        //   position: "top-right",
-        //   autoClose: 3000,
-        //   hideProgressBar: true,
-        //   closeOnClick: true,
-        //   pauseOnHover: true,
-        //   draggable: true,
-        //   progress: undefined,
-        //   theme: "colored",
-        // });
       } else {
         setSubmitMessage("Something went wrong, try again");
         setSubmit("danger");
         // setLoading(false);
-        // toast.error("Something went wrong, try again", {
-        //   position: "top-right",
-        //   autoClose: 3000,
-        //   hideProgressBar: true,
-        //   closeOnClick: true,
-        //   pauseOnHover: true,
-        //   draggable: true,
-        //   progress: undefined,
-        //   theme: "colored",
-        // });
       }
     }
   };

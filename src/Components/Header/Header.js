@@ -53,11 +53,11 @@ export default function Header() {
 
                 <li className="nav-item">
                   <NavLink
-                    to="/blood-tips"
+                    to="/blood-request"
                     activeclassname="nav-link active"
                     className="nav-link"
                   >
-                    Donation Tips
+                    Blood Request
                   </NavLink>
                 </li>
                 <li className="nav-item">
@@ -107,8 +107,8 @@ export default function Header() {
                       </NavLink>
                     </li>
                     <li>
-                      <NavLink to="/blood-request" className="dropdown-item">
-                        Blood Request
+                      <NavLink to="/blood-tips" className="dropdown-item">
+                        Donation Tips
                       </NavLink>
                     </li>
                   </ul>
@@ -219,8 +219,8 @@ export default function Header() {
             </li>
 
             <li>
-              <NavLink to="/blood-tips">
-                <i className="fa-solid fa-angle-right"></i> Donation Tips
+              <NavLink to="/blood-request" className="dropdown-item">
+                Blood Request
               </NavLink>
             </li>
             <li>

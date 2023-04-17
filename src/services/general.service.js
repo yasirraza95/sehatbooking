@@ -113,6 +113,27 @@ const listGroups = () => {
   });
 };
 
+const bloodRequest = (values) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.post(
+    `${API_URL}/blood-request`,
+    {
+      type: "normal",
+      blood_id: "1",
+      state_id: "1",
+      city_id: "1",
+      city_area_id: "1",
+      user_id: "1",
+      ip: "192.168.10.1",
+    },
+    {
+      headers: headers,
+    }
+  );
+};
+
 const listDonors = (pageNo, city, area, group) => {
   const headers = {
     "Content-Type": "application/json",
@@ -149,20 +170,13 @@ const getAreaByCity = (name) => {
   });
 };
 
-const getCityByStateId = (values) => {
+const getCityByState = (name) => {
   const headers = {
     "Content-Type": "application/json",
   };
-  return axios.get(
-    `${API_URL}/get-city-by-state-id/${values.id}`,
-    {
-      username: values.name,
-      password: values.password,
-    },
-    {
-      headers: headers,
-    }
-  );
+  return axios.get(`${API_URL}/get-city-by-state/${name}`, {
+    headers: headers,
+  });
 };
 
 const checkEmail = (email) => {
@@ -290,7 +304,7 @@ const GeneralService = {
   listCities,
   listGroups,
   listStates,
-  getCityByStateId,
+  getCityByState,
   checkEmail,
   checkEmailVerification,
   validateEmailVerification,
@@ -301,6 +315,7 @@ const GeneralService = {
   checkForgotToken,
   updatePassword,
   contactUs,
+  bloodRequest,
 };
 
 export default GeneralService;
