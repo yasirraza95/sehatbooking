@@ -106,6 +106,11 @@ export default function Header() {
                         Terms & Conditions
                       </NavLink>
                     </li>
+                    <li>
+                      <NavLink to="/blood-request" className="dropdown-item">
+                        Blood Request
+                      </NavLink>
+                    </li>
                   </ul>
                 </li>
 

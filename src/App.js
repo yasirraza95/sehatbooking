@@ -19,6 +19,7 @@ import Profile from "./Components/Profile/Profile";
 import HowTo from "./Components/How to/HowTo";
 import OurServices from "./Components/OurServices/OurServices";
 import ServiceDetail from "./Components/ServiceDetail/ServiceDetail";
+import BloodRequest from "./Components/BloodRequest/BloodRequest";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
             <Route path="/how-to" element={<HowTo />} />
             <Route path="/our-services" element={<OurServices />} />
             <Route path="/service-detail" element={<ServiceDetail />} />
+            <Route path="/blood-request" element={<BloodRequest />} />
           </Routes>
         </BrowserRouter>
       </div>
