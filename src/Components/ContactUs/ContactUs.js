@@ -140,7 +140,7 @@ export default function ContactUs() {
                                 className="input"
                               />
                               {touched.first_name && errors.first_name && (
-                                <div>{errors.first_name}</div>
+                                <div className="error">{errors.first_name}</div>
                               )}
                             </div>
                             <div className="input">
@@ -156,7 +156,7 @@ export default function ContactUs() {
                                 className="input"
                               />
                               {touched.last_name && errors.last_name && (
-                                <div>{errors.last_name}</div>
+                                <div className="error">{errors.last_name}</div>
                               )}
                             </div>
                           </div>
@@ -174,7 +174,7 @@ export default function ContactUs() {
                                 className="input"
                               />
                               {touched.email && errors.email && (
-                                <div>{errors.email}</div>
+                                <div className="error">{errors.email}</div>
                               )}
                             </div>
                             <div className="input">
@@ -190,7 +190,7 @@ export default function ContactUs() {
                                 className="input"
                               />
                               {touched.subject && errors.subject && (
-                                <div>{errors.subject}</div>
+                                <div className="error">{errors.subject}</div>
                               )}
                             </div>
                           </div>
@@ -208,7 +208,7 @@ export default function ContactUs() {
                               onBlur={handleBlur}
                             ></textarea>
                             {touched.message && errors.message && (
-                              <div>{errors.message}</div>
+                              <div className="error">{errors.message}</div>
                             )}
                           </div>
                           <button

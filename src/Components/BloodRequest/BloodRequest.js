@@ -239,7 +239,7 @@ export default function BloodRequest() {
                                 })}
                               </select>
                               {touched.state && errors.state && (
-                                <div>{errors.state}</div>
+                                <div className="error">{errors.state}</div>
                               )}
                             </div>
 
@@ -264,7 +264,7 @@ export default function BloodRequest() {
                                 })}
                               </select>
                               {touched.city && errors.city && (
-                                <div>{errors.city}</div>
+                                <div className="error">{errors.city}</div>
                               )}
                             </div>
                           </div>
@@ -290,7 +290,7 @@ export default function BloodRequest() {
                                 })}
                               </select>
                               {touched.area && errors.area && (
-                                <div>{errors.area}</div>
+                                <div className="error">{errors.area}</div>
                               )}
                             </div>
                             <div className="input">
@@ -311,7 +311,7 @@ export default function BloodRequest() {
                                 })}
                               </select>
                               {touched.group && errors.group && (
-                                <div>{errors.group}</div>
+                                <div className="error">{errors.group}</div>
                               )}
                             </div>
                             <div className="input">
