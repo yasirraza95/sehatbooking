@@ -5,7 +5,7 @@ import {
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import TopBar from "../HomeTopBar/TopBar";
@@ -24,6 +24,8 @@ import slideImage2 from "../Images/doctor-taking-blood-samples.jpg";
 import slideImage3 from "../Images/6-1.jpg";
 import useImportScript from "../../utils/useImportScript";
 import { Link } from "react-router-dom";
+import moment from "moment";
+import GeneralService from "../../services/general.service";
 
 export default function IndexOne() {
   // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
@@ -39,6 +41,46 @@ export default function IndexOne() {
   // useImportScript("/assets/vendor/wow/wow.min.js");
   // useImportScript("/assets/js/plugin.js");
   // useImportScript("/assets/js/main.js");
+
+  const [normalReq, setNormalReq] = useState([]);
+  const [emergencyReq, setEmergencyReq] = useState([]);
+
+  const getNormalData = async (page, city, area, group) => {
+    // setLoading(true);
+    try {
+      const response = await GeneralService.listBloodReq("normal");
+      const { data } = response;
+      const { response: res } = data;
+      let resultData;
+      resultData = res;
+      setNormalReq(resultData);
+      // setLoading(false);
+    } catch (err) {
+      // setLoading(false);
+      setNormalReq([]);
+    }
+  };
+
+  const getEmergencyData = async (page, city, area, group) => {
+    // setLoading(true);
+    try {
+      const response = await GeneralService.listBloodReq("emergency");
+      const { data } = response;
+      const { response: res } = data;
+      let resultData;
+      resultData = res;
+      setEmergencyReq(resultData);
+      // setLoading(false);
+    } catch (err) {
+      // setLoading(false);
+      setEmergencyReq([]);
+    }
+  };
+
+  useEffect(() => {
+    getNormalData();
+    getEmergencyData();
+  }, []);
 
   return (
     <>
@@ -70,9 +112,9 @@ export default function IndexOne() {
                 </div>
                 <h3>Donate blood,save life !</h3>
                 <h1>Donate Blood And Inspires Others.</h1>
-                <Link to="/our-services" className="button button--effect">
+                <a href="/find-donor" className="button button--effect">
                   Explore Now
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -99,9 +141,9 @@ export default function IndexOne() {
                 </div>
                 <h3>Donate blood,save life !</h3>
                 <h1>Donate Blood And Inspires Others.</h1>
-                <Link to="/our-services" className="button button--effect">
+                <a href="/find-donor" className="button button--effect">
                   Explore Now
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -128,81 +170,15 @@ export default function IndexOne() {
                 </div>
                 <h3>Donate blood,save life !</h3>
                 <h1>Donate Blood And Inspires Others.</h1>
-                <Link to="/our-services" className="button button--effect">
+                <a href="/find-donor" className="button button--effect">
                   Explore Now
-                </Link>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
       {/* <!-- ==== #hero section end ==== --> */}
-
-      {/* <section className="section-content-block section-secondary-bg">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="contact-area">
-                <div className="contact-area__content">
-                  <div className="row neutral-row">
-                      <div className="contact-area-singlee contact-area__content-form">
-                        <h4 className="descender" style={{ color: "#000" }}>
-                          Login Form
-                        </h4>
-                        <form action="#" name="contact__Form">
-                          <div className="input" id="fields">
-                            <input
-                              type="text"
-                              name="contact_f_name"
-                              id="contactFName"
-                              placeholder="Your Email"
-                              required=""
-                              className="input"
-                            />
-                          </div>
-                          <div className="input" id="fields">
-                            <input
-                              type="password"
-                              name="contact_l_name"
-                              id="contactLName"
-                              placeholder="Password"
-                              required=""
-                              className="input"
-                            />
-                          </div>
-                          <div className="text-center">
-                            <div className="btn-group">
-                            <button
-                              type="submit"
-                              className="button button--effect"
-                              id="login"
-                            >
-                              LOGIN <i className="bi bi-arrow-right"></i>
-                            </button>
-
-                            <button
-                              type="submit"
-                              className="button button--effect"
-                              id="forgot"
-                            >
-                              FORGOT YOUR PASSWORD?
-                              <img
-                                src={ForgotPass}
-                                alt="React Logo"
-                                style={{ width: "15px", color: "#fff" }}
-                              />
-                            </button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>\
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       {/* <!-- ==== overview section start ==== --> */}
       <section className="overview">
@@ -211,11 +187,11 @@ export default function IndexOne() {
             <div className="explore-area__single">
               <div className="explore-area__single-content">
                 <h4>
-                  <a href="register.html">Regsiter Now</a>
+                  <a href="/register">Regsiter Now</a>
                 </h4>
                 <p className="neutral-bottom">
-                  Nor again is there anyone who loves or pursues or desires to
-                  obtain pain of itself, because it is pain,
+                  Register yourself as a Donor and donate your Blood to helpful
+                  society
                 </p>
               </div>
               <a href="/register">
@@ -225,11 +201,11 @@ export default function IndexOne() {
             <div className="explore-area__single explore-area__single--secondary">
               <div className="explore-area__single-content">
                 <h4>
-                  <a href="donate-now.html">Donate Now</a>
+                  <a href="/find-donor">Find Donor</a>
                 </h4>
                 <p className="neutral-bottom">
-                  Nor again is there anyone who loves or pursues or desires to
-                  obtain pain of itself, because it is pain,
+                  Click the button to find a donor that will donate blood to
+                  yourself
                 </p>
               </div>
               <a href="/register">
@@ -254,17 +230,16 @@ export default function IndexOne() {
                     </div>
                     <h5>Become a Donor</h5>
                     <p className="neutral-bottom">
-                      But I must explain to you how all this mistaken idea of
-                      denouncing pleasure and praising pain was born and I will
-                      give pleasure
+                      Register yourself as a donor by visiting registration page
+                      and fill the required information in the form
                     </p>
                   </div>
-                  <Link
+                  {/* <Link
                     to="/service-detail"
                     className="button button--secondary button--effect"
                   >
                     Read More
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
               <div className="col-sm-6 col-md-6 col-lg-4 row-item align-center">
@@ -282,17 +257,16 @@ export default function IndexOne() {
                     </div>
                     <h5>Why Give Blood?</h5>
                     <p className="neutral-bottom">
-                      But I must explain to you how all this mistaken idea of
-                      denouncing pleasure and praising pain was born and I will
-                      give pleasure
+                      Blood transfusions are used to treat a variety of medical
+                      conditions, including anemia, cancer, surgery, and trauma.
                     </p>
                   </div>
-                  <Link
+                  {/* <Link
                     to="/service-detail"
                     className="button button--secondary button--effect"
                   >
                     Read More
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
               <div className="col-sm-6 col-md-6 col-lg-4 row-item align-center">
@@ -313,17 +287,16 @@ export default function IndexOne() {
                     </div>
                     <h5>How Donations Helps</h5>
                     <p className="neutral-bottom">
-                      But I must explain to you how all this mistaken idea of
-                      denouncing pleasure and praising pain was born and I will
-                      give pleasure
+                      By donating blood, you are helping to ensure that there is
+                      a steady supply of blood available to those who need it.
                     </p>
                   </div>
-                  <Link
+                  {/* <Link
                     to="/service-detail"
                     className="button button--secondary button--effect"
                   >
                     Read More
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>
@@ -331,197 +304,6 @@ export default function IndexOne() {
         </div>
       </section>
       {/* <!-- ==== #overview section end ==== --> */}
-
-      {/* Reviews Section Start */}
-      {/* Review Section End  */}
-      {/* <!-- ==== call now section start ==== --> */}
-      {/* <section className="call dark-overlay bg-img">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="call-area">
-                <div className="icon-box__wrapper">
-                  <a href="tel:+01(977)259912" className="icon-box">
-                    <i className="bi bi-telephone-fill"></i>
-                  </a>
-                </div>
-                <p className="primary neutral-ascender descender">
-                  Start Donating
-                </p>
-                <h2 className="descender">Call Now : 333 555 9090</h2>
-                <div className="group">
-                  <a href="contact-us.html">
-                    <i className="bi bi-geo-alt-fill"></i>
-                    <span>New York – 1075 Firs Avenue</span>
-                  </a>
-                  <a href="mailto:company@domin.com">
-                    <i className="bi bi-envelope-fill"></i>
-                    <span>donate@gmail.com</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-      {/* <!-- ==== #call now section end ==== --> */}
-
-      {/* <!-- ==== testimonial section start ==== --> */}
-      {/* <section className="testimonial section-space">
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-12">
-                        <div className="testimonial-area">
-                            <div className="section-header section-inner-space">
-                                <p className="primary neutral-ascender descender">Testimonials</p>
-                                <h2 className="neutral-bottom">What Our Clients Say</h2>
-                            </div>
-                            <div className="testimonial-area__slider">
-                                <div className="testimonial-area__slider-single">
-                                    <div className="testimonial-area__slider-single__inner">
-                                        <div className="testimonial-area__slider-single__inner-content">
-                                            <div className="rating">
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                            </div>
-                                            <p className="secondary neutral-descender">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum cillum dolore fugiat nulla pariatur.</p>
-                                        </div>
-                                        <div className="avatar-wrapper">
-                                            <div className="avatar">
-                                                <img src="assets/images/avatars/nora.png" alt="Nora"/>
-                                            </div>
-                                            <div className="avatar-info">
-                                                <h5>Nora Fateha</h5>
-                                                <p className="secondary">Designer</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="testimonial-area__slider-single">
-                                    <div className="testimonial-area__slider-single__inner">
-                                        <div className="testimonial-area__slider-single__inner-content">
-                                            <div className="rating">
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                            </div>
-                                            <p className="secondary neutral-descender">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum cillum dolore fugiat nulla pariatur.</p>
-                                        </div>
-                                        <div className="avatar-wrapper">
-                                            <div className="avatar">
-                                                <img src="assets/images/avatars/niro.png" alt="Niro"/>
-                                            </div>
-                                            <div className="avatar-info">
-                                                <h5>Niro Markusa</h5>
-                                                <p className="secondary">Designer</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="testimonial-area__slider-single">
-                                    <div className="testimonial-area__slider-single__inner">
-                                        <div className="testimonial-area__slider-single__inner-content">
-                                            <div className="rating">
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                            </div>
-                                            <p className="secondary neutral-descender">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum cillum dolore fugiat nulla pariatur.</p>
-                                        </div>
-                                        <div className="avatar-wrapper">
-                                            <div className="avatar">
-                                                <img src="assets/images/avatars/nicolas.png" alt="Nicolas"/>
-                                            </div>
-                                            <div className="avatar-info">
-                                                <h5>Nicolas Mark</h5>
-                                                <p className="secondary">Designer</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="testimonial-area__slider-single">
-                                    <div className="testimonial-area__slider-single__inner">
-                                        <div className="testimonial-area__slider-single__inner-content">
-                                            <div className="rating">
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                            </div>
-                                            <p className="secondary neutral-descender">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum cillum dolore fugiat nulla pariatur.</p>
-                                        </div>
-                                        <div className="avatar-wrapper">
-                                            <div className="avatar">
-                                                <img src="assets/images/avatars/nora.png" alt="Nora"/>
-                                            </div>
-                                            <div className="avatar-info">
-                                                <h5>Nora Fateha</h5>
-                                                <p className="secondary">Designer</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="testimonial-area__slider-single">
-                                    <div className="testimonial-area__slider-single__inner">
-                                        <div className="testimonial-area__slider-single__inner-content">
-                                            <div className="rating">
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                            </div>
-                                            <p className="secondary neutral-descender">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum cillum dolore fugiat nulla pariatur.</p>
-                                        </div>
-                                        <div className="avatar-wrapper">
-                                            <div className="avatar">
-                                                <img src="assets/images/avatars/niro.png" alt="Niro"/>
-                                            </div>
-                                            <div className="avatar-info">
-                                                <h5>Niro Markusa</h5>
-                                                <p className="secondary">Designer</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="testimonial-area__slider-single">
-                                    <div className="testimonial-area__slider-single__inner">
-                                        <div className="testimonial-area__slider-single__inner-content">
-                                            <div className="rating">
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                                <FontAwesomeIcon icon={faStar} />
-                                            </div>
-                                            <p className="secondary neutral-descender">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum cillum dolore fugiat nulla pariatur.</p>
-                                        </div>
-                                        <div className="avatar-wrapper">
-                                            <div className="avatar">
-                                                <img src="assets/images/avatars/nicolas.png" alt="Nicolas"/>
-                                            </div>
-                                            <div className="avatar-info">
-                                                <h5>Nicolas Mark</h5>
-                                                <p className="secondary">Designer</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> */}
-      {/* <!-- ==== testimonial section end ==== --> */}
 
       {/* <!-- ==== donor section end ==== --> */}
       <section className="donor dark-overlay section-space bg-img">
@@ -561,38 +343,20 @@ export default function IndexOne() {
                     <div className="appointment-area__single appointment-area__content">
                       <h4>Recent Blood Request</h4>
                       <ul>
-                        <li>
-                          <FontAwesomeIcon icon={faHeart} />
-                          B+ Washington, USA (13.02.2022)
-                        </li>
-                        <li>
-                          <FontAwesomeIcon icon={faHeart} />
-                          O- Washington, USA (13.02.2022)
-                        </li>
-                        <li>
-                          <FontAwesomeIcon icon={faHeart} />
-                          B- Washington, USA (13.02.2022)
-                        </li>
-                        <li>
-                          <FontAwesomeIcon icon={faHeart} />
-                          AB- Washington, USA (13.02.2022)
-                        </li>
-                        <li>
-                          <FontAwesomeIcon icon={faHeart} />
-                          O+ Washington, USA (13.02.2022)
-                        </li>
-                        <li>
-                          <FontAwesomeIcon icon={faHeart} />
-                          B+ Washington, USA (13.02.2022)
-                        </li>
-                        <li>
-                          <FontAwesomeIcon icon={faHeart} />
-                          AB+ Washington, USA (13.02.2022)
-                        </li>
-                        <li>
-                          <FontAwesomeIcon icon={faHeart} />
-                          B+ Washington, USA (13.02.2022)
-                        </li>
+                        {normalReq.length ? (
+                          normalReq.map((row) => (
+                            <li>
+                              <FontAwesomeIcon icon={faHeart} />
+                              {`${row.blood} ${row.city}, ${row.state}`} (
+                              {moment(row.date).format("DD.MM.YYYY")})
+                            </li>
+                          ))
+                        ) : (
+                          <li>
+                            <FontAwesomeIcon icon={faHeart} />
+                            No recent blood request
+                          </li>
+                        )}
                       </ul>
                     </div>
                   </div>
@@ -600,38 +364,20 @@ export default function IndexOne() {
                     <div className="appointment-area__single appointment-area__content bg-red">
                       <h4 className="white">Emergency Blood Request</h4>
                       <ul>
-                        <li className="white">
-                          <FontAwesomeIcon icon={faHeart} id="white" />
-                          B+ Washington, USA (13.02.2022)
-                        </li>
-                        <li className="white">
-                          <FontAwesomeIcon icon={faHeart} id="white" />
-                          O- Washington, USA (13.02.2022)
-                        </li>
-                        <li className="white">
-                          <FontAwesomeIcon icon={faHeart} id="white" />
-                          B- Washington, USA (13.02.2022)
-                        </li>
-                        <li className="white">
-                          <FontAwesomeIcon icon={faHeart} id="white" />
-                          AB- Washington, USA (13.02.2022)
-                        </li>
-                        <li className="white">
-                          <FontAwesomeIcon icon={faHeart} id="white" />
-                          O+ Washington, USA (13.02.2022)
-                        </li>
-                        <li className="white">
-                          <FontAwesomeIcon icon={faHeart} id="white" />
-                          B+ Washington, USA (13.02.2022)
-                        </li>
-                        <li className="white">
-                          <FontAwesomeIcon icon={faHeart} id="white" />
-                          AB+ Washington, USA (13.02.2022)
-                        </li>
-                        <li className="white">
-                          <FontAwesomeIcon icon={faHeart} id="white" />
-                          B+ Washington, USA (13.02.2022)
-                        </li>
+                        {emergencyReq.length ? (
+                          emergencyReq.map((row) => (
+                            <li className="white">
+                              <FontAwesomeIcon icon={faHeart} id="white" />
+                              {`${row.blood} ${row.city}, ${row.state}`} (
+                              {moment(row.date).format("DD.MM.YYYY")})
+                            </li>
+                          ))
+                        ) : (
+                          <li>
+                            <FontAwesomeIcon icon={faHeart} />
+                            No recent blood request
+                          </li>
+                        )}
                       </ul>
                     </div>
                   </div>

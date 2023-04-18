@@ -113,6 +113,15 @@ const listGroups = () => {
   });
 };
 
+const listBloodReq = (type) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.get(`${API_URL}/list-blood-request/${type}`, {
+    headers: headers,
+  });
+};
+
 const bloodRequest = (values) => {
   const headers = {
     "Content-Type": "application/json",
@@ -330,6 +339,7 @@ const GeneralService = {
   updatePassword,
   contactUs,
   bloodRequest,
+  listBloodReq,
   subscription,
 };
 

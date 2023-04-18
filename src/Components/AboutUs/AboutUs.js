@@ -69,14 +69,22 @@ export default function AboutUs() {
                         We are here not for income, but for outcome
                       </h5>
                       <p>
-                        Which is the same as saying through shrinking from toil
-                        and pain. These cases are perfectly simple and easy to
-                        distinguish. In a free hour, when untrammelled and when
-                        nothing prevents through shrinking from toil and pain.
-                        These cases are
+                        We" in a statement about blood donors typically refers
+                        to people who have donated blood. This can include
+                        individuals from all walks of life, including men and
+                        women of all ages, races, and backgrounds. Blood donors
+                        are individuals who have voluntarily given a part of
+                        themselves to help others in need. They may have donated
+                        blood for a variety of reasons, including to help a
+                        friend or family member, to give back to their
+                        community, or simply because they believe it is the
+                        right thing to do. Blood donors are an essential part of
+                        the healthcare system, and their generosity and
+                        selflessness have a significant impact on the lives of
+                        many people who need blood transfusions to survive.
                       </p>
 
-                      <a href="services.html" className="button button--effect">
+                      <a href="/find-donor" className="button button--effect">
                         Explore Now
                       </a>
                     </div>

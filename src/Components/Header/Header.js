@@ -2,7 +2,7 @@ import React from "react";
 import "./Header.css";
 import ProfileIcon from "../Images/sehatbooking-logo-3.png";
 import MenuLogo from "../Images/sehatbooking-logo.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, a } from "react-router-dom";
 // import $ from "jquery";
 
 export default function Header() {
@@ -42,28 +42,28 @@ export default function Header() {
             >
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <NavLink
-                    to="/"
+                  <a
+                    href="/"
                     activeclassname="nav-link active"
                     className="nav-link"
                   >
                     Home
-                  </NavLink>
+                  </a>
                 </li>
 
                 <li className="nav-item">
-                  <NavLink
-                    to="/blood-request"
+                  <a
+                    href="/blood-request"
                     activeclassname="nav-link active"
                     className="nav-link"
                   >
                     Blood Request
-                  </NavLink>
+                  </a>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/find-donor" className="nav-link">
+                  <a href="/find-donor" className="nav-link">
                     Find Donor
-                  </NavLink>
+                  </a>
                 </li>
 
                 <li className="nav-item dropdown">
@@ -82,56 +82,56 @@ export default function Header() {
                     aria-labelledby="navbarDropdown"
                   >
                     <li>
-                      <NavLink to="/about-us" className="dropdown-item">
+                      <a href="/about-us" className="dropdown-item">
                         About Us
-                      </NavLink>
+                      </a>
                     </li>
                     <li>
-                      <NavLink to="/how-to" className="dropdown-item">
+                      <a href="/how-to" className="dropdown-item">
                         How To
-                      </NavLink>
+                      </a>
                     </li>
                     {/* <li>
-                      <NavLink to="/faqs" className="dropdown-item">
+                      <a href="/faqs" className="dropdown-item">
                         FAQs
-                      </NavLink>
+                      </a>
                     </li> */}
                     <li>
-                      <NavLink to="/privacy-policy" className="dropdown-item">
+                      <a href="/privacy-policy" className="dropdown-item">
                         Privacy Policy
-                      </NavLink>
+                      </a>
                     </li>
                     <li>
-                      <NavLink to="/terms-conditions" className="dropdown-item">
+                      <a href="/terms-conditions" className="dropdown-item">
                         Terms & Conditions
-                      </NavLink>
+                      </a>
                     </li>
                     <li>
-                      <NavLink to="/blood-tips" className="dropdown-item">
+                      <a href="/blood-tips" className="dropdown-item">
                         Donation Tips
-                      </NavLink>
+                      </a>
                     </li>
                   </ul>
                 </li>
 
                 <li className="nav-item">
-                  <NavLink to="/contact-us" className="nav-link">
+                  <a href="/contact-us" className="nav-link">
                     Contact Us
-                  </NavLink>
+                  </a>
                 </li>
                 <li className="nav-item appointment">
-                  <NavLink to="/appointment" className="nav-link" id="app-item">
+                  <a href="/appointment" className="nav-link" id="app-item">
                     Appointment
-                  </NavLink>
+                  </a>
                 </li>
                 <li className="nav-item">
-                  <NavLink to="/profile" className="nav-link">
+                  <a href="/profile" className="nav-link">
                     <div className="circle">
                       <span className="circle-inner" data-hover="Profile">
                         SB
                       </span>
                     </div>
-                  </NavLink>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -147,7 +147,7 @@ export default function Header() {
                                 <option value="germany">Germany</option>
                             </select> */}
                 <Link
-                  to={void 0}
+                  href={void 0}
                   className="d-none d-xl-block open-sidenav"
                   // onClick={(e) => sideBarClick(e)}
                 >
@@ -199,12 +199,12 @@ export default function Header() {
       <div className="sidenav d-none d-xl-block">
         <div className="navbar-inner">
           <div className="close-sidebar-wrapper">
-            {/* <a href="javascript:void(0)" className="close-sidebar">
+            <a href="javascript:void(0)" className="close-sidebar">
               <i className="fa-solid fa-xmark"></i>
-            </a> */}
-            <Link to={void 0} className="close-sidebar">
+            </a>
+            {/* <Link href={void 0} className="close-sidebar">
               <i className="fa-solid fa-xmark"></i>
-            </Link>
+            </Link> */}
           </div>
           <div className="intro">
             <a href="/">
@@ -213,55 +213,55 @@ export default function Header() {
           </div>
           <ul className="sideMenu">
             <li>
-              <NavLink to="/">
+              <a href="/">
                 <i className="fa-solid fa-angle-right"></i> Home
-              </NavLink>
+              </a>
             </li>
 
             <li>
-              <NavLink to="/blood-request" className="dropdown-item">
+              <a href="/blood-request" className="dropdown-item">
                 Blood Request
-              </NavLink>
+              </a>
             </li>
             <li>
-              <NavLink to="/find-donor">
+              <a href="/find-donor">
                 <i className="fa-solid fa-angle-right"></i> Find Donor
-              </NavLink>
+              </a>
             </li>
             <li>
-              <NavLink to="/about-us">
+              <a href="/about-us">
                 <i className="fa-solid fa-angle-right"></i> About Us
-              </NavLink>
+              </a>
             </li>
             <li>
-              <NavLink to="/how-to">
+              <a href="/how-to">
                 <i className="fa-solid fa-angle-right"></i> How To
-              </NavLink>
+              </a>
             </li>
             <li>
-              <NavLink to="/faqs">
+              <a href="/faqs">
                 <i className="fa-solid fa-angle-right"></i> FAQs
-              </NavLink>
+              </a>
             </li>
             <li>
-              <NavLink to="/privacy-policy">
+              <a href="/privacy-policy">
                 <i className="fa-solid fa-angle-right"></i> Privacy Policy
-              </NavLink>
+              </a>
             </li>
             <li>
-              <NavLink to="/terms-conditions">
+              <a href="/terms-conditions">
                 <i className="fa-solid fa-angle-right"></i> Terms & Conditions
-              </NavLink>
+              </a>
             </li>
             <li>
-              <NavLink to="/contact-us">
+              <a href="/contact-us">
                 <i className="fa-solid fa-angle-right"></i> Contact Us
-              </NavLink>
+              </a>
             </li>
             <li>
-              <NavLink to="/appointment">
+              <a href="/appointment">
                 <i className="fa-solid fa-angle-right"></i> Appointment
-              </NavLink>
+              </a>
             </li>
           </ul>
           {/* <form action="#" method="post">
