@@ -6,11 +6,9 @@ import GeneralService from "../../services/general.service";
 import { useFormik } from "formik";
 import { newsletterValidation } from "../../schema";
 import { useState } from "react";
+import swal from "sweetalert";
 
 export default function Footer() {
-  const [submit, setSubmit] = useState("");
-  const [submitMessage, setSubmitMessage] = useState("");
-
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: {
@@ -29,14 +27,11 @@ export default function Footer() {
       const { data } = response;
       const { response: message } = data;
       // console.log(message);
-      setSubmitMessage(message);
-      setSubmit("success");
       action.resetForm();
+      swal(message);
       // setLoading(false);
     } catch (err) {
-      console.log(err);
-      setSubmitMessage("Something went wrong, try again");
-      setSubmit("danger");
+      swal("", "Something went wrong!", "error");
       // setLoading(false);
     }
   };
@@ -142,12 +137,15 @@ export default function Footer() {
                         <div className="input-group-btnn">
                           <input
                             type="email"
-                            name="newsletter__email"
+                            name="email"
                             id="newsletterEmail"
                             placeholder="Enter Your Email"
                             className="email"
                             required
+                            value={values.email || ""}
+                            onChange={handleChange}
                           />
+
                           <button
                             type="submit"
                             className="button button--effect"
@@ -158,6 +156,7 @@ export default function Footer() {
                         </div>
                       </form>
                     </div>
+                    {touched.email && errors.email && <div className="error">{errors.email}</div>}
                   </div>
                   <div className="col-lg-6 row-item">
                     <div className="footer-area__bottom-right">
