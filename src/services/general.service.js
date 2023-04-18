@@ -241,14 +241,14 @@ const validatePhoneVerification = (phone) => {
   });
 };
 
-const forgot = (email) => {
+const forgot = (values) => {
   const headers = {
     "Content-Type": "application/json",
   };
   return axios.post(
     `${API_URL}/forgot`,
     {
-      email: email,
+      email: values.email,
     },
     {
       headers: headers,

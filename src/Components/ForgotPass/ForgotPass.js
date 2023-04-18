@@ -1,4 +1,8 @@
+import { useFormik } from "formik";
 import React from "react";
+import { useState } from "react";
+import { newsletterValidation } from "../../schema";
+import GeneralService from "../../services/general.service";
 import useImportScript from "../../utils/useImportScript";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
@@ -20,50 +24,83 @@ export default function ForgotPass() {
   // useImportScript("/assets/js/plugin.js");
   // useImportScript("/assets/js/main.js");
 
+  const [submit, setSubmit] = useState("");
+  const [submitMessage, setSubmitMessage] = useState("");
+
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
+    useFormik({
+      initialValues: {
+        first_name: "",
+        last_name: "",
+        email: "",
+        subject: "",
+        message: "",
+      },
+      validationSchema: newsletterValidation,
+      onSubmit: (values, action) => {
+        formSubmit(values, action);
+      },
+    });
+
+  const formSubmit = async (values, action) => {
+    // setLoading(true);
+    try {
+      const response = await GeneralService.forgot(values);
+      const { data } = response;
+      const { response: message } = data;
+      // console.log(message);
+      setSubmitMessage(message);
+      setSubmit("success");
+      action.resetForm();
+      // setLoading(false);
+    } catch (err) {
+      console.log(err);
+      if (err?.response?.status === 404) {
+        setSubmitMessage("You are not a registered user");
+        setSubmit("danger");
+        // setLoading(false);
+      } else {
+        setSubmitMessage("Something went wrong, try again");
+        setSubmit("danger");
+        // setLoading(false);
+      }
+    }
+  };
+
   return (
     <>
       <TopBar />
       <Header />
       <main id="page-content" className="d-flex nm-aic nm-vh-md-100">
-        {/* <!-- // Logo wrapper --> */}
-        {/* <div id="logo-container">
-                    <a  className="d-none d-md-flex" href="/" aria-label="Nimoy">
-                        <img src="https://res.cloudinary.com/dll4d2yu7/image/upload/v1679220124/Sehatbooking/logo_yqgytd.png" alt="Logo" />
-                      
-                        
-                    </a>
-                    <a  className="d-flex d-md-none" href="/" aria-label="Nimoy">
-                        <img src="https://res.cloudinary.com/dll4d2yu7/image/upload/v1679130514/Sehatbooking/logo-light_hcpctn.png" alt="Logo" />
-                    </a>
-                </div> */}
-        {/* <!-- Logo wrapper // --> */}
-
-        {/* <!-- // Non-form side --> */}
-        {/* <div id="non-form-side-forgot" className="col-md-4 col-lg-4 col-xl-4 d-none d-md-flex nm-aic nm-vh-100">
-                    <div  className="overlay"></div>
-                </div> */}
-        {/* <!-- Non-form Side // --> */}
-
-        {/* <!-- // Form side --> */}
         <div className="container">
           <div className="row">
             <div className="col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2 nm-st nm-st-md">
-              <form>
+              <form onSubmit={handleSubmit} noValidate>
                 <div className="box">
                   <div className="nm-mb-2 nm-mb-md-2">
                     <h2>Forgotten Password?</h2>
                     <p>Fill in your email address to reset your account</p>
                   </div>
 
+                  {submit && (
+                    <div className={`alert alert-${submit}`} role="alert">
+                      {submitMessage}
+                    </div>
+                  )}
                   <div className="input">
                     <input
                       type="text"
-                      name="contact_f_name"
+                      name="email"
                       id="contactFName"
                       placeholder="Your Email"
-                      required=""
+                      required
+                      value={values.email || ""}
+                      onChange={handleChange}
                       className="input"
                     />
+                    {touched.email && errors.email && (
+                      <div className="error">{errors.email}</div>
+                    )}
                   </div>
 
                   <div className="row nm-aic nm-mb-2">

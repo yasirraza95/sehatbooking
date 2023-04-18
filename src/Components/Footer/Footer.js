@@ -156,7 +156,7 @@ export default function Footer() {
                         </div>
                       </form>
                     </div>
-                    {touched.email && errors.email && <div>{errors.email}</div>}
+                    {touched.email && errors.email && <div className="error">{errors.email}</div>}
                   </div>
                   <div className="col-lg-6 row-item">
                     <div className="footer-area__bottom-right">

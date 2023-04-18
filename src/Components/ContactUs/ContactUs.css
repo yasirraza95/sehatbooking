@@ -147,3 +147,7 @@ button.button.button--effect.contact:hover {
 textarea {
   resize: none;
 }
+.error {
+  margin-top: 15px;
+  color: red;
+} 

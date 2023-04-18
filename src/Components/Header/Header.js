@@ -2,7 +2,9 @@ import React from "react";
 import "./Header.css";
 import ProfileIcon from "../Images/sehatbooking-logo-3.png";
 import MenuLogo from "../Images/sehatbooking-logo.png";
-import { Link, a } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 // import $ from "jquery";
 
 export default function Header() {
@@ -125,13 +127,19 @@ export default function Header() {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="/profile" className="nav-link">
-                    <div className="circle">
-                      <span className="circle-inner" data-hover="Profile">
-                        SB
-                      </span>
+                  <div className="dropdown">
+                    <a href="/profile" className="nav-link">
+                      <div className="circle">
+                        <span className="circle-inner">
+                          SB
+                        </span>
+                      </div>
+                    </a>
+                    <div className="dropdown-content">
+                      <div style={{borderTop:"5px solid #ea062b"}}></div>
+                      <a href="#">Log Out <FontAwesomeIcon icon={faArrowRightFromBracket} /></a>
                     </div>
-                  </a>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -149,7 +157,7 @@ export default function Header() {
                 <Link
                   href={void 0}
                   className="d-none d-xl-block open-sidenav"
-                  // onClick={(e) => sideBarClick(e)}
+                // onClick={(e) => sideBarClick(e)}
                 >
                   <span className="icon-bar top-bar"></span>
                   <span className="icon-bar middle-bar"></span>
