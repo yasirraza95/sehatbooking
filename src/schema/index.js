@@ -10,6 +10,12 @@ export const contactValidation = Yup.object().shape({
   message: Yup.string().required("Please enter Message"),
 });
 
+export const newsletterValidation = Yup.object().shape({
+  email: Yup.string()
+    .email("Please enter a valid Email Address")
+    .required("Please enter Email Address"),
+});
+
 export const donorSearch = Yup.object().shape({
   city: Yup.string().required("Please select City"),
   area: Yup.string().required("Please select City Area"),

@@ -120,13 +120,12 @@ const bloodRequest = (values) => {
   return axios.post(
     `${API_URL}/blood-request`,
     {
-      type: "normal",
-      blood_id: "1",
-      state_id: "1",
-      city_id: "1",
-      city_area_id: "1",
-      user_id: "1",
-      ip: "192.168.10.1",
+      type: values.emergency,
+      blood: values.group,
+      state: values.state,
+      city: values.city,
+      city_area: values.area,
+      user_id: values.user,
     },
     {
       headers: headers,
@@ -293,6 +292,21 @@ const contactUs = (values) => {
   );
 };
 
+const subscription = (values) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.post(
+    `${API_URL}/subscription`,
+    {
+      email: values.email,
+    },
+    {
+      headers: headers,
+    }
+  );
+};
+
 const GeneralService = {
   login,
   register,
@@ -316,6 +330,7 @@ const GeneralService = {
   updatePassword,
   contactUs,
   bloodRequest,
+  subscription,
 };
 
 export default GeneralService;

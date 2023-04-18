@@ -9,7 +9,7 @@ import TubeIcon from "../Images/tube.png";
 import useImportScript from '../../utils/useImportScript';
 import { Link } from 'react-router-dom';
 export default function OurServices() {
-  useImportScript("/assets/vendor/wow/wow.min.js");
+//   useImportScript("/assets/vendor/wow/wow.min.js");
 
     return (
         <>

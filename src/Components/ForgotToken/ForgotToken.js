@@ -7,7 +7,7 @@ import TopBar from "../HomeTopBar/TopBar";
 export default function ForgotToken() {
     // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
     // useImportScript("/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
-    useImportScript("/assets/vendor/nice-select/js/jquery.nice-select.min.js");
+    // useImportScript("/assets/vendor/nice-select/js/jquery.nice-select.min.js");
     // useImportScript(
     //     "/assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"
     // );

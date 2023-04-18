@@ -2,8 +2,45 @@ import React from "react";
 import "./Footer.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import GeneralService from "../../services/general.service";
+import { useFormik } from "formik";
+import { newsletterValidation } from "../../schema";
+import { useState } from "react";
 
 export default function Footer() {
+  const [submit, setSubmit] = useState("");
+  const [submitMessage, setSubmitMessage] = useState("");
+
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
+    useFormik({
+      initialValues: {
+        email: "",
+      },
+      validationSchema: newsletterValidation,
+      onSubmit: (values, action) => {
+        formSubmit(values, action);
+      },
+    });
+
+  const formSubmit = async (values, action) => {
+    // setLoading(true);
+    try {
+      const response = await GeneralService.subscription(values);
+      const { data } = response;
+      const { response: message } = data;
+      // console.log(message);
+      setSubmitMessage(message);
+      setSubmit("success");
+      action.resetForm();
+      // setLoading(false);
+    } catch (err) {
+      console.log(err);
+      setSubmitMessage("Something went wrong, try again");
+      setSubmit("danger");
+      // setLoading(false);
+    }
+  };
+
   return (
     <footer className="footer">
       <div className="container">
@@ -11,12 +48,11 @@ export default function Footer() {
           <div className="col-lg-12">
             <div className="footer-area section-space-top">
               <div className="row alt-row">
-                <div className="col-md-6 col-lg-4 col-sm-6">
+                <div className="col-md-6 col-lg-6 col-sm-6">
                   <div className="footer-area__single">
                     <h5>About Us</h5>
                     <p className="address">
-                      Duis aute irure dolor in reprehenderit velit esse cillum
-                      dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                      We are connecting Blood Donor with Blood Recipient
                     </p>
 
                     <div className="address">
@@ -29,112 +65,62 @@ export default function Footer() {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-6 col-lg-2 col-sm-6">
+
+                <div className="col-md-6 col-lg-3 col-sm-6">
                   <div className="footer-area__single">
                     <h5>Quick Links</h5>
                     <ul>
-                      <li>
-                        <a href="services.html">
-                          <i className="bi bi-chevron-double-right"></i>Service
-                        </a>
-                      </li>
                       <li>
                         <a href="/about-us">
                           <i className="bi bi-chevron-double-right"></i>About Us
                         </a>
                       </li>
                       <li>
-                        <a href="/campaigns">
-                          <i className="bi bi-chevron-double-right"></i>New
-                          Campaign
+                        <a href="/how-to">
+                          <i className="bi bi-chevron-double-right"></i>How To
                         </a>
                       </li>
+
                       <li>
-                        <a href="blog.html">
-                          <i className="bi bi-chevron-double-right"></i>Latest
-                          News
+                        <a href="/blood-tips">
+                          <i className="bi bi-chevron-double-right"></i>Donation
+                          Tips
                         </a>
                       </li>
+
                       <li>
                         <a href="/contact-us">
                           <i className="bi bi-chevron-double-right"></i>Contact
+                          Us
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/appointment">
+                          <i className="bi bi-chevron-double-right"></i>
+                          Appointment
                         </a>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div className="col-md-6 col-lg-2 col-sm-6">
+
+                <div className="col-md-6 col-lg-3 col-sm-6">
                   <div className="footer-area__single">
                     <h5>Services</h5>
                     <ul>
                       <li>
-                        <a href="donate-now.html">
+                        <a href="blood-request">
                           <i className="bi bi-chevron-double-right"></i>Blood
-                          Donation
+                          Request
                         </a>
                       </li>
                       <li>
-                        <a href="services.html">
-                          <i className="bi bi-chevron-double-right"></i>Health
-                          Check
-                        </a>
-                      </li>
-                      <li>
-                        <a href="campaigns.html">
-                          <i className="bi bi-chevron-double-right"></i> Blood
-                          Bank
-                        </a>
-                      </li>
-                      <li>
-                        <a href="donate-now.html">
-                          <i className="bi bi-chevron-double-right"></i>Donate
-                          Process
-                        </a>
-                      </li>
-                      <li>
-                        <a href="donate-now.html">
-                          <i className="bi bi-chevron-double-right"></i>Blood
-                          Info
+                        <a href="/find-donor">
+                          <i className="bi bi-chevron-double-right"></i>Find
+                          Donor
                         </a>
                       </li>
                     </ul>
-                  </div>
-                </div>
-                <div className="col-md-6 col-lg-4 col-sm-6">
-                  <div className="footer-area__single">
-                    <h5>Latest News</h5>
-                    <div className="latest-news__single">
-                      <a href="blog-details.html">
-                        <img
-                          src="https://res.cloudinary.com/dll4d2yu7/image/upload/v1679078708/Sehatbooking/lastest-1_jktmh5.png"
-                          alt="Latest News"
-                        />
-                      </a>
-                      <div className="latest-news__single-content">
-                        <p className="mt-0">
-                          <a href="blog-details.html">
-                            A Formula For Help And Happiness
-                          </a>
-                        </p>
-                        <p className="post-date">18 February, 2022</p>
-                      </div>
-                    </div>
-                    <div className="latest-news__single">
-                      <a href="blog-details.html">
-                        <img
-                          src="https://res.cloudinary.com/dll4d2yu7/image/upload/v1679078708/Sehatbooking/latest-2_nxpig5.png"
-                          alt="Latest News"
-                        />
-                      </a>
-                      <div className="latest-news__single-content">
-                        <p className="mt-0">
-                          <a href="blog-details.html">
-                            Donation is hope for poor helpless children
-                          </a>
-                        </p>
-                        <p className="post-date">18 February, 2022</p>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -152,7 +138,7 @@ export default function Footer() {
                       <p className="secondary1">
                         Subscribe us for more update & news !!
                       </p>
-                      <form action="#" method="post">
+                      <form onSubmit={handleSubmit} noValidate>
                         <div className="input-group-btnn">
                           <input
                             type="email"
@@ -197,9 +183,6 @@ export default function Footer() {
                           </li>
                           <li className="breadcrumb-item">
                             <a href="/terms-conditions">Terms & Conditions</a>
-                          </li>
-                          <li className="breadcrumb-item">
-                            <a href="/faqs">FAQ</a>
                           </li>
                         </ol>
                       </nav>

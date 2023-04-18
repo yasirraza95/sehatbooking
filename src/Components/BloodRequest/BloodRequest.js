@@ -11,7 +11,7 @@ import { bloodRequest } from ".././../schema/index";
 export default function BloodRequest() {
   // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
   // useImportScript("/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
-  useImportScript("/assets/vendor/nice-select/js/jquery.nice-select.min.js");
+//   useImportScript("/assets/vendor/nice-select/js/jquery.nice-select.min.js");
   // useImportScript(
   //     "/assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"
   // );
@@ -135,6 +135,8 @@ export default function BloodRequest() {
   const formSubmit = async (values, action) => {
     // setLoading(true);
     try {
+      values.emergency = checkedValue(values.emergency);
+      values.user = "1"; //FIXME
       const response = await GeneralService.bloodRequest(values);
       const { data } = response;
       const { response: message } = data;
@@ -148,6 +150,14 @@ export default function BloodRequest() {
       setSubmit("danger");
       // setLoading(false);
     }
+  };
+
+  const checkedValue = (e) => {
+    let value = "emergency";
+    if (e === false) {
+      value = "normal";
+    }
+    return value;
   };
 
   return (
@@ -305,15 +315,16 @@ export default function BloodRequest() {
                               )}
                             </div>
                             <div className="input">
-                              <div class="form-checkk">
+                              <div className="form-checkk">
                                 <input
                                   type="checkbox"
-                                  value=""
-                                  id="flexCheckDefault"
+                                  onChange={handleChange}
+                                  name="emergency"
+                                  id="emergency"
                                 />
                                 <label
-                                  class="form-check-label"
-                                  for="flexCheckDefault"
+                                  className="form-check-label"
+                                  htmlFor="flexCheckDefault"
                                 >
                                   Emergency Request ?
                                 </label>

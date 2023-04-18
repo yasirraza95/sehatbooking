@@ -3,7 +3,7 @@ import "./VisibleFields.css";
 import useImportScript from "../../utils/useImportScript";
 export default function VisibleFields() {
   const [visible, setVisible] = React.useState(false);
-useImportScript("/assets/vendor/wow/wow.min.js");
+  // useImportScript("/assets/vendor/wow/wow.min.js");
 
   return (
     <div>
