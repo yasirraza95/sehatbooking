@@ -386,22 +386,22 @@ export default function AboutUs() {
             <div className="col-lg-12">
               <div className="call-area">
                 <div className="icon-box__wrapper">
-                  <a href="tel:+01(977)259912" className="icon-box">
+                  <a href="tel:+923481586695" className="icon-box">
                     <i className="bi bi-telephone-fill"></i>
                   </a>
                 </div>
                 <p className="primary neutral-ascender descender">
                   Start Donating
                 </p>
-                <h2 className="descender">Call Now : 333 555 9090</h2>
+                <h2 className="descender">Call Now : +92 348 158 6695</h2>
                 <div className="group">
-                  <a href="contact-us.html">
+                  <a href="/contact-us">
                     <i className="bi bi-geo-alt-fill"></i>
-                    <span>New York – 1075 Firs Avenue</span>
+                    <span>All over Pakistan</span>
                   </a>
-                  <a href="mailto:company@domin.com">
+                  <a href="mailto:sehatbooking@gmail.com">
                     <i className="bi bi-envelope-fill"></i>
-                    <span>donate@gmail.com</span>
+                    <span>sehatbooking@gmail.com</span>
                   </a>
                 </div>
               </div>
