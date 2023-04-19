@@ -24,34 +24,48 @@ export default function ForgotPass() {
     <>
       <TopBar />
       <Header />
-      <main id="page-content" className="d-flex nm-aic nm-vh-md-100">
-        {/* <!-- // Logo wrapper --> */}
-        {/* <div id="logo-container">
-                    <a  className="d-none d-md-flex" href="/" aria-label="Nimoy">
-                        <img src="https://res.cloudinary.com/dll4d2yu7/image/upload/v1679220124/Sehatbooking/logo_yqgytd.png" alt="Logo" />
-                      
-                        
-                    </a>
-                    <a  className="d-flex d-md-none" href="/" aria-label="Nimoy">
-                        <img src="https://res.cloudinary.com/dll4d2yu7/image/upload/v1679130514/Sehatbooking/logo-light_hcpctn.png" alt="Logo" />
-                    </a>
-                </div> */}
-        {/* <!-- Logo wrapper // --> */}
-
-        {/* <!-- // Non-form side --> */}
-        {/* <div id="non-form-side-forgot" className="col-md-4 col-lg-4 col-xl-4 d-none d-md-flex nm-aic nm-vh-100">
-                    <div  className="overlay"></div>
-                </div> */}
-        {/* <!-- Non-form Side // --> */}
-
-        {/* <!-- // Form side --> */}
+          {/* <!-- ==== banner section start ==== --> */}
+          <section className="banner bg-img dark-overlay dark-overlay">
         <div className="container">
           <div className="row">
+            <div className="col-lg-12">
+              <div className="banner-area">
+                <div className="banner-area__content">
+                  <h2>Forgotten Password</h2>
+                  <nav aria-label="breadcrumb">
+                    <ol className="breadcrumb">
+                      <li className="breadcrumb-item">
+                        <a href="/">Home</a>
+                      </li>
+                      <li
+                        className="breadcrumb-item active"
+                        aria-current="page"
+                      >
+                        Forgotten Password
+                      </li>
+                    </ol>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <!-- ==== #banner section end ==== --> */}
+
+
+        {/* <!-- // Form side --> */}
+      <section className="contact section-space">
+
+        <div className="container">
+          <div className="row">
+            <div className="forgot">
             <div className="col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2 nm-st nm-st-md">
               <form>
                 <div className="box">
+            <h4 class="descender">Forgotten Password?</h4>
                   <div className="nm-mb-2 nm-mb-md-2">
-                    <h2>Forgotten Password?</h2>
+                    {/* <h2>Forgotten Password?</h2> */}
                     <p>Fill in your email address to reset your account</p>
                   </div>
 
@@ -85,11 +99,13 @@ export default function ForgotPass() {
                   </div>
                 </div>
               </form>
-            </div>
+              </div>
+          </div>
           </div>
         </div>
+        </section>
         {/* <!-- Form Side // --> */}
-      </main>
+      
       <Footer />
     </>
   );
