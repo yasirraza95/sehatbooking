@@ -219,7 +219,7 @@ export default function IndexOne() {
                 <div className="overview-area__single img-effect">
                   <div className="overview-area__single-content">
                     <div className="poster">
-                      <a href="service-details.html">
+                      <a href="/service-detail">
                         <img src={BloodDonate} alt="Blood Donor" />
                       </a>
                     </div>
@@ -246,7 +246,7 @@ export default function IndexOne() {
                 <div className="overview-area__single img-effect wow fadeInUp">
                   <div className="overview-area__single-content">
                     <div className="poster">
-                      <a href="service-details.html">
+                      <a href="/service-detail">
                         <img src={BloodDonate} alt="Give Blood" />
                       </a>
                     </div>
@@ -276,7 +276,7 @@ export default function IndexOne() {
                 >
                   <div className="overview-area__single-content">
                     <div className="poster">
-                      <a href="service-details.html">
+                      <a href="/service-detail">
                         <img src={BloodDonate} alt="Blood Donation" />
                       </a>
                     </div>
@@ -406,7 +406,7 @@ export default function IndexOne() {
                     <div className="team-area__single img-effect">
                       <div className="poster">
                         <img src={DoctorOne} alt="Nora" />
-                        <div className="social social--secondary">
+                        {/* <div className="social social--secondary">
                           <a href="https://www.facebook.com/" target="_blank">
                             <i className="fab fa-facebook-f"></i>
                           </a>
@@ -419,7 +419,7 @@ export default function IndexOne() {
                           <a href="https://www.pinterest.com/" target="_blank">
                             <i className="fab fa-pinterest"></i>
                           </a>
-                        </div>
+                        </div> */}
                       </div>
                       <h5>Nora Khaypeia</h5>
                       <p className="secondary neutral-descender">Co-Founder</p>
@@ -429,7 +429,7 @@ export default function IndexOne() {
                     <div className="team-area__single img-effect wow fadeInUp">
                       <div className="poster">
                         <img src={DoctorTwo} alt="Alex Joshan Deo" />
-                        <div className="social social--secondary">
+                        {/* <div className="social social--secondary">
                           <a href="https://www.facebook.com/" target="_blank">
                             <i className="fab fa-facebook-f"></i>
                           </a>
@@ -442,7 +442,7 @@ export default function IndexOne() {
                           <a href="https://www.pinterest.com/" target="_blank">
                             <i className="fab fa-pinterest"></i>
                           </a>
-                        </div>
+                        </div> */}
                       </div>
                       <h5>Nora Khaypeia</h5>
                       <p className="secondary neutral-descender">Co-Founder</p>
@@ -455,7 +455,7 @@ export default function IndexOne() {
                     >
                       <div className="poster">
                         <img src={DoctorThree} alt="Alex Joshi Deon" />
-                        <div className="social social--secondary">
+                        {/* <div className="social social--secondary">
                           <a href="https://www.facebook.com/" target="_blank">
                             <i className="fab fa-facebook-f"></i>
                           </a>
@@ -468,7 +468,7 @@ export default function IndexOne() {
                           <a href="https://www.pinterest.com/" target="_blank">
                             <i className="fab fa-pinterest"></i>
                           </a>
-                        </div>
+                        </div> */}
                       </div>
                       <h5>Alex Joshi Deon</h5>
                       <p className="secondary neutral-descender">Co-Founder</p>

@@ -452,7 +452,7 @@ export default function AboutUs() {
                           src="https://res.cloudinary.com/dll4d2yu7/image/upload/v1679166695/Sehatbooking/nora_knntzw.png"
                           alt="Nora"
                         />
-                        <div className="social social--secondary">
+                        {/* <div className="social social--secondary">
                           <a href="https://www.facebook.com/">
                             <i className="bi bi-facebook"></i>
                           </a>
@@ -465,7 +465,7 @@ export default function AboutUs() {
                           <a href="https://www.pinterest.com/">
                             <i className="bi bi-youtube"></i>
                           </a>
-                        </div>
+                        </div> */}
                       </div>
                       <h5>Nora Khaypeia</h5>
                       <p className="secondary neutral-descender">Co-Founder</p>
@@ -478,7 +478,7 @@ export default function AboutUs() {
                           src="https://res.cloudinary.com/dll4d2yu7/image/upload/v1679166695/Sehatbooking/joshi_j6s1mb.png"
                           alt="Alex Joshan Deo"
                         />
-                        <div className="social social--secondary">
+                        {/* <div className="social social--secondary">
                           <a href="https://www.facebook.com/">
                             <i className="bi bi-facebook"></i>
                           </a>
@@ -491,7 +491,7 @@ export default function AboutUs() {
                           <a href="https://www.youtube.com/">
                             <i className="bi bi-youtube"></i>
                           </a>
-                        </div>
+                        </div> */}
                       </div>
                       <h5>Nora Khaypeia</h5>
                       <p className="secondary neutral-descender">Co-Founder</p>
@@ -507,7 +507,7 @@ export default function AboutUs() {
                           src="https://res.cloudinary.com/dll4d2yu7/image/upload/v1679166694/Sehatbooking/alex_kzyvxs.png"
                           alt="Alex Joshi Deon"
                         />
-                        <div className="social social--secondary">
+                        {/* <div className="social social--secondary">
                           <a href="https://www.facebook.com/">
                             <i className="bi bi-facebook"></i>
                           </a>
@@ -520,7 +520,7 @@ export default function AboutUs() {
                           <a href="https://www.pinterest.com/">
                             <i className="bi bi-youtube"></i>
                           </a>
-                        </div>
+                        </div> */}
                       </div>
                       <h5>Alex Joshi Deon</h5>
                       <p className="secondary neutral-descender">Co-Founder</p>
