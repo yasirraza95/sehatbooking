@@ -44,21 +44,13 @@ export default function Header() {
             >
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a
-                    href="/"
-                    activeclassname="nav-link active"
-                    className="nav-link"
-                  >
+                  <a href="/" className="nav-link">
                     Home
                   </a>
                 </li>
 
                 <li className="nav-item">
-                  <a
-                    href="/blood-request"
-                    activeclassname="nav-link active"
-                    className="nav-link"
-                  >
+                  <a href="/blood-request" className="nav-link">
                     Blood Request
                   </a>
                 </li>
@@ -130,14 +122,15 @@ export default function Header() {
                   <div className="dropdown">
                     <a href="/profile" className="nav-link">
                       <div className="circle">
-                        <span className="circle-inner">
-                          SB
-                        </span>
+                        <span className="circle-inner">SB</span>
                       </div>
                     </a>
                     <div className="dropdown-content">
-                      <div style={{borderTop:"5px solid #ea062b"}}></div>
-                      <a href="#">Log Out <FontAwesomeIcon icon={faArrowRightFromBracket} /></a>
+                      <div style={{ borderTop: "5px solid #ea062b" }}></div>
+                      <a href="#">
+                        Log Out{" "}
+                        <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                      </a>
                     </div>
                   </div>
                 </li>
@@ -157,7 +150,7 @@ export default function Header() {
                 <Link
                   href={void 0}
                   className="d-none d-xl-block open-sidenav"
-                // onClick={(e) => sideBarClick(e)}
+                  // onClick={(e) => sideBarClick(e)}
                 >
                   <span className="icon-bar top-bar"></span>
                   <span className="icon-bar middle-bar"></span>
