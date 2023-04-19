@@ -72,3 +72,21 @@ input#newpwd {
   font-size: 20px;
   height: 56px;
 }
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+  z-index: 3;
+  color: #fff;
+  cursor: default;
+  background-color: #ea062b;
+  border-color: #ea062b;
+}
+.pagination {
+  display: inline-block;
+  margin-left: 40%;
+}
+
+ul.pagination li a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}

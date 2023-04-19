@@ -19,6 +19,9 @@ import HeartIcon from "../Images/heart.png";
 import FirstAidIcon from "../Images/first-aid.png";
 import TubeIcon from "../Images/tube.png";
 import BloodDonate from "../Images/blood-donate.jpg";
+import BloodDonate2 from "../Images/blood-donate2.jpg";
+import BloodDonate3 from "../Images/blood-donate3.jpg";
+import BloodDonate4 from "../Images/blood-donate4.jpg";
 import slideImage1 from "../Images/patient-donating-blood-at-hospital.jpg";
 import slideImage2 from "../Images/doctor-taking-blood-samples.jpg";
 import slideImage3 from "../Images/6-1.jpg";
@@ -220,7 +223,7 @@ export default function IndexOne() {
                   <div className="overview-area__single-content">
                     <div className="poster">
                       <a href="/service-detail">
-                        <img src={BloodDonate} alt="Blood Donor" />
+                        <img src={BloodDonate4} alt="Blood Donor" />
                       </a>
                     </div>
                     <div className="icon-box-wrapper">
@@ -247,7 +250,7 @@ export default function IndexOne() {
                   <div className="overview-area__single-content">
                     <div className="poster">
                       <a href="/service-detail">
-                        <img src={BloodDonate} alt="Give Blood" />
+                        <img src={BloodDonate3} alt="Give Blood" />
                       </a>
                     </div>
                     <div className="icon-box-wrapper">

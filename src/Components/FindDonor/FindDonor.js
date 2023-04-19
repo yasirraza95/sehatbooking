@@ -350,7 +350,7 @@ export default function FindDonor() {
                 </table>
               </div>
               {/* {totalResults > limit && totalPages > 1 ? ( */}
-              <Pagination
+              {/* <Pagination
                 activePage={currentPage}
                 itemsCountPerPage={parseInt(limit)}
                 totalItemsCount={totalResults}
@@ -362,10 +362,20 @@ export default function FindDonor() {
                 linkClass="page-link"
                 firstPageText="First Page"
                 lastPageText="Last Page"
-              />
-              {/* ) : (
-                 ""
-               )} */}
+              /> */}
+              <Pagination
+                activePage={currentPage}
+                itemsCountPerPage={parseInt(limit)}
+                totalItemsCount={totalResults}
+                onChange={(e) => {
+                  changePagination(e);
+                }}>
+                <Pagination.First />
+                <Pagination.Prev />
+
+                <Pagination.Next />
+                <Pagination.Last />
+              </Pagination>
             </div>
           </div>
         </div>

@@ -99,9 +99,12 @@ section.page-header::after {
 }
 
 .contact-area-singlee {
-  /* height: 100%; */
-  width: 75%;
-  margin-left: 12%;
+     /* height: 100%; */
+     width: 90%;
+     margin-left: 5%;
+}
+.btn-group {
+  margin-left: -7px !important;
 }
 
 section.page-header::after {
@@ -157,6 +160,19 @@ a.btn.btn-link:hover {
   color: #ffffff;
   background-color: #111111;
 }
+button#login:hover{
+  background-color: #111111 !important;
+  color: #fff !important;
+}
+button#forgot:hover{
+  background-color: #111111 !important;
+  color: #fff !important;
+}
+button#account:hover{
+  background-color: #111111 !important;
+  color: #fff !important;
+}
+
 
 a.btn.btn-link::after {
   left: -100%;
@@ -206,17 +222,70 @@ a.btn.btn-link:hover::before {
   padding-top: 13px;
   padding-bottom: 13px;
 }
+.btn-group {
+  margin-left: -44px !important;
+}
 
 input:focus {
   background: #fff;
   border: 1px solid #e2e0e0;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+
   button#login {
     width: 85%;
     margin-bottom: 2px;
     display: inline-block;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  button#forgot
+  {
+    width: 85%;
+    margin-bottom: 2px;
+    display: inline-block;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  button#account
+  {
+    width: 85%;
+    margin-bottom: 2px;
+    display: inline-block;
+  }
+}
+@media (min-width: 426px) and (max-width: 767px) {
+  button#login
+  {
+    width: 85%;
+    margin-bottom: 2px;
+    display: inline-block;
+    font-size: 12px;
+  }
+}
+@media (min-width: 426px) and (max-width: 767px) {
+  button#forgot
+  {
+    width: 85%;
+    margin-bottom: 2px;
+    display: inline-block;
+    font-size: 12px;
+  }
+}
+@media (min-width: 426px) and (max-width: 767px) {
+  img#forgotImg
+  {
+       width: 12px !important;
+  }
+}
+@media (min-width: 426px) and (max-width: 767px) {
+  button#account
+  {
+    width: 85%;
+    margin-bottom: 2px;
+    display: inline-block;
+    font-size: 12px;
   }
 }
 
@@ -240,6 +309,15 @@ input:focus {
   button#forgot {
     width: 17rem !important;
     display: inline-block;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+@media (max-width: 425px) {
+  button#account{
+    width: 17rem !important;
+    display: inline-block;
+    margin-top: 2px;
     font-size: 12px;
     line-height: 15px;
   }

@@ -71,14 +71,48 @@ export default function ForgotPass() {
     <>
       <TopBar />
       <Header />
-      <main id="page-content" className="d-flex nm-aic nm-vh-md-100">
+          {/* <!-- ==== banner section start ==== --> */}
+          <section className="banner bg-img dark-overlay dark-overlay">
         <div className="container">
           <div className="row">
+            <div className="col-lg-12">
+              <div className="banner-area">
+                <div className="banner-area__content">
+                  <h2>Forgotten Password</h2>
+                  <nav aria-label="breadcrumb">
+                    <ol className="breadcrumb">
+                      <li className="breadcrumb-item">
+                        <a href="/">Home</a>
+                      </li>
+                      <li
+                        className="breadcrumb-item active"
+                        aria-current="page"
+                      >
+                        Forgotten Password
+                      </li>
+                    </ol>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <!-- ==== #banner section end ==== --> */}
+
+
+        {/* <!-- // Form side --> */}
+      <section className="contact section-space">
+
+        <div className="container">
+          <div className="row">
+            <div className="forgot">
             <div className="col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2 nm-st nm-st-md">
               <form onSubmit={handleSubmit} noValidate>
                 <div className="box">
+            <h4 class="descender">Forgotten Password?</h4>
                   <div className="nm-mb-2 nm-mb-md-2">
-                    <h2>Forgotten Password?</h2>
+                    {/* <h2>Forgotten Password?</h2> */}
                     <p>Fill in your email address to reset your account</p>
                   </div>
 
@@ -122,11 +156,13 @@ export default function ForgotPass() {
                   </div>
                 </div>
               </form>
-            </div>
+              </div>
+          </div>
           </div>
         </div>
+        </section>
         {/* <!-- Form Side // --> */}
-      </main>
+      
       <Footer />
     </>
   );

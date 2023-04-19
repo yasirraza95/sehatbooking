@@ -81,6 +81,17 @@ button.btn.btn-primary.nm-hvr.nm-btn-1{
     background-color: #ea062b;
     border: 1px solid #ea062b;
     color: #ffffff;
+    /* padding: 13px 40px 15px; */
+    background-color: #ea062b;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 9;
+    margin-left: 4px;
+    font-size: 17px;
 }
 button.btn.btn-primary.nm-hvr.nm-btn-1:hover{
     background-color: #1e2022;
@@ -136,4 +147,8 @@ a.nm-fs-1.nm-fw-bd:hover {
     /* background-color: #ea062b; */
     padding: 9px;
 
+}
+.forgot {
+    padding: 60px;
+    box-shadow: 0px 9px 52px 0px rgba(0, 0, 0, 0.07);
 }

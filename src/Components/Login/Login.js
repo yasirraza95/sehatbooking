@@ -165,12 +165,19 @@ export default function Login() {
                                 (window.location.href = "/forgot-pass")
                               }
                             >
-                              FORGOT YOUR PASSWORD?
-                              <img
+                              FORGOT YOUR PASSWORD? <img
+                              id="forgotImg"
                                 src={ForgotPass}
                                 alt="Forgot Logo"
                                 style={{ width: "15px", color: "#fff" }}
                               />
+                            </button>
+                            <button
+                              type="submit"
+                              className="button button--effect"
+                              id="account"
+                            >
+                              CREATE ACCOUNT <i class="bi bi-person-plus"></i>
                             </button>
                           </div>
                         </div>
