@@ -6,6 +6,11 @@ import "./Login.css";
 import ForgotPass from "../Images/forgotPassword-icon.png";
 // import ToTop from "../TopTop/ToTop";
 import useImportScript from "../../utils/useImportScript";
+import GeneralService from "../../services/general.service";
+import { loginValidation } from "../../schema";
+import { useFormik } from "formik";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 // import LoginHeader from './LoginHeader.js---';
 export default function Login() {
   // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
@@ -22,24 +27,55 @@ export default function Login() {
   // useImportScript("/assets/js/plugin.js");
   // useImportScript("/assets/js/main.js");
 
+  const navigate = useNavigate();
+  const [submit, setSubmit] = useState("");
+  const [submitMessage, setSubmitMessage] = useState("");
+
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
+    useFormik({
+      initialValues: {
+        first_name: "",
+        last_name: "",
+        email: "",
+        subject: "",
+        message: "",
+      },
+      validationSchema: loginValidation,
+      onSubmit: (values, action) => {
+        formSubmit(values, action);
+      },
+    });
+
+  const formSubmit = async (values, action) => {
+    // setLoading(true);
+    try {
+      await GeneralService.login(values);
+      navigate("/");
+      // console.log(message);
+      // setSubmitMessage(message);
+      // setSubmit("success");
+      action.resetForm();
+      // setLoading(false);
+    } catch (err) {
+      console.log(err);
+      if (err?.response?.status === 401) {
+        setSubmitMessage("Username or Password is invalid");
+        setSubmit("danger");
+        // setLoading(false);
+      } else {
+        setSubmitMessage("Something went wrong, try again");
+        setSubmit("danger");
+        // setLoading(false);
+      }
+    }
+  };
+
   return (
     <>
       {/* <LoginHeader /> */}
       <TopBar />
       <Header />
-      {/* <section className="page-header" data-stellar-background-ratio="1.2">
-        <div className="container">
-          <div className="row">
-            <div className="col-sm-12 text-center">
-              <div className="banner-area__content">
-              <h2>
-                Sign In
-              </h2>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
+
       {/* <!-- ==== banner section start ==== --> */}
       <section className="banner bg-img dark-overlay dark-overlay">
         {/* <div className="Blad-image">
@@ -51,7 +87,7 @@ export default function Login() {
             <div className="col-lg-12">
               <div className="banner-area">
                 <div className="banner-area__content">
-                  <h2>Sign Up</h2>
+                  <h2>Sign In</h2>
                 </div>
               </div>
             </div>
@@ -71,26 +107,44 @@ export default function Login() {
                       <h4 className="descender" style={{ color: "#000" }}>
                         Login Form
                       </h4>
-                      <form action="#" name="contact__Form">
+                      <form onSubmit={handleSubmit} noValidate>
                         <div className="input" id="fields">
+                          {submit && (
+                            <div
+                              className={`alert alert-${submit}`}
+                              role="alert"
+                            >
+                              {submitMessage}
+                            </div>
+                          )}
                           <input
                             type="text"
-                            name="contact_f_name"
+                            name="username"
                             id="contactFName"
-                            placeholder="Your Email"
-                            required=""
+                            placeholder="Username"
+                            required
                             className="input"
+                            value={values.username || ""}
+                            onChange={handleChange}
                           />
+                          {touched.username && errors.username && (
+                            <div className="error">{errors.username}</div>
+                          )}
                         </div>
                         <div className="input" id="fields">
                           <input
                             type="password"
-                            name="contact_l_name"
+                            name="password"
                             id="contactLName"
                             placeholder="Password"
-                            required=""
+                            required
                             className="input"
+                            value={values.password || ""}
+                            onChange={handleChange}
                           />
+                          {touched.password && errors.password && (
+                            <div className="error">{errors.password}</div>
+                          )}
                         </div>
                         <div className="text-center">
                           <div className="btn-group">
@@ -103,14 +157,17 @@ export default function Login() {
                             </button>
 
                             <button
-                              type="submit"
+                              type="button"
                               className="button button--effect"
                               id="forgot"
+                              onClick={(e) =>
+                                (window.location.href = "/forgot-pass")
+                              }
                             >
                               FORGOT YOUR PASSWORD?
                               <img
                                 src={ForgotPass}
-                                alt="React Logo"
+                                alt="Forgot Logo"
                                 style={{ width: "15px", color: "#fff" }}
                               />
                             </button>

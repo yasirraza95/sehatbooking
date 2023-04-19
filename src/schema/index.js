@@ -10,6 +10,11 @@ export const contactValidation = Yup.object().shape({
   message: Yup.string().required("Please enter Message"),
 });
 
+export const loginValidation = Yup.object().shape({
+  username: Yup.string().required("Please enter Username"),
+  password: Yup.string().required("Please enter Password"),
+});
+
 export const newsletterValidation = Yup.object().shape({
   email: Yup.string()
     .email("Please enter a valid Email Address")

@@ -105,7 +105,7 @@ export default function ForgotPass() {
 
                   <div className="row nm-aic nm-mb-2">
                     <div className="col-sm-6 nm-mb-1 nm-mb-sm-0">
-                      <a className="nm-fs-1 nm-fw-bd" href="login.html">
+                      <a className="nm-fs-1 nm-fw-bd" href="/login">
                         <i className="fas fa-chevron-left nm-fal"></i>
                         Back to sign in
                       </a>

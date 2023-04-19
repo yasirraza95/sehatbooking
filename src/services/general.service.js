@@ -12,7 +12,7 @@ const login = (values) => {
   return axios.post(
     `${API_URL}/login`,
     {
-      username: values.name,
+      username: values.username,
       password: values.password,
     },
     {
