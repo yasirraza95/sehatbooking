@@ -28,11 +28,12 @@ export default function ForgotToken() {
   const token = searchParams.get("token");
   useEffect(() => {
     if (!token) {
-      navigate("/");
+      // navigate("/");
+      window.location.href = "/";
     } else {
       checkToken(token);
     }
-  }, [token, navigate]);
+  }, [token]);
 
   const checkToken = async (token) => {
     // setLoading(true);
@@ -42,11 +43,13 @@ export default function ForgotToken() {
       if (err.response.status === 404) {
         // setLoading(false);
         swal("", err.response, "error");
-        navigate("/");
+        // navigate("/");
+        window.location.href = "/";
       } else {
         // setLoading(false);
         swal("", "Something went wrong", "error");
-        navigate("/");
+        // navigate("/");
+        window.location.href = "/";
       }
     }
   };
@@ -71,7 +74,9 @@ export default function ForgotToken() {
       const { data } = response;
       const { response: message } = data;
       swal(message);
-      navigate("/login");
+      // navigate("/login");
+      window.location.href = "/login";
+
       action.resetForm();
       // setLoading(false);
     } catch (err) {

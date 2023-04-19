@@ -50,7 +50,8 @@ export default function Login() {
     // setLoading(true);
     try {
       await GeneralService.login(values);
-      navigate("/");
+      // navigate("/");
+      window.location.href = "/";
       // console.log(message);
       // setSubmitMessage(message);
       // setSubmit("success");

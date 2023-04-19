@@ -424,7 +424,9 @@ export default function FindDonor() {
                       </div>
                       <div className="checkbox">
                         <label>
-                          <input type="checkbox" name="remember" /> Remember me
+                          <a style={{ color: "black" }} href="/forgot-pass">
+                            Forgot Password
+                          </a>
                         </label>
                       </div>
                       <button
