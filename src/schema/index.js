@@ -16,6 +16,25 @@ export const newsletterValidation = Yup.object().shape({
     .required("Please enter Email Address"),
 });
 
+export const passwordsValidation = Yup.object().shape({
+  new_password: Yup.string()
+    .required("Please enter Password")
+    .min(6, "Your password must be at least 6 characters long")
+    .matches(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})/,
+      "Please enter atleast 1 uppercase,1 lowercase and 1 digit."
+    ),
+
+  confirm_password: Yup.string()
+    .required("Please enter Password")
+    .min(6, "Your password must be at least 6 characters long")
+    .matches(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})/,
+      "Please enter atleast 1 uppercase,1 lowercase and 1 digit."
+    )
+    .oneOf([Yup.ref("new_password"), null], "Passwords must match"),
+});
+
 export const donorSearch = Yup.object().shape({
   city: Yup.string().required("Please select City"),
   area: Yup.string().required("Please select City Area"),

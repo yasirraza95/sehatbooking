@@ -273,8 +273,6 @@ const updatePassword = (values) => {
     `${API_URL}/update-password/${values.token}`,
     {
       password: values.password,
-      updated_by: values.updated_by,
-      updated_at: values.updated_at,
     },
     {
       headers: headers,
