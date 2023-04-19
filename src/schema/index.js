@@ -126,7 +126,7 @@ export const updateStoreSchema = Yup.object({
   store: Yup.number().required("Please enter the Store"),
 });
 
-export const signUpSchema = Yup.object({
+export const registerValidation = Yup.object({
   username: Yup.string().min(2).required("Please enter the Username"),
   fname: Yup.string().min(2).required("Please enter the First Name"),
   lname: Yup.string().min(2).required("Please enter the Last Name"),

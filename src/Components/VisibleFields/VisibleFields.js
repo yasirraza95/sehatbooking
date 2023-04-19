@@ -11,19 +11,18 @@ export default function VisibleFields() {
         <button className="BTN" onClick={() => setVisible(!visible)}>
           {visible ? "Hide" : "Show"}
         </button>
-        List me in PakDonor's donaion bank
+        List me in blood donaion bank
       </li>
       {visible && (
         <div>
           <div className="input">
             <label for="regiState">Date Of Birth</label>
-            <input type="text" name="regi_state" id="regiState" required />
+            <input type="date" name="regi_state" id="regiState" required />
           </div>
           <div className="input">
             <label for="regiCountry">Blood Group</label>
             <select class="select-donation-type" id="regiCountry">
-              <option label="" selected style={{ display: "none" }}></option>
-              <option value="usa">Select Blood Group</option>
+              <option value="">Select Blood Group</option>
               <option value="A+">A+</option>
               <option value="A-">A-</option>
               <option value="B+">B+</option>
@@ -36,7 +35,7 @@ export default function VisibleFields() {
           </div>
           <div className="input">
             <label for="regiState">Last Bleed Date</label>
-            <input type="text" name="regi_state" id="regiState" required />
+            <input type="date" name="regi_state" id="regiState" required />
           </div>
         </div>
       )}
