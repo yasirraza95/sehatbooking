@@ -5,6 +5,9 @@ import MenuLogo from "../Images/sehatbooking-logo.png";
 import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch, useSelector } from "react-redux";
+import { actionCreaters } from "../../Redux";
+import { bindActionCreators } from "redux";
 // import $ from "jquery";
 
 export default function Header() {
@@ -23,6 +26,20 @@ export default function Header() {
   //     $(".open-sidenav").toggleClass("toggle-active");
   //   });
   // };
+
+  const dispatch = useDispatch();
+  const userActions = bindActionCreators(actionCreaters, dispatch);
+  const state = useSelector((state) => state.stateVals);
+  const { name } = state;
+
+  const logOut = async (event) => {
+    event.preventDefault();
+
+    // setLoading(true);
+    userActions.logOut(null);
+    // setLoading(false);
+    // navigate("/");
+  };
 
   return (
     <>
@@ -118,22 +135,30 @@ export default function Header() {
                     Appointment
                   </a>
                 </li>
-                <li className="nav-item">
-                  <div className="dropdown">
-                    <a href="/profile" className="nav-link">
-                      <div className="circle">
-                        <span className="circle-inner">SB</span>
-                      </div>
-                    </a>
-                    <div className="dropdown-content">
-                      <div style={{ borderTop: "5px solid #ea062b" }}></div>
-                      <a href="#">
-                        Log Out{" "}
-                        <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                {name ? (
+                  <li className="nav-item">
+                    <div className="dropdown">
+                      <a href="/profile" className="nav-link">
+                        <div className="circle">
+                          <span className="circle-inner">{name}</span>
+                        </div>
                       </a>
+                      <div className="dropdown-content">
+                        <div style={{ borderTop: "5px solid #ea062b" }}></div>
+                        <a href="#" onClick={(e) => logOut(e)}>
+                          Log Out{" "}
+                          <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                </li>
+                  </li>
+                ) : (
+                  <li className="nav-item">
+                    <a href="/login" className="nav-link">
+                      Login
+                    </a>
+                  </li>
+                )}
               </ul>
             </div>
             <div className="navbar-out order-2 order-xl-3">

@@ -21,8 +21,14 @@ import OurServices from "./Components/OurServices/OurServices";
 import ServiceDetail from "./Components/ServiceDetail/ServiceDetail";
 import BloodRequest from "./Components/BloodRequest/BloodRequest";
 import ForgotToken from "./Components/ForgotToken/ForgotToken";
+// import { useDispatch } from "react-redux";
+// import { actionCreaters } from "./Redux";
+// import { bindActionCreators } from "redux";
 
 function App() {
+  // const dispatch = useDispatch();
+  // const userActions = bindActionCreators(actionCreaters, dispatch);
+
   return (
     <>
       <div className="App">

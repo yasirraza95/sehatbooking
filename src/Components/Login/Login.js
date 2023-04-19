@@ -11,7 +11,10 @@ import { loginValidation } from "../../schema";
 import { useFormik } from "formik";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import LoginHeader from './LoginHeader.js---';
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreaters } from "../../Redux";
+
 export default function Login() {
   // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
   // useImportScript("/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
@@ -27,6 +30,9 @@ export default function Login() {
   // useImportScript("/assets/js/plugin.js");
   // useImportScript("/assets/js/main.js");
 
+  const dispatch = useDispatch();
+  const userActions = bindActionCreators(actionCreaters, dispatch);
+
   const navigate = useNavigate();
   const [submit, setSubmit] = useState("");
   const [submitMessage, setSubmitMessage] = useState("");
@@ -34,11 +40,8 @@ export default function Login() {
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: {
-        first_name: "",
-        last_name: "",
-        email: "",
-        subject: "",
-        message: "",
+        username: "",
+        password: "",
       },
       validationSchema: loginValidation,
       onSubmit: (values, action) => {
@@ -49,13 +52,25 @@ export default function Login() {
   const formSubmit = async (values, action) => {
     // setLoading(true);
     try {
-      await GeneralService.login(values);
+      const response = await GeneralService.login(values);
+      const { access_token, data } = response;
+      const { user } = data;
+      const { id, first_name, last_name } = user;
+      console.log(first_name);
+      let fname = first_name.substring(0, 1).toUpperCase();
+      let lname = last_name.substring(0, 1).toUpperCase();
+
+      userActions.logIn({
+        accessToken: access_token,
+        id: id,
+        name: fname + lname,
+      });
       // navigate("/");
       window.location.href = "/";
+      action.resetForm();
       // console.log(message);
       // setSubmitMessage(message);
       // setSubmit("success");
-      action.resetForm();
       // setLoading(false);
     } catch (err) {
       console.log(err);
@@ -165,8 +180,9 @@ export default function Login() {
                                 (window.location.href = "/forgot-pass")
                               }
                             >
-                              FORGOT YOUR PASSWORD? <img
-                              id="forgotImg"
+                              FORGOT YOUR PASSWORD?{" "}
+                              <img
+                                id="forgotImg"
                                 src={ForgotPass}
                                 alt="Forgot Logo"
                                 style={{ width: "15px", color: "#fff" }}

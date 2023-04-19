@@ -1,19 +1,13 @@
 import secureLocalStorage from "react-secure-storage";
 
 const id = secureLocalStorage.getItem("_id");
-const uName = secureLocalStorage.getItem("uName");
-const uType = secureLocalStorage.getItem("uType");
 const name = secureLocalStorage.getItem("name");
-const resultDate = secureLocalStorage.getItem("date");
 const accessToken = secureLocalStorage.getItem("accessToken");
 const forgotToken = secureLocalStorage.getItem("forgotToken");
 
 const initialState = {
   id: id ? id : null,
-  uType: uType ? uType : null,
-  uName: uName ? uName : null,
   name: name ? name : null,
-  resultDate: resultDate ? resultDate : null,
   accessToken: accessToken ? accessToken : null,
   forgotToken: forgotToken ? forgotToken : null,
 };
@@ -22,16 +16,12 @@ const reducer = (state = initialState, action) => {
   if (action.type === "login") {
     secureLocalStorage.setItem("accessToken", action.payload.accessToken);
     secureLocalStorage.setItem("_id", action.payload.id);
-    secureLocalStorage.setItem("uType", action.payload.uType);
-    secureLocalStorage.setItem("uName", action.payload.uName);
     secureLocalStorage.setItem("name", action.payload.name);
 
     return {
       ...state,
       accessToken: action.payload.accessToken,
       id: action.payload.id,
-      uType: action.payload.uType,
-      uName: action.payload.uName,
       name: action.payload.name,
     };
   } else if (action.type === "updateprofile") {
@@ -58,8 +48,6 @@ const reducer = (state = initialState, action) => {
       ...state,
       accessToken: null,
       id: null,
-      uType: null,
-      uName: null,
       name: null,
     };
   } else if (action.type === "forgot") {
