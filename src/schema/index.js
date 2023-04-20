@@ -127,52 +127,18 @@ export const updateStoreSchema = Yup.object({
 });
 
 export const registerValidation = Yup.object({
-  username: Yup.string().min(2).required("Please enter the Username"),
-  fname: Yup.string().min(2).required("Please enter the First Name"),
-  lname: Yup.string().min(2).required("Please enter the Last Name"),
-  // ssn: Yup.string().min(9).required("Please enter the SSN").typeError("SSN must be a number"),
-  ssn: Yup.string()
-    .min(11, "please enter valid ssn")
-    .max(11, "please enter complete ssn")
-    .required("Please enter the SSN"),
+  first_name: Yup.string().min(2).required("Please enter First Name"),
+  last_name: Yup.string().min(2).required("Please enter Last Name"),
+  group: Yup.string().required("Please select Blood Group"),
+  // FIXME mobile validation
+  mobile: Yup.string()
+    .min(11, "Mobile No. must be 11 digits")
+    .max(11, "Mobile No. must be 11 digits")
+    .required("Please enter Mobile No."),
 
-  address1: Yup.string().min(2).required("Please enter the Address1"),
-  city: Yup.string().required("Please select the City"),
-  zipcode: Yup.number().min(5).required("Please enter the Zip Code"),
-  email: Yup.string().email().required("Please enter the Email"),
-  phone: Yup.string().required("Please enter the Phone"),
-  fax: Yup.number().min(5).required("Please enter the Fax"),
-  stateprov: Yup.number().required("Please select the State"),
-  stateprov2: Yup.number().required("Please select the State"),
-  store: Yup.number().required("Please select the Store"),
-  // stateprov2: Yup.number().required("Please enter the State"),
-  city2: Yup.number().required("Please enter the City"),
-  role: Yup.number().required("Please select the Role"),
-  manager_signature: Yup.string()
-    .notRequired()
-    .when("role", {
-      is: (val) => val === 1,
-      then: Yup.string().required("Please enter the Signature"),
-      otherwise: Yup.string().notRequired(),
-    }),
-  signature: Yup.string().min(2).required("Please enter the Signature"),
-  email: Yup.string().email().required("Please enter the Email"),
-  password: Yup.string()
-    .min(6, "Your password must be at least 6 characters long")
-    .required("Please enter the Password")
-    .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})/,
-      "Please enter atleast 1 uppercase,1 lowercase and 1 digit."
-    ),
-  termsAndConditions: Yup.bool().oneOf(
-    [true],
-    "You need to agree  the terms and conditions"
-  ),
-  iAgree: Yup.bool().oneOf([true], "Please accept our agreement"),
-  // name: Yup.string().min(2).max(10).required("Please enter the Name"),
-  confirm_password: Yup.string()
-    .required("Please enter the Password again")
-    .oneOf([Yup.ref("password"), null], "Passwords must match"),
+  address: Yup.string().required("Please enter Address"),
+  state: Yup.number().min(5).required("Please enter the Zip Code"),
+  city: Yup.string().email().required("Please enter the Email"),
 });
 
 export const addState = Yup.object({

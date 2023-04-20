@@ -25,6 +25,7 @@ export default function Register() {
   // useImportScript("/assets/vendor/wow/wow.min.js");
   // useImportScript("/assets/js/plugin.js");
   // useImportScript("/assets/js/main.js");
+  const [state, setState] = useState([]);
   const [city, setCity] = useState([]);
   const [group, setGroup] = useState([]);
 
@@ -33,9 +34,29 @@ export default function Register() {
   const [submit, setSubmit] = useState("");
   const [submitMessage, setSubmitMessage] = useState("");
 
-  const getCity = async () => {
-    setCity([]);
-    const { data } = await GeneralService.listCities();
+  const changeState = (e) => {
+    const getCity = async () => {
+      setCity([]);
+      const { data } = await GeneralService.getCityByState(e.target.value);
+      const { response: res } = data;
+      const results = [];
+      res.map((value) => {
+        results.push({
+          key: value.name,
+          value: value.name,
+        });
+      });
+      setCity([...results]);
+    };
+
+    if (e.target.value !== "") {
+      getCity();
+    }
+  };
+
+  const getState = async () => {
+    setState([]);
+    const { data } = await GeneralService.listStates();
     const { response: res } = data;
     const results = [];
     res.map((value) => {
@@ -44,11 +65,26 @@ export default function Register() {
         value: value.name,
       });
     });
-    setCity([{ key: "", value: "Select City" }, ...results]);
+    setState([{ key: "", value: "Select State" }, ...results]);
+  };
+
+  const getGroup = async () => {
+    const { data } = await GeneralService.listGroups();
+    const { response: res } = data;
+    const results = [];
+    res.map((value) => {
+      results.push({
+        key: value.name,
+        value: value.name,
+      });
+    });
+    setGroup([{ key: "", value: "Select Group" }, ...results]);
   };
 
   useEffect(() => {
-    getCity();
+    getState();
+    // getCity();
+    getGroup();
   }, []);
 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
@@ -56,9 +92,11 @@ export default function Register() {
       initialValues: {
         first_name: "",
         last_name: "",
-        email: "",
-        subject: "",
-        message: "",
+        group: "",
+        mobile: "",
+        address: "",
+        state: "",
+        city: "",
       },
       validationSchema: registerValidation,
       onSubmit: (values, action) => {
@@ -141,19 +179,29 @@ export default function Register() {
                             <label for="regiFName">First Name</label>
                             <input
                               type="text"
-                              name="regi_f_name"
+                              name="first_name"
                               id="regiFName"
                               required
+                              value={values.first_name || ""}
+                              onChange={handleChange}
                             />
+                            {touched.first_name && errors.first_name && (
+                              <div className="error">{errors.first_name}</div>
+                            )}
                           </div>
                           <div className="input">
                             <label for="regiLName">Last Name</label>
                             <input
                               type="text"
-                              name="regi_l_name"
+                              name="last_name"
                               id="regiLName"
                               required
+                              value={values.last_name || ""}
+                              onChange={handleChange}
                             />
+                            {touched.last_name && errors.last_name && (
+                              <div className="error">{errors.last_name}</div>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -168,19 +216,21 @@ export default function Register() {
                             <select
                               className="select-blood-group"
                               id="regiGroup"
+                              name="group"
+                              onChange={handleChange}
+                              value={values.group || ""}
                             >
-                              <option
-                                label=""
-                                selected
-                                style={{ display: "none" }}
-                              ></option>
-                              <option value="AB+">AB+</option>
-                              <option value="AB-">AB-</option>
-                              <option value="O+">O+</option>
-                              <option value="O-">O-</option>
-                              <option value="A+">A+</option>
-                              <option value="A-">A-</option>
+                              {group.map((res) => {
+                                return (
+                                  <option key={res.key} value={res.value}>
+                                    {res.value}
+                                  </option>
+                                );
+                              })}
                             </select>
+                            {touched.group && errors.group && (
+                              <div className="error">{errors.group}</div>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -278,10 +328,13 @@ export default function Register() {
                             <label for="regiNumber">Number</label>
                             <input
                               type="text"
-                              name="regi_number"
+                              name="mobile"
                               id="regiNumber"
                               required
                             />
+                            {touched.mobile && errors.mobile && (
+                              <div className="error">{errors.mobile}</div>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -294,10 +347,15 @@ export default function Register() {
                             <label for="regiAddress">Street Address</label>
                             <input
                               type="text"
-                              name="regi_address"
+                              name="address"
                               id="regiAddress"
                               required
+                              value={values.address || ""}
+                              onChange={handleChange}
                             />
+                            {touched.address && errors.address && (
+                              <div className="error">{errors.address}</div>
+                            )}
                           </div>
                           <div className="input">
                             <label for="regiState">State</label>
@@ -307,11 +365,11 @@ export default function Register() {
                               id="state"
                               value={values.state || ""}
                               onChange={(e) => {
-                                // changeCity(e);
+                                changeState(e);
                                 handleChange(e);
                               }}
                             >
-                              {city.map((res) => {
+                              {state.map((res) => {
                                 return (
                                   <option key={res.key} value={res.value}>
                                     {res.value}
@@ -319,6 +377,9 @@ export default function Register() {
                                 );
                               })}
                             </select>
+                            {touched.state && errors.state && (
+                              <div className="error">{errors.state}</div>
+                            )}
                           </div>
                           <div className="input">
                             <label for="regiCity">City</label>
@@ -332,6 +393,7 @@ export default function Register() {
                                 handleChange(e);
                               }}
                             >
+                              <option value="">Select City</option>
                               {city.map((res) => {
                                 return (
                                   <option key={res.key} value={res.value}>
@@ -340,18 +402,26 @@ export default function Register() {
                                 );
                               })}
                             </select>
+                            {touched.city && errors.city && (
+                              <div className="error">{errors.city}</div>
+                            )}
                           </div>
 
                           <div>
                             {/* <VisibleFields /> */}
                             <div>
                               <li style={{ listStyle: "none" }}>
-                                <button
+                                {/* <button
                                   className="BTN"
                                   onClick={() => setVisible(!visible)}
                                 >
                                   {visible ? "Hide" : "Show"}
-                                </button>
+                                </button> */}
+                                <input
+                                  type="checkbox"
+                                  name="consent"
+                                  onClick={() => setVisible(!visible)}
+                                />
                                 List me in blood donaion bank
                               </li>
                               {visible && (
@@ -365,7 +435,7 @@ export default function Register() {
                                       required
                                     />
                                   </div>
-                                  <div className="input">
+                                  {/* <div className="input">
                                     <label for="regiCountry">Blood Group</label>
                                     <select
                                       class="select-donation-type"
@@ -383,7 +453,7 @@ export default function Register() {
                                       <option value="AB+">AB+</option>
                                       <option value="AB-">AB-</option>
                                     </select>
-                                  </div>
+                                  </div> */}
                                   <div className="input">
                                     <label for="regiState">
                                       Last Bleed Date
