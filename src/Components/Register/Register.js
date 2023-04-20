@@ -30,6 +30,7 @@ export default function Register() {
   const [group, setGroup] = useState([]);
 
   const [visible, setVisible] = useState(false);
+  const [notified, setNotified] = useState(false);
 
   const [submit, setSubmit] = useState("");
   const [submitMessage, setSubmitMessage] = useState("");
@@ -97,10 +98,15 @@ export default function Register() {
         address: "",
         state: "",
         city: "",
+        consent: "",
+        notification: "",
+        dob: "",
+        last_bleed: "",
       },
       validationSchema: registerValidation,
       onSubmit: (values, action) => {
-        formSubmit(values, action);
+        console.log(values);
+        // formSubmit(values, action);
       },
     });
 
@@ -423,49 +429,58 @@ export default function Register() {
                                   type="checkbox"
                                   name="consent"
                                   onClick={() => setVisible(!visible)}
+                                  value={values.consent || ""}
+                                  onChange={handleChange}
                                 />
                                 List me in blood donaion bank
                               </li>
                               {visible && (
                                 <div>
                                   <div className="input">
+                                    <label for="notification">
+                                      Want to get notifications ?
+                                    </label>
+                                    <input
+                                      type="checkbox"
+                                      name="notification"
+                                      id="notification"
+                                      onClick={() => setNotified(!notified)}
+                                      value={values.notification || ""}
+                                      onChange={handleChange}
+                                    />
+                                  </div>
+
+                                  <div className="input">
                                     <label for="regiState">Date Of Birth</label>
                                     <input
                                       type="date"
-                                      name="regi_state"
+                                      name="dob"
                                       id="regiState"
                                       required
+                                      value={values.dob || ""}
+                                      onChange={handleChange}
                                     />
+                                    {touched.dob && errors.dob && (
+                                      <div className="error">{errors.dob}</div>
+                                    )}
                                   </div>
-                                  {/* <div className="input">
-                                    <label for="regiCountry">Blood Group</label>
-                                    <select
-                                      class="select-donation-type"
-                                      id="regiCountry"
-                                    >
-                                      <option value="">
-                                        Select Blood Group
-                                      </option>
-                                      <option value="A+">A+</option>
-                                      <option value="A-">A-</option>
-                                      <option value="B+">B+</option>
-                                      <option value="B-">B-</option>
-                                      <option value="O+">O+</option>
-                                      <option value="O-">O-</option>
-                                      <option value="AB+">AB+</option>
-                                      <option value="AB-">AB-</option>
-                                    </select>
-                                  </div> */}
+
                                   <div className="input">
                                     <label for="regiState">
                                       Last Bleed Date
                                     </label>
                                     <input
                                       type="date"
-                                      name="regi_state"
+                                      name="last_bleed"
                                       id="regiState"
                                       required
                                     />
+                                    {touched.last_bleed &&
+                                      errors.last_bleed && (
+                                        <div className="error">
+                                          {errors.last_bleed}
+                                        </div>
+                                      )}
                                   </div>
                                 </div>
                               )}

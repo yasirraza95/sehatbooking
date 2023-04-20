@@ -135,6 +135,18 @@ export const registerValidation = Yup.object({
   address: Yup.string().required("Please enter Address"),
   state: Yup.string().required("Please select State"),
   city: Yup.string().required("Please select City"),
+  dob: Yup.string()
+    .notRequired()
+    .when("consent", {
+      is: true,
+      then: () => Yup.string().required("Please select Date of Birth"),
+    }),
+  last_bleed: Yup.string()
+    .notRequired()
+    .when("consent", {
+      is: true,
+      then: () => Yup.string().required("Please select Last Bleed Date"),
+    }),
 });
 
 export const addState = Yup.object({
