@@ -13,6 +13,7 @@
     "font-awesome": "^4.7.0",
     "formik": "^2.2.9",
     "jquery": "^3.6.4",
+    "jquery-nice-select": "^1.1.0",
     "mdb-react-ui-kit": "^6.0.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",

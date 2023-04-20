@@ -215,7 +215,7 @@ export default function FindDonor() {
                       <div className="col-md-4">
                         {/* <p className="donorLabel">City</p> */}
                         <div className="input">
-                          <select
+                          {/* <select
                             className="select-donation-type"
                             name="city"
                             id="city"
@@ -232,7 +232,25 @@ export default function FindDonor() {
                                 </option>
                               );
                             })}
+                          </select> */}
+                          <select className="selectpicker"
+                            name="city"
+                            id="city"
+                            value={values.city || ""}
+                            onChange={(e) => {
+                              changeCity(e);
+                              handleChange(e);
+                            }}
+                          >
+                            {city.map((res) => {
+                              return (
+                                <option key={res.key} value={res.value}>
+                                  {res.value}
+                                </option>
+                              );
+                            })}
                           </select>
+
                           {touched.city && errors.city && (
                             <div>{errors.city}</div>
                           )}
@@ -242,7 +260,7 @@ export default function FindDonor() {
                         {/* <p className="donorLabel">City Area</p> */}
                         <div className="input">
                           <select
-                            className="select-donation-type"
+                            className="selectpicker"
                             name="area"
                             id="area"
                             value={values.area || ""}
@@ -269,7 +287,7 @@ export default function FindDonor() {
                         {/* <p className="donorLabel">Blood Group</p> */}
                         <div className="input">
                           <select
-                            className="select-donation-type"
+                            className="selectpicker"
                             name="group"
                             id="group"
                             onChange={handleChange}
@@ -289,9 +307,11 @@ export default function FindDonor() {
                           )}
                         </div>
                       </div>
+                      <div className="col-md-4">
                       <button type="submit" className="button button--effect">
                         Search
                       </button>
+                      </div>
                     </div>
                   </div>
                 </form>
