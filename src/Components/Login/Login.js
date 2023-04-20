@@ -189,9 +189,12 @@ export default function Login() {
                               />
                             </button>
                             <button
-                              type="submit"
+                              type="button"
                               className="button button--effect"
                               id="account"
+                              onClick={(e) =>
+                                (window.location.href = "/register")
+                              }
                             >
                               CREATE ACCOUNT <i class="bi bi-person-plus"></i>
                             </button>
