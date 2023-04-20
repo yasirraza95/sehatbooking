@@ -131,14 +131,10 @@ export const registerValidation = Yup.object({
   last_name: Yup.string().min(2).required("Please enter Last Name"),
   group: Yup.string().required("Please select Blood Group"),
   // FIXME mobile validation
-  mobile: Yup.string()
-    .min(11, "Mobile No. must be 11 digits")
-    .max(11, "Mobile No. must be 11 digits")
-    .required("Please enter Mobile No."),
-
+  mobile: Yup.string().required("Please enter Mobile No."),
   address: Yup.string().required("Please enter Address"),
-  state: Yup.number().min(5).required("Please enter the Zip Code"),
-  city: Yup.string().email().required("Please enter the Email"),
+  state: Yup.string().required("Please select State"),
+  city: Yup.string().required("Please select City"),
 });
 
 export const addState = Yup.object({

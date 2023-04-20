@@ -331,6 +331,8 @@ export default function Register() {
                               name="mobile"
                               id="regiNumber"
                               required
+                              value={values.mobile || ""}
+                              onChange={handleChange}
                             />
                             {touched.mobile && errors.mobile && (
                               <div className="error">{errors.mobile}</div>
