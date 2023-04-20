@@ -349,33 +349,25 @@ export default function FindDonor() {
                   </tbody>
                 </table>
               </div>
-              {/* {totalResults > limit && totalPages > 1 ? ( */}
-              {/* <Pagination
-                activePage={currentPage}
-                itemsCountPerPage={parseInt(limit)}
-                totalItemsCount={totalResults}
-                onChange={(e) => {
-                  changePagination(e);
-                }}
-                pageRangeDisplayed={8}
-                itemClass="page-item"
-                linkClass="page-link"
-                firstPageText="First Page"
-                lastPageText="Last Page"
-              /> */}
-              <Pagination
-                activePage={currentPage}
-                itemsCountPerPage={parseInt(limit)}
-                totalItemsCount={totalResults}
-                onChange={(e) => {
-                  changePagination(e);
-                }}>
-                <Pagination.First />
-                <Pagination.Prev />
 
-                <Pagination.Next />
-                <Pagination.Last />
-              </Pagination>
+              {totalResults > limit && totalPages > 1 ? (
+                <Pagination
+                  activePage={currentPage}
+                  itemsCountPerPage={parseInt(limit)}
+                  totalItemsCount={totalResults}
+                  onChange={(e) => {
+                    changePagination(e);
+                  }}
+                >
+                  <Pagination.First />
+                  <Pagination.Prev />
+
+                  <Pagination.Next />
+                  <Pagination.Last />
+                </Pagination>
+              ) : (
+                ""
+              )}
             </div>
           </div>
         </div>

@@ -222,9 +222,7 @@ export default function IndexOne() {
                 <div className="overview-area__single img-effect">
                   <div className="overview-area__single-content">
                     <div className="poster">
-                      <a href="/service-detail">
-                        <img src={BloodDonate4} alt="Blood Donor" />
-                      </a>
+                      <img src={BloodDonate4} alt="Blood Donor" />
                     </div>
                     <div className="icon-box-wrapper">
                       <div className="icon-box">
@@ -249,9 +247,7 @@ export default function IndexOne() {
                 <div className="overview-area__single img-effect wow fadeInUp">
                   <div className="overview-area__single-content">
                     <div className="poster">
-                      <a href="/service-detail">
-                        <img src={BloodDonate3} alt="Give Blood" />
-                      </a>
+                      <img src={BloodDonate3} alt="Give Blood" />
                     </div>
                     <div className="icon-box-wrapper">
                       <div className="icon-box">
@@ -279,9 +275,7 @@ export default function IndexOne() {
                 >
                   <div className="overview-area__single-content">
                     <div className="poster">
-                      <a href="/service-detail">
-                        <img src={BloodDonate} alt="Blood Donation" />
-                      </a>
+                      <img src={BloodDonate} alt="Blood Donation" />
                     </div>
                     <div className="icon-box-wrapper">
                       <div className="icon-box">
@@ -483,9 +477,7 @@ export default function IndexOne() {
           </div>
         </div>
       </section>
-      {/* <!-- ==== #team section end ==== --> */}
 
-      {/* <!-- ==== cta section start ==== --> */}
       <section className="cta">
         <div className="container">
           <div className="row">
@@ -496,11 +488,9 @@ export default function IndexOne() {
                     <div className="cta-area__content">
                       <h2>Let's change the world, Join us now!</h2>
                       <p className="neutral-bottom">
-                        Nor again is there anyone who loves or pursues or
-                        desires to obtain pain of itself, because it is pain,
-                        but occasionally circumstances occur in which toil and
-                        pain can procure reat pleasure but occasionally
-                        circumstances occur.
+                        We strive to respond to all inquiries in a timely manner
+                        and look forward to the opportunity to assist you with
+                        any questions, comments, or concerns you may have
                       </p>
                     </div>
                   </div>
@@ -520,9 +510,6 @@ export default function IndexOne() {
           </div>
         </div>
       </section>
-      {/* <!-- ==== #cta section end ==== --> */}
-
-      {/* <ToTop /> */}
       <Footer />
     </>
   );
