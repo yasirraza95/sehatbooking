@@ -556,7 +556,7 @@ export default function AboutUs() {
                   <div className="col-md-3">
                     <div className="cta-area__btn text-start text-md-end">
                       <a
-                        href="contact-us.html"
+                        href="/contact-us"
                         className="button button--quaternary button--effect"
                       >
                         Contact Us
