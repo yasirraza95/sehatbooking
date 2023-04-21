@@ -36,10 +36,11 @@ const register = (values) => {
       state: values.state,
       city: values.city,
       address: values.address,
-      zip: values.zip,
-      notifications: values.notifications,
-      donation_consent: values.donation_consent,
-      register_from: "web",
+      notifications: values.notification,
+      donation_consent: values.consent,
+      group: values.group,
+      dob: values.dob,
+      last_bleed: values.last_bleed,
     },
     {
       headers: headers,
@@ -271,7 +272,7 @@ const updatePassword = (values) => {
   return axios.put(
     `${API_URL}/update-password/${values.token}`,
     {
-      password: values.password,
+      password: values.new_password,
     },
     {
       headers: headers,
