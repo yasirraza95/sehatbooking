@@ -909,12 +909,12 @@ textarea:focus {
       font-size: 30px;
     }
   }
-@media (max-width:1024px){
+/* @media (max-width:1024px){
   ul.navbar-nav {
     display: none !important;
     padding-bottom: 10px !important;
   }
-}
+} */
   button.button.button--effect::before {
     left: -50%;
   }

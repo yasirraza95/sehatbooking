@@ -1285,4 +1285,18 @@ color: #fff;
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
+@media (min-width: 768px){
+.navbar-nav {
+    float: none !important;
+    margin: 0;
+}
+}
+@media (max-width: 1199px){
+.navbar-collapse {
+    margin-left: 0px !important;
+    margin-top: 28px !important;
+    max-height: 300px !important;
+    overflow-y: auto !important;
+}
+}
 /* ----------------- */
