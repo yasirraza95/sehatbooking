@@ -1,4 +1,5 @@
 import * as Yup from "yup";
+const phoneRegExp = /^(03)([0-9]{9})$/gm;
 
 export const contactValidation = Yup.object().shape({
   first_name: Yup.string().required("Please enter First Name"),
@@ -129,11 +130,19 @@ export const updateStoreSchema = Yup.object({
 export const registerValidation = Yup.object({
   first_name: Yup.string().min(2).required("Please enter First Name"),
   last_name: Yup.string().min(2).required("Please enter Last Name"),
-  // FIXME mobile validation
   email: Yup.string()
     .email("Please enter a valid Email Address")
     .required("Please enter Email Address"),
-  mobile: Yup.string().required("Please enter Mobile No."),
+  phone: Yup.string()
+    .required("Please enter Phone No.")
+    .matches(phoneRegExp, "Please enter valid Phone No."),
+  password: Yup.string()
+    .required("Please enter Password")
+    .min(6, "Your password must be at least 6 characters long")
+    .matches(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})/,
+      "Please enter atleast 1 uppercase,1 lowercase and 1 digit."
+    ),
   address: Yup.string().required("Please enter Address"),
   state: Yup.string().required("Please select State"),
   city: Yup.string().required("Please select City"),

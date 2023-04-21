@@ -10,6 +10,7 @@ import GeneralService from "../../services/general.service";
 import { useFormik } from "formik";
 import { registerValidation } from "../../schema";
 import { useEffect } from "react";
+import swal from "sweetalert";
 
 export default function Register() {
   // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
@@ -34,6 +35,8 @@ export default function Register() {
 
   const [submit, setSubmit] = useState("");
   const [submitMessage, setSubmitMessage] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [phoneError, setPhoneError] = useState("");
 
   const changeState = (e) => {
     const getCity = async () => {
@@ -95,10 +98,12 @@ export default function Register() {
         last_name: "",
         group: "",
         email: "",
-        mobile: "",
+        phone: "",
+        password: "",
         address: "",
         state: "",
         city: "",
+        zip: "",
         consent: "",
         notification: "",
         dob: "",
@@ -106,8 +111,8 @@ export default function Register() {
       },
       validationSchema: registerValidation,
       onSubmit: (values, action) => {
-        console.log(values);
-        // formSubmit(values, action);
+        // console.log(values);
+        formSubmit(values, action);
       },
     });
 
@@ -118,15 +123,23 @@ export default function Register() {
       const { data } = response;
       const { response: message } = data;
       // console.log(message);
-      setSubmitMessage(message);
-      setSubmit("success");
+      // setSubmitMessage(message);
+      // setSubmit("success");
+      swal(message);
       action.resetForm();
       // setLoading(false);
     } catch (err) {
-      console.log(err);
-      if (err?.response?.status === 401) {
-        setSubmitMessage("Username or Password is invalid");
-        setSubmit("danger");
+      // console.log(err);
+      if (err?.response?.status === 422) {
+        const propertyNames = Object.keys(err.response.data);
+
+        if (propertyNames.includes("email")) {
+          setEmailError(err.response.data?.email[0]);
+        }
+
+        if (propertyNames.includes("phone")) {
+          setPhoneError(err.response.data?.phone[0]);
+        }
         // setLoading(false);
       } else {
         setSubmitMessage("Something went wrong, try again");
@@ -177,6 +190,11 @@ export default function Register() {
                   <h2 className="neutral-bottom">Sehat Booking</h2>
                 </div>
                 <div className="registration-area__form">
+                  {submit && (
+                    <div className={`alert alert-${submit}`} role="alert">
+                      {submitMessage}
+                    </div>
+                  )}
                   <form onSubmit={handleSubmit} noValidate>
                     <div className="registration-area__form-single">
                       <p className="secondary">Full Name *</p>
@@ -336,14 +354,17 @@ export default function Register() {
                             <label for="regiNumber">Number</label>
                             <input
                               type="text"
-                              name="mobile"
+                              name="phone"
                               id="regiNumber"
                               required
-                              value={values.mobile || ""}
+                              value={values.phone || ""}
                               onChange={handleChange}
                             />
-                            {touched.mobile && errors.mobile && (
-                              <div className="error">{errors.mobile}</div>
+                            {touched.phone && errors.phone && (
+                              <div className="error">{errors.phone}</div>
+                            )}
+                            {phoneError && (
+                              <div className="error">{phoneError}</div>
                             )}
                           </div>
                         </div>
@@ -365,6 +386,30 @@ export default function Register() {
                             />
                             {touched.email && errors.email && (
                               <div className="error">{errors.email}</div>
+                            )}
+                            {emailError && (
+                              <div className="error">{emailError}</div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="registration-area__form-single">
+                      <p className="secondary">Password *</p>
+                      <div className="registration-area__form-single__inner">
+                        <div className="input-group-column">
+                          <div className="input">
+                            <label for="password">Password</label>
+                            <input
+                              type="password"
+                              name="password"
+                              id="password"
+                              required
+                              value={values.password || ""}
+                              onChange={handleChange}
+                            />
+                            {touched.password && errors.password && (
+                              <div className="error">{errors.password}</div>
                             )}
                           </div>
                         </div>
@@ -400,7 +445,6 @@ export default function Register() {
                                 handleChange(e);
                               }}
                             >
-                              <option value="">Select State</option>
                               {state.map((res) => {
                                 return (
                                   <option key={res.key} value={res.value}>
@@ -437,105 +481,111 @@ export default function Register() {
                             {touched.city && errors.city && (
                               <div className="errorCity">{errors.city}</div>
                             )}
-                          <div>
-                            {/* <VisibleFields /> */}
                             <div>
-                              <li style={{ listStyle: "none" }}>
-                                {/* <button
+                              {/* <VisibleFields /> */}
+                              <div>
+                                <li style={{ listStyle: "none" }}>
+                                  {/* <button
                                   className="BTN"
                                   onClick={() => setVisible(!visible)}
                                 >
                                   {visible ? "Hide" : "Show"}
                                 </button> */}
-                                <input
-                                  type="checkbox"
-                                  name="consent"
-                                  onClick={() => setVisible(!visible)}
-                                  value={values.consent || ""}
-                                  onChange={handleChange}
-                                />
-                                List me in blood donaion bank
-                              </li>
-                              {visible && (
-                                <div>
-                                  <div className="input">
-                                    <label for="notification">
-                                      Want to get notifications ?
-                                    </label>
-                                    <input
-                                      type="checkbox"
-                                      name="notification"
-                                      id="notification"
-                                      onClick={() => setNotified(!notified)}
-                                      value={values.notification || ""}
-                                      onChange={handleChange}
-                                    />
-                                  </div>
-                                  <div className="input">
-                                    <label for="regiCountry">Blood Group</label>
-                                    <select
-                                      className="select-regi-country"
-                                      id="regiCountry"
-                                      name="group"
-                                      onChange={handleChange}
-                                      value={values.group || ""}
-                                    >
-                                      {group.map((res) => {
-                                        return (
-                                          <option
-                                            key={res.key}
-                                            value={res.value}
-                                          >
-                                            {res.value}
-                                          </option>
-                                        );
-                                      })}
-                                    </select>
-                                    {touched.group && errors.group && (
-                                      <div className="error">
-                                        {errors.group}
-                                      </div>
-                                    )}
-                                  </div>
-
-                                  <div className="input">
-                                    <label for="regiState">Date Of Birth</label>
-                                    <input
-                                      type="date"
-                                      name="dob"
-                                      id="regiState"
-                                      required
-                                      value={values.dob || ""}
-                                      onChange={handleChange}
-                                    />
-                                    {touched.dob && errors.dob && (
-                                      <div className="error">{errors.dob}</div>
-                                    )}
-                                  </div>
-
-                                  <div className="input">
-                                    <label for="regiState">
-                                      Last Bleed Date
-                                    </label>
-                                    <input
-                                      type="date"
-                                      name="last_bleed"
-                                      id="regiState"
-                                      required
-                                      value={values.last_bleed || ""}
-                                      onChange={handleChange}
-                                    />
-                                    {touched.last_bleed &&
-                                      errors.last_bleed && (
+                                  <input
+                                    type="checkbox"
+                                    name="consent"
+                                    onClick={() => setVisible(!visible)}
+                                    value={values.consent || ""}
+                                    onChange={handleChange}
+                                  />
+                                  List me in blood donaion bank
+                                </li>
+                                {visible && (
+                                  <div>
+                                    <div className="input">
+                                      <label for="notification">
+                                        Want to get notifications ?
+                                      </label>
+                                      <input
+                                        type="checkbox"
+                                        name="notification"
+                                        id="notification"
+                                        onClick={() => setNotified(!notified)}
+                                        value={values.notification || ""}
+                                        onChange={handleChange}
+                                      />
+                                    </div>
+                                    <div className="input">
+                                      <label for="regiCountry">
+                                        Blood Group
+                                      </label>
+                                      <select
+                                        className="select-regi-country"
+                                        id="regiCountry"
+                                        name="group"
+                                        onChange={handleChange}
+                                        value={values.group || ""}
+                                      >
+                                        {group.map((res) => {
+                                          return (
+                                            <option
+                                              key={res.key}
+                                              value={res.value}
+                                            >
+                                              {res.value}
+                                            </option>
+                                          );
+                                        })}
+                                      </select>
+                                      {touched.group && errors.group && (
                                         <div className="error">
-                                          {errors.last_bleed}
+                                          {errors.group}
                                         </div>
                                       )}
+                                    </div>
+
+                                    <div className="input">
+                                      <label for="regiState">
+                                        Date Of Birth
+                                      </label>
+                                      <input
+                                        type="date"
+                                        name="dob"
+                                        id="regiState"
+                                        required
+                                        value={values.dob || ""}
+                                        onChange={handleChange}
+                                      />
+                                      {touched.dob && errors.dob && (
+                                        <div className="error">
+                                          {errors.dob}
+                                        </div>
+                                      )}
+                                    </div>
+
+                                    <div className="input">
+                                      <label for="regiState">
+                                        Last Bleed Date
+                                      </label>
+                                      <input
+                                        type="date"
+                                        name="last_bleed"
+                                        id="regiState"
+                                        required
+                                        value={values.last_bleed || ""}
+                                        onChange={handleChange}
+                                      />
+                                      {touched.last_bleed &&
+                                        errors.last_bleed && (
+                                          <div className="error">
+                                            {errors.last_bleed}
+                                          </div>
+                                        )}
+                                    </div>
                                   </div>
-                                </div>
-                              )}
+                                )}
+                              </div>
                             </div>
-                          </div>
                           </div>
 
                           <div className="input registration-input-button mb-0">
