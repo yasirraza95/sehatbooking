@@ -21,12 +21,14 @@ import OurServices from "./Components/OurServices/OurServices";
 import ServiceDetail from "./Components/ServiceDetail/ServiceDetail";
 import BloodRequest from "./Components/BloodRequest/BloodRequest";
 import ForgotToken from "./Components/ForgotToken/ForgotToken";
+import PreLoader from "./Components/PreLoader/PreLoader";
 
 function App() {
   return (
     <>
       <div className="App">
         <BrowserRouter>
+        <PreLoader/>
           <Routes>
             <Route path="/" element={<IndexOne />} />
             <Route path="/login" element={<Login />} />

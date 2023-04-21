@@ -233,6 +233,8 @@ export default function FindDonor() {
                               );
                             })}
                           </select> */}
+
+
                           <select className="selectpicker"
                             name="city"
                             id="city"
@@ -252,7 +254,7 @@ export default function FindDonor() {
                           </select>
 
                           {touched.city && errors.city && (
-                            <div>{errors.city}</div>
+                            <div className="findError">{errors.city}</div>
                           )}
                         </div>
                       </div>
@@ -279,7 +281,7 @@ export default function FindDonor() {
                             })}
                           </select>
                           {touched.area && errors.area && (
-                            <div>{errors.area}</div>
+                            <div className="findError">{errors.area}</div>
                           )}
                         </div>
                       </div>
@@ -303,14 +305,14 @@ export default function FindDonor() {
                             })}
                           </select>
                           {touched.group && errors.group && (
-                            <div>{errors.group}</div>
+                            <div className="findError">{errors.group}</div>
                           )}
                         </div>
                       </div>
                       <div className="col-md-4">
-                      <button type="submit" className="button button--effect">
-                        Search
-                      </button>
+                        <button type="submit" className="button button--effect findDonor">
+                          Search
+                        </button>
                       </div>
                     </div>
                   </div>
