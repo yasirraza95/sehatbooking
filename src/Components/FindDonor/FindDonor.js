@@ -14,6 +14,8 @@ import { useEffect } from "react";
 import GeneralService from "../../services/general.service";
 import { useFormik } from "formik";
 import { donorSearch } from ".././../schema/index";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function FindDonor() {
   // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
@@ -30,6 +32,9 @@ export default function FindDonor() {
   // useImportScript("/assets/js/plugin.js");
   // useImportScript("/assets/js/main.js");
 
+  const state = useSelector((state) => state.stateVals);
+  const { id } = state;
+
   const [loading, setLoading] = useState(false);
   const [resultData, setResultData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -40,6 +45,15 @@ export default function FindDonor() {
   const [city, setCity] = useState([]);
   const [area, setArea] = useState([]);
   const [group, setGroup] = useState([]);
+
+  // TODO redirection to login page and popup opening here and send email to recipient
+  const contactDonor = (e) => {
+    if (id !== null) {
+      console.log("id=" + id);
+    } else {
+      console.log("not id");
+    }
+  };
 
   const getResultData = async (page, city, area, group) => {
     setLoading(true);
@@ -234,8 +248,8 @@ export default function FindDonor() {
                             })}
                           </select> */}
 
-
-                          <select className="selectpicker"
+                          <select
+                            className="selectpicker"
                             name="city"
                             id="city"
                             value={values.city || ""}
@@ -310,7 +324,10 @@ export default function FindDonor() {
                         </div>
                       </div>
                       <div className="col-md-4">
-                        <button type="submit" className="button button--effect findDonor">
+                        <button
+                          type="submit"
+                          className="button button--effect findDonor"
+                        >
                           Search
                         </button>
                       </div>
@@ -352,14 +369,23 @@ export default function FindDonor() {
                             </div>
                           </td>
                           <td>
-                            <a
+                            {/* <a
                               href="#"
                               onclick="show_registration_dialog()"
                               data-toggle="modal"
                               data-target=".login-register-form"
                             >
                               <FontAwesomeIcon icon={faMobileScreenButton} />
-                            </a>{" "}
+                            </a> */}
+                            <Link
+                              id={row.id}
+                              to={void 0}
+                              onClick={(e) => {
+                                contactDonor(e.currentTarget.id);
+                              }}
+                            >
+                              <FontAwesomeIcon icon={faMobileScreenButton} />
+                            </Link>
                           </td>
                         </tr>
                       ))
