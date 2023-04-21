@@ -834,9 +834,6 @@
         padding-left: 18px;
         padding-right: 18px;
     }
-    .standalone-area {
-        /*padding-bottom: 0;*/
-    }
     .slider-sec .overlay {
         position: absolute;
         top: 0;
@@ -1364,9 +1361,7 @@
   /* background: transparent url(../images/select-icon2.png) no-repeat calc(100% - 15px) center; */
   position: relative;
 }
-.wpo-contact-pg-section form select:focus {
-  /* background: transparent url(../images/select-icon2.png) no-repeat calc(100% - 15px) center; */
-}
+
 .wpo-contact-pg-section form .submit-area {
     text-align: center;
     width: 100%;
@@ -1541,7 +1536,7 @@
      -ms-transform-origin: 60px 60px;
      -o-transform-origin: 60px 60px;
      transform-origin: 60px 60px;
-     -webkit-mask-image: -webkit-linear-gradient(top, #000, rgba(0, 0, 0, 0));
+     /* -webkit-mask-image: -webkit-linear-gradient(top, #000, rgba(0, 0, 0, 0)); */
      -webkit-animation: rotate 1.2s infinite linear;
      -moz-animation: rotate 1.2s infinite linear;
      -o-animation: rotate 1.2s infinite linear;

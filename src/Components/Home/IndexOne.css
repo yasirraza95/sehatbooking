@@ -43,10 +43,13 @@ select.select-donation-type:focus {
     border: 1px solid #e2e0e0;
   }
   .appointment-area__single.appointment-area__content.bg-red {
-    background-color: #ea062b;
+    /* background-color: #ea062b; */
+    background-color: #fff;
 }
-h4.white {
-    color: #fff;
+h4.red {
+    /* color: #fff; */
+    color: #ea062b;
+
 }
 li.white {
     color: #fff;

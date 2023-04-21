@@ -221,7 +221,7 @@ export default function BloodRequest() {
                           <div className="input-group-column">
                             <div className="input">
                               <select
-                                className="select-donation-type"
+                                className="selectpicker"
                                 name="state"
                                 id="state"
                                 value={values.state || ""}
@@ -245,7 +245,7 @@ export default function BloodRequest() {
 
                             <div className="input">
                               <select
-                                className="select-donation-type"
+                                className="selectpicker"
                                 name="city"
                                 id="city"
                                 value={values.city || ""}
@@ -271,7 +271,7 @@ export default function BloodRequest() {
                           <div className="input-group-column">
                             <div className="input">
                               <select
-                                className="select-donation-type"
+                                className="selectpicker"
                                 name="area"
                                 id="area"
                                 value={values.area || ""}
@@ -295,7 +295,7 @@ export default function BloodRequest() {
                             </div>
                             <div className="input">
                               <select
-                                className="select-donation-type"
+                                className="selectpicker"
                                 name="group"
                                 id="group"
                                 value={values.group || ""}
