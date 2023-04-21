@@ -16,6 +16,7 @@ import { useFormik } from "formik";
 import { donorSearch } from ".././../schema/index";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import swal from "sweetalert";
 
 export default function FindDonor() {
   // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
@@ -49,9 +50,9 @@ export default function FindDonor() {
   // TODO redirection to login page and popup opening here and send email to recipient
   const contactDonor = (e) => {
     if (id !== null) {
-      console.log("id=" + id);
+      swal("Donor information has been sent to your mobile number");
     } else {
-      console.log("not id");
+      window.location.href = "/login";
     }
   };
 
