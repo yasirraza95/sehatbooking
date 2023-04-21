@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ yasir ]
+    branches: [ main ]
 
 jobs:
   web-deploy:
