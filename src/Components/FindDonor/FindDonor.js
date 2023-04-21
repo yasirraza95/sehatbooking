@@ -208,7 +208,7 @@ export default function FindDonor() {
                 <form onSubmit={handleSubmit} noValidate>
                   <div
                     id="donor_search"
-                    className="panel-collapse collapse in"
+                    className="panel-collapse collapse-donor in"
                     style={{ height: "auto" }}
                   >
                     <div className="panel-body">

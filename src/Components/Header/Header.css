@@ -52,9 +52,11 @@ a#app-item:hover {
   text-decoration: none !important;
   color: #000 !important;
 }
+
 a#navbarDropdown {
   text-decoration: none;
 }
+
 a#app-item {
   text-decoration: none;
 }
@@ -624,9 +626,11 @@ a#app-item {
 .nav-link.active {
   color: #ea062b !important;
 }
+
 ul.dropdown-menu {
   margin-top: -9px !important;
 }
+
 .dropdown .dropdown-toggle {
   color: #111111 !important;
 }
@@ -719,6 +723,7 @@ ul.dropdown-menu {
 ul.sideMenu {
   text-align: left;
 }
+
 .navbar-inner .intro {
   width: 100%;
   text-align: center;
@@ -1068,14 +1073,16 @@ div#primaryNav {
   } */
 
 
-  .collapse:not(.show) {
-    display: none;
+.collapse:not(.show) {
+  display: none;
 }
+
 @media (max-width: 2560px) {
   .navbar-out.order-2.order-xl-3::after {
     width: 20% !important;
   }
 }
+
 @media (min-width: 2801px) and (max-width: 3100px) {
   img.sehat-logo {
     margin-left: -61rem !important;
@@ -1087,11 +1094,13 @@ div#primaryNav {
     margin-left: -53rem !important;
   }
 }
+
 @media (min-width: 1993px) and (max-width: 2200px) {
   img.sehat-logo {
     margin-left: -33rem !important;
   }
 }
+
 @media (min-width: 2201px) and (max-width: 2559px) {
   img.sehat-logo {
     margin-left: -51rem !important;
@@ -1107,21 +1116,24 @@ div#primaryNav {
 
 /* two Lines New Header Changes */
 @media (min-width: 1200px) and (max-width: 1600px) {
-    ul.navbar-nav {
-      margin-left: -37px;
+  ul.navbar-nav {
+    margin-left: -37px;
   }
 }
+
 @media (min-width: 1200px) and (max-width: 1600px) {
-a.nav-link {
-  font-size: 15px;
+  a.nav-link {
+    font-size: 15px;
+  }
 }
-}
+
 /* ------- */
 @media (max-width: 1992px) {
   img.sehat-logo {
     margin-left: -27rem !important;
   }
 }
+
 @media (max-width: 1600px) {
   img.sehat-logo {
     margin-left: -4rem !important;
@@ -1139,6 +1151,7 @@ a.nav-link {
     margin-left: -26rem !important;
   }
 }
+
 @media (min-width: 1025px) and (max-width: 1199px) {
   img.sehat-logo {
     margin-left: -30rem !important;
@@ -1199,6 +1212,7 @@ a.nav-link {
   margin-top: -25px;
   margin-bottom: -19px;
 }
+
 .circle-inner {
   color: white;
   display: table-cell;
@@ -1209,6 +1223,7 @@ a.nav-link {
   width: 71px;
   font-size: 27px;
 }
+
 div#primaryNav {
   margin-left: 121px;
 }
@@ -1263,7 +1278,7 @@ div#primaryNav {
   position: absolute;
   background-color: #f1f1f1;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   margin-top: -9px;
   margin-left: 20px;
@@ -1278,33 +1293,47 @@ div#primaryNav {
   text-align: center;
 }
 
-.dropdown-content a:hover {background-color: #ea062b;
-color: #fff;
+.dropdown-content a:hover {
+  background-color: #ea062b;
+  color: #fff;
 }
 
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
 
-@media (min-width: 768px){
-.navbar-nav {
+@media (min-width: 768px) {
+  .navbar-nav {
     float: none !important;
     margin: 0;
+  }
 }
-}
-@media (max-width: 1199px){
-.navbar-collapse {
+
+@media (max-width: 1199px) {
+  .navbar-collapse {
     margin-left: 0px !important;
     margin-top: 28px !important;
     max-height: 300px !important;
     overflow-y: auto !important;
-}
+  }
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
 
-.collapse:not(.show) {
-  display: none !important;
+  .collapse:not(.show) {
+    display: none !important;
+  }
 }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .collapse:not(.show) {
+    display: none !important;
+  }
 }
+
 /* ----------------- */
