@@ -5,6 +5,7 @@
   background-color: #111111;
 }
 
+
 ol.breadcrumb {
   background-color: transparent;
 }
@@ -1297,6 +1298,13 @@ color: #fff;
     margin-top: 28px !important;
     max-height: 300px !important;
     overflow-y: auto !important;
+}
+}
+
+@media (max-width: 768px){
+
+.collapse:not(.show) {
+  display: none !important;
 }
 }
 /* ----------------- */
