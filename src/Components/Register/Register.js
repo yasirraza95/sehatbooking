@@ -221,12 +221,13 @@ export default function Register() {
                           <div className="input">
                             <label for="regiGroup">Blood Group</label>
                             <select
-                              className="select-blood-group"
+                              className="selectpicker"
                               id="regiGroup"
                               name="group"
                               onChange={handleChange}
                               value={values.group || ""}
                             >
+                              <option value="">Select Blood Group</option>
                               {group.map((res) => {
                                 return (
                                   <option key={res.key} value={res.value}>
@@ -390,7 +391,7 @@ export default function Register() {
                           <div className="input">
                             <label for="regiState">State</label>
                             <select
-                              className="select-donation-type"
+                              className="selectpicker"
                               name="state"
                               id="state"
                               value={values.state || ""}
@@ -399,6 +400,7 @@ export default function Register() {
                                 handleChange(e);
                               }}
                             >
+                              <option value="">Select State</option>
                               {state.map((res) => {
                                 return (
                                   <option key={res.key} value={res.value}>
@@ -414,7 +416,7 @@ export default function Register() {
                           <div className="input">
                             <label for="regiCity">City</label>
                             <select
-                              className="select-donation-type"
+                              className="selectpicker"
                               name="city"
                               id="city"
                               value={values.city || ""}
@@ -433,10 +435,8 @@ export default function Register() {
                               })}
                             </select>
                             {touched.city && errors.city && (
-                              <div className="error">{errors.city}</div>
+                              <div className="errorCity">{errors.city}</div>
                             )}
-                          </div>
-
                           <div>
                             {/* <VisibleFields /> */}
                             <div>
@@ -536,6 +536,8 @@ export default function Register() {
                               )}
                             </div>
                           </div>
+                          </div>
+
                           <div className="input registration-input-button mb-0">
                             <button
                               type="submit"

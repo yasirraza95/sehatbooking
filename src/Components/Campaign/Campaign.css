@@ -2884,8 +2884,10 @@
    z-index: 99999;
  }
  .preloader .content {
-   width: 200px;
-   height: 200px;
+  width: 118px;
+  height: 123px;
+   /* width: 200px;
+   height: 200px; */
    overflow: hidden;
    display: flex;
    justify-content: center;
@@ -2896,6 +2898,7 @@
  }
  .preloader .content img {
    border-radius: 100px;
+   margin-left: -1px;
  }
  .preloader.preloader-deactivate {
    visibility: hidden;
