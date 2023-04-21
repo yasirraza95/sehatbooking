@@ -74,7 +74,7 @@ const recRegister = (values) => {
 };
 
 const showProfile = (accessToken) => {
-  return axios.get(`${API_URL}/profle`, {
+  return axios.get(`${API_URL}/profile`, {
     headers: authHeader(accessToken),
   });
 };

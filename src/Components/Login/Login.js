@@ -53,8 +53,8 @@ export default function Login() {
     // setLoading(true);
     try {
       const response = await GeneralService.login(values);
-      const { access_token, data } = response;
-      const { user } = data;
+      const { data } = response;
+      const { access_token, user } = data;
       const { id, first_name, last_name } = user;
       console.log(first_name);
       let fname = first_name.substring(0, 1).toUpperCase();

@@ -6,6 +6,14 @@ import Footer from "../Footer/Footer";
 import VisibleFields from "../VisibleFields/VisibleFields";
 import useImportScript from "../../utils/useImportScript";
 import "./Profile.css";
+import { useEffect } from "react";
+import GeneralService from "../../services/general.service";
+import { useDispatch, useSelector } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreaters } from "../../Redux";
+import { useState } from "react";
+import swal from "sweetalert";
+import { useFormik } from "formik";
 export default function Profile() {
   // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
   // useImportScript("/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
@@ -20,6 +28,111 @@ export default function Profile() {
   // useImportScript("/assets/vendor/wow/wow.min.js");
   // useImportScript("/assets/js/plugin.js");
   // useImportScript("/assets/js/main.js");
+
+  const dispatch = useDispatch();
+  const userActions = bindActionCreators(actionCreaters, dispatch);
+  const state = useSelector((state) => state.stateVals);
+  const { id, accessToken } = state;
+  const [fname, setFname] = useState("");
+  const [lname, setLname] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [states, setStates] = useState("");
+  const [city, setCity] = useState("");
+  const [consent, setConsent] = useState("");
+  const [notification, setNotification] = useState("");
+  const [dob, setDob] = useState("");
+  const [bleed, setBleed] = useState("");
+  const [submit, setSubmit] = useState("");
+  const [submitMessage, setSubmitMessage] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [phoneError, setPhoneError] = useState("");
+
+  // FIXME
+  const getProfile = async () => {
+    // setLoading(true);
+    try {
+      const response = await GeneralService.showProfile(accessToken);
+      // if (status == 200) {
+
+      // userActions.UpdateProfile({
+      //   accessToken: response.data.access_token,
+      //   id: response.data.id,
+      //   uName: response.data.username,
+      //   uType: response.data.user_type,
+      //   name: response.data.first_name + " " + response.data.last_name,
+      // });
+      setFname(response.data.first_name);
+      setLname(response.data.last_name);
+      setEmail(response.data.email);
+      setPhone(response.data.phone);
+      setAddress(response.data.address);
+      setStates(response.data.state);
+      setCity(response.data.city);
+      setConsent(response.data.consent);
+      setNotification(response.data.notification);
+      setDob(response.data.dob);
+      setBleed(response.data.last_bleed);
+
+      // }
+    } catch (err) {
+      console.log(err);
+      // userActions.logOut();
+
+      // setLoading(false);
+      // navigate("/");
+      // swal("", "Please login again", "danger");
+      // window.location.href = "/";
+    }
+  };
+
+  useEffect(() => {
+    getProfile();
+  }, []);
+
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
+    useFormik({
+      enableReinitialize: true,
+
+      initialValues: {
+        first_name: fname,
+        last_name: lname,
+        email: email,
+        phone: phone,
+        address: address,
+      },
+      // validationSchema: contactValidation,
+      onSubmit: (values, action) => {
+        swal("Waiting for update");
+        // formSubmit(values, action);
+      },
+    });
+
+  const formSubmit = async (values, action) => {
+    // setLoading(true);
+    try {
+      const response = await GeneralService.contactUs(values);
+      const { data } = response;
+      const { response: message } = data;
+      // console.log(message);
+      setSubmitMessage(message);
+      setSubmit("success");
+      action.resetForm();
+      // setLoading(false);
+    } catch (err) {
+      console.log(err);
+      if (err?.response?.status === 401) {
+        setSubmitMessage("Username or Password is invalid");
+        setSubmit("danger");
+        // setLoading(false);
+      } else {
+        setSubmitMessage("Something went wrong, try again");
+        setSubmit("danger");
+        // setLoading(false);
+      }
+    }
+  };
 
   return (
     <>
@@ -64,7 +177,7 @@ export default function Profile() {
                   <h2 className="neutral-bottom">Sehat Booking</h2>
                 </div>
                 <div className="registration-area__form">
-                  <form action="#" method="post" name="registration__form">
+                  <form onSubmit={handleSubmit} noValidate>
                     <div className="registration-area__form-single">
                       <p className="secondary">Full Name *</p>
                       <div className="registration-area__form-single__inner">
@@ -73,171 +186,34 @@ export default function Profile() {
                             <label htmlFor="regiFName">First Name</label>
                             <input
                               type="text"
-                              name="regi_f_name"
+                              name="first_name"
                               id="regiFName"
                               required
+                              value={values.first_name || ""}
+                              onChange={handleChange}
                             />
+                            {touched.first_name && errors.first_name && (
+                              <div className="error">{errors.first_name}</div>
+                            )}
                           </div>
                           <div className="input">
                             <label htmlFor="regiLName">Last Name</label>
                             <input
                               type="text"
-                              name="regi_l_name"
+                              name="last_name"
                               id="regiLName"
                               required
+                              value={values.last_name || ""}
+                              onChange={handleChange}
                             />
+                            {touched.last_name && errors.last_name && (
+                              <div className="error">{errors.last_name}</div>
+                            )}
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div className="registration-area__form-single">
-                      <p className="secondary">Date Of Birth *</p>
-                      <div className="registration-area__form-single__inner">
-                        <div className="input-group-column">
-                          <div className="input">
-                            <label htmlFor="regiDay">Day</label>
-                            <select className="select-day" id="regiDay">
-                              <option value="saturday">Saturday</option>
-                              <option value="sunday">Sunday</option>
-                              <option value="monday">Monday</option>
-                              <option value="tuesday">Tuesday</option>
-                              <option value="wednesday">Wednesday</option>
-                              <option value="thursday">Thursday</option>
-                              <option value="friday">Friday</option>
-                            </select>
-                          </div>
-                          <div className="input">
-                            <label htmlFor="regiMonth">Month</label>
-                            <select className="select-month" id="regiMonth">
-                              <option value="january">January</option>
-                              <option value="february">February</option>
-                              <option value="march">March</option>
-                              <option value="april">April</option>
-                              <option value="may">May</option>
-                              <option value="june">June</option>
-                              <option value="july">July</option>
-                              <option value="august">August</option>
-                              <option value="september">September</option>
-                              <option value="october">October</option>
-                              <option value="november">November</option>
-                              <option value="december">December</option>
-                            </select>
-                          </div>
-                          <div className="input">
-                            <label htmlFor="regiYear">Year</label>
-                            <select className="select-year" id="regiYear">
-                              <option value="1990">1990</option>
-                              <option value="1991">1991</option>
-                              <option value="1992">1992</option>
-                              <option value="1993">1993</option>
-                              <option value="1994">1994</option>
-                              <option value="1995">1995</option>
-                              <option value="1996">1996</option>
-                              <option value="1997">1997</option>
-                              <option value="1998">1998</option>
-                              <option value="1999">1999</option>
-                              <option value="2000">2000</option>
-                              <option value="2001">2001</option>
-                              <option value="2002">2002</option>
-                              <option value="2003">2003</option>
-                              <option value="2004">2004</option>
-                              <option value="2005">2005</option>
-                              <option value="2006">2006</option>
-                              <option value="2007">2007</option>
-                              <option value="2008">2008</option>
-                              <option value="2009">2009</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="registration-area__form-single">
-                      <p className="secondary">Blood Group *</p>
-                      <div className="registration-area__form-single__inner">
-                        <div className="input-group-column">
-                          <div className="input">
-                            <label htmlFor="regiGroup">Blood Group</label>
-                            <select
-                              className="select-blood-group"
-                              id="regiGroup"
-                            >
-                              <option
-                                label=""
-                                selected
-                                style={{ display: "none" }}
-                              ></option>
-                              <option value="ab+">AB+</option>
-                              <option value="ab-">AB-</option>
-                              <option value="o+">O+</option>
-                              <option value="o-">O-</option>
-                              <option value="A+">A+</option>
-                              <option value="A-">A-</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="registration-area__form-single">
-                      <p className="secondary">Last Donate Date *</p>
-                      <div className="registration-area__form-single__inner">
-                        <div className="input-group-column">
-                          <div className="input">
-                            <label htmlFor="regiLastDay">Day</label>
-                            <select className="select-donation-type">
-                              <option value="saturday">Saturday</option>
-                              <option value="sunday">Sunday</option>
-                              <option value="monday">Monday</option>
-                              <option value="tuesday">Tuesday</option>
-                              <option value="wednesday">Wednesday</option>
-                              <option value="thursday">Thursday</option>
-                              <option value="friday">Friday</option>
-                            </select>
-                          </div>
-                          <div className="input">
-                            <label htmlFor="regiLastDay">Month</label>
-                            <select className="select-donation-type">
-                              <option value="january">January</option>
-                              <option value="february">February</option>
-                              <option value="march">March</option>
-                              <option value="april">April</option>
-                              <option value="may">May</option>
-                              <option value="june">June</option>
-                              <option value="july">July</option>
-                              <option value="august">August</option>
-                              <option value="september">September</option>
-                              <option value="october">October</option>
-                              <option value="november">November</option>
-                              <option value="december">December</option>
-                            </select>
-                          </div>
-                          <div className="input">
-                            <label htmlFor="regiLastYear">Year</label>
-                            <select className="select-donation-type">
-                              <option value="1990">1990</option>
-                              <option value="1991">1991</option>
-                              <option value="1992">1992</option>
-                              <option value="1993">1993</option>
-                              <option value="1994">1994</option>
-                              <option value="1995">1995</option>
-                              <option value="1996">1996</option>
-                              <option value="1997">1997</option>
-                              <option value="1998">1998</option>
-                              <option value="1999">1999</option>
-                              <option value="2000">2000</option>
-                              <option value="2001">2001</option>
-                              <option value="2002">2002</option>
-                              <option value="2003">2003</option>
-                              <option value="2004">2004</option>
-                              <option value="2005">2005</option>
-                              <option value="2006">2006</option>
-                              <option value="2007">2007</option>
-                              <option value="2008">2008</option>
-                              <option value="2009">2009</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+
                     <div className="registration-area__form-single">
                       <p className="secondary">Phone Number *</p>
                       <div className="registration-area__form-single__inner">
@@ -246,10 +222,42 @@ export default function Profile() {
                             <label htmlFor="regiNumber">Number</label>
                             <input
                               type="text"
-                              name="regi_number"
+                              name="phone"
                               id="regiNumber"
                               required
+                              value={values.phone || ""}
+                              onChange={handleChange}
                             />
+                            {touched.phone && errors.phone && (
+                              <div className="error">{errors.phone}</div>
+                            )}
+                            {phoneError && (
+                              <div className="error">{phoneError}</div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="registration-area__form-single">
+                      <p className="secondary">Email Address *</p>
+                      <div className="registration-area__form-single__inner">
+                        <div className="input-group-column">
+                          <div className="input">
+                            <label for="regiNumber">Email</label>
+                            <input
+                              type="email"
+                              name="email"
+                              id="regemail"
+                              required
+                              value={values.email || ""}
+                              onChange={handleChange}
+                            />
+                            {touched.email && errors.email && (
+                              <div className="error">{errors.email}</div>
+                            )}
+                            {emailError && (
+                              <div className="error">{emailError}</div>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -262,54 +270,26 @@ export default function Profile() {
                             <label for="regiAddress">Street Address</label>
                             <input
                               type="text"
-                              name="regi_address"
+                              name="address"
                               id="regiAddress"
                               required
+                              value={values.address || ""}
+                              onChange={handleChange}
                             />
+                            {touched.address && errors.address && (
+                              <div className="error">{errors.address}</div>
+                            )}
                           </div>
-                          <div className="input">
-                            <label for="regiCity">City</label>
-                            <input
-                              type="text"
-                              name="regi_city"
-                              id="regiCity"
-                              required
-                            />
-                          </div>
-                          <div className="input">
-                            <label for="regiState">State / Province</label>
-                            <input
-                              type="text"
-                              name="regi_state"
-                              id="regiState"
-                              required
-                            />
-                          </div>
-                          <div className="input">
-                            <label for="regiCountry">Country</label>
-                            <select className="select-donation-type">
-                              <option
-                                label=""
-                                selected
-                                style={{ display: "none" }}
-                              ></option>
-                              <option value="usa">United State</option>
-                              <option value="japan">Japan</option>
-                              <option value="brazil">Brazil</option>
-                              <option value="australia">Australia</option>
-                              <option value="canada">Canada</option>
-                              <option value="china">China</option>
-                            </select>
-                          </div>
-                          <div>
+
+                          {/* <div>
                             <VisibleFields />
-                          </div>
+                          </div> */}
                           <div className="input registration-input-button mb-0">
                             <button
                               type="submit"
                               className="button button--effect profile"
                             >
-                              Submit
+                              Update Profile
                               <i className="bi bi-arrow-right"></i>
                             </button>
                           </div>
