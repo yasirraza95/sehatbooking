@@ -364,7 +364,7 @@ export default function IndexOne() {
                       <ul>
                         {emergencyReq.length ? (
                           emergencyReq.map((row) => (
-                            <li className="white">
+                            <li className="black">
                               <FontAwesomeIcon icon={faHeart} id="white" />
                               {`${row.blood} ${row.city}, ${row.state}`} (
                               {moment(row.date).format("DD.MM.YYYY")})

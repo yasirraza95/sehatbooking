@@ -257,3 +257,30 @@ select#cityReg {
   margin: 0px;
   width: 100%;
 }
+select#regstate {
+  border: 1px solid rgb(202, 202, 202);
+  background-color: #f1f1f1;
+  padding: 6px 15px;
+  margin: 0px;
+  width: 100%;
+}
+.regemail {
+  border: 1px solid rgb(202, 202, 202);
+  background-color: #f1f1f1;
+  padding: 6px 15px;
+  margin: 0px;
+  width: 100%;
+}
+.checkbox_section {
+  margin-top: 30px;
+}
+input#checkReg {
+  margin-left: -48% !important;
+}
+span.text {
+  /* margin-right: 13px !important; */
+  margin-left: -48% !important;
+}
+input#notification {
+  margin-left: -48% !important;
+}

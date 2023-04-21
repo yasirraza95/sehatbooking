@@ -231,121 +231,6 @@ export default function Register() {
                         </div>
                       </div>
                     </div>
-
-                    {/* <div className="registration-area__form-single">
-                      <p className="secondary">Blood Group *</p>
-                      <div className="registration-area__form-single__inner">
-                        <div className="input-group-column">
-                          <div className="input">
-                            <label for="regiGroup">Blood Group</label>
-                            <select
-                              className="selectpicker"
-                              id="regiGroup"
-                              name="group"
-                              onChange={handleChange}
-                              value={values.group || ""}
-                            >
-                              <option value="">Select Blood Group</option>
-                              {group.map((res) => {
-                                return (
-                                  <option key={res.key} value={res.value}>
-                                    {res.value}
-                                  </option>
-                                );
-                              })}
-                            </select>
-                            {touched.group && errors.group && (
-                              <div className="error">{errors.group}</div>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    </div> */}
-                    {/* <div className="registration-area__form-single">
-                      <p className="secondary">Last Donate Date *</p>
-                      <div className="registration-area__form-single__inner">
-                        <div className="input-group-column">
-                          <div className="input">
-                            <label for="regiLastMonth">Month</label>
-                            <select
-                              className="select-last-month"
-                              id="regiLastMonth"
-                            >
-                              <option
-                                label=""
-                                selected
-                                style={{ display: "none" }}
-                              ></option>
-                              <option value="january">January</option>
-                              <option value="february">February</option>
-                              <option value="march">March</option>
-                              <option value="april">April</option>
-                              <option value="may">May</option>
-                              <option value="june">June</option>
-                              <option value="july">July</option>
-                              <option value="august">August</option>
-                              <option value="september">September</option>
-                              <option value="october">October</option>
-                              <option value="november">November</option>
-                              <option value="december">December</option>
-                            </select>
-                          </div>
-                          <div className="input">
-                            <label for="regiLastDay">Day</label>
-                            <select
-                              className="select-last-day"
-                              id="regiLastDay"
-                            >
-                              <option
-                                label=""
-                                selected
-                                style={{ display: "none" }}
-                              ></option>
-                              <option value="saturday">Saturday</option>
-                              <option value="sunday">Sunday</option>
-                              <option value="monday">Monday</option>
-                              <option value="tuesday">Tuesday</option>
-                              <option value="wednesday">Wednesday</option>
-                              <option value="thursday">Thursday</option>
-                              <option value="friday">Friday</option>
-                            </select>
-                          </div>
-                          <div className="input">
-                            <label for="regiLastYear">Year</label>
-                            <select
-                              className="select-last-year"
-                              id="regiLastYear"
-                            >
-                              <option
-                                label=""
-                                selected
-                                style={{ display: "none" }}
-                              ></option>
-                              <option value="1990">1990</option>
-                              <option value="1991">1991</option>
-                              <option value="1992">1992</option>
-                              <option value="1993">1993</option>
-                              <option value="1994">1994</option>
-                              <option value="1995">1995</option>
-                              <option value="1996">1996</option>
-                              <option value="1997">1997</option>
-                              <option value="1998">1998</option>
-                              <option value="1999">1999</option>
-                              <option value="2000">2000</option>
-                              <option value="2001">2001</option>
-                              <option value="2002">2002</option>
-                              <option value="2003">2003</option>
-                              <option value="2004">2004</option>
-                              <option value="2005">2005</option>
-                              <option value="2006">2006</option>
-                              <option value="2007">2007</option>
-                              <option value="2008">2008</option>
-                              <option value="2009">2009</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div> */}
                     <div className="registration-area__form-single">
                       <p className="secondary">Phone Number *</p>
                       <div className="registration-area__form-single__inner">
@@ -379,7 +264,7 @@ export default function Register() {
                             <input
                               type="email"
                               name="email"
-                              id="email"
+                              id="regemail"
                               required
                               value={values.email || ""}
                               onChange={handleChange}
@@ -438,7 +323,7 @@ export default function Register() {
                             <select
                               className="selectpicker"
                               name="state"
-                              id="state"
+                              id="regstate"
                               value={values.state || ""}
                               onChange={(e) => {
                                 changeState(e);
@@ -483,32 +368,27 @@ export default function Register() {
                             )}
 
                             {/* <VisibleFields /> */}
-                            {/* <li style={{ listStyle: "none" }}>
-                                  <input
-                                    type="checkbox"
-                                    name="consent"
-                                    onClick={() => setVisible(!visible)}
-                                    value={values.consent || ""}
-                                    onChange={handleChange}
-                                  />
-                                  List me in blood donaion bank
-                                </li> */}
+                            <div className="checkbox_section">
                             <ul>
                               <li>
-                                <label>List me in Blood Donation Bank ?</label>
-
+                                <label>
                                 <input
                                   type="checkbox"
                                   name="consent"
                                   onClick={() => setVisible(!visible)}
                                   value={values.consent || ""}
                                   onChange={handleChange}
+                                  id="checkReg"
                                 />
+                                  <span className="text"> List me in Blood Donation Bank ?
+                                  </span>
+                                </label>
                               </li>
                             </ul>
+                            </div>
                             {visible && (
                               <div>
-                                <div className="input">
+                                {/* <div className="input">
                                   <label for="notification">
                                     Want to get notifications ?
                                   </label>
@@ -520,7 +400,23 @@ export default function Register() {
                                     value={values.notification || ""}
                                     onChange={handleChange}
                                   />
-                                </div>
+                                </div> */}
+                                   <ul>
+                              <li>
+                                <label>
+                                <input
+                                     type="checkbox"
+                                     name="notification"
+                                     id="notification"
+                                     onClick={() => setNotified(!notified)}
+                                     value={values.notification || ""}
+                                     onChange={handleChange}
+                                />
+                                  <span className="text"> Want to get notifications ?
+                                  </span>
+                                </label>
+                              </li>
+                            </ul>
                                 <div className="input">
                                   <label for="regiCountry">Blood Group</label>
                                   <select
