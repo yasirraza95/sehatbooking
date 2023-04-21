@@ -129,12 +129,17 @@ export const updateStoreSchema = Yup.object({
 export const registerValidation = Yup.object({
   first_name: Yup.string().min(2).required("Please enter First Name"),
   last_name: Yup.string().min(2).required("Please enter Last Name"),
-  group: Yup.string().required("Please select Blood Group"),
   // FIXME mobile validation
   mobile: Yup.string().required("Please enter Mobile No."),
   address: Yup.string().required("Please enter Address"),
   state: Yup.string().required("Please select State"),
   city: Yup.string().required("Please select City"),
+  group: Yup.string()
+    .notRequired()
+    .when("consent", {
+      is: true,
+      then: () => Yup.string().required("Please select Blood Group"),
+    }),
   dob: Yup.string()
     .notRequired()
     .when("consent", {

@@ -213,7 +213,7 @@ export default function Register() {
                       </div>
                     </div>
 
-                    <div className="registration-area__form-single">
+                    {/* <div className="registration-area__form-single">
                       <p className="secondary">Blood Group *</p>
                       <div className="registration-area__form-single__inner">
                         <div className="input-group-column">
@@ -240,7 +240,7 @@ export default function Register() {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                     {/* <div className="registration-area__form-single">
                       <p className="secondary">Last Donate Date *</p>
                       <div className="registration-area__form-single__inner">
@@ -449,6 +449,32 @@ export default function Register() {
                                       onChange={handleChange}
                                     />
                                   </div>
+                                  <div className="input">
+                                    <label for="regiCountry">Blood Group</label>
+                                    <select
+                                      className="select-regi-country"
+                                      id="regiCountry"
+                                      name="group"
+                                      onChange={handleChange}
+                                      value={values.group || ""}
+                                    >
+                                      {group.map((res) => {
+                                        return (
+                                          <option
+                                            key={res.key}
+                                            value={res.value}
+                                          >
+                                            {res.value}
+                                          </option>
+                                        );
+                                      })}
+                                    </select>
+                                    {touched.group && errors.group && (
+                                      <div className="error">
+                                        {errors.group}
+                                      </div>
+                                    )}
+                                  </div>
 
                                   <div className="input">
                                     <label for="regiState">Date Of Birth</label>
@@ -474,6 +500,8 @@ export default function Register() {
                                       name="last_bleed"
                                       id="regiState"
                                       required
+                                      value={values.last_bleed || ""}
+                                      onChange={handleChange}
                                     />
                                     {touched.last_bleed &&
                                       errors.last_bleed && (
