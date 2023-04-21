@@ -418,7 +418,7 @@ export default function Register() {
                             <select
                               className="selectpicker"
                               name="city"
-                              id="city"
+                              id="cityReg"
                               value={values.city || ""}
                               onChange={(e) => {
                                 // changeCity(e);
@@ -437,105 +437,110 @@ export default function Register() {
                             {touched.city && errors.city && (
                               <div className="errorCity">{errors.city}</div>
                             )}
-                          <div>
+
                             {/* <VisibleFields /> */}
-                            <div>
-                              <li style={{ listStyle: "none" }}>
-                                {/* <button
-                                  className="BTN"
-                                  onClick={() => setVisible(!visible)}
-                                >
-                                  {visible ? "Hide" : "Show"}
-                                </button> */}
-                                <input
-                                  type="checkbox"
-                                  name="consent"
-                                  onClick={() => setVisible(!visible)}
-                                  value={values.consent || ""}
-                                  onChange={handleChange}
-                                />
-                                List me in blood donaion bank
+                            {/* <li style={{ listStyle: "none" }}>
+                                  <input
+                                    type="checkbox"
+                                    name="consent"
+                                    onClick={() => setVisible(!visible)}
+                                    value={values.consent || ""}
+                                    onChange={handleChange}
+                                  />
+                                  List me in blood donaion bank
+                                </li> */}
+                            <ul>
+                             
+                              <li>
+                              <label>Coffee</label>
+
+                              <input
+                                type="checkbox"
+                                name="consent"
+                                onClick={() => setVisible(!visible)}
+                                value={values.consent || ""}
+                                onChange={handleChange}
+                              />
                               </li>
-                              {visible && (
-                                <div>
-                                  <div className="input">
-                                    <label for="notification">
-                                      Want to get notifications ?
-                                    </label>
-                                    <input
-                                      type="checkbox"
-                                      name="notification"
-                                      id="notification"
-                                      onClick={() => setNotified(!notified)}
-                                      value={values.notification || ""}
-                                      onChange={handleChange}
-                                    />
-                                  </div>
-                                  <div className="input">
-                                    <label for="regiCountry">Blood Group</label>
-                                    <select
-                                      className="select-regi-country"
-                                      id="regiCountry"
-                                      name="group"
-                                      onChange={handleChange}
-                                      value={values.group || ""}
-                                    >
-                                      {group.map((res) => {
-                                        return (
-                                          <option
-                                            key={res.key}
-                                            value={res.value}
-                                          >
-                                            {res.value}
-                                          </option>
-                                        );
-                                      })}
-                                    </select>
-                                    {touched.group && errors.group && (
+                            </ul>
+                            {visible && (
+                              <div>
+                                <div className="input">
+                                  <label for="notification">
+                                    Want to get notifications ?
+                                  </label>
+                                  <input
+                                    type="checkbox"
+                                    name="notification"
+                                    id="notification"
+                                    onClick={() => setNotified(!notified)}
+                                    value={values.notification || ""}
+                                    onChange={handleChange}
+                                  />
+                                </div>
+                                <div className="input">
+                                  <label for="regiCountry">Blood Group</label>
+                                  <select
+                                    className="select-regi-country"
+                                    id="regiCountry"
+                                    name="group"
+                                    onChange={handleChange}
+                                    value={values.group || ""}
+                                  >
+                                    {group.map((res) => {
+                                      return (
+                                        <option
+                                          key={res.key}
+                                          value={res.value}
+                                        >
+                                          {res.value}
+                                        </option>
+                                      );
+                                    })}
+                                  </select>
+                                  {touched.group && errors.group && (
+                                    <div className="error">
+                                      {errors.group}
+                                    </div>
+                                  )}
+                                </div>
+
+                                <div className="input">
+                                  <label for="regiState">Date Of Birth</label>
+                                  <input
+                                    type="date"
+                                    name="dob"
+                                    id="regiState"
+                                    required
+                                    value={values.dob || ""}
+                                    onChange={handleChange}
+                                  />
+                                  {touched.dob && errors.dob && (
+                                    <div className="error">{errors.dob}</div>
+                                  )}
+                                </div>
+
+                                <div className="input">
+                                  <label for="regiState">
+                                    Last Bleed Date
+                                  </label>
+                                  <input
+                                    type="date"
+                                    name="last_bleed"
+                                    id="regiState"
+                                    required
+                                    value={values.last_bleed || ""}
+                                    onChange={handleChange}
+                                  />
+                                  {touched.last_bleed &&
+                                    errors.last_bleed && (
                                       <div className="error">
-                                        {errors.group}
+                                        {errors.last_bleed}
                                       </div>
                                     )}
-                                  </div>
-
-                                  <div className="input">
-                                    <label for="regiState">Date Of Birth</label>
-                                    <input
-                                      type="date"
-                                      name="dob"
-                                      id="regiState"
-                                      required
-                                      value={values.dob || ""}
-                                      onChange={handleChange}
-                                    />
-                                    {touched.dob && errors.dob && (
-                                      <div className="error">{errors.dob}</div>
-                                    )}
-                                  </div>
-
-                                  <div className="input">
-                                    <label for="regiState">
-                                      Last Bleed Date
-                                    </label>
-                                    <input
-                                      type="date"
-                                      name="last_bleed"
-                                      id="regiState"
-                                      required
-                                      value={values.last_bleed || ""}
-                                      onChange={handleChange}
-                                    />
-                                    {touched.last_bleed &&
-                                      errors.last_bleed && (
-                                        <div className="error">
-                                          {errors.last_bleed}
-                                        </div>
-                                      )}
-                                  </div>
                                 </div>
-                              )}
-                            </div>
-                          </div>
+                              </div>
+                            )}
                           </div>
 
                           <div className="input registration-input-button mb-0">

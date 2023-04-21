@@ -1,5 +1,6 @@
 import {
   faArrowRightToBracket,
+  faClockRotateLeft,
   faHeart,
   faPlay,
   faStar,
@@ -338,7 +339,7 @@ export default function IndexOne() {
                 <div className="row neutral-row">
                   <div className="col-lg-6 row-item">
                     <div className="appointment-area__single appointment-area__content">
-                      <h4>Recent Blood Request</h4>
+                      <h4 className="red"><FontAwesomeIcon icon={faClockRotateLeft} /> Recent Blood Request</h4>
                       <ul>
                         {normalReq.length ? (
                           normalReq.map((row) => (
@@ -359,7 +360,7 @@ export default function IndexOne() {
                   </div>
                   <div className="col-lg-6 row-item">
                     <div className="appointment-area__single appointment-area__content bg-red">
-                      <h4 className="white">Emergency Blood Request</h4>
+                      <h4 className="red"><i class="fa fa-heartbeat"></i> Emergency Blood Request</h4>
                       <ul>
                         {emergencyReq.length ? (
                           emergencyReq.map((row) => (
@@ -370,7 +371,7 @@ export default function IndexOne() {
                             </li>
                           ))
                         ) : (
-                          <li>
+                          <li >
                             <FontAwesomeIcon icon={faHeart} />
                             No recent blood request
                           </li>
