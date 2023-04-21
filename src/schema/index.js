@@ -130,6 +130,9 @@ export const registerValidation = Yup.object({
   first_name: Yup.string().min(2).required("Please enter First Name"),
   last_name: Yup.string().min(2).required("Please enter Last Name"),
   // FIXME mobile validation
+  email: Yup.string()
+    .email("Please enter a valid Email Address")
+    .required("Please enter Email Address"),
   mobile: Yup.string().required("Please enter Mobile No."),
   address: Yup.string().required("Please enter Address"),
   state: Yup.string().required("Please select State"),

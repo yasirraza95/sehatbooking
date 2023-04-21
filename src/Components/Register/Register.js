@@ -94,6 +94,7 @@ export default function Register() {
         first_name: "",
         last_name: "",
         group: "",
+        email: "",
         mobile: "",
         address: "",
         state: "",
@@ -342,6 +343,27 @@ export default function Register() {
                             />
                             {touched.mobile && errors.mobile && (
                               <div className="error">{errors.mobile}</div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="registration-area__form-single">
+                      <p className="secondary">Email Address *</p>
+                      <div className="registration-area__form-single__inner">
+                        <div className="input-group-column">
+                          <div className="input">
+                            <label for="regiNumber">Email</label>
+                            <input
+                              type="email"
+                              name="email"
+                              id="email"
+                              required
+                              value={values.email || ""}
+                              onChange={handleChange}
+                            />
+                            {touched.email && errors.email && (
+                              <div className="error">{errors.email}</div>
                             )}
                           </div>
                         </div>
