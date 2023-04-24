@@ -94,7 +94,7 @@ export default function IndexOne() {
       <Header />
 
       {/* <!-- ==== hero section start ==== --> */}
-      {/* <section className="hero-slider-area">
+      <section className="hero-slider-area">
         <div className="hero-slider owl-carousel owl-theme">
           <div
             className="hero-slider-item bg-img"
@@ -183,42 +183,22 @@ export default function IndexOne() {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
-      <Carousel>
-        <section className="hero-slider-area">
-          <div className="hero-slider owl-carousel owl-theme">
-            <div
-              className="hero-slider-item bg-img"
-              data-background={slideImage1}
-            >
-              <div className="container">
-                <div className="hero-slider-content">
-                  <div className="intro-video">
-                    <div className="d-flex align-items-center">
-                      <a
-                        href="https://www.youtube.com/watch?v=NtETKgSE7i0"
-                        title="YouTube video player"
-                        className="video-btn video-popup-btn"
-                      >
-                        <span>
-                          <i className="fa-solid fa-play"></i>
-                        </span>
-                      </a>
-                      <span>Intro Video</span>
-                    </div>
-                  </div>
-                  <h3>Donate blood,save life !</h3>
-                  <h1>Donate Blood And Inspires Others.</h1>
-                  <a href="/find-donor" className="button button--effect">
-                    Explore Now
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </Carousel>
+      {/* <Carousel>
+        <div>
+          <img src={slideImage1} />
+          <p className="legend">Legend 1</p>
+        </div>
+        <div>
+          <img src={slideImage2} />
+          <p className="legend">Legend 2</p>
+        </div>
+        <div>
+          <img src={slideImage3} />
+          <p className="legend">Legend 3</p>
+        </div>
+      </Carousel> */}
 
       {/* <!-- ==== #hero section end ==== --> */}
 
