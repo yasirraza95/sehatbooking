@@ -28,7 +28,7 @@ function App() {
     <>
       <div className="App">
         <BrowserRouter>
-        <PreLoader/>
+          <PreLoader />
           <Routes>
             <Route path="/" element={<IndexOne />} />
             <Route path="/login" element={<Login />} />
