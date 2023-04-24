@@ -28,6 +28,8 @@ import slideImage2 from "../Images/doctor-taking-blood-samples.jpg";
 import slideImage3 from "../Images/6-1.jpg";
 import useImportScript from "../../utils/useImportScript";
 import { Link } from "react-router-dom";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 import moment from "moment";
 import GeneralService from "../../services/general.service";
 
@@ -92,7 +94,7 @@ export default function IndexOne() {
       <Header />
 
       {/* <!-- ==== hero section start ==== --> */}
-      <section className="hero-slider-area">
+      {/* <section className="hero-slider-area">
         <div className="hero-slider owl-carousel owl-theme">
           <div
             className="hero-slider-item bg-img"
@@ -181,7 +183,43 @@ export default function IndexOne() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <Carousel>
+        <section className="hero-slider-area">
+          <div className="hero-slider owl-carousel owl-theme">
+            <div
+              className="hero-slider-item bg-img"
+              data-background={slideImage1}
+            >
+              <div className="container">
+                <div className="hero-slider-content">
+                  <div className="intro-video">
+                    <div className="d-flex align-items-center">
+                      <a
+                        href="https://www.youtube.com/watch?v=NtETKgSE7i0"
+                        title="YouTube video player"
+                        className="video-btn video-popup-btn"
+                      >
+                        <span>
+                          <i className="fa-solid fa-play"></i>
+                        </span>
+                      </a>
+                      <span>Intro Video</span>
+                    </div>
+                  </div>
+                  <h3>Donate blood,save life !</h3>
+                  <h1>Donate Blood And Inspires Others.</h1>
+                  <a href="/find-donor" className="button button--effect">
+                    Explore Now
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </Carousel>
+
       {/* <!-- ==== #hero section end ==== --> */}
 
       {/* <!-- ==== overview section start ==== --> */}
@@ -191,7 +229,7 @@ export default function IndexOne() {
             <div className="explore-area__single">
               <div className="explore-area__single-content">
                 <h4>
-                  <a href="/register">Regsiter Now</a>
+                  <a href="/register">Register Now</a>
                 </h4>
                 <p className="neutral-bottom">
                   Register yourself as a Donor and donate your Blood to helpful
@@ -339,7 +377,10 @@ export default function IndexOne() {
                 <div className="row neutral-row">
                   <div className="col-lg-6 row-item">
                     <div className="appointment-area__single appointment-area__content">
-                      <h4 className="red"><FontAwesomeIcon icon={faClockRotateLeft} /> Recent Blood Request</h4>
+                      <h4 className="red">
+                        <FontAwesomeIcon icon={faClockRotateLeft} /> Recent
+                        Blood Request
+                      </h4>
                       <ul>
                         {normalReq.length ? (
                           normalReq.map((row) => (
@@ -360,7 +401,9 @@ export default function IndexOne() {
                   </div>
                   <div className="col-lg-6 row-item">
                     <div className="appointment-area__single appointment-area__content bg-red">
-                      <h4 className="red"><i class="fa fa-heartbeat"></i> Emergency Blood Request</h4>
+                      <h4 className="red">
+                        <i class="fa fa-heartbeat"></i> Emergency Blood Request
+                      </h4>
                       <ul>
                         {emergencyReq.length ? (
                           emergencyReq.map((row) => (
@@ -371,7 +414,7 @@ export default function IndexOne() {
                             </li>
                           ))
                         ) : (
-                          <li >
+                          <li>
                             <FontAwesomeIcon icon={faHeart} />
                             No recent blood request
                           </li>

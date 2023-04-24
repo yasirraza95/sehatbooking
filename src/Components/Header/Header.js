@@ -8,25 +8,10 @@ import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { actionCreaters } from "../../Redux";
 import { bindActionCreators } from "redux";
-// import $ from "jquery";
+import $ from "jquery";
+import "jquery-ui-dist/jquery-ui";
 
 export default function Header() {
-  // const sideBarClick = (e) => {
-  //   let currentClass = e.target.className;
-  //   console.log(e.target.className);
-  //   // open sidenav
-  //   $(".open-sidenav").on("click", function () {
-  //     $(this).toggleClass("toggle-active");
-  //     $(".sidenav").addClass("sidenav-active");
-  //   });
-
-  //   // close sidenav
-  //   $(".close-sidebar").on("click", function () {
-  //     $(".sidenav").removeClass("sidenav-active");
-  //     $(".open-sidenav").toggleClass("toggle-active");
-  //   });
-  // };
-
   const dispatch = useDispatch();
   const userActions = bindActionCreators(actionCreaters, dispatch);
   const state = useSelector((state) => state.stateVals);
