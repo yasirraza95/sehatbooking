@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { actionCreaters } from "../../Redux";
 import { bindActionCreators } from "redux";
 
-export default function Header() {
+export default function Header2() {
   const dispatch = useDispatch();
   const userActions = bindActionCreators(actionCreaters, dispatch);
   const state = useSelector((state) => state.stateVals);

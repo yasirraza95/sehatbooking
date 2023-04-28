@@ -22,6 +22,7 @@ import ServiceDetail from "./Components/ServiceDetail/ServiceDetail";
 import BloodRequest from "./Components/BloodRequest/BloodRequest";
 import ForgotToken from "./Components/ForgotToken/ForgotToken";
 import PreLoader from "./Components/PreLoader/PreLoader";
+import HomeScreen from "./Components/Home/HomeScreen";
 
 function App() {
   return (

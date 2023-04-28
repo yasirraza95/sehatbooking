@@ -11,7 +11,7 @@ import { bloodRequest } from ".././../schema/index";
 export default function BloodRequest() {
   // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
   // useImportScript("/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
-//   useImportScript("/assets/vendor/nice-select/js/jquery.nice-select.min.js");
+  //   useImportScript("/assets/vendor/nice-select/js/jquery.nice-select.min.js");
   // useImportScript(
   //     "/assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"
   // );
@@ -136,7 +136,8 @@ export default function BloodRequest() {
     // setLoading(true);
     try {
       values.emergency = checkedValue(values.emergency);
-      values.user = "1"; //FIXME
+      // console.log(values);
+      // values.user = "1"; //FIXME
       const response = await GeneralService.bloodRequest(values);
       const { data } = response;
       const { response: message } = data;
@@ -154,7 +155,7 @@ export default function BloodRequest() {
 
   const checkedValue = (e) => {
     let value = "emergency";
-    if (e === false) {
+    if (e === false || e === "") {
       value = "normal";
     }
     return value;
@@ -314,7 +315,7 @@ export default function BloodRequest() {
                                 <div className="error">{errors.group}</div>
                               )}
                             </div>
-                            <br/>
+                            <br />
                             <div className="input">
                               <div className="form-checkk">
                                 <input
@@ -322,6 +323,7 @@ export default function BloodRequest() {
                                   onChange={handleChange}
                                   name="emergency"
                                   id="emergency"
+                                  value={values.emergency || ""}
                                 />
                                 <label
                                   className="form-check-label"
