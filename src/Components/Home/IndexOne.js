@@ -13,9 +13,9 @@ import TopBar from "../HomeTopBar/TopBar";
 // import ToTop from "../TopTop/ToTop";
 
 import "./IndexOne.css";
-import DoctorOne from "../Images/Doctor1.jpg";
-import DoctorTwo from "../Images/Doctor2.jpg";
-import DoctorThree from "../Images/Doctor3.jpg";
+import DoctorOne from "../Images/Doctor1.webp";
+import DoctorTwo from "../Images/Doctor2.webp";
+import DoctorThree from "../Images/Doctor3.webp";
 import HeartIcon from "../Images/heart.png";
 import FirstAidIcon from "../Images/first-aid.png";
 import TubeIcon from "../Images/tube.png";

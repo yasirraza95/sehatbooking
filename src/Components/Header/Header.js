@@ -69,7 +69,7 @@ export default function Header() {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    Miscs.
+                    More
                   </a>
                   <ul
                     className="dropdown-menu"
