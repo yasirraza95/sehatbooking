@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import FavImage from "../Images/sehatbooking-logo-3.png";
+import FavImage from "../Images/sehatbooking-logo-3.webp";
 import "./PreLoader.css";
 export default function PreLoader() {
   const location = useLocation();

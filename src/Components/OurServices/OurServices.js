@@ -2,10 +2,10 @@ import React from 'react'
 import TopBar from '../HomeTopBar/TopBar'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
-import donorBlood from "../Images/blooddonation.jpg";
-import HeartIcon from "../Images/heart.png";
-import FirstAidIcon from "../Images/first-aid.png";
-import TubeIcon from "../Images/tube.png";
+import donorBlood from "../Images/blooddonation.webp";
+import HeartIcon from "../Images/heart.webp";
+import FirstAidIcon from "../Images/first-aid.webp";
+import TubeIcon from "../Images/tube.webp";
 import useImportScript from '../../utils/useImportScript';
 import { Link } from 'react-router-dom';
 export default function OurServices() {

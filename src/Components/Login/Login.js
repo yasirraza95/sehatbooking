@@ -3,7 +3,7 @@ import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import TopBar from "../HomeTopBar/TopBar";
 import "./Login.css";
-import ForgotPass from "../Images/forgotPassword-icon.png";
+import ForgotPass from "../Images/forgotPassword-icon.webp";
 // import ToTop from "../TopTop/ToTop";
 import useImportScript from "../../utils/useImportScript";
 import GeneralService from "../../services/general.service";

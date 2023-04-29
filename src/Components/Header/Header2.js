@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.css";
-import ProfileIcon from "../Images/sehatbooking-logo-3.png";
-import MenuLogo from "../Images/sehatbooking-logo.png";
+import ProfileIcon from "../Images/sehatbooking-logo-3.webp";
+import MenuLogo from "../Images/sehatbooking-logo.webp";
 import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";

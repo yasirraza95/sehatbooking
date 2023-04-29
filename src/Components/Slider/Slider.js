@@ -1,8 +1,8 @@
 import React from "react";
 import "./Slider.css";
-import Fotor1 from '../Images/fotor1.png';
-import Fotor2 from '../Images/fotor2.png';
-import Fotor3 from '../Images/fotor3.png';
+import Fotor1 from '../Images/fotor1.webp';
+import Fotor2 from '../Images/fotor2.webp';
+import Fotor3 from '../Images/fotor3.webp';
 
 export default function Slider() {
   return (
