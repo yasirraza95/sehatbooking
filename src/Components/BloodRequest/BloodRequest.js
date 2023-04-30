@@ -315,7 +315,8 @@ export default function BloodRequest() {
                                 <div className="error">{errors.group}</div>
                               )}
                             </div>
-                            <br />
+
+                          </div>
                             <div className="input">
                               <div className="form-checkk">
                                 <input
@@ -333,7 +334,7 @@ export default function BloodRequest() {
                                 </label>
                               </div>
                             </div>
-                          </div>
+
                           <button
                             type="submit"
                             className="button button--effect contact"
