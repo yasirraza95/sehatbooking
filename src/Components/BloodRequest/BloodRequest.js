@@ -298,7 +298,7 @@ export default function BloodRequest() {
                               <select
                                 className="selectpicker"
                                 name="group"
-                                id="group"
+                                id="blodGroup"
                                 value={values.group || ""}
                                 onChange={handleChange}
                               >
@@ -315,25 +315,24 @@ export default function BloodRequest() {
                                 <div className="error">{errors.group}</div>
                               )}
                             </div>
-
                           </div>
-                            <div className="input">
-                              <div className="form-checkk">
-                                <input
-                                  type="checkbox"
-                                  onChange={handleChange}
-                                  name="emergency"
-                                  id="emergency"
-                                  value={values.emergency || ""}
-                                />
-                                <label
-                                  className="form-check-label"
-                                  htmlFor="flexCheckDefault"
-                                >
-                                  Emergency Request ?
-                                </label>
-                              </div>
+                          <div className="input">
+                            <div className="form-checkk">
+                              <input
+                                type="checkbox"
+                                onChange={handleChange}
+                                name="emergency"
+                                id="emergency"
+                                value={values.emergency || ""}
+                              />
+                              <label
+                                className="form-check-label"
+                                htmlFor="flexCheckDefault"
+                              >
+                                Emergency Request ?
+                              </label>
                             </div>
+                          </div>
 
                           <button
                             type="submit"
