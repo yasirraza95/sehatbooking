@@ -61,7 +61,8 @@ svg#white {
     animation: blinker 1.5s linear infinite;
     color: red;
     font-family: sans-serif;
-    font-size: small;
+    font-size: medium;
+    font-weight: 800;
 }
 @keyframes blinker {
     50% {
