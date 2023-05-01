@@ -58,8 +58,8 @@ function App() {
         phoneNumber="+923137300434"
         accountName="Sehat Booking"
         // chatMessage="Assalam o Alaikum, Main apki kya madad kr skta hu?"
-        chatMessage="السلام علیکم! ہم آپ کی مدد کے لیے حاضر ہیں
-        ہمیں ایک پیغام بھیجیں اور ہم جلد از جلد آپ سے رابطہ کریں گے"
+        chatMessage=".السلام علیکم! ہم آپ کی مدد کے لیے حاضر ہیں. ہمیں ایک پیغام بھیجیں اور ہم جلد از جلد آپ سے رابطہ کریں گے
+"
         statusMessage=""
         placeholder="Type a message"
         avatar="/favicon.png"
