@@ -120,6 +120,10 @@
   width: 100%;
   justify-content: space-between;
 }
+button.button.button--effect.register:hover{
+  background-color: #000 !important;
+  color: #fff !important;
+}
 .button--effect:hover::after {
   left: 200%;
   opacity: 1;
@@ -249,6 +253,12 @@ select#state{
 }
 .errorCity {
   color: red;
+  margin-top: 13px;
+}
+.errorArea {
+  color: red;
+  margin-top: 13px;
+
 }
 select#cityReg {
   border: 1px solid rgb(202, 202, 202);

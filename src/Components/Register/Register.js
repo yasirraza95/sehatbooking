@@ -103,6 +103,7 @@ export default function Register() {
         address: "",
         state: "",
         city: "",
+        city_area: "",
         zip: "",
         consent: "",
         notification: "",
@@ -366,7 +367,23 @@ export default function Register() {
                             {touched.city && errors.city && (
                               <div className="errorCity">{errors.city}</div>
                             )}
-
+                            </div>
+                            <div className="input">
+                            <label for="regicityArea">City Area</label>
+                            <input
+                              type="text"
+                              name="city_area"
+                              id="regicityArea"
+                              required
+                              value={values.city_area || ""}
+                              onChange={handleChange}
+                            />
+                            {touched.city_area && errors.city_area && (
+                              <div className="errorArea">{errors.city_area}</div>
+                            )}
+                          </div>
+                            
+                          <div className="input">
                             {/* <VisibleFields /> */}
                             <div className="checkbox_section">
                             <ul>
@@ -477,7 +494,7 @@ export default function Register() {
                           <div className="input registration-input-button mb-0">
                             <button
                               type="submit"
-                              className="button button--effect"
+                              className="button button--effect register"
                             >
                               Submit
                               <i className="bi bi-arrow-right"></i>

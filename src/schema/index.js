@@ -146,6 +146,8 @@ export const registerValidation = Yup.object({
   address: Yup.string().required("Please enter Address"),
   state: Yup.string().required("Please select State"),
   city: Yup.string().required("Please select City"),
+  city_area: Yup.string().min(2).required("Please enter City Area"),
+
   group: Yup.string()
     .notRequired()
     .when("consent", {

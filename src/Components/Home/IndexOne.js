@@ -357,9 +357,9 @@ export default function IndexOne() {
                 <div className="row neutral-row">
                   <div className="col-lg-6 row-item">
                     <div className="appointment-area__single appointment-area__content">
-                    <p>
-                    <marquee className="blink"></marquee>
-                    </p>
+                      <p>
+                        <marquee className="blink"></marquee>
+                      </p>
                       <h4 className="red">
                         <FontAwesomeIcon icon={faClockRotateLeft} /> Recent
                         Blood Request
@@ -385,8 +385,8 @@ export default function IndexOne() {
                   <div className="col-lg-6 row-item">
                     <div className="appointment-area__single appointment-area__content bg-red">
                       <p>
-                    <marquee className="blink">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</marquee>
-                    </p>
+                        <marquee className="blink">We now have a section for SELF REFERRAL and SELF HELP. Please take a look! There are plenty of resources including Mental Health, Physi!</marquee>
+                      </p>
                       <h4 className="red">
                         <i class="fa fa-heartbeat"></i> Emergency Blood Request
                       </h4>
