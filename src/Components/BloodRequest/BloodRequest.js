@@ -240,7 +240,7 @@ export default function BloodRequest() {
                                 })}
                               </select>
                               {touched.state && errors.state && (
-                                <div className="error">{errors.state}</div>
+                                <div className="error bloodrequest">{errors.state}</div>
                               )}
                             </div>
 
@@ -265,7 +265,7 @@ export default function BloodRequest() {
                                 })}
                               </select>
                               {touched.city && errors.city && (
-                                <div className="error">{errors.city}</div>
+                                <div className="error bloodrequest">{errors.city}</div>
                               )}
                             </div>
                           </div>
@@ -291,7 +291,7 @@ export default function BloodRequest() {
                                 })}
                               </select>
                               {touched.area && errors.area && (
-                                <div className="error">{errors.area}</div>
+                                <div className="error bloodrequest">{errors.area}</div>
                               )}
                             </div>
                             <div className="input">
@@ -312,11 +312,11 @@ export default function BloodRequest() {
                                 })}
                               </select>
                               {touched.group && errors.group && (
-                                <div className="error">{errors.group}</div>
+                                <div className="error bloodrequest">{errors.group}</div>
                               )}
                             </div>
                           </div>
-                          <div className="input">
+                          <div className="input alignment">
                             <div className="form-checkk">
                               <input
                                 type="checkbox"

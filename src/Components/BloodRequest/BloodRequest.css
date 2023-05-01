@@ -60,3 +60,10 @@ select:focus {
         font-size: small;
     }
 }
+.input.alignment {
+    margin-top: -11px;
+}
+.error.bloodrequest {
+    margin-top: -6px;
+    color: red;
+}
