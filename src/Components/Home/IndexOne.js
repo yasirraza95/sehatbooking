@@ -381,6 +381,9 @@ export default function IndexOne() {
                   </div>
                   <div className="col-lg-6 row-item">
                     <div className="appointment-area__single appointment-area__content bg-red">
+                      <h6>
+                    <marquee className="blink">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</marquee>
+                    </h6>
                       <h4 className="red">
                         <i class="fa fa-heartbeat"></i> Emergency Blood Request
                       </h4>

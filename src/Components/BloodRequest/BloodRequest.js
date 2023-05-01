@@ -336,7 +336,7 @@ export default function BloodRequest() {
 
                           <button
                             type="submit"
-                            className="button button--effect contact"
+                            className="button button--effect contact mt-2"
                           >
                             Submit Request<i className="bi bi-arrow-right"></i>
                           </button>
