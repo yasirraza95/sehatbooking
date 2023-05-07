@@ -50,6 +50,7 @@ export default function IndexOne() {
 
   const [normalReq, setNormalReq] = useState([]);
   const [emergencyReq, setEmergencyReq] = useState([]);
+  const [marqueeTxt, setMarqueeTxt] = useState("");
 
   const getNormalData = async (page, city, area, group) => {
     // setLoading(true);
@@ -83,9 +84,26 @@ export default function IndexOne() {
     }
   };
 
+  const getMarquee = async () => {
+    // setLoading(true);
+    try {
+      const response = await GeneralService.getMarquee();
+      const { data } = response;
+      const { response: res } = data;
+      let resultData;
+      resultData = res;
+      setMarqueeTxt(resultData);
+      // setLoading(false);
+    } catch (err) {
+      // setLoading(false);
+      setMarqueeTxt("");
+    }
+  };
+
   useEffect(() => {
     getNormalData();
     getEmergencyData();
+    getMarquee();
   }, []);
 
   return (
@@ -358,7 +376,7 @@ export default function IndexOne() {
                   <div className="col-lg-6 row-item">
                     <div className="appointment-area__single appointment-area__content">
                       <p>
-                        <marquee className="blink"></marquee>
+                        <marquee className="blink">{marqueeTxt}</marquee>
                       </p>
                       <h4 className="red">
                         <FontAwesomeIcon icon={faClockRotateLeft} /> Recent
@@ -385,11 +403,7 @@ export default function IndexOne() {
                   <div className="col-lg-6 row-item">
                     <div className="appointment-area__single appointment-area__content bg-red">
                       <p>
-                        <marquee className="blink">
-                          We now have a section for SELF REFERRAL and SELF HELP.
-                          Please take a look! There are plenty of resources
-                          including Mental Health, Physi!
-                        </marquee>
+                        <marquee className="blink">{marqueeTxt}</marquee>
                       </p>
                       <h4 className="red">
                         <i class="fa fa-heartbeat"></i> Emergency Blood Request

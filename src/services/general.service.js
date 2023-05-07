@@ -122,6 +122,15 @@ const listBloodReq = (type) => {
   });
 };
 
+const getMarquee = () => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.get(`${API_URL}/marquee`, {
+    headers: headers,
+  });
+};
+
 const bloodRequest = (values) => {
   const headers = {
     "Content-Type": "application/json",
@@ -339,6 +348,7 @@ const GeneralService = {
   contactUs,
   bloodRequest,
   listBloodReq,
+  getMarquee,
   subscription,
 };
 
