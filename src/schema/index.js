@@ -52,6 +52,9 @@ export const bloodRequest = Yup.object().shape({
   city: Yup.string().required("Please select City"),
   area: Yup.string().required("Please select City Area"),
   group: Yup.string().required("Please select Blood Group"),
+  phone: Yup.string()
+    .required("Please enter Phone No.")
+    .matches(phoneRegExp, "Please enter valid Phone No."),
 });
 
 export const signImSchema = Yup.object({

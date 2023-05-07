@@ -129,6 +129,7 @@ const bloodRequest = (values) => {
   return axios.post(
     `${API_URL}/blood-request`,
     {
+      phone: values.phone,
       type: values.emergency,
       blood: values.group,
       state: values.state,

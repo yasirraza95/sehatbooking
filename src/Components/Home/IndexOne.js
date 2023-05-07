@@ -369,8 +369,8 @@ export default function IndexOne() {
                           normalReq.map((row) => (
                             <li>
                               <FontAwesomeIcon icon={faHeart} />
-                              {`${row.blood} ${row.city}, ${row.state}`} (
-                              {moment(row.date).format("DD.MM.YYYY")})
+                              {`${row.blood} ${row.city}, ${row.state}, ${row.phone}`}{" "}
+                              ({moment(row.date).format("DD.MM.YYYY")})
                             </li>
                           ))
                         ) : (
@@ -385,7 +385,11 @@ export default function IndexOne() {
                   <div className="col-lg-6 row-item">
                     <div className="appointment-area__single appointment-area__content bg-red">
                       <p>
-                        <marquee className="blink">We now have a section for SELF REFERRAL and SELF HELP. Please take a look! There are plenty of resources including Mental Health, Physi!</marquee>
+                        <marquee className="blink">
+                          We now have a section for SELF REFERRAL and SELF HELP.
+                          Please take a look! There are plenty of resources
+                          including Mental Health, Physi!
+                        </marquee>
                       </p>
                       <h4 className="red">
                         <i class="fa fa-heartbeat"></i> Emergency Blood Request
@@ -395,8 +399,8 @@ export default function IndexOne() {
                           emergencyReq.map((row) => (
                             <li className="black">
                               <FontAwesomeIcon icon={faHeart} id="white" />
-                              {`${row.blood} ${row.city}, ${row.state}`} (
-                              {moment(row.date).format("DD.MM.YYYY")})
+                              {`${row.blood} ${row.city}, ${row.state}, ${row.phone}`}{" "}
+                              ({moment(row.date).format("DD.MM.YYYY")})
                             </li>
                           ))
                         ) : (

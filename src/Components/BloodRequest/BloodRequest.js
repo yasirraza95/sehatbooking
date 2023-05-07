@@ -125,6 +125,7 @@ export default function BloodRequest() {
         area: "",
         group: "",
         emergency: "",
+        phone: "",
       },
       validationSchema: bloodRequest,
       onSubmit: (values, action) => {
@@ -136,7 +137,7 @@ export default function BloodRequest() {
     // setLoading(true);
     try {
       values.emergency = checkedValue(values.emergency);
-      // console.log(values);
+      console.log(values);
       // values.user = "1"; //FIXME
       const response = await GeneralService.bloodRequest(values);
       const { data } = response;
@@ -240,7 +241,9 @@ export default function BloodRequest() {
                                 })}
                               </select>
                               {touched.state && errors.state && (
-                                <div className="error bloodrequest">{errors.state}</div>
+                                <div className="error bloodrequest">
+                                  {errors.state}
+                                </div>
                               )}
                             </div>
 
@@ -265,7 +268,9 @@ export default function BloodRequest() {
                                 })}
                               </select>
                               {touched.city && errors.city && (
-                                <div className="error bloodrequest">{errors.city}</div>
+                                <div className="error bloodrequest">
+                                  {errors.city}
+                                </div>
                               )}
                             </div>
                           </div>
@@ -291,7 +296,9 @@ export default function BloodRequest() {
                                 })}
                               </select>
                               {touched.area && errors.area && (
-                                <div className="error bloodrequest">{errors.area}</div>
+                                <div className="error bloodrequest">
+                                  {errors.area}
+                                </div>
                               )}
                             </div>
                             <div className="input">
@@ -312,7 +319,26 @@ export default function BloodRequest() {
                                 })}
                               </select>
                               {touched.group && errors.group && (
-                                <div className="error bloodrequest">{errors.group}</div>
+                                <div className="error bloodrequest">
+                                  {errors.group}
+                                </div>
+                              )}
+                            </div>
+                            <div className="input">
+                              <input
+                                className="selectpicker"
+                                type="text"
+                                name="phone"
+                                id="phone"
+                                placeholder="Phone No."
+                                required
+                                value={values.phone || ""}
+                                onChange={handleChange}
+                              />
+                              {touched.phone && errors.phone && (
+                                <div className="error bloodrequest">
+                                  {errors.phone}
+                                </div>
                               )}
                             </div>
                           </div>
