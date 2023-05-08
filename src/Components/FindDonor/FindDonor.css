@@ -1,6 +1,9 @@
 /* .collapse:not(.show) {
   display: block !important;
 } */
+tbody tr {
+  cursor: pointer;
+}
 .section-space {
   padding: 116px 0px;
 }
