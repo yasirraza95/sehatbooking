@@ -324,23 +324,23 @@ export default function BloodRequest() {
                                 </div>
                               )}
                             </div>
-                            <div className="input">
+                            <div className="input" style={{marginTop: "-20px"}}>
                               <input
-                                className="selectpicker"
+                                // className="selectpicker"
                                 type="text"
                                 name="phone"
                                 id="phoneNo"
                                 placeholder="Phone No."
-                                required
                                 value={values.phone || ""}
                                 onChange={handleChange}
                               />
                               {touched.phone && errors.phone && (
-                                <div className="error phone">
+                                <div className="error bloodrequestNo">
                                   {errors.phone}
                                 </div>
                               )}
                             </div>
+                            
                           </div>
                           <div className="input alignment">
                             <div className="form-checkk">
