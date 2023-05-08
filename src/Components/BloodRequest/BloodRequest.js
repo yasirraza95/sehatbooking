@@ -329,14 +329,14 @@ export default function BloodRequest() {
                                 className="selectpicker"
                                 type="text"
                                 name="phone"
-                                id="phone"
+                                id="phoneNo"
                                 placeholder="Phone No."
                                 required
                                 value={values.phone || ""}
                                 onChange={handleChange}
                               />
                               {touched.phone && errors.phone && (
-                                <div className="error bloodrequest">
+                                <div className="error phone">
                                   {errors.phone}
                                 </div>
                               )}
