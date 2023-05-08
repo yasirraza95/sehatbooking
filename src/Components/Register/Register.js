@@ -30,7 +30,6 @@ export default function Register() {
   const [city, setCity] = useState([]);
   const [group, setGroup] = useState([]);
 
-  const [visible, setVisible] = useState(false);
   const [notified, setNotified] = useState(false);
 
   const [submit, setSubmit] = useState("");
@@ -105,7 +104,6 @@ export default function Register() {
         city: "",
         city_area: "",
         zip: "",
-        consent: "",
         notification: "",
         dob: "",
         last_bleed: "",
@@ -154,33 +152,6 @@ export default function Register() {
     <>
       <TopBar />
       <Header />
-      <section className="banner bg-img dark-overlay dark-overlay">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="banner-area">
-                <div className="banner-area__content">
-                  <h2>Register As a Blood Donor</h2>
-                  <nav aria-label="breadcrumb">
-                    <ol className="breadcrumb">
-                      <li className="breadcrumb-item">
-                        <a href="/">Home</a>
-                      </li>
-                      <li
-                        className="breadcrumb-item active"
-                        aria-current="page"
-                      >
-                        Register Now{" "}
-                      </li>
-                    </ol>
-                  </nav>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* <!-- ==== registration section start ==== --> */}
       <section className="registration section-space">
         <div className="container">
@@ -367,8 +338,8 @@ export default function Register() {
                             {touched.city && errors.city && (
                               <div className="errorCity">{errors.city}</div>
                             )}
-                            </div>
-                            <div className="input">
+                          </div>
+                          <div className="input">
                             <label for="regicityArea">City Area</label>
                             <input
                               type="text"
@@ -379,116 +350,86 @@ export default function Register() {
                               onChange={handleChange}
                             />
                             {touched.city_area && errors.city_area && (
-                              <div className="errorArea">{errors.city_area}</div>
-                            )}
-                          </div>
-                            
-                          <div className="input">
-                            {/* <VisibleFields /> */}
-                            <div className="checkbox_section">
-                            <ul>
-                              <li>
-                                <label>
-                                <input
-                                  type="checkbox"
-                                  name="consent"
-                                  onClick={() => setVisible(!visible)}
-                                  value={values.consent || ""}
-                                  onChange={handleChange}
-                                  id="checkReg"
-                                />
-                                  <span className="text"> List me in Blood Donation Bank ?
-                                  </span>
-                                </label>
-                              </li>
-                            </ul>
-                            </div>
-                            {visible && (
-                              <div>
-                                {/* <div className="input">
-                                  <label for="notification">
-                                    Want to get notifications ?
-                                  </label>
-                                  <input
-                                    type="checkbox"
-                                    name="notification"
-                                    id="notification"
-                                    onClick={() => setNotified(!notified)}
-                                    value={values.notification || ""}
-                                    onChange={handleChange}
-                                  />
-                                </div> */}
-                                   <ul>
-                              <li>
-                                <label>
-                                <input
-                                     type="checkbox"
-                                     name="notification"
-                                     id="notification"
-                                     onClick={() => setNotified(!notified)}
-                                     value={values.notification || ""}
-                                     onChange={handleChange}
-                                />
-                                  <span className="text"> Want to get notifications ?
-                                  </span>
-                                </label>
-                              </li>
-                            </ul>
-                                <div className="input">
-                                  <label for="regiCountry">Blood Group</label>
-                                  <select
-                                    className="select-regi-country"
-                                    id="regiCountry"
-                                    name="group"
-                                    onChange={handleChange}
-                                    value={values.group || ""}
-                                  >
-                                    {group.map((res) => {
-                                      return (
-                                        <option key={res.key} value={res.value}>
-                                          {res.value}
-                                        </option>
-                                      );
-                                    })}
-                                  </select>
-                                  {touched.group && errors.group && (
-                                    <div className="error">{errors.group}</div>
-                                  )}
-                                </div>
-
-                                <div className="input">
-                                  <label for="regiState">Date Of Birth</label>
-                                  <input
-                                    type="date"
-                                    name="dob"
-                                    id="regiState"
-                                    required
-                                    value={values.dob || ""}
-                                    onChange={handleChange}
-                                  />
-                                  {touched.dob && errors.dob && (
-                                    <div className="error">{errors.dob}</div>
-                                  )}
-                                </div>
-
-                                <div className="input">
-                                  <label for="regiState">Last Bleed Date</label>
-                                  <input
-                                    type="date"
-                                    name="last_bleed"
-                                    id="regiState"
-                                    required
-                                    value={values.last_bleed || ""}
-                                    onChange={handleChange}
-                                  />
-                                  {touched.last_bleed && errors.last_bleed && (
-                                    <div className="error">
-                                      {errors.last_bleed}
-                                    </div>
-                                  )}
-                                </div>
+                              <div className="errorArea">
+                                {errors.city_area}
                               </div>
                             )}
+                          </div>
+
+                          <div className="input">
+                            <div>
+                              <ul>
+                                <li>
+                                  <label>
+                                    <input
+                                      type="checkbox"
+                                      name="notification"
+                                      id="notification"
+                                      onClick={() => setNotified(!notified)}
+                                      value={values.notification || ""}
+                                      onChange={handleChange}
+                                    />
+                                    <span className="text">
+                                      {" "}
+                                      Want to get notifications ?
+                                    </span>
+                                  </label>
+                                </li>
+                              </ul>
+                              <div className="input">
+                                <label for="regiCountry">Blood Group</label>
+                                <select
+                                  className="select-regi-country"
+                                  id="regiCountry"
+                                  name="group"
+                                  onChange={handleChange}
+                                  value={values.group || ""}
+                                >
+                                  {group.map((res) => {
+                                    return (
+                                      <option key={res.key} value={res.value}>
+                                        {res.value}
+                                      </option>
+                                    );
+                                  })}
+                                </select>
+                                {touched.group && errors.group && (
+                                  <div className="error">{errors.group}</div>
+                                )}
+                              </div>
+
+                              <div className="input">
+                                <label for="regiState">Date Of Birth</label>
+                                <input
+                                  type="date"
+                                  name="dob"
+                                  id="regiState"
+                                  required
+                                  value={values.dob || ""}
+                                  onChange={handleChange}
+                                />
+                                {touched.dob && errors.dob && (
+                                  <div className="error">{errors.dob}</div>
+                                )}
+                              </div>
+
+                              <div className="input">
+                                <label for="regiState">Last Bleed Date</label>
+                                <input
+                                  type="date"
+                                  name="last_bleed"
+                                  id="regiState"
+                                  required
+                                  value={values.last_bleed || ""}
+                                  onChange={handleChange}
+                                />
+                                {touched.last_bleed && errors.last_bleed && (
+                                  <div className="error">
+                                    {errors.last_bleed}
+                                  </div>
+                                )}
+                              </div>
+                            </div>
                           </div>
 
                           <div className="input registration-input-button mb-0">

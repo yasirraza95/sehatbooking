@@ -151,24 +151,9 @@ export const registerValidation = Yup.object({
   city: Yup.string().required("Please select City"),
   city_area: Yup.string().min(2).required("Please enter City Area"),
 
-  group: Yup.string()
-    .notRequired()
-    .when("consent", {
-      is: true,
-      then: () => Yup.string().required("Please select Blood Group"),
-    }),
-  dob: Yup.string()
-    .notRequired()
-    .when("consent", {
-      is: true,
-      then: () => Yup.string().required("Please select Date of Birth"),
-    }),
-  last_bleed: Yup.string()
-    .notRequired()
-    .when("consent", {
-      is: true,
-      then: () => Yup.string().required("Please select Last Bleed Date"),
-    }),
+  group: Yup.string().required("Please select Blood Group"),
+  dob: Yup.string().required("Please select Date of Birth"),
+  last_bleed: Yup.string().required("Please select Last Bleed Date"),
 });
 
 export const addState = Yup.object({
