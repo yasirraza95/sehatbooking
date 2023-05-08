@@ -170,6 +170,16 @@ const listDonors = (pageNo, city, area, group) => {
   }
 };
 
+const getDonorById = (id) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+
+  return axios.get(`${API_URL}/get-donor/${id}`, {
+    headers: headers,
+  });
+};
+
 const listCities = () => {
   const headers = {
     "Content-Type": "application/json",
@@ -350,6 +360,7 @@ const GeneralService = {
   listBloodReq,
   getMarquee,
   subscription,
+  getDonorById,
 };
 
 export default GeneralService;

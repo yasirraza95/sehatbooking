@@ -47,12 +47,25 @@ export default function FindDonor() {
   const [area, setArea] = useState([]);
   const [group, setGroup] = useState([]);
 
-  // TODO redirection to login page and popup opening here and send email to recipient
   const contactDonor = (e) => {
-    if (id !== null) {
-      swal("Donor information has been sent to your mobile number");
-    } else {
-      window.location.href = "/login";
+    getDonorResult(e);
+    // if (id !== null) {
+    // } else {
+    //   window.location.href = "/login";
+    // }
+  };
+
+  // TODO
+  const getDonorResult = async (id) => {
+    try {
+      const response = await GeneralService.getDonorById(id);
+      const { data } = response;
+      const { response: res } = data;
+      swal(
+        `Name: ${res.full_name}, Phone: ${res.phone}, Group: ${res.blood_group}`
+      );
+    } catch (err) {
+      swal(`Error fetching information`);
     }
   };
 
@@ -357,7 +370,12 @@ export default function FindDonor() {
                   <tbody>
                     {resultData.length ? (
                       resultData.map((row) => (
-                        <tr key={row.id}>
+                        <tr
+                          key={row.id}
+                          onClick={(e) => {
+                            contactDonor(row.id);
+                          }}
+                        >
                           <td>
                             <div className="wordbreak">{`${row.first_name} ${row.last_name}`}</div>
                           </td>
