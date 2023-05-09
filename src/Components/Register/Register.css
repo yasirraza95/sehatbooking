@@ -1,7 +1,8 @@
 
 
 .registration-area__form {
-  max-width: 720px;
+  /* max-width: 720px; */
+  max-width: 120%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;

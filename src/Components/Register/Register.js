@@ -379,12 +379,13 @@ export default function Register() {
                               <div className="input">
                                 <label for="regiCountry">Blood Group</label>
                                 <select
-                                  className="select-regi-country"
+                                  className="selectpicker"
                                   id="regiCountry"
                                   name="group"
                                   onChange={handleChange}
                                   value={values.group || ""}
                                 >
+                                  <option>Blood Group</option>
                                   {group.map((res) => {
                                     return (
                                       <option key={res.key} value={res.value}>
