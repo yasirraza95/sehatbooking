@@ -247,7 +247,7 @@ export default function BloodRequest() {
                               )}
                             </div>
 
-                            <div className="input">
+                            <div className="input mt-2">
                               <select
                                 className="selectpicker"
                                 name="city"

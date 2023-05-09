@@ -385,7 +385,6 @@ export default function Register() {
                                   onChange={handleChange}
                                   value={values.group || ""}
                                 >
-                                  <option>Blood Group</option>
                                   {group.map((res) => {
                                     return (
                                       <option key={res.key} value={res.value}>

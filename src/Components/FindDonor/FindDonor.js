@@ -61,9 +61,18 @@ export default function FindDonor() {
       const response = await GeneralService.getDonorById(id);
       const { data } = response;
       const { response: res } = data;
-      swal(
-        `Name: ${res.full_name}, Phone: ${res.phone}, Group: ${res.blood_group}`
-      );
+      // swal(
+      //   `Name: ${res.full_name},
+      //   Phone: ${res.phone},
+      //   Group: ${res.blood_group},`
+      // );
+      swal({
+        icon: 'success',
+        title: 'Blood Details',
+        text:  `Name: ${res.full_name}
+        Phone: ${res.phone}
+         Group: ${res.blood_group}`,
+      })
     } catch (err) {
       swal(`Error fetching information`);
     }
