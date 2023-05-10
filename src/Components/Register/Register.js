@@ -169,7 +169,7 @@ export default function Register() {
                   )}
                   <form onSubmit={handleSubmit} noValidate>
                     <div className="registration-area__form-single">
-                      <p className="secondary">Full Name *</p>
+                      {/* <p className="secondary">Full Name *</p> */}
                       <div className="registration-area__form-single__inner">
                         <div className="input-group-column">
                           <div className="input">
@@ -203,245 +203,211 @@ export default function Register() {
                         </div>
                       </div>
                     </div>
-                    <div className="registration-area__form-single">
-                      <p className="secondary">Phone Number *</p>
-                      <div className="registration-area__form-single__inner">
-                        <div className="input-group-column">
-                          <div className="input">
-                            <label for="regiNumber">Number</label>
-                            <input
-                              type="text"
-                              name="phone"
-                              id="regiNumber"
-                              required
-                              value={values.phone || ""}
-                              onChange={handleChange}
-                            />
-                            {touched.phone && errors.phone && (
-                              <div className="error">{errors.phone}</div>
-                            )}
-                            {phoneError && (
-                              <div className="error">{phoneError}</div>
-                            )}
-                          </div>
-                        </div>
+                    <div className="input-group-column">
+                      <div className="input">
+                        <label for="regiNumber">Number</label>
+                        <input
+                          type="text"
+                          name="phone"
+                          id="regiNumber"
+                          required
+                          value={values.phone || ""}
+                          onChange={handleChange}
+                        />
+                        {touched.phone && errors.phone && (
+                          <div className="error">{errors.phone}</div>
+                        )}
+                        {phoneError && (
+                          <div className="error">{phoneError}</div>
+                        )}
+                      </div>
+
+                      <div className="input">
+                        <label for="regiNumber">Email</label>
+                        <input
+                          type="email"
+                          name="email"
+                          id="regemail"
+                          required
+                          value={values.email || ""}
+                          onChange={handleChange}
+                        />
+                        {touched.email && errors.email && (
+                          <div className="error">{errors.email}</div>
+                        )}
+                        {emailError && (
+                          <div className="error">{emailError}</div>
+                        )}
                       </div>
                     </div>
-                    <div className="registration-area__form-single">
-                      <p className="secondary">Email Address *</p>
-                      <div className="registration-area__form-single__inner">
-                        <div className="input-group-column">
-                          <div className="input">
-                            <label for="regiNumber">Email</label>
-                            <input
-                              type="email"
-                              name="email"
-                              id="regemail"
-                              required
-                              value={values.email || ""}
-                              onChange={handleChange}
-                            />
-                            {touched.email && errors.email && (
-                              <div className="error">{errors.email}</div>
-                            )}
-                            {emailError && (
-                              <div className="error">{emailError}</div>
-                            )}
-                          </div>
-                        </div>
+                    <div className="input-group-column">
+                      <div className="input">
+                        <label for="password">Password</label>
+                        <input
+                          type="password"
+                          name="password"
+                          id="password"
+                          required
+                          value={values.password || ""}
+                          onChange={handleChange}
+                        />
+                        {touched.password && errors.password && (
+                          <div className="error">{errors.password}</div>
+                        )}
+                      </div>
+                      <div className="input">
+                        <label for="regiAddress">Street Address</label>
+                        <input
+                          type="text"
+                          name="address"
+                          id="regiAddress"
+                          required
+                          value={values.address || ""}
+                          onChange={handleChange}
+                        />
+                        {touched.address && errors.address && (
+                          <div className="error">{errors.address}</div>
+                        )}
                       </div>
                     </div>
-                    <div className="registration-area__form-single">
-                      <p className="secondary">Password *</p>
-                      <div className="registration-area__form-single__inner">
-                        <div className="input-group-column">
-                          <div className="input">
-                            <label for="password">Password</label>
-                            <input
-                              type="password"
-                              name="password"
-                              id="password"
-                              required
-                              value={values.password || ""}
-                              onChange={handleChange}
-                            />
-                            {touched.password && errors.password && (
-                              <div className="error">{errors.password}</div>
-                            )}
-                          </div>
-                        </div>
+                    <div className="input-group-column">
+
+                      <div className="input">
+                        <label for="regiState">State</label>
+                        <select
+                          className="selectpicker"
+                          name="state"
+                          id="regstate"
+                          value={values.state || ""}
+                          onChange={(e) => {
+                            changeState(e);
+                            handleChange(e);
+                          }}
+                        >
+                          {state.map((res) => {
+                            return (
+                              <option key={res.key} value={res.value}>
+                                {res.value}
+                              </option>
+                            );
+                          })}
+                        </select>
+                        {touched.state && errors.state && (
+                          <div className="error">{errors.state}</div>
+                        )}
+                      </div>
+                      <div className="input">
+                        <label for="regiCity">City</label>
+                        <select
+                          className="selectpicker"
+                          name="city"
+                          id="cityReg"
+                          value={values.city || ""}
+                          onChange={(e) => {
+                            // changeCity(e);
+                            handleChange(e);
+                          }}
+                        >
+                          <option value="">Select City</option>
+                          {city.map((res) => {
+                            return (
+                              <option key={res.key} value={res.value}>
+                                {res.value}
+                              </option>
+                            );
+                          })}
+                        </select>
+                        {touched.city && errors.city && (
+                          <div className="errorCity">{errors.city}</div>
+                        )}
                       </div>
                     </div>
-                    <div className="registration-area__form-single">
-                      <p className="secondary">Address *</p>
-                      <div className="registration-area__form-single__inner mb-0">
-                        <div className="input-group-column input-group-column--secondary">
-                          <div className="input">
-                            <label for="regiAddress">Street Address</label>
-                            <input
-                              type="text"
-                              name="address"
-                              id="regiAddress"
-                              required
-                              value={values.address || ""}
-                              onChange={handleChange}
-                            />
-                            {touched.address && errors.address && (
-                              <div className="error">{errors.address}</div>
-                            )}
-                          </div>
-                          <div className="input">
-                            <label for="regiState">State</label>
-                            <select
-                              className="selectpicker"
-                              name="state"
-                              id="regstate"
-                              value={values.state || ""}
-                              onChange={(e) => {
-                                changeState(e);
-                                handleChange(e);
-                              }}
-                            >
-                              {state.map((res) => {
-                                return (
-                                  <option key={res.key} value={res.value}>
-                                    {res.value}
-                                  </option>
-                                );
-                              })}
-                            </select>
-                            {touched.state && errors.state && (
-                              <div className="error">{errors.state}</div>
-                            )}
-                          </div>
-                          <div className="input">
-                            <label for="regiCity">City</label>
-                            <select
-                              className="selectpicker"
-                              name="city"
-                              id="cityReg"
-                              value={values.city || ""}
-                              onChange={(e) => {
-                                // changeCity(e);
-                                handleChange(e);
-                              }}
-                            >
-                              <option value="">Select City</option>
-                              {city.map((res) => {
-                                return (
-                                  <option key={res.key} value={res.value}>
-                                    {res.value}
-                                  </option>
-                                );
-                              })}
-                            </select>
-                            {touched.city && errors.city && (
-                              <div className="errorCity">{errors.city}</div>
-                            )}
-                          </div>
-                          <div className="input">
-                            <label for="regicityArea">City Area</label>
-                            <input
-                              type="text"
-                              name="city_area"
-                              id="regicityArea"
-                              required
-                              value={values.city_area || ""}
-                              onChange={handleChange}
-                            />
-                            {touched.city_area && errors.city_area && (
-                              <div className="errorArea">
-                                {errors.city_area}
-                              </div>
-                            )}
-                          </div>
+                    <div className="input-group-column">
 
-                          <div className="input">
-                            <div>
-                              <ul>
-                                <li>
-                                  <label>
-                                    <input
-                                      type="checkbox"
-                                      name="notification"
-                                      id="notification"
-                                      onClick={() => setNotified(!notified)}
-                                      value={values.notification || ""}
-                                      onChange={handleChange}
-                                    />
-                                    <span className="text">
-                                      {" "}
-                                      Want to get notifications ?
-                                    </span>
-                                  </label>
-                                </li>
-                              </ul>
-                              <div className="input">
-                                <label for="regiCountry">Blood Group</label>
-                                <select
-                                  className="selectpicker"
-                                  id="regiCountry"
-                                  name="group"
-                                  onChange={handleChange}
-                                  value={values.group || ""}
-                                >
-                                  {group.map((res) => {
-                                    return (
-                                      <option key={res.key} value={res.value}>
-                                        {res.value}
-                                      </option>
-                                    );
-                                  })}
-                                </select>
-                                {touched.group && errors.group && (
-                                  <div className="error">{errors.group}</div>
-                                )}
-                              </div>
-
-                              <div className="input">
-                                <label for="regiState">Date Of Birth</label>
-                                <input
-                                  type="date"
-                                  name="dob"
-                                  id="regiState"
-                                  required
-                                  value={values.dob || ""}
-                                  onChange={handleChange}
-                                />
-                                {touched.dob && errors.dob && (
-                                  <div className="error">{errors.dob}</div>
-                                )}
-                              </div>
-
-                              <div className="input">
-                                <label for="regiState">Last Bleed Date</label>
-                                <input
-                                  type="date"
-                                  name="last_bleed"
-                                  id="regiState"
-                                  required
-                                  value={values.last_bleed || ""}
-                                  onChange={handleChange}
-                                />
-                                {touched.last_bleed && errors.last_bleed && (
-                                  <div className="error">
-                                    {errors.last_bleed}
-                                  </div>
-                                )}
-                              </div>
-                            </div>
+                      <div className="input">
+                        <label for="regicityArea">City Area</label>
+                        <input
+                          type="text"
+                          name="city_area"
+                          id="regicityArea"
+                          required
+                          value={values.city_area || ""}
+                          onChange={handleChange}
+                        />
+                        {touched.city_area && errors.city_area && (
+                          <div className="errorArea">
+                            {errors.city_area}
                           </div>
+                        )}
+                      </div>
 
-                          <div className="input registration-input-button mb-0">
-                            <button
-                              type="submit"
-                              className="button button--effect register"
-                            >
-                              Submit
-                              <i className="bi bi-arrow-right"></i>
-                            </button>
+
+                      <div className="input">
+                        <label for="regiCountry">Blood Group</label>
+                        <select
+                          className="selectpicker"
+                          id="regiCountry"
+                          name="group"
+                          onChange={handleChange}
+                          value={values.group || ""}
+                        >
+                          {group.map((res) => {
+                            return (
+                              <option key={res.key} value={res.value}>
+                                {res.value}
+                              </option>
+                            );
+                          })}
+                        </select>
+                        {touched.group && errors.group && (
+                          <div className="error">{errors.group}</div>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="input-group-column">
+
+                      <div className="input">
+                        <label for="regiState">Date Of Birth</label>
+                        <input
+                          type="date"
+                          name="dob"
+                          id="regiState"
+                          required
+                          value={values.dob || ""}
+                          onChange={handleChange}
+                        />
+                        {touched.dob && errors.dob && (
+                          <div className="error">{errors.dob}</div>
+                        )}
+                      </div>
+
+                      <div className="input">
+                        <label for="regiState">Last Bleed Date</label>
+                        <input
+                          type="date"
+                          name="last_bleed"
+                          id="regiState"
+                          required
+                          value={values.last_bleed || ""}
+                          onChange={handleChange}
+                        />
+                        {touched.last_bleed && errors.last_bleed && (
+                          <div className="error">
+                            {errors.last_bleed}
                           </div>
-                        </div>
+                        )}
+                      </div>
+                    </div>
+                      <div className="col-md-12 text-center">
+                        <div className="input registration-input-button mb-0">
+                          <button
+                            type="submit"
+                            className="button button--effect registerBtn"
+                          >
+                            Submit
+                            <i className="bi bi-arrow-right"></i>
+                          </button>
                       </div>
                     </div>
                   </form>
