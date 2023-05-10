@@ -375,9 +375,9 @@ export default function IndexOne() {
                 <div className="row neutral-row">
                   <div className="col-lg-6 row-item">
                     <div className="appointment-area__single appointment-area__content">
-                      <p>
+                      {/* <p>
                         <marquee className="blink">{marqueeTxt}</marquee>
-                      </p>
+                      </p> */}
                       <h4 className="red">
                         <FontAwesomeIcon icon={faClockRotateLeft} /> Recent
                         Blood Request
