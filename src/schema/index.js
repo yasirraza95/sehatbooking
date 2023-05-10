@@ -154,6 +154,7 @@ export const registerValidation = Yup.object({
   group: Yup.string().required("Please select Blood Group"),
   dob: Yup.string().required("Please select Date of Birth"),
   last_bleed: Yup.string().required("Please select Last Bleed Date"),
+  captcha: Yup.string().required("Captcha is required"),
 });
 
 export const addState = Yup.object({

@@ -112,6 +112,7 @@ export default function Register() {
         notification: "",
         dob: "",
         last_bleed: "",
+        captcha: "",
       },
       validationSchema: registerValidation,
       onSubmit: (values, action) => {
@@ -410,6 +411,9 @@ export default function Register() {
                       sitekey="6LfBVvslAAAAAN4DZ4XzpmN_72xgJoHCHO1FBhtM"
                       onChange={onChange}
                     />
+                         <div className="error">
+                            {errors.captcha}
+                          </div>
                     </div>
                     <div className="col-md-12 text-center">
                       <div className="input registration-input-button mb-0">
