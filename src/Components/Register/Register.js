@@ -11,6 +11,7 @@ import { useFormik } from "formik";
 import { registerValidation } from "../../schema";
 import { useEffect } from "react";
 import swal from "sweetalert";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Register() {
   // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
@@ -36,6 +37,10 @@ export default function Register() {
   const [submitMessage, setSubmitMessage] = useState("");
   const [emailError, setEmailError] = useState("");
   const [phoneError, setPhoneError] = useState("");
+
+  const onChange = (value) => {
+    console.log("Captcha value:", value);
+  }
 
   const changeState = (e) => {
     const getCity = async () => {
@@ -399,15 +404,22 @@ export default function Register() {
                         )}
                       </div>
                     </div>
-                      <div className="col-md-12 text-center">
-                        <div className="input registration-input-button mb-0">
-                          <button
-                            type="submit"
-                            className="button button--effect registerBtn"
-                          >
-                            Submit
-                            <i className="bi bi-arrow-right"></i>
-                          </button>
+                    <div className="input">
+
+                    <ReCAPTCHA
+                      sitekey="6LfBVvslAAAAAN4DZ4XzpmN_72xgJoHCHO1FBhtM"
+                      onChange={onChange}
+                    />
+                    </div>
+                    <div className="col-md-12 text-center">
+                      <div className="input registration-input-button mb-0">
+                        <button
+                          type="submit"
+                          className="button button--effect registerBtn"
+                        >
+                          Submit
+                          <i className="bi bi-arrow-right"></i>
+                        </button>
                       </div>
                     </div>
                   </form>
