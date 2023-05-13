@@ -32,7 +32,7 @@ const NoInternet = (props) => {
               {" "}
               <li id="des">
                 Please re-connect to the internet to continue use
-                <span id="siteName"> {process.env.REACT_APP_SMALLNAME}</span>
+                <span id="siteName"> sehatbooking.com</span>
               </li>{" "}<br />
               <li>If you encounter problems:</li>
               <ul className="mt-2 inner">
