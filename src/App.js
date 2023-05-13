@@ -23,11 +23,13 @@ import BloodRequest from "./Components/BloodRequest/BloodRequest";
 import ForgotToken from "./Components/ForgotToken/ForgotToken";
 import PreLoader from "./Components/PreLoader/PreLoader";
 import HomeScreen from "./Components/Home/HomeScreen";
+import NoInternet from "./Components/NoInternet/NoInternet";
 
 function App() {
   return (
     <>
       <div className="App">
+        <NoInternet>
         <BrowserRouter>
           <PreLoader />
           <Routes>
@@ -53,6 +55,7 @@ function App() {
             <Route path="/forgot-token" element={<ForgotToken />} />
           </Routes>
         </BrowserRouter>
+        </NoInternet>
       </div>
       <FloatingWhatsApp
         phoneNumber="+923137300434"
