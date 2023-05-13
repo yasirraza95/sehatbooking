@@ -47,6 +47,10 @@ a#offlineBtn {
   text-decoration: none;
   box-shadow: 0 0 15px #ea062b;
 }
+a#offlineBtn:hover {
+  background: #ea062b;
+  color: #111111;
+}
 ul.list-unstyled.text-muted {
   list-style: circle;
   text-align: initial;
