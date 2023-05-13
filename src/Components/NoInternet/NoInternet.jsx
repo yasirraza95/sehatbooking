@@ -24,7 +24,9 @@ const NoInternet = (props) => {
     return (
       <>
         <div className="wrapper">
-          {/* <div className="noSignel"></div> */}
+          <div className="noSignel">
+          <i className="bi bi-wifi-off"></i>  
+          </div>
           <h1 className="offlineT">OFFLINE</h1>
           <h4 className="offlineP">NO INTERNET CONNECTION!</h4>
           <div className="card-body px-sm-4 mb-3">

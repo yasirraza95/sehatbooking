@@ -57,3 +57,10 @@ ul.list-unstyled.text-muted {
 ::marker {
   color: #cb2330;
   }
+  i.bi.bi-wifi-off {
+    font-size: 100px;
+    color: #cb2330;
+}
+.noSignel {
+  padding: 70px;
+}
