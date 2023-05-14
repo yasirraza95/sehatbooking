@@ -223,7 +223,8 @@ export default function BloodRequest() {
                           <div className="input-group-column">
                             <div className="input">
                               <select
-                                className="selectpicker"
+                                // className="selectpicker"
+                            className="form-select" aria-label="Default select example"
                                 name="state"
                                 id="state"
                                 value={values.state || ""}
@@ -249,7 +250,8 @@ export default function BloodRequest() {
 
                             <div className="input mt-2">
                               <select
-                                className="selectpicker"
+                                // className="selectpicker"
+                            className="form-select" aria-label="Default select example"
                                 name="city"
                                 id="city"
                                 value={values.city || ""}
@@ -277,7 +279,8 @@ export default function BloodRequest() {
                           <div className="input-group-column">
                             <div className="input">
                               <select
-                                className="selectpicker"
+                                // className="selectpicker"
+                            className="form-select" aria-label="Default select example"
                                 name="area"
                                 id="area"
                                 value={values.area || ""}
@@ -303,7 +306,9 @@ export default function BloodRequest() {
                             </div>
                             <div className="input">
                               <select
-                                className="selectpicker"
+                                // className="selectpicker"
+                            className="form-select" aria-label="Default select example"
+
                                 name="group"
                                 id="blodGroup"
                                 value={values.group || ""}

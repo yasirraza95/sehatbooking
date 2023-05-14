@@ -51,6 +51,7 @@ h2, h2 > a, h2 > span {
 }
 .banner .breadcrumb .breadcrumb-item::before {
     padding-right: 10px;
+    color: #fff;
 }
 .breadcrumb .breadcrumb-item::before {
     color: #ffffff;
