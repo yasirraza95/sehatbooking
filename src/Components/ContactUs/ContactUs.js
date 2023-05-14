@@ -9,6 +9,7 @@ import { contactValidation } from "../../schema";
 import GeneralService from "../../services/general.service";
 import { toast } from "react-toastify";
 import { Alert } from "react-bootstrap";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactUs() {
   // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
@@ -28,6 +29,9 @@ export default function ContactUs() {
   const [submit, setSubmit] = useState("");
   const [submitMessage, setSubmitMessage] = useState("");
 
+  const onChange = (value) => {
+    console.log("Captcha value:", value);
+  }
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: {
@@ -36,6 +40,7 @@ export default function ContactUs() {
         email: "",
         subject: "",
         message: "",
+        captcha: "",
       },
       validationSchema: contactValidation,
       onSubmit: (values, action) => {
@@ -210,6 +215,15 @@ export default function ContactUs() {
                             {touched.message && errors.message && (
                               <div className="error">{errors.message}</div>
                             )}
+                          </div>
+                          <div className="input">
+                            <ReCAPTCHA
+                              sitekey="6LfBVvslAAAAAN4DZ4XzpmN_72xgJoHCHO1FBhtM"
+                              onChange={onChange}
+                            />
+                            <div className="error">
+                              {errors.captcha}
+                            </div>
                           </div>
                           <button
                             type="submit"
