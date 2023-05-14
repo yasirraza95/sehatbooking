@@ -29,9 +29,9 @@ export default function ContactUs() {
   const [submit, setSubmit] = useState("");
   const [submitMessage, setSubmitMessage] = useState("");
 
-  const onChange = (value) => {
-    console.log("Captcha value:", value);
-  }
+  // const onChange = (value) => {
+  //   console.log("Captcha value:", value);
+  // };
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: {
@@ -44,7 +44,8 @@ export default function ContactUs() {
       },
       validationSchema: contactValidation,
       onSubmit: (values, action) => {
-        formSubmit(values, action);
+        console.log(values);
+        // formSubmit(values, action);
       },
     });
 
@@ -219,11 +220,10 @@ export default function ContactUs() {
                           <div className="input">
                             <ReCAPTCHA
                               sitekey="6LfBVvslAAAAAN4DZ4XzpmN_72xgJoHCHO1FBhtM"
-                              onChange={onChange}
+                              onChange={handleChange}
+                              onBlur={handleBlur}
                             />
-                            <div className="error">
-                              {errors.captcha}
-                            </div>
+                            <div className="error">{errors.captcha}</div>
                           </div>
                           <button
                             type="submit"
