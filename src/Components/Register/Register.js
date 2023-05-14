@@ -211,7 +211,7 @@ export default function Register() {
                     </div>
                     <div className="input-group-column">
                       <div className="input">
-                        <label for="regiNumber">Number</label>
+                        <label for="regiNumber">Phone No.</label>
                         <input
                           type="text"
                           name="phone"
