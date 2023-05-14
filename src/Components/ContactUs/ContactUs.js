@@ -32,7 +32,7 @@ export default function ContactUs() {
   // const onChange = (value) => {
   //   console.log("Captcha value:", value);
   // };
-  const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFieldValue } =
     useFormik({
       initialValues: {
         first_name: "",
@@ -220,9 +220,13 @@ export default function ContactUs() {
                           <div className="input">
                             <ReCAPTCHA
                               sitekey="6LfBVvslAAAAAN4DZ4XzpmN_72xgJoHCHO1FBhtM"
-                              onChange={handleChange}
-                              onBlur={handleBlur}
-                              value={values.captcha || ""}
+                              render="explicit"
+                              verifyCallback={(response) => {
+                                setFieldValue("captcha", response);
+                              }}
+                              onloadCallback={() => {
+                                console.log("done loading!");
+                              }}
                             />
                             <div className="error">{errors.captcha}</div>
                           </div>
