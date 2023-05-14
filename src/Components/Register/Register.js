@@ -112,7 +112,7 @@ export default function Register() {
         notification: "",
         dob: "",
         last_bleed: "",
-        captcha: "",
+        // captcha: "",
       },
       validationSchema: registerValidation,
       onSubmit: (values, action) => {
@@ -281,7 +281,8 @@ export default function Register() {
                       <div className="input">
                         <label for="regiState">State</label>
                         <select
-                          className="selectpicker"
+                          // className="selectpicker"
+                          className="form-select" aria-label="Default select example"
                           name="state"
                           id="regstate"
                           value={values.state || ""}
@@ -305,7 +306,8 @@ export default function Register() {
                       <div className="input">
                         <label for="regiCity">City</label>
                         <select
-                          className="selectpicker"
+                          // className="selectpicker"
+                          className="form-select" aria-label="Default select example"
                           name="city"
                           id="cityReg"
                           value={values.city || ""}
@@ -351,7 +353,8 @@ export default function Register() {
                       <div className="input">
                         <label for="regiCountry">Blood Group</label>
                         <select
-                          className="selectpicker"
+                          // className="selectpicker"
+                            className="form-select" aria-label="Default select example"
                           id="regiCountry"
                           name="group"
                           onChange={handleChange}
@@ -405,7 +408,7 @@ export default function Register() {
                         )}
                       </div>
                     </div>
-                    <div className="input">
+                    {/* <div className="input">
 
                     <ReCAPTCHA
                       sitekey="6LfBVvslAAAAAN4DZ4XzpmN_72xgJoHCHO1FBhtM"
@@ -414,7 +417,7 @@ export default function Register() {
                          <div className="error">
                             {errors.captcha}
                           </div>
-                    </div>
+                    </div> */}
                     <div className="col-md-12 text-center">
                       <div className="input registration-input-button mb-0">
                         <button

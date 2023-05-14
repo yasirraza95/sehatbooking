@@ -40,7 +40,7 @@ export default function ContactUs() {
         email: "",
         subject: "",
         message: "",
-        captcha: "",
+        // captcha: "",
       },
       validationSchema: contactValidation,
       onSubmit: (values, action) => {
@@ -216,7 +216,7 @@ export default function ContactUs() {
                               <div className="error">{errors.message}</div>
                             )}
                           </div>
-                          <div className="input">
+                          {/* <div className="input">
                             <ReCAPTCHA
                               sitekey="6LfBVvslAAAAAN4DZ4XzpmN_72xgJoHCHO1FBhtM"
                               onChange={onChange}
@@ -224,7 +224,7 @@ export default function ContactUs() {
                             <div className="error">
                               {errors.captcha}
                             </div>
-                          </div>
+                          </div> */}
                           <button
                             type="submit"
                             className="button button--effect contact"
