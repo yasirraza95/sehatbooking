@@ -222,6 +222,7 @@ export default function ContactUs() {
                               sitekey="6LfBVvslAAAAAN4DZ4XzpmN_72xgJoHCHO1FBhtM"
                               onChange={handleChange}
                               onBlur={handleBlur}
+                              value={values.captcha || ""}
                             />
                             <div className="error">{errors.captcha}</div>
                           </div>
