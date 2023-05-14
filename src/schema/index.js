@@ -9,7 +9,7 @@ export const contactValidation = Yup.object().shape({
     .required("Please enter Email Address"),
   subject: Yup.string().required("Please enter Subject"),
   // message: Yup.string().required("Please enter Message"),
-  // captcha: Yup.string().required("Captcha is required"),
+  // recaptcha: Yup.string().required("Captcha is required"),
 });
 
 export const loginValidation = Yup.object().shape({

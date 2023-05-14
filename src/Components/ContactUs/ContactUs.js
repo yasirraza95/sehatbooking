@@ -40,7 +40,7 @@ export default function ContactUs() {
         email: "",
         subject: "",
         message: "",
-        captcha: "",
+        recaptcha: "",
       },
       validationSchema: contactValidation,
       onSubmit: (values, action) => {
@@ -222,7 +222,7 @@ export default function ContactUs() {
                               sitekey="6LfBVvslAAAAAN4DZ4XzpmN_72xgJoHCHO1FBhtM"
                               render="explicit"
                               verifyCallback={(response) => {
-                                setFieldValue("captcha", response);
+                                setFieldValue("recaptcha", response);
                               }}
                               onloadCallback={() => {
                                 console.log("done loading!");
