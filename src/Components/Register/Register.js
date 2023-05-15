@@ -38,9 +38,30 @@ export default function Register() {
   const [emailError, setEmailError] = useState("");
   const [phoneError, setPhoneError] = useState("");
 
-  const onChange = (value) => {
-    console.log("Captcha value:", value);
-  }
+  const fetchAreas = (e) => {
+    let newValue = e.target.value;
+    const getCityArea = async () => {
+      setArea([]);
+      const { data } = await GeneralService.getCityArea(selectedCity, newValue);
+      const { response: res } = data;
+      const results = [];
+      res.map((value) => {
+        results.push({
+          key: value.name,
+          value: value.name,
+        });
+      });
+      setArea([...results]);
+    };
+
+    if (newValue !== "") {
+      getCityArea();
+    }
+  };
+
+  const changeCity = (e) => {
+    setSelectedCity(e);
+  };
 
   const changeState = (e) => {
     const getCity = async () => {
@@ -340,8 +361,24 @@ export default function Register() {
                           id="regicityArea"
                           required
                           value={values.city_area || ""}
-                          onChange={handleChange}
+                          // onChange={handleChange}
+                          onChange={(e) => {
+                            fetchAreas(e);
+                            handleChange(e);
+                          }}
                         />
+                        <datalist
+                          id="cityArea"
+                        >
+                          {/* <option value="Objective C">Objective C</option> */}
+                          {area.map((res) => {
+                            return (
+                              <option key={res.value} value={res.value}>
+                                {res.value}
+                              </option>
+                            );
+                          })}
+                        </datalist>
                         {touched.city_area && errors.city_area && (
                           <div className="errorArea">
                             {errors.city_area}
