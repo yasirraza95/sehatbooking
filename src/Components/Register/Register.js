@@ -363,14 +363,13 @@ export default function Register() {
                           id="regicityArea"
                           required
                           value={values.city_area || ""}
-                          onChange={handleChange}
-                        />
-                        <datalist
-                          id="cityArea"
                           onChange={(e) => {
                             fetchAreas(e.target.value);
                             handleChange(e);
                           }}
+                        />
+                        <datalist
+                     
                         >
                           {/* <option value="Objective C">Objective C</option> */}
                           {area.map((res) => {
