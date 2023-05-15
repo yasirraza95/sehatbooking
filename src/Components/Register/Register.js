@@ -335,13 +335,28 @@ export default function Register() {
                       <div className="input">
                         <label for="regicityArea">City Area</label>
                         <input
-                          type="text"
+                          type="text" list="cityArea"
                           name="city_area"
                           id="regicityArea"
                           required
                           value={values.city_area || ""}
                           onChange={handleChange}
                         />
+                        <datalist id="cityArea">
+                          <option value="Objective C">Objective C</option>
+                          <option value="C++">C++</option>
+                          <option value="C#">C#</option>
+                          <option value="Cobol">Cobol</option>
+                          <option value="Go">Go</option>
+                          <option value="Java">Java</option>
+                          <option value="JavaScript">JavaScript</option>
+                          <option value="Python">Python</option>
+                          <option value="PHP">PHP</option>
+                          <option value="Pascal">Pascal</option>
+                          <option value="Perl">Perl</option>
+                          <option value="R">R</option>
+                          <option value="Swift">Swift</option>
+                        </datalist>
                         {touched.city_area && errors.city_area && (
                           <div className="errorArea">
                             {errors.city_area}
@@ -354,7 +369,7 @@ export default function Register() {
                         <label for="regiCountry">Blood Group</label>
                         <select
                           // className="selectpicker"
-                            className="form-select" aria-label="Default select example"
+                          className="form-select" aria-label="Default select example"
                           id="regiCountry"
                           name="group"
                           onChange={handleChange}
