@@ -369,9 +369,8 @@ export default function Register() {
                           }}
                         />
                         <datalist
-                     
+                          id="cityArea"
                         >
-                          {/* <option value="Objective C">Objective C</option> */}
                           {area.map((res) => {
                             return (
                               <option key={res.value} value={res.value}>
