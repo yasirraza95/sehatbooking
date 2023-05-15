@@ -207,6 +207,22 @@ const getCityByState = (name) => {
   });
 };
 
+const getCityArea = (city, name) => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.post(
+    `${API_URL}/suggest-area`,
+    {
+      city: city,
+      name: name,
+    },
+    {
+      headers: headers,
+    }
+  );
+};
+
 const checkEmail = (email) => {
   const headers = {
     "Content-Type": "application/json",
@@ -361,6 +377,7 @@ const GeneralService = {
   getMarquee,
   subscription,
   getDonorById,
+  getCityArea,
 };
 
 export default GeneralService;
