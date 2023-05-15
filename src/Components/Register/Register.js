@@ -41,9 +41,10 @@ export default function Register() {
   const [selectedCity, setSelectedCity] = useState("");
 
   const fetchAreas = (e) => {
+    let newValue = e.target.value;
     const getCityArea = async () => {
       setArea([]);
-      const { data } = await GeneralService.getCityArea(selectedCity, e);
+      const { data } = await GeneralService.getCityArea(selectedCity, newValue);
       const { response: res } = data;
       const results = [];
       res.map((value) => {
@@ -55,7 +56,7 @@ export default function Register() {
       setArea([...results]);
     };
 
-    if (e.target.value !== "") {
+    if (newValue !== "") {
       getCityArea();
     }
   };
@@ -363,14 +364,14 @@ export default function Register() {
                           id="regicityArea"
                           required
                           value={values.city_area || ""}
-                          onChange={handleChange}
+                          // onChange={handleChange}
+                          onChange={(e) => {
+                            fetchAreas(e);
+                            handleChange(e);
+                          }}
                         />
                         <datalist
                           id="cityArea"
-                          onChange={(e) => {
-                            fetchAreas(e.target.value);
-                            handleChange(e);
-                          }}
                         >
                           {/* <option value="Objective C">Objective C</option> */}
                           {area.map((res) => {
