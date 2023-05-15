@@ -223,7 +223,8 @@ export default function BloodRequest() {
                           <div className="input-group-column">
                             <div className="input">
                               <select
-                                className="selectpicker"
+                                // className="selectpicker"
+                                className="form-select" aria-label="Default select example"
                                 name="state"
                                 id="state"
                                 value={values.state || ""}
@@ -249,7 +250,8 @@ export default function BloodRequest() {
 
                             <div className="input mt-2">
                               <select
-                                className="selectpicker"
+                                // className="selectpicker"
+                                className="form-select" aria-label="Default select example"
                                 name="city"
                                 id="city"
                                 value={values.city || ""}
@@ -276,8 +278,8 @@ export default function BloodRequest() {
                           </div>
                           <div className="input-group-column">
                             <div className="input">
-                              <select
-                                className="selectpicker"
+                              {/* <select
+                                className="form-select" aria-label="Default select example"
                                 name="area"
                                 id="area"
                                 value={values.area || ""}
@@ -294,7 +296,25 @@ export default function BloodRequest() {
                                     </option>
                                   );
                                 })}
-                              </select>
+                              </select> */}
+                              <input type="text" list="cityArea"
+                                placeholder="Enter City Area"
+                                name="area"
+                                id="area" 
+                                value={values.area || ""}
+                                onChange={(e) => {
+                                  fetchGroup(e);
+                                  handleChange(e);
+                                }}/>
+                              <datalist id="cityArea">
+                                {area.map((res) => {
+                                  return (
+                                    <option key={res.key} value={res.value}>
+                                      {res.value}
+                                    </option>
+                                  );
+                                })}
+                              </datalist>
                               {touched.area && errors.area && (
                                 <div className="error bloodrequest">
                                   {errors.area}
@@ -303,7 +323,9 @@ export default function BloodRequest() {
                             </div>
                             <div className="input">
                               <select
-                                className="selectpicker"
+                                // className="selectpicker"
+                                className="form-select" aria-label="Default select example"
+
                                 name="group"
                                 id="blodGroup"
                                 value={values.group || ""}
@@ -324,13 +346,13 @@ export default function BloodRequest() {
                                 </div>
                               )}
                             </div>
-                            <div className="input" style={{marginTop: "-20px"}}>
+                            <div className="input" style={{ marginTop: "-20px" }}>
                               <input
                                 // className="selectpicker"
                                 type="text"
                                 name="phone"
                                 id="phoneNo"
-                                placeholder="Phone No."
+                                placeholder="Phone No"
                                 value={values.phone || ""}
                                 onChange={handleChange}
                               />
@@ -340,7 +362,7 @@ export default function BloodRequest() {
                                 </div>
                               )}
                             </div>
-                            
+
                           </div>
                           <div className="input alignment">
                             <div className="form-checkk">

@@ -272,7 +272,8 @@ export default function FindDonor() {
                           </select> */}
 
                           <select
-                            className="selectpicker"
+                            // className="selectpicker"
+                            className="form-select" aria-label="Default select example"
                             name="city"
                             id="city"
                             value={values.city || ""}
@@ -299,7 +300,8 @@ export default function FindDonor() {
                         {/* <p className="donorLabel">City Area</p> */}
                         <div className="input">
                           <select
-                            className="selectpicker"
+                            // className="selectpicker"
+                            className="form-select" aria-label="Default select example"
                             name="area"
                             id="area"
                             value={values.area || ""}
@@ -326,7 +328,8 @@ export default function FindDonor() {
                         {/* <p className="donorLabel">Blood Group</p> */}
                         <div className="input">
                           <select
-                            className="selectpicker"
+                            // className="selectpicker"
+                            className="form-select" aria-label="Default select example"
                             name="group"
                             id="group"
                             onChange={handleChange}

@@ -8,8 +8,8 @@ export const contactValidation = Yup.object().shape({
     .email("Please enter a valid Email Address")
     .required("Please enter Email Address"),
   subject: Yup.string().required("Please enter Subject"),
-  // message: Yup.string().required("Please enter Message"),
-  // recaptcha: Yup.string().required("Captcha is required"),
+  message: Yup.string().required("Please enter Message"),
+  // captcha: Yup.string().required("Captcha is required"),
 });
 
 export const loginValidation = Yup.object().shape({
@@ -155,7 +155,7 @@ export const registerValidation = Yup.object({
   group: Yup.string().required("Please select Blood Group"),
   dob: Yup.string().required("Please select Date of Birth"),
   last_bleed: Yup.string().required("Please select Last Bleed Date"),
-  captcha: Yup.string().required("Captcha is required"),
+  // captcha: Yup.string().required("Captcha is required"),
 });
 
 export const addState = Yup.object({
