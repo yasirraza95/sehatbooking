@@ -35,6 +35,7 @@ const register = (values) => {
       last_name: values.last_name,
       state: values.state,
       city: values.city,
+      city_area: values.city_area,
       address: values.address,
       notifications: values.notification,
       donation_consent: values.consent,
