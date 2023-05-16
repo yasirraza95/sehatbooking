@@ -373,9 +373,7 @@ export default function Register() {
                           }}
                           disabled={isEnable}
                         />
-                        <datalist
-                          id="cityArea"
-                        >
+                        <datalist id="cityArea">
                           {/* <option value="Objective C">Objective C</option> */}
                           {area.map((res) => {
                             return (

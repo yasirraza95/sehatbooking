@@ -176,6 +176,18 @@ input#regiNumber:focus {
   background: #fff;
   border: 1px solid #e2e0e0;
 }
+input#regemail:focus {
+  background: #fff;
+  border: 1px solid #e2e0e0;
+}
+input#password:focus {
+  background: #fff;
+  border: 1px solid #e2e0e0;
+}
+input#regicityArea:focus {
+  background: #fff;
+  border: 1px solid #e2e0e0;
+}
 input#regiAddress:focus {
   background: #fff;
   border: 1px solid #e2e0e0;
