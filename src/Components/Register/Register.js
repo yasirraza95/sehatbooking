@@ -29,6 +29,7 @@ export default function Register() {
   // useImportScript("/assets/js/main.js");
   const [state, setState] = useState([]);
   const [city, setCity] = useState([]);
+  const [area, setArea] = useState([]);
   const [group, setGroup] = useState([]);
 
   const [notified, setNotified] = useState(false);
@@ -37,10 +38,34 @@ export default function Register() {
   const [submitMessage, setSubmitMessage] = useState("");
   const [emailError, setEmailError] = useState("");
   const [phoneError, setPhoneError] = useState("");
+  const [selectedCity, setSelectedCity] = useState("");
+  const [isEnable, setIsEnable] = useState(true);
 
-  const onChange = (value) => {
-    console.log("Captcha value:", value);
-  }
+  const fetchAreas = (e) => {
+    let newValue = e.target.value;
+    const getCityArea = async () => {
+      setArea([]);
+      const { data } = await GeneralService.getCityArea(selectedCity, newValue);
+      const { response: res } = data;
+      const results = [];
+      res.map((value) => {
+        results.push({
+          key: value.name,
+          value: value.name,
+        });
+      });
+      setArea([...results]);
+    };
+
+    if (newValue !== "") {
+      getCityArea();
+    }
+  };
+
+  const changeCity = (e) => {
+    setSelectedCity(e);
+    setIsEnable(false);
+  };
 
   const changeState = (e) => {
     const getCity = async () => {
@@ -211,7 +236,7 @@ export default function Register() {
                     </div>
                     <div className="input-group-column">
                       <div className="input">
-                        <label for="regiNumber">Number</label>
+                        <label for="regiNumber">Phone No.</label>
                         <input
                           type="text"
                           name="phone"
@@ -277,12 +302,12 @@ export default function Register() {
                       </div>
                     </div>
                     <div className="input-group-column">
-
                       <div className="input">
                         <label for="regiState">State</label>
                         <select
                           // className="selectpicker"
-                          className="form-select" aria-label="Default select example"
+                          className="form-select"
+                          aria-label="Default select example"
                           name="state"
                           id="regstate"
                           value={values.state || ""}
@@ -307,12 +332,13 @@ export default function Register() {
                         <label for="regiCity">City</label>
                         <select
                           // className="selectpicker"
-                          className="form-select" aria-label="Default select example"
+                          className="form-select"
+                          aria-label="Default select example"
                           name="city"
                           id="cityReg"
                           value={values.city || ""}
                           onChange={(e) => {
-                            // changeCity(e);
+                            changeCity(e.target.value);
                             handleChange(e);
                           }}
                         >
@@ -331,30 +357,45 @@ export default function Register() {
                       </div>
                     </div>
                     <div className="input-group-column">
-
                       <div className="input">
                         <label for="regicityArea">City Area</label>
                         <input
                           type="text"
+                          list="cityArea"
                           name="city_area"
                           id="regicityArea"
                           required
                           value={values.city_area || ""}
-                          onChange={handleChange}
+                          // onChange={handleChange}
+                          onChange={(e) => {
+                            fetchAreas(e);
+                            handleChange(e);
+                          }}
+                          disabled={isEnable}
                         />
+                        <datalist
+                          id="cityArea"
+                        >
+                          {/* <option value="Objective C">Objective C</option> */}
+                          {area.map((res) => {
+                            return (
+                              <option key={res.value} value={res.value}>
+                                {res.value}
+                              </option>
+                            );
+                          })}
+                        </datalist>
                         {touched.city_area && errors.city_area && (
-                          <div className="errorArea">
-                            {errors.city_area}
-                          </div>
+                          <div className="errorArea">{errors.city_area}</div>
                         )}
                       </div>
-
 
                       <div className="input">
                         <label for="regiCountry">Blood Group</label>
                         <select
                           // className="selectpicker"
-                            className="form-select" aria-label="Default select example"
+                          className="form-select"
+                          aria-label="Default select example"
                           id="regiCountry"
                           name="group"
                           onChange={handleChange}
@@ -375,13 +416,12 @@ export default function Register() {
                     </div>
 
                     <div className="input-group-column">
-
                       <div className="input">
                         <label for="regiState">Date Of Birth</label>
                         <input
                           type="date"
                           name="dob"
-                          id="regiState"
+                          id="dob"
                           required
                           value={values.dob || ""}
                           onChange={handleChange}
@@ -396,15 +436,13 @@ export default function Register() {
                         <input
                           type="date"
                           name="last_bleed"
-                          id="regiState"
+                          id="last_bleed"
                           required
                           value={values.last_bleed || ""}
                           onChange={handleChange}
                         />
                         {touched.last_bleed && errors.last_bleed && (
-                          <div className="error">
-                            {errors.last_bleed}
-                          </div>
+                          <div className="error">{errors.last_bleed}</div>
                         )}
                       </div>
                     </div>
