@@ -37,10 +37,34 @@ export default function Register() {
   const [submitMessage, setSubmitMessage] = useState("");
   const [emailError, setEmailError] = useState("");
   const [phoneError, setPhoneError] = useState("");
+  const [selectedCity, setSelectedCity] = useState("");
+  const [isEnable, setIsEnable] = useState(true);
 
-  const onChange = (value) => {
-    console.log("Captcha value:", value);
-  }
+  const fetchAreas = (e) => {
+    let newValue = e.target.value;
+    const getCityArea = async () => {
+      setArea([]);
+      const { data } = await GeneralService.getCityArea(selectedCity, newValue);
+      const { response: res } = data;
+      const results = [];
+      res.map((value) => {
+        results.push({
+          key: value.name,
+          value: value.name,
+        });
+      });
+      setArea([...results]);
+    };
+
+    if (newValue !== "") {
+      getCityArea();
+    }
+  };
+
+  const changeCity = (e) => {
+    setSelectedCity(e);
+    setIsEnable(false);
+  };
 
   const changeState = (e) => {
     const getCity = async () => {
@@ -340,7 +364,12 @@ export default function Register() {
                           id="regicityArea"
                           required
                           value={values.city_area || ""}
-                          onChange={handleChange}
+                          // onChange={handleChange}
+                          onChange={(e) => {
+                            fetchAreas(e);
+                            handleChange(e);
+                          }}
+                          disabled={isEnable}
                         />
                         {touched.city_area && errors.city_area && (
                           <div className="errorArea">
