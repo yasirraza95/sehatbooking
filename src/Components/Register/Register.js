@@ -39,6 +39,7 @@ export default function Register() {
   const [emailError, setEmailError] = useState("");
   const [phoneError, setPhoneError] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
+  const [isEnable, setIsEnable] = useState(true);
 
   const fetchAreas = (e) => {
     let newValue = e.target.value;
@@ -63,6 +64,7 @@ export default function Register() {
 
   const changeCity = (e) => {
     setSelectedCity(e);
+    setIsEnable(false);
   };
 
   const changeState = (e) => {
@@ -369,6 +371,7 @@ export default function Register() {
                             fetchAreas(e);
                             handleChange(e);
                           }}
+                          disabled={isEnable}
                         />
                         <datalist
                           id="cityArea"
