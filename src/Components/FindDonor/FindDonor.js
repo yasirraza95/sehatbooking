@@ -47,6 +47,9 @@ export default function FindDonor() {
   const [area, setArea] = useState([]);
   const [group, setGroup] = useState([]);
 
+  const [areaLoader, setAreaLoader] = useState(false);
+  const [groupLoader, setGroupLoader] = useState(false);
+
   const contactDonor = (e) => {
     getDonorResult(e);
     // if (id !== null) {
@@ -69,7 +72,7 @@ export default function FindDonor() {
       swal({
         icon: 'success',
         title: 'Blood Details',
-        text:  `Name: ${res.full_name}
+        text: `Name: ${res.full_name}
         Phone: ${res.phone}
          Group: ${res.blood_group}`,
       })
@@ -125,6 +128,7 @@ export default function FindDonor() {
     setGroup([]);
 
     const getArea = async () => {
+      setAreaLoader(true);
       const { data } = await GeneralService.getAreaByCity(e.target.value);
       const { response: res } = data;
       const results = [];
@@ -135,6 +139,7 @@ export default function FindDonor() {
         });
       });
       setArea([...results]);
+      setAreaLoader(false);
     };
 
     if (e.target.value !== "") {
@@ -146,6 +151,7 @@ export default function FindDonor() {
     setGroup([]);
 
     const getGroup = async () => {
+      setGroupLoader(true);
       const { data } = await GeneralService.listGroups();
       const { response: res } = data;
       const results = [];
@@ -156,6 +162,7 @@ export default function FindDonor() {
         });
       });
       setGroup([...results]);
+      setGroupLoader(false);
     };
 
     if (e.target.value !== "") {
@@ -299,34 +306,51 @@ export default function FindDonor() {
                       <div className="col-md-4">
                         {/* <p className="donorLabel">City Area</p> */}
                         <div className="input">
-                          <select
-                            // className="selectpicker"
-                            className="form-select" aria-label="Default select example"
-                            name="area"
-                            id="area"
-                            value={values.area || ""}
-                            onChange={(e) => {
-                              fetchGroup(e);
-                              handleChange(e);
-                            }}
-                          >
-                            <option value="">Select City Area</option>
-                            {area.map((res) => {
-                              return (
-                                <option key={res.key} value={res.value}>
-                                  {res.value}
-                                </option>
-                              );
-                            })}
-                          </select>
-                          {touched.area && errors.area && (
-                            <div className="findError">{errors.area}</div>
-                          )}
+                          <div className="select-leading">
+                            {areaLoader ? (
+                              <span
+                                className="spinner-border spinner-border-sm"
+                                role="status"
+                                aria-hidden="true"
+                              ></span>
+                            ) : null}
+                            <select
+                              // className="selectpicker"
+                              className="form-select" aria-label="Default select example"
+                              name="area"
+                              id="area"
+                              value={values.area || ""}
+                              onChange={(e) => {
+                                fetchGroup(e);
+                                handleChange(e);
+                              }}
+                            >
+                              <option value="">Select City Area</option>
+                              {area.map((res) => {
+                                return (
+                                  <option key={res.key} value={res.value}>
+                                    {res.value}
+                                  </option>
+                                );
+                              })}
+                            </select>
+                            {touched.area && errors.area && (
+                              <div className="findError">{errors.area}</div>
+                            )}
+                          </div>
                         </div>
                       </div>
                       <div className="col-md-4">
                         {/* <p className="donorLabel">Blood Group</p> */}
                         <div className="input">
+                        <div className="select-leading">
+                                {groupLoader ? (
+                                  <span
+                                    className="spinner-border spinner-border-sm"
+                                    role="status"
+                                    aria-hidden="true"
+                                  ></span>
+                                ) : null}
                           <select
                             // className="selectpicker"
                             className="form-select" aria-label="Default select example"
@@ -347,6 +371,7 @@ export default function FindDonor() {
                           {touched.group && errors.group && (
                             <div className="findError">{errors.group}</div>
                           )}
+                          </div>
                         </div>
                       </div>
                       <div className="col-md-4">
