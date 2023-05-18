@@ -10,10 +10,11 @@ import GeneralService from "../../services/general.service";
 import { loginValidation } from "../../schema";
 import { useFormik } from "formik";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actionCreaters } from "../../Redux";
+import $ from "jquery"
 
 export default function Login() {
   // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
@@ -86,6 +87,26 @@ export default function Login() {
     }
   };
 
+  const showHide = async () => {
+    $(document).ready(function() {
+      $("#show_hide_password a").on('click', function(event) {
+      event.preventDefault();
+      if($('#show_hide_password input').attr("type") == "text"){
+      $('#show_hide_password input').attr('type', 'password');
+      $('#show_hide_password i').addClass( "fa-eye-slash" );
+      $('#show_hide_password i').removeClass( "fa-eye" );
+      }else if($('#show_hide_password input').attr("type") == "password"){
+      $('#show_hide_password input').attr('type', 'text');
+      $('#show_hide_password i').removeClass( "fa-eye-slash" );
+      $('#show_hide_password i').addClass( "fa-eye" );
+      }
+      });
+      });
+      
+
+
+  };
+
   return (
     <>
       {/* <LoginHeader /> */}
@@ -148,16 +169,22 @@ export default function Login() {
                           )}
                         </div>
                         <div className="input" id="fields">
-                          <input
-                            type="password"
-                            name="password"
-                            id="contactLName"
-                            placeholder="Password"
-                            required
-                            className="input"
-                            value={values.password || ""}
-                            onChange={handleChange}
-                          />
+                          <div class="input-group" id="show_hide_password">
+                            <input
+                              type="password"
+                              name="password"
+                              id="contactLName"
+                              placeholder="Password"
+                              required
+                              className="input"
+                              value={values.password || ""}
+                              onChange={handleChange}
+                              onClick={showHide}
+                            />
+                            <div className="input-group-addon">
+                              <Link href=""><i className="fa fa-eye-slash" aria-hidden="true"></i></Link>
+                            </div>
+                          </div>
                           {touched.password && errors.password && (
                             <div className="error">{errors.password}</div>
                           )}
