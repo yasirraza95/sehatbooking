@@ -8,6 +8,12 @@
     z-index: 1;
     top: 20px;
 }
+span.spinner-border.spinner-border-sm.register {
+  position: absolute;
+  right: 35px;
+  z-index: 1;
+  top: 11px;
+}
 .spinner-border-sm {
   width: 2rem;
   height: 2rem;

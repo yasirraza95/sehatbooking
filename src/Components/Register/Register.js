@@ -340,38 +340,37 @@ export default function Register() {
                       <div className="input">
                         <label for="regiCity">City</label>
                         <div className="select-leading">
-                                {cityLoader ? (
-                                  <span
-                                    className="spinner-border spinner-border-sm"
-                                    role="status"
-                                    aria-hidden="true"
-                                  ></span>
-                                ) : null}
-                        <select
-                          // className="selectpicker"
-                          className="form-select"
-                          aria-label="Default select example"
-                          name="city"
-                          id="cityReg"
-                          value={values.city || ""}
-                          onChange={(e) => {
-                            changeCity(e.target.value);
-                            handleChange(e);
-                          }}
-                        >
-                          <option value="">Select City</option>
-                          {city.map((res) => {
-                            return (
-                              <option key={res.key} value={res.value}>
-                                {res.value}
-                              </option>
-                            );
-                          })}
-                        </select>
-                        {touched.city && errors.city && (
-                          <div className="errorCity">{errors.city}</div>
-                        )}
-                      </div>
+                          {cityLoader ? (
+                            <span
+                              className="spinner-border spinner-border-sm register"
+                              role="status"
+                              aria-hidden="true"
+                            ></span>
+                          ) : null}
+                          <select
+                            className="form-select"
+                            aria-label="Default select example"
+                            name="city"
+                            id="cityReg"
+                            value={values.city || ""}
+                            onChange={(e) => {
+                              changeCity(e.target.value);
+                              handleChange(e);
+                            }}
+                          >
+                            <option value="">Select City</option>
+                            {city.map((res) => {
+                              return (
+                                <option key={res.key} value={res.value}>
+                                  {res.value}
+                                </option>
+                              );
+                            })}
+                          </select>
+                          {touched.city && errors.city && (
+                            <div className="errorCity">{errors.city}</div>
+                          )}
+                        </div>
                       </div>
                     </div>
                     <div className="input-group-column">
