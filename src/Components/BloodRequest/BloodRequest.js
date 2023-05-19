@@ -6,6 +6,7 @@ import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import TopBar from "../HomeTopBar/TopBar";
 import "./BloodRequest.css";
+import "../Includes/general.css";
 import { bloodRequest } from ".././../schema/index";
 
 export default function BloodRequest() {
@@ -30,6 +31,10 @@ export default function BloodRequest() {
   const [area, setArea] = useState([]);
   const [group, setGroup] = useState([]);
 
+  const [cityLoader, setCityLoader] = useState(false);
+  const [areaLoader, setAreaLoader] = useState(false);
+  const [groupLoader, setGroupLoader] = useState(false);
+
   const getStates = async () => {
     setState([]);
     const { data } = await GeneralService.listStates();
@@ -50,6 +55,7 @@ export default function BloodRequest() {
     setGroup([]);
 
     const getCity = async () => {
+      setCityLoader(true);
       const { data } = await GeneralService.getCityByState(e.target.value);
       const { response: res } = data;
       const results = [];
@@ -60,6 +66,8 @@ export default function BloodRequest() {
         });
       });
       setCity([...results]);
+      setCityLoader(false);
+
     };
 
     if (e.target.value !== "") {
@@ -72,6 +80,7 @@ export default function BloodRequest() {
     setGroup([]);
 
     const getArea = async () => {
+      setAreaLoader(true);
       const { data } = await GeneralService.getAreaByCity(e.target.value);
       const { response: res } = data;
       const results = [];
@@ -82,6 +91,7 @@ export default function BloodRequest() {
         });
       });
       setArea([...results]);
+      setAreaLoader(false);
     };
 
     if (e.target.value !== "") {
@@ -93,6 +103,7 @@ export default function BloodRequest() {
     setGroup([]);
 
     const getGroup = async () => {
+      setGroupLoader(true);
       const { data } = await GeneralService.listGroups();
       const { response: res } = data;
       const results = [];
@@ -103,6 +114,7 @@ export default function BloodRequest() {
         });
       });
       setGroup([...results]);
+      setGroupLoader(false);
     };
 
     if (e.target.value !== "") {
@@ -224,7 +236,7 @@ export default function BloodRequest() {
                             <div className="input">
                               <select
                                 // className="selectpicker"
-                            className="form-select" aria-label="Default select example"
+                                className="form-select" aria-label="Default select example"
                                 name="state"
                                 id="state"
                                 value={values.state || ""}
@@ -233,6 +245,7 @@ export default function BloodRequest() {
                                   handleChange(e);
                                 }}
                               >
+                                {/* <option value="">Select State</option> */}
                                 {state.map((res) => {
                                   return (
                                     <option key={res.key} value={res.value}>
@@ -249,65 +262,93 @@ export default function BloodRequest() {
                             </div>
 
                             <div className="input mt-2">
-                              <select
-                                // className="selectpicker"
-                            className="form-select" aria-label="Default select example"
-                                name="city"
-                                id="city"
-                                value={values.city || ""}
-                                onChange={(e) => {
-                                  changeCity(e);
-                                  handleChange(e);
-                                }}
-                              >
-                                <option value="">Select City</option>
-                                {city.map((res) => {
-                                  return (
-                                    <option key={res.key} value={res.value}>
-                                      {res.value}
-                                    </option>
-                                  );
-                                })}
-                              </select>
-                              {touched.city && errors.city && (
-                                <div className="error bloodrequest">
-                                  {errors.city}
-                                </div>
-                              )}
+                              <div className="select-leading">
+                                {cityLoader ? (
+                                  <span
+                                    className="spinner-border spinner-border-sm"
+                                    role="status"
+                                    aria-hidden="true"
+                                  ></span>
+                                ) : null}
+                                <select
+                                  // className="selectpicker"
+                                  className="form-select" aria-label="Default select example"
+                                  name="city"
+                                  id="city"
+                                  value={values.city || ""}
+                                  onChange={(e) => {
+                                    changeCity(e);
+                                    handleChange(e);
+                                  }}
+                                >
+                                  <option value="">Select City</option>
+                                  {city.map((res) => {
+                                    return (
+                                      <option key={res.key} value={res.value}>
+                                        {res.value}
+                                      </option>
+                                    );
+                                  })}
+                                </select>
+                                {touched.city && errors.city && (
+                                  <div className="error bloodrequest">
+                                    {errors.city}
+                                  </div>
+                                )}
+                              </div>
                             </div>
                           </div>
+
                           <div className="input-group-column">
                             <div className="input">
-                              <select
-                                // className="selectpicker"
-                            className="form-select" aria-label="Default select example"
-                                name="area"
-                                id="area"
-                                value={values.area || ""}
-                                onChange={(e) => {
-                                  fetchGroup(e);
-                                  handleChange(e);
-                                }}
-                              >
-                                <option value="">Select City Area</option>
-                                {area.map((res) => {
-                                  return (
-                                    <option key={res.key} value={res.value}>
-                                      {res.value}
-                                    </option>
-                                  );
-                                })}
-                              </select>
-                              {touched.area && errors.area && (
-                                <div className="error bloodrequest">
-                                  {errors.area}
-                                </div>
-                              )}
+                              <div className="select-leading">
+
+                                {areaLoader ? (
+                                  <span
+                                    className="spinner-border spinner-border-sm"
+                                    role="status"
+                                    aria-hidden="true"
+                                  ></span>
+                                ) : null}
+                                <select
+                                  // className="selectpicker"
+                                  className="form-select" aria-label="Default select example"
+                                  name="area"
+                                  id="area"
+                                  value={values.area || ""}
+                                  onChange={(e) => {
+                                    fetchGroup(e);
+                                    handleChange(e);
+                                  }}
+                                >
+                                  <option value="">Select City Area</option>
+                                  {area.map((res) => {
+                                    return (
+                                      <option key={res.key} value={res.value}>
+                                        {res.value}
+                                      </option>
+                                    );
+                                  })}
+                                </select>
+                                {touched.area && errors.area && (
+                                  <div className="error bloodrequest">
+                                    {errors.area}
+                                  </div>
+                                )}
+                              </div>
                             </div>
                             <div className="input">
+                                  <div className="select-leading">
+                                {groupLoader ? (
+                                  <span
+                                    className="spinner-border spinner-border-sm"
+                                    role="status"
+                                    aria-hidden="true"
+                                  ></span>
+                                ) : null}
                               <select
                                 // className="selectpicker"
-                            className="form-select" aria-label="Default select example"
+                                className="form-select" aria-label="Default select example"
 
                                 name="group"
                                 id="blodGroup"
@@ -328,8 +369,9 @@ export default function BloodRequest() {
                                   {errors.group}
                                 </div>
                               )}
+                              </div>
                             </div>
-                            <div className="input" style={{marginTop: "-20px"}}>
+                            <div className="input" style={{ marginTop: "-20px" }}>
                               <input
                                 // className="selectpicker"
                                 type="text"
@@ -345,7 +387,7 @@ export default function BloodRequest() {
                                 </div>
                               )}
                             </div>
-                            
+
                           </div>
                           <div className="input alignment">
                             <div className="form-checkk">

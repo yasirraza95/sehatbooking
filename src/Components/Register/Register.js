@@ -32,6 +32,10 @@ export default function Register() {
   const [area, setArea] = useState([]);
   const [group, setGroup] = useState([]);
 
+  const [cityLoader, setCityLoader] = useState(false);
+  const [areaLoader, setAreaLoader] = useState(false);
+  const [groupLoader, setGroupLoader] = useState(false);
+
   const [notified, setNotified] = useState(false);
 
   const [submit, setSubmit] = useState("");
@@ -69,6 +73,7 @@ export default function Register() {
 
   const changeState = (e) => {
     const getCity = async () => {
+      setCityLoader(true);
       setCity([]);
       const { data } = await GeneralService.getCityByState(e.target.value);
       const { response: res } = data;
@@ -80,6 +85,7 @@ export default function Register() {
         });
       });
       setCity([...results]);
+      setCityLoader(false);
     };
 
     if (e.target.value !== "") {
@@ -102,6 +108,7 @@ export default function Register() {
   };
 
   const getGroup = async () => {
+    setGroupLoader(true);
     const { data } = await GeneralService.listGroups();
     const { response: res } = data;
     const results = [];
@@ -112,6 +119,8 @@ export default function Register() {
       });
     });
     setGroup([{ key: "", value: "Select Group" }, ...results]);
+    setGroupLoader(false);
+
   };
 
   useEffect(() => {
@@ -330,40 +339,48 @@ export default function Register() {
                       </div>
                       <div className="input">
                         <label for="regiCity">City</label>
-                        <select
-                          // className="selectpicker"
-                          className="form-select"
-                          aria-label="Default select example"
-                          name="city"
-                          id="cityReg"
-                          value={values.city || ""}
-                          onChange={(e) => {
-                            changeCity(e.target.value);
-                            handleChange(e);
-                          }}
-                        >
-                          <option value="">Select City</option>
-                          {city.map((res) => {
-                            return (
-                              <option key={res.key} value={res.value}>
-                                {res.value}
-                              </option>
-                            );
-                          })}
-                        </select>
-                        {touched.city && errors.city && (
-                          <div className="errorCity">{errors.city}</div>
-                        )}
+                        <div className="select-leading">
+                          {cityLoader ? (
+                            <span
+                              className="spinner-border spinner-border-sm register"
+                              role="status"
+                              aria-hidden="true"
+                            ></span>
+                          ) : null}
+                          <select
+                            className="form-select"
+                            aria-label="Default select example"
+                            name="city"
+                            id="cityReg"
+                            value={values.city || ""}
+                            onChange={(e) => {
+                              changeCity(e.target.value);
+                              handleChange(e);
+                            }}
+                          >
+                            <option value="">Select City</option>
+                            {city.map((res) => {
+                              return (
+                                <option key={res.key} value={res.value}>
+                                  {res.value}
+                                </option>
+                              );
+                            })}
+                          </select>
+                          {touched.city && errors.city && (
+                            <div className="errorCity">{errors.city}</div>
+                          )}
+                        </div>
                       </div>
                     </div>
                     <div className="input-group-column">
                       <div className="input">
-                        <label for="regicityArea">City Area</label>
+                        <label for="city_area">City Area</label>
                         <input
                           type="text"
-                          list="cityArea"
+                          list="city_area"
                           name="city_area"
-                          id="regicityArea"
+                          id="city_area"
                           required
                           value={values.city_area || ""}
                           // onChange={handleChange}
@@ -374,7 +391,7 @@ export default function Register() {
                           disabled={isEnable}
                         />
                         <datalist
-                          id="cityArea"
+                          id="city_area"
                         >
                           {/* <option value="Objective C">Objective C</option> */}
                           {area.map((res) => {

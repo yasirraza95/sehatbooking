@@ -172,7 +172,9 @@ button#account:hover{
   background-color: #111111 !important;
   color: #fff !important;
 }
-
+i.fa.fa-eye-slash {
+  color: #a19f9f;
+}
 
 a.btn.btn-link::after {
   left: -100%;

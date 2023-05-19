@@ -22,6 +22,7 @@ const login = (values) => {
 };
 
 const register = (values) => {
+  console.log(values);
   const headers = {
     "Content-Type": "application/json",
   };

@@ -1,0 +1,34 @@
+.select-leading {
+    position: relative;
+}
+
+.select-leading span.spinner-border.spinner-border-sm {
+    position: absolute;
+    right: 35px;
+    z-index: 1;
+    top: 20px;
+}
+span.spinner-border.spinner-border-sm.register {
+  position: absolute;
+  right: 35px;
+  z-index: 1;
+  top: 11px;
+}
+.spinner-border-sm {
+  width: 2rem;
+  height: 2rem;
+  border-width: 0.2em;
+}
+.prfil-set button:not(:disabled) .spinner-border-sm,
+.prfil-set [type="button"]:not(:disabled) .spinner-border-sm,
+.prfil-set [type="reset"]:not(:disabled) .spinner-border-sm,
+.prfil-set [type="submit"]:not(:disabled) .spinner-border-sm {
+  display: none;
+}
+.prfil-set button:disabled,
+.prfil-set [type="button"]:disabled .spinner-border-sm,
+.prfil-set [type="reset"]:disabled .spinner-border-sm,
+.prfil-set [type="submit"]:disabled .spinner-border-sm {
+  display: inline-block;
+  margin-right: 5px;
+}
