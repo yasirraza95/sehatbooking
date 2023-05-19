@@ -14,7 +14,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actionCreaters } from "../../Redux";
-import $ from "jquery"
+import $ from "jquery";
 
 export default function Login() {
   // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
@@ -87,24 +87,38 @@ export default function Login() {
     }
   };
 
-  const showHide = async () => {
-    $(document).ready(function() {
-      $("#show_hide_password a").on('click', function(event) {
-      event.preventDefault();
-      if($('#show_hide_password input').attr("type") == "text"){
-      $('#show_hide_password input').attr('type', 'password');
-      $('#show_hide_password i').addClass( "fa-eye-slash" );
-      $('#show_hide_password i').removeClass( "fa-eye" );
-      }else if($('#show_hide_password input').attr("type") == "password"){
-      $('#show_hide_password input').attr('type', 'text');
-      $('#show_hide_password i').removeClass( "fa-eye-slash" );
-      $('#show_hide_password i').addClass( "fa-eye" );
-      }
-      });
-      });
-      
+  // const showHide = async () => {
+  //   $(document).ready(function () {
+  //     $("#show_hide_password a").on("click", function (event) {
+  //       event.preventDefault();
+  //       if ($("#show_hide_password input").attr("type") == "text") {
+  //         $("#show_hide_password input").attr("type", "password");
+  //         $("#show_hide_password i").addClass("fa-eye-slash");
+  //         $("#show_hide_password i").removeClass("fa-eye");
+  //       } else if ($("#show_hide_password input").attr("type") == "password") {
+  //         $("#show_hide_password input").attr("type", "text");
+  //         $("#show_hide_password i").removeClass("fa-eye-slash");
+  //         $("#show_hide_password i").addClass("fa-eye");
+  //       }
+  //     });
+  //   });
+  // };
 
+  const showHide = (e) => {
+    let eyeClass = e.target.className;
+    const togglePassword = $("#togglePassword");
+    const password = $("#id_password");
 
+    // togglePassword.addEventListener("click", function (e) {
+    // toggle the type attribute
+    const type = password.attr("type") === "password" ? "text" : "password";
+    const newClass =
+      eyeClass === "fa fa-eye-slash" ? "fa fa-eye" : "fa fa-eye-slash";
+    password.attr("type", type);
+    togglePassword.attr("class", newClass);
+    // toggle the eye slash icon
+    // this.classList.toggle("fa-eye-slash");
+    // });
   };
 
   return (
@@ -173,17 +187,31 @@ export default function Login() {
                             <input
                               type="password"
                               name="password"
-                              id="contactLName"
+                              id="id_password"
                               placeholder="Password"
                               required
                               className="input"
                               value={values.password || ""}
                               onChange={handleChange}
-                              onClick={showHide}
+                              // onClick={showHide}
                             />
-                            <div className="input-group-addon">
-                              <Link href=""><i className="fa fa-eye-slash" aria-hidden="true"></i></Link>
-                            </div>
+                            {/* <div className="input-group-addon">
+                              <Link href=""> */}
+                            {/* <i
+                              className="fa fa-eye-slash"
+                              aria-hidden="true"
+                            ></i> */}
+                            <i
+                              class="far fa-eye"
+                              id="togglePassword"
+                              style={{ marginLeft: "-30px", cursor: "pointer" }}
+                              onClick={(e) => {
+                                showHide(e);
+                              }}
+                            ></i>
+
+                            {/* </Link>
+                            </div> */}
                           </div>
                           {touched.password && errors.password && (
                             <div className="error">{errors.password}</div>
