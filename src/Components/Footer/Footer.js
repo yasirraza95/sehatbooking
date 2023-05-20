@@ -5,11 +5,10 @@ import "react-toastify/dist/ReactToastify.css";
 import GeneralService from "../../services/general.service";
 import { useFormik } from "formik";
 import { newsletterValidation } from "../../schema";
-import { useState } from "react";
 import swal from "sweetalert";
 
 export default function Footer() {
-  const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
+  const { values, errors, touched, handleChange, handleSubmit } =
     useFormik({
       initialValues: {
         email: "",
@@ -21,18 +20,14 @@ export default function Footer() {
     });
 
   const formSubmit = async (values, action) => {
-    // setLoading(true);
     try {
       const response = await GeneralService.subscription(values);
       const { data } = response;
       const { response: message } = data;
-      // console.log(message);
       action.resetForm();
       swal(message);
-      // setLoading(false);
     } catch (err) {
       swal("", "Something went wrong!", "error");
-      // setLoading(false);
     }
   };
 
@@ -160,21 +155,6 @@ export default function Footer() {
                   </div>
                   <div className="col-lg-6 row-item">
                     <div className="footer-area__bottom-right">
-                      {/* <div className="social social--secondary">
-                        <a href="https://www.facebook.com/">
-                          <i className="fab fa-facebook-f">
-                          </i>
-                        </a>
-                        <a href="https://www.twitter.com/">
-                          <i className="bi bi-twitter"></i>
-                        </a>
-                        <a href="https://www.instagram.com/">
-                          <i className="bi bi-instagram"></i>
-                        </a>
-                        <a href="https://www.pinterest.com/">
-                        <i className="fab fa-pinterest"></i>
-                        </a>
-                      </div> */}
                       <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">
                           <li className="breadcrumb-item">
@@ -198,7 +178,7 @@ export default function Footer() {
           <div className="row">
             <div className="col-lg-12">
               <p className="secondary-f neutral-bottom-footer">
-                Copyright © 2023{" "}
+                Copyright © {new Date().getFullYear()}{" "}
                 <a href="https://themeforest.net/user/croptheme">
                   <strong>Sehat Booking</strong>
                 </a>

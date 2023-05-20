@@ -4130,11 +4130,6 @@
    gap: 30px;
    transition: all 0.3s ease-out;
  }
- /* @media (max-width: 1199px) {
-   .explore-area__single {
-     padding: 30px 20px;
-   }
- } */
  @media (max-width: 767px) {
    .explore-area__single {
      flex-grow: unset;

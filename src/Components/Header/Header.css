@@ -36,11 +36,6 @@ ul.navbar-nav {
   margin-bottom: -10px;
 }
 
-/* li.nav-item.appointment {
-    background-color: #ea062b;
-    margin-bottom: 9px;
-    margin-top: -1px;
-} */
 a#app-item {
   color: #fff !important;
   background-color: #ea062b;
@@ -1028,17 +1023,6 @@ img.sehat-logo {
   }
 }
 
-/* .navbar-out.order-2.order-xl-3::after {
-    content: "";
-    position: absolute !important;
-    top: 0px !important;
-    left: 0% !important;
-    bottom: 0px !important;
-    width: 32% !important;
-    max-height: 100px !important;
-    background-color: #ea062b !important;
-    z-index: -1 !important;
-} */
 .navbar-out.order-2.order-xl-3::after {
   content: "";
   position: absolute !important;
@@ -1063,15 +1047,6 @@ img.sehat-logo {
 div#primaryNav {
   margin-left: 160px;
 }
-
-/* .avatar {
-    vertical-align: middle;
-    width: 60px;
-    height: 45px;
-    border-radius: 50%;
-    margin-left: 10px;
-  } */
-
 
 .collapse:not(.show) {
   display: none;
@@ -1231,39 +1206,13 @@ div#primaryNav {
 
 .circle-inner {
   position: relative;
-  /* border-bottom: 1px dotted black; */
 }
-
-/* .circle-inner:before {
-  content: attr(data-hover);
-  visibility: hidden;
-  opacity: 0;
-  width: 80px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 5px;
-  padding: 5px 0;
-  transition: opacity 1s ease-in-out;
-  position: absolute;
-  z-index: 1;
-  left: 0;
-  font-size: 17px;
-  top: 110%;
-} */
-
-/* .circle-inner:hover:before {
-  opacity: 1;
-  visibility: visible;
-} */
-
 
 
 /* Profile dropdown css */
 .dropbtn {
   background-color: #04AA6D;
   color: white;
-  /* padding: 16px; */
   font-size: 16px;
   border: none;
 }

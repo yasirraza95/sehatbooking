@@ -12,27 +12,9 @@ import { Alert } from "react-bootstrap";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactUs() {
-  // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
-  // useImportScript("/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
-  // useImportScript("/assets/vendor/nice-select/js/jquery.nice-select.min.js");
-  // useImportScript(
-  //   "/assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"
-  // );
-  // useImportScript("/assets/vendor/slick/js/slick.js");
-  // useImportScript("/assets/vendor/odometer/js/odometer.min.js");
-  // useImportScript("/assets/vendor/viewport-js/viewport.jquery.js");
-  // useImportScript("/assets/vendor/owl-carousel/js/owl.carousel.min.js");
-  // useImportScript("/assets/vendor/wow/wow.min.js");
-  // useImportScript("/assets/js/plugin.js");
-  // useImportScript("/assets/js/main.js");
-
   const [submit, setSubmit] = useState("");
   const [submitMessage, setSubmitMessage] = useState("");
-
-  // const onChange = (value) => {
-  //   console.log("Captcha value:", value);
-  // };
-  const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFieldValue } =
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues: {
         first_name: "",
@@ -45,31 +27,25 @@ export default function ContactUs() {
       validationSchema: contactValidation,
       onSubmit: (values, action) => {
         console.log(values);
-        // formSubmit(values, action);
       },
     });
 
   const formSubmit = async (values, action) => {
-    // setLoading(true);
     try {
       const response = await GeneralService.contactUs(values);
       const { data } = response;
       const { response: message } = data;
-      // console.log(message);
       setSubmitMessage(message);
       setSubmit("success");
       action.resetForm();
-      // setLoading(false);
     } catch (err) {
       console.log(err);
       if (err?.response?.status === 401) {
         setSubmitMessage("Username or Password is invalid");
         setSubmit("danger");
-        // setLoading(false);
       } else {
         setSubmitMessage("Something went wrong, try again");
         setSubmit("danger");
-        // setLoading(false);
       }
     }
   };

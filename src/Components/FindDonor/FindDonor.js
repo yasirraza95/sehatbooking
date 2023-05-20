@@ -2,13 +2,11 @@ import React from "react";
 import TopBar from "../HomeTopBar/TopBar";
 import Header from "../Header/Header";
 import "./FindDonor.css";
-import { Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMobileScreenButton } from "@fortawesome/free-solid-svg-icons";
 import Footer from "../Footer/Footer";
 import Pagination from "react-js-pagination";
 // import ToTop from "../TopTop/ToTop";
-import useImportScript from "../../utils/useImportScript";
 import { useState } from "react";
 import { useEffect } from "react";
 import GeneralService from "../../services/general.service";
@@ -19,19 +17,6 @@ import { useSelector } from "react-redux";
 import swal from "sweetalert";
 
 export default function FindDonor() {
-  // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
-  // useImportScript("/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
-  // useImportScript("/assets/vendor/nice-select/js/jquery.nice-select.min.js");
-  // useImportScript(
-  //   "/assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"
-  // );
-  // useImportScript("/assets/vendor/slick/js/slick.js");
-  // useImportScript("/assets/vendor/odometer/js/odometer.min.js");
-  // useImportScript("/assets/vendor/viewport-js/viewport.jquery.js");
-  // useImportScript("/assets/vendor/owl-carousel/js/owl.carousel.min.js");
-  // useImportScript("/assets/vendor/wow/wow.min.js");
-  // useImportScript("/assets/js/plugin.js");
-  // useImportScript("/assets/js/main.js");
 
   const state = useSelector((state) => state.stateVals);
   const { id } = state;
@@ -304,7 +289,6 @@ export default function FindDonor() {
                         </div>
                       </div>
                       <div className="col-md-4">
-                        {/* <p className="donorLabel">City Area</p> */}
                         <div className="input">
                           <div className="select-leading">
                             {areaLoader ? (
@@ -315,7 +299,6 @@ export default function FindDonor() {
                               ></span>
                             ) : null}
                             <select
-                              // className="selectpicker"
                               className="form-select" aria-label="Default select example"
                               name="area"
                               id="area"
@@ -341,36 +324,34 @@ export default function FindDonor() {
                         </div>
                       </div>
                       <div className="col-md-4">
-                        {/* <p className="donorLabel">Blood Group</p> */}
                         <div className="input">
-                        <div className="select-leading">
-                                {groupLoader ? (
-                                  <span
-                                    className="spinner-border spinner-border-sm"
-                                    role="status"
-                                    aria-hidden="true"
-                                  ></span>
-                                ) : null}
-                          <select
-                            // className="selectpicker"
-                            className="form-select" aria-label="Default select example"
-                            name="group"
-                            id="group"
-                            onChange={handleChange}
-                            value={values.group || ""}
-                          >
-                            <option value="">Select Blood Group</option>
-                            {group.map((res) => {
-                              return (
-                                <option key={res.key} value={res.value}>
-                                  {res.value}
-                                </option>
-                              );
-                            })}
-                          </select>
-                          {touched.group && errors.group && (
-                            <div className="findError">{errors.group}</div>
-                          )}
+                          <div className="select-leading">
+                            {groupLoader ? (
+                              <span
+                                className="spinner-border spinner-border-sm"
+                                role="status"
+                                aria-hidden="true"
+                              ></span>
+                            ) : null}
+                            <select
+                              className="form-select" aria-label="Default select example"
+                              name="group"
+                              id="group"
+                              onChange={handleChange}
+                              value={values.group || ""}
+                            >
+                              <option value="">Select Blood Group</option>
+                              {group.map((res) => {
+                                return (
+                                  <option key={res.key} value={res.value}>
+                                    {res.value}
+                                  </option>
+                                );
+                              })}
+                            </select>
+                            {touched.group && errors.group && (
+                              <div className="findError">{errors.group}</div>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -425,14 +406,6 @@ export default function FindDonor() {
                             </div>
                           </td>
                           <td>
-                            {/* <a
-                              href="#"
-                              onclick="show_registration_dialog()"
-                              data-toggle="modal"
-                              data-target=".login-register-form"
-                            >
-                              <FontAwesomeIcon icon={faMobileScreenButton} />
-                            </a> */}
                             <Link
                               id={row.id}
                               to={void 0}

@@ -3,15 +3,12 @@ import {
   faClockRotateLeft,
   faHeart,
   faPlay,
-  faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import TopBar from "../HomeTopBar/TopBar";
-// import ToTop from "../TopTop/ToTop";
-
 import "./IndexOne.css";
 import DoctorOne from "../Images/Doctor1.webp";
 import DoctorTwo from "../Images/Doctor2.webp";
@@ -20,40 +17,23 @@ import HeartIcon from "../Images/heart.webp";
 import FirstAidIcon from "../Images/first-aid.webp";
 import TubeIcon from "../Images/tube.webp";
 import BloodDonate from "../Images/blood-donate.webp";
-import BloodDonate2 from "../Images/blood-donate2.webp";
 import BloodDonate3 from "../Images/blood-donate3.webp";
 import BloodDonate4 from "../Images/blood-donate4.webp";
 import slideImage1 from "../Images/patient-donating-blood-at-hospital.webp";
 import slideImage2 from "../Images/doctor-taking-blood-samples.webp";
 import slideImage3 from "../Images/6-1.webp";
-import useImportScript from "../../utils/useImportScript";
 import { Link } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
 import moment from "moment";
 import GeneralService from "../../services/general.service";
 
 export default function IndexOne() {
-  // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
-  // useImportScript("/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
-  // useImportScript("/assets/vendor/nice-select/js/jquery.nice-select.min.js");
-  // useImportScript(
-  //   "/assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"
-  // );
-  // useImportScript("/assets/vendor/slick/js/slick.js");
-  // useImportScript("/assets/vendor/odometer/js/odometer.min.js");
-  // useImportScript("/assets/vendor/viewport-js/viewport.jquery.js");
-  // useImportScript("/assets/vendor/owl-carousel/js/owl.carousel.min.js");
-  // useImportScript("/assets/vendor/wow/wow.min.js");
-  // useImportScript("/assets/js/plugin.js");
-  // useImportScript("/assets/js/main.js");
 
   const [normalReq, setNormalReq] = useState([]);
   const [emergencyReq, setEmergencyReq] = useState([]);
   const [marqueeTxt, setMarqueeTxt] = useState("");
 
   const getNormalData = async (page, city, area, group) => {
-    // setLoading(true);
     try {
       const response = await GeneralService.listBloodReq("normal");
       const { data } = response;
@@ -61,15 +41,12 @@ export default function IndexOne() {
       let resultData;
       resultData = res;
       setNormalReq(resultData);
-      // setLoading(false);
     } catch (err) {
-      // setLoading(false);
       setNormalReq([]);
     }
   };
 
   const getEmergencyData = async (page, city, area, group) => {
-    // setLoading(true);
     try {
       const response = await GeneralService.listBloodReq("emergency");
       const { data } = response;
@@ -77,15 +54,12 @@ export default function IndexOne() {
       let resultData;
       resultData = res;
       setEmergencyReq(resultData);
-      // setLoading(false);
     } catch (err) {
-      // setLoading(false);
       setEmergencyReq([]);
     }
   };
 
   const getMarquee = async () => {
-    // setLoading(true);
     try {
       const response = await GeneralService.getMarquee();
       const { data } = response;
@@ -93,9 +67,7 @@ export default function IndexOne() {
       let resultData;
       resultData = res;
       setMarqueeTxt(resultData);
-      // setLoading(false);
     } catch (err) {
-      // setLoading(false);
       setMarqueeTxt("");
     }
   };
@@ -203,21 +175,6 @@ export default function IndexOne() {
         </div>
       </section>
 
-      {/* <Carousel>
-        <div>
-          <img src={slideImage1} />
-          <p className="legend">Legend 1</p>
-        </div>
-        <div>
-          <img src={slideImage2} />
-          <p className="legend">Legend 2</p>
-        </div>
-        <div>
-          <img src={slideImage3} />
-          <p className="legend">Legend 3</p>
-        </div>
-      </Carousel> */}
-
       {/* <!-- ==== #hero section end ==== --> */}
 
       {/* <!-- ==== overview section start ==== --> */}
@@ -272,12 +229,6 @@ export default function IndexOne() {
                       and fill the required information in the form
                     </p>
                   </div>
-                  {/* <Link
-                    to="/service-detail"
-                    className="button button--secondary button--effect"
-                  >
-                    Read More
-                  </Link> */}
                 </div>
               </div>
               <div className="col-sm-6 col-md-6 col-lg-4 row-item align-center">
@@ -297,12 +248,6 @@ export default function IndexOne() {
                       conditions, including anemia, cancer, surgery, and trauma.
                     </p>
                   </div>
-                  {/* <Link
-                    to="/service-detail"
-                    className="button button--secondary button--effect"
-                  >
-                    Read More
-                  </Link> */}
                 </div>
               </div>
               <div className="col-sm-6 col-md-6 col-lg-4 row-item align-center">
@@ -325,12 +270,6 @@ export default function IndexOne() {
                       a steady supply of blood available to those who need it.
                     </p>
                   </div>
-                  {/* <Link
-                    to="/service-detail"
-                    className="button button--secondary button--effect"
-                  >
-                    Read More
-                  </Link> */}
                 </div>
               </div>
             </div>
@@ -375,9 +314,6 @@ export default function IndexOne() {
                 <div className="row neutral-row">
                   <div className="col-lg-6 row-item">
                     <div className="appointment-area__single appointment-area__content">
-                      {/* <p>
-                        <marquee className="blink">{marqueeTxt}</marquee>
-                      </p> */}
                       <h4 className="red">
                         <FontAwesomeIcon icon={faClockRotateLeft} /> Recent
                         Blood Request
@@ -451,20 +387,6 @@ export default function IndexOne() {
                     <div className="team-area__single img-effect">
                       <div className="poster">
                         <img src={DoctorOne} alt="Nora" />
-                        {/* <div className="social social--secondary">
-                          <a href="https://www.facebook.com/" target="_blank">
-                            <i className="fab fa-facebook-f"></i>
-                          </a>
-                          <a href="https://www.twitter.com/" target="_blank">
-                            <i className="bi bi-twitter"></i>
-                          </a>
-                          <a href="https://www.instagram.com/" target="_blank">
-                            <i className="bi bi-instagram"></i>
-                          </a>
-                          <a href="https://www.pinterest.com/" target="_blank">
-                            <i className="fab fa-pinterest"></i>
-                          </a>
-                        </div> */}
                       </div>
                       <h5>Nora Khaypeia</h5>
                       <p className="secondary neutral-descender">Co-Founder</p>
@@ -474,20 +396,6 @@ export default function IndexOne() {
                     <div className="team-area__single img-effect wow fadeInUp">
                       <div className="poster">
                         <img src={DoctorTwo} alt="Alex Joshan Deo" />
-                        {/* <div className="social social--secondary">
-                          <a href="https://www.facebook.com/" target="_blank">
-                            <i className="fab fa-facebook-f"></i>
-                          </a>
-                          <a href="https://www.twitter.com/" target="_blank">
-                            <i className="bi bi-twitter"></i>
-                          </a>
-                          <a href="https://www.instagram.com/" target="_blank">
-                            <i className="bi bi-instagram"></i>
-                          </a>
-                          <a href="https://www.pinterest.com/" target="_blank">
-                            <i className="fab fa-pinterest"></i>
-                          </a>
-                        </div> */}
                       </div>
                       <h5>Nora Khaypeia</h5>
                       <p className="secondary neutral-descender">Co-Founder</p>
@@ -500,20 +408,6 @@ export default function IndexOne() {
                     >
                       <div className="poster">
                         <img src={DoctorThree} alt="Alex Joshi Deon" />
-                        {/* <div className="social social--secondary">
-                          <a href="https://www.facebook.com/" target="_blank">
-                            <i className="fab fa-facebook-f"></i>
-                          </a>
-                          <a href="https://www.twitter.com/" target="_blank">
-                            <i className="bi bi-twitter"></i>
-                          </a>
-                          <a href="https://www.instagram.com/" target="_blank">
-                            <i className="bi bi-instagram"></i>
-                          </a>
-                          <a href="https://www.pinterest.com/" target="_blank">
-                            <i className="fab fa-pinterest"></i>
-                          </a>
-                        </div> */}
                       </div>
                       <h5>Alex Joshi Deon</h5>
                       <p className="secondary neutral-descender">Co-Founder</p>

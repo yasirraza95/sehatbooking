@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import TopBar from "../HomeTopBar/TopBar";
-// import ToTop from "../TopTop/ToTop";
 import "./Register.css";
-import VisibleFields from "../VisibleFields/VisibleFields";
-import useImportScript from "../../utils/useImportScript";
 import GeneralService from "../../services/general.service";
 import { useFormik } from "formik";
 import { registerValidation } from "../../schema";
@@ -14,19 +11,6 @@ import swal from "sweetalert";
 import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Register() {
-  // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
-  // useImportScript("/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
-  // useImportScript("/assets/vendor/nice-select/js/jquery.nice-select.min.js");
-  // useImportScript(
-  //   "/assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"
-  // );
-  // useImportScript("/assets/vendor/slick/js/slick.js");
-  // useImportScript("/assets/vendor/odometer/js/odometer.min.js");
-  // useImportScript("/assets/vendor/viewport-js/viewport.jquery.js");
-  // useImportScript("/assets/vendor/owl-carousel/js/owl.carousel.min.js");
-  // useImportScript("/assets/vendor/wow/wow.min.js");
-  // useImportScript("/assets/js/plugin.js");
-  // useImportScript("/assets/js/main.js");
   const [state, setState] = useState([]);
   const [city, setCity] = useState([]);
   const [area, setArea] = useState([]);
@@ -150,25 +134,18 @@ export default function Register() {
       },
       validationSchema: registerValidation,
       onSubmit: (values, action) => {
-        // console.log(values);
         formSubmit(values, action);
       },
     });
 
   const formSubmit = async (values, action) => {
-    // setLoading(true);
     try {
       const response = await GeneralService.register(values);
       const { data } = response;
       const { response: message } = data;
-      // console.log(message);
-      // setSubmitMessage(message);
-      // setSubmit("success");
       swal(message);
       action.resetForm();
-      // setLoading(false);
     } catch (err) {
-      // console.log(err);
       if (err?.response?.status === 422) {
         const propertyNames = Object.keys(err.response.data);
 
@@ -179,11 +156,9 @@ export default function Register() {
         if (propertyNames.includes("phone")) {
           setPhoneError(err.response.data?.phone[0]);
         }
-        // setLoading(false);
       } else {
         setSubmitMessage("Something went wrong, try again");
         setSubmit("danger");
-        // setLoading(false);
       }
     }
   };
@@ -209,7 +184,6 @@ export default function Register() {
                   )}
                   <form onSubmit={handleSubmit} noValidate>
                     <div className="registration-area__form-single">
-                      {/* <p className="secondary">Full Name *</p> */}
                       <div className="registration-area__form-single__inner">
                         <div className="input-group-column">
                           <div className="input">
@@ -383,7 +357,6 @@ export default function Register() {
                           id="city_area"
                           required
                           value={values.city_area || ""}
-                          // onChange={handleChange}
                           onChange={(e) => {
                             fetchAreas(e);
                             handleChange(e);
@@ -393,7 +366,6 @@ export default function Register() {
                         <datalist
                           id="city_area"
                         >
-                          {/* <option value="Objective C">Objective C</option> */}
                           {area.map((res) => {
                             return (
                               <option key={res.value} value={res.value}>
@@ -410,7 +382,6 @@ export default function Register() {
                       <div className="input">
                         <label for="regiCountry">Blood Group</label>
                         <select
-                          // className="selectpicker"
                           className="form-select"
                           aria-label="Default select example"
                           id="regiCountry"

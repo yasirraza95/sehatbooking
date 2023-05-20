@@ -1,12 +1,4 @@
 
-/* body {
-  width: 100%;
-  min-height: 100vh;
-  display: relative;
-  margin: 0;
-  padding: 0;
-  background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%);
-} */
 .wrapper {
   position: absolute;
   top: 50%;
@@ -55,9 +47,6 @@ ul.list-unstyled.text-muted {
   list-style: circle;
   text-align: initial;
 }
-/* li#des{
-  color: #ea062b;
-} */
 ::marker {
   color: #cb2330;
   }

@@ -1,8 +1,7 @@
 import React from "react";
 import "./Header.css";
-import ProfileIcon from "../Images/sehatbooking-logo-3.webp";
 import MenuLogo from "../Images/sehatbooking-logo.webp";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,10 +17,7 @@ export default function Header2() {
   const logOut = async (event) => {
     event.preventDefault();
 
-    // setLoading(true);
     userActions.logOut(null);
-    // setLoading(false);
-    // navigate("/");
   };
 
   return (
@@ -146,19 +142,9 @@ export default function Header2() {
             </div>
             <div className="navbar-out order-2 order-xl-3">
               <div className="navbar-out__group">
-                {/* <a href="" className="search-icon">
-                  <i className="fa-solid fa-magnifying-glass"></i>
-                </a> */}
-                {/* <select className="select-language" style={{display: "none"}}>
-                                <option value="english">English</option>
-                                <option value="spanish">Spanish</option>
-                                <option value="china">China</option>
-                                <option value="germany">Germany</option>
-                            </select> */}
                 <Link
                   href={void 0}
                   className="d-none d-xl-block open-sidenav"
-                  // onClick={(e) => sideBarClick(e)}
                 >
                   <span className="icon-bar top-bar"></span>
                   <span className="icon-bar middle-bar"></span>
@@ -211,9 +197,6 @@ export default function Header2() {
             <a href="javascript:void(0)" className="close-sidebar">
               <i className="fa-solid fa-xmark"></i>
             </a>
-            {/* <Link href={void 0} className="close-sidebar">
-              <i className="fa-solid fa-xmark"></i>
-            </Link> */}
           </div>
           <div className="intro">
             <a href="/">
@@ -273,20 +256,6 @@ export default function Header2() {
               </a>
             </li>
           </ul>
-          {/* <form action="#" method="post">
-            <div className="input-group-btn input-group-btn--secondary">
-              <input
-                type="email"
-                name="sidenav__newsletter__email"
-                id="sidenavNewsletterEmail"
-                placeholder="Enter Your Email"
-                required
-              />
-              <button type="submit" className="button button--effect">
-                <i className="fa-solid fa-paper-plane"></i>
-              </button>
-            </div>
-          </form> */}
         </div>
       </div>
       {/* <!-- ==== sidenav end ==== --> */}

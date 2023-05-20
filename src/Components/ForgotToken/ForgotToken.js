@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import useImportScript from "../../utils/useImportScript";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import TopBar from "../HomeTopBar/TopBar";
@@ -10,25 +9,11 @@ import { useFormik } from "formik";
 import { passwordsValidation } from "../../schema";
 
 export default function ForgotToken() {
-  // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
-  // useImportScript("/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
-  // useImportScript("/assets/vendor/nice-select/js/jquery.nice-select.min.js");
-  // useImportScript(
-  //     "/assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"
-  // );
-  // useImportScript("/assets/vendor/slick/js/slick.js");
-  // useImportScript("/assets/vendor/odometer/js/odometer.min.js");
-  // useImportScript("/assets/vendor/viewport-js/viewport.jquery.js");
-  // useImportScript("/assets/vendor/owl-carousel/js/owl.carousel.min.js");
-  // useImportScript("/assets/vendor/wow/wow.min.js");
-  // useImportScript("/assets/js/plugin.js");
-  // useImportScript("/assets/js/main.js");
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const token = searchParams.get("token");
   useEffect(() => {
     if (!token) {
-      // navigate("/");
       window.location.href = "/";
     } else {
       checkToken(token);
@@ -36,19 +21,14 @@ export default function ForgotToken() {
   }, [token]);
 
   const checkToken = async (token) => {
-    // setLoading(true);
     try {
       await GeneralService.checkForgotToken(token);
     } catch (err) {
       if (err.response.status === 404) {
-        // setLoading(false);
         swal("", err.response, "error");
-        // navigate("/");
         window.location.href = "/";
       } else {
-        // setLoading(false);
         swal("", "Something went wrong", "error");
-        // navigate("/");
         window.location.href = "/";
       }
     }
@@ -67,18 +47,15 @@ export default function ForgotToken() {
     });
 
   const formSubmit = async (values, action) => {
-    // setLoading(true);
     try {
       values.token = token;
       const response = await GeneralService.updatePassword(values);
       const { data } = response;
       const { response: message } = data;
       swal(message);
-      // navigate("/login");
       window.location.href = "/login";
 
       action.resetForm();
-      // setLoading(false);
     } catch (err) {
       swal("", "Something went wrong", "error");
     }
