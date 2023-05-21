@@ -1,26 +1,9 @@
 import React from "react";
 import TopBar from "../HomeTopBar/TopBar";
 import Header from "../Header/Header";
-// import ToTop from "../TopTop/ToTop";
 import Footer from "../Footer/Footer";
-import useImportScript from "../../utils/useImportScript";
 import "./HowTo.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHospital } from "@fortawesome/free-solid-svg-icons";
 export default function HowTo() {
-  // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
-  // useImportScript("/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
-  // useImportScript("/assets/vendor/nice-select/js/jquery.nice-select.min.js");
-  // useImportScript(
-  //   "/assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"
-  // );
-  // useImportScript("/assets/vendor/slick/js/slick.js");
-  // useImportScript("/assets/vendor/odometer/js/odometer.min.js");
-  // useImportScript("/assets/vendor/viewport-js/viewport.jquery.js");
-  // useImportScript("/assets/vendor/owl-carousel/js/owl.carousel.min.js");
-  // useImportScript("/assets/vendor/wow/wow.min.js");
-  // useImportScript("/assets/js/plugin.js");
-  // useImportScript("/assets/js/main.js");
 
   return (
     <>
@@ -114,69 +97,6 @@ export default function HowTo() {
                               Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, 
                               vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
                               </p>
-                              {/* <form action="/">
-
-                                <div className="input-group-column">
-                                  <div className="input">
-                                    <input
-                                      type="text"
-                                      name="contact_f_name"
-                                      id="contactFName"
-                                      placeholder="First Name"
-                                      required
-                                      className="input"
-                                    />
-                                  </div>
-                                  <div className="input">
-                                    <input
-                                      type="text"
-                                      name="contact_l_name"
-                                      id="contactLName"
-                                      placeholder="Last Name"
-                                      required
-                                      className="input"
-                                    />
-                                  </div>
-                                </div>
-                                <div className="input-group-column">
-                                  <div className="input">
-                                    <input
-                                      type="email"
-                                      name="contact_mail"
-                                      id="contactMail"
-                                      placeholder="Email"
-                                      required
-                                      className="input"
-                                    />
-                                  </div>
-                                  <div className="input">
-                                    <input
-                                      type="text"
-                                      name="contact_subject"
-                                      id="contactSubject"
-                                      placeholder="Subject"
-                                      required
-                                      className="input"
-                                    />
-                                  </div>
-                                </div>
-                                <div className="input">
-                                  <textarea
-                                    name="contact_message"
-                                    id="contactMessage"
-                                    cols="30"
-                                    rows="10"
-                                    className="input textarea"
-                                    placeholder="Message"
-                                  ></textarea>
-                                </div>
-                                <button
-                                  type="submit"
-                                  className="button button--effect howTo"
-                                >
-                                  Submit Request<i className="bi bi-arrow-right"></i>
-                                </button>
-                              </form> */}
                             </div>
                             <div id="registration-form" className="tab-pane fade">
                               <h4 className="descender">Find Donor</h4>
@@ -194,68 +114,6 @@ export default function HowTo() {
                               et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, 
                               ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat
                               </p>
-                              {/* <form action="/">
-                                <div className="input-group-column">
-                                  <div className="input">
-                                    <input
-                                      type="text"
-                                      name="contact_f_name"
-                                      id="contactFName"
-                                      placeholder="First Name"
-                                      required
-                                      className="input"
-                                    />
-                                  </div>
-                                  <div className="input">
-                                    <input
-                                      type="text"
-                                      name="contact_l_name"
-                                      id="contactLName"
-                                      placeholder="Last Name"
-                                      required
-                                      className="input"
-                                    />
-                                  </div>
-                                </div>
-                                <div className="input-group-column">
-                                  <div className="input">
-                                    <input
-                                      type="email"
-                                      name="contact_mail"
-                                      id="contactMail"
-                                      placeholder="Email"
-                                      required
-                                      className="input"
-                                    />
-                                  </div>
-                                  <div className="input">
-                                    <input
-                                      type="text"
-                                      name="contact_subject"
-                                      id="contactSubject"
-                                      placeholder="Subject"
-                                      required
-                                      className="input"
-                                    />
-                                  </div>
-                                </div>
-                                <div className="input">
-                                  <textarea
-                                    name="contact_message"
-                                    id="contactMessage"
-                                    cols="30"
-                                    rows="10"
-                                    className="input textarea"
-                                    placeholder="Message"
-                                  ></textarea>
-                                </div>
-                                <button
-                                  type="submit"
-                                  className="button button--effect howTo"
-                                >
-                                  Submit Request<i className="bi bi-arrow-right"></i>
-                                </button>
-                              </form> */}
                             </div>
 
 
@@ -273,68 +131,6 @@ export default function HowTo() {
                                 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                                 On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire.
                               </p>
-                              {/* <form action="/">
-                                <div className="input-group-column">
-                                  <div className="input">
-                                    <input
-                                      type="text"
-                                      name="contact_f_name"
-                                      id="contactFName"
-                                      placeholder="First Name"
-                                      required
-                                      className="input"
-                                    />
-                                  </div>
-                                  <div className="input">
-                                    <input
-                                      type="text"
-                                      name="contact_l_name"
-                                      id="contactLName"
-                                      placeholder="Last Name"
-                                      required
-                                      className="input"
-                                    />
-                                  </div>
-                                </div>
-                                <div className="input-group-column">
-                                  <div className="input">
-                                    <input
-                                      type="email"
-                                      name="contact_mail"
-                                      id="contactMail"
-                                      placeholder="Email"
-                                      required
-                                      className="input"
-                                    />
-                                  </div>
-                                  <div className="input">
-                                    <input
-                                      type="text"
-                                      name="contact_subject"
-                                      id="contactSubject"
-                                      placeholder="Subject"
-                                      required
-                                      className="input"
-                                    />
-                                  </div>
-                                </div>
-                                <div className="input">
-                                  <textarea
-                                    name="contact_message"
-                                    id="contactMessage"
-                                    cols="30"
-                                    rows="10"
-                                    className="input textarea"
-                                    placeholder="Message"
-                                  ></textarea>
-                                </div>
-                                <button
-                                  type="submit"
-                                  className="button button--effect howTo"
-                                >
-                                  Submit Request<i className="bi bi-arrow-right"></i>
-                                </button>
-                              </form> */}
                             </div>
                           </div>
                         </div>

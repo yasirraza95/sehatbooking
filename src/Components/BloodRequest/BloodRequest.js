@@ -1,7 +1,6 @@
 import { useFormik } from "formik";
 import React, { useEffect, useState } from "react";
 import GeneralService from "../../services/general.service";
-import useImportScript from "../../utils/useImportScript";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import TopBar from "../HomeTopBar/TopBar";
@@ -10,20 +9,6 @@ import "../Includes/general.css";
 import { bloodRequest } from ".././../schema/index";
 
 export default function BloodRequest() {
-  // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
-  // useImportScript("/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
-  //   useImportScript("/assets/vendor/nice-select/js/jquery.nice-select.min.js");
-  // useImportScript(
-  //     "/assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"
-  // );
-  // useImportScript("/assets/vendor/slick/js/slick.js");
-  // useImportScript("/assets/vendor/odometer/js/odometer.min.js");
-  // useImportScript("/assets/vendor/viewport-js/viewport.jquery.js");
-  // useImportScript("/assets/vendor/owl-carousel/js/owl.carousel.min.js");
-  // useImportScript("/assets/vendor/wow/wow.min.js");
-  // useImportScript("/assets/js/plugin.js");
-  // useImportScript("/assets/js/main.js");
-
   const [submit, setSubmit] = useState("");
   const [submitMessage, setSubmitMessage] = useState("");
   const [state, setState] = useState([]);
@@ -154,15 +139,12 @@ export default function BloodRequest() {
       const response = await GeneralService.bloodRequest(values);
       const { data } = response;
       const { response: message } = data;
-      //   console.log(message);
       setSubmitMessage(message);
       setSubmit("success");
       action.resetForm();
-      // setLoading(false);
     } catch (err) {
       setSubmitMessage("Something went wrong, try again");
       setSubmit("danger");
-      // setLoading(false);
     }
   };
 
@@ -235,7 +217,6 @@ export default function BloodRequest() {
                           <div className="input-group-column">
                             <div className="input">
                               <select
-                                // className="selectpicker"
                                 className="form-select" aria-label="Default select example"
                                 name="state"
                                 id="state"
@@ -271,7 +252,6 @@ export default function BloodRequest() {
                                   ></span>
                                 ) : null}
                                 <select
-                                  // className="selectpicker"
                                   className="form-select" aria-label="Default select example"
                                   name="city"
                                   id="city"
@@ -311,7 +291,6 @@ export default function BloodRequest() {
                                   ></span>
                                 ) : null}
                                 <select
-                                  // className="selectpicker"
                                   className="form-select" aria-label="Default select example"
                                   name="area"
                                   id="area"
@@ -338,7 +317,7 @@ export default function BloodRequest() {
                               </div>
                             </div>
                             <div className="input">
-                                  <div className="select-leading">
+                              <div className="select-leading">
                                 {groupLoader ? (
                                   <span
                                     className="spinner-border spinner-border-sm"
@@ -346,34 +325,32 @@ export default function BloodRequest() {
                                     aria-hidden="true"
                                   ></span>
                                 ) : null}
-                              <select
-                                // className="selectpicker"
-                                className="form-select" aria-label="Default select example"
+                                <select
+                                  className="form-select" aria-label="Default select example"
 
-                                name="group"
-                                id="blodGroup"
-                                value={values.group || ""}
-                                onChange={handleChange}
-                              >
-                                <option value="">Select Blood Group</option>
-                                {group.map((res) => {
-                                  return (
-                                    <option key={res.key} value={res.value}>
-                                      {res.value}
-                                    </option>
-                                  );
-                                })}
-                              </select>
-                              {touched.group && errors.group && (
-                                <div className="error bloodrequest">
-                                  {errors.group}
-                                </div>
-                              )}
+                                  name="group"
+                                  id="blodGroup"
+                                  value={values.group || ""}
+                                  onChange={handleChange}
+                                >
+                                  <option value="">Select Blood Group</option>
+                                  {group.map((res) => {
+                                    return (
+                                      <option key={res.key} value={res.value}>
+                                        {res.value}
+                                      </option>
+                                    );
+                                  })}
+                                </select>
+                                {touched.group && errors.group && (
+                                  <div className="error bloodrequest">
+                                    {errors.group}
+                                  </div>
+                                )}
                               </div>
                             </div>
                             <div className="input" style={{ marginTop: "-20px" }}>
                               <input
-                                // className="selectpicker"
                                 type="text"
                                 name="phone"
                                 id="phoneNo"

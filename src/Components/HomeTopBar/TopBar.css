@@ -83,3 +83,7 @@ li.neutral-bottom {
 a#email:focus{
     color: #fff !important;
 }
+
+p{
+    margin: 0px !important;
+}

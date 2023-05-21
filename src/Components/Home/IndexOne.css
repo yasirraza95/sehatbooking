@@ -1,28 +1,17 @@
-/* .dark-overlay::after {
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: -1;
-} */
-
-svg.svg-inline--fa.fa-play{
+svg.svg-inline--fa.fa-play {
     color: #ea062b;
     transform: rotate(-55deg);
 }
-svg.svg-inline--fa.fa-heart{
-font-size: 18px;
-color: #ea062b;
+
+svg.svg-inline--fa.fa-heart {
+    font-size: 18px;
+    color: #ea062b;
 }
 
-section.donor.dark-overlay.section-space.bg-img{
+section.donor.dark-overlay.section-space.bg-img {
     background-image: url("../Images/donorfotor.webp");
 }
+
 select.select-donation-type {
     width: 100%;
     border: 0px solid transparent;
@@ -34,29 +23,33 @@ select.select-donation-type {
     margin-bottom: 0px;
     font-size: 16px;
 }
+
 select.select-donation-type:focus {
     background: #fff;
     border: 1px solid #e2e0e0;
-  }
-  textarea#appointmentMessage:focus {
+}
+
+textarea#appointmentMessage:focus {
     background: #fff;
     border: 1px solid #e2e0e0;
-  }
-  .appointment-area__single.appointment-area__content.bg-red {
-    /* background-color: #ea062b; */
+}
+
+.appointment-area__single.appointment-area__content.bg-red {
     background-color: #fff;
 }
-h4.red {
-    /* color: #fff; */
-    color: #ea062b;
 
+h4.red {
+    color: #ea062b;
 }
+
 li.black {
     color: #000;
 }
+
 svg#white {
     color: #ea062b;
 }
+
 .blink {
     animation: blinker 1.5s linear infinite;
     color: red;
@@ -64,6 +57,7 @@ svg#white {
     font-size: medium;
     font-weight: 800;
 }
+
 @keyframes blinker {
     50% {
         opacity: 0;

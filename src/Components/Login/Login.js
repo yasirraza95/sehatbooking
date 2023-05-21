@@ -4,8 +4,6 @@ import Header from "../Header/Header";
 import TopBar from "../HomeTopBar/TopBar";
 import "./Login.css";
 import ForgotPass from "../Images/forgotPassword-icon.webp";
-// import ToTop from "../TopTop/ToTop";
-import useImportScript from "../../utils/useImportScript";
 import GeneralService from "../../services/general.service";
 import { loginValidation } from "../../schema";
 import { useFormik } from "formik";
@@ -17,20 +15,6 @@ import { actionCreaters } from "../../Redux";
 import $ from "jquery";
 
 export default function Login() {
-  // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
-  // useImportScript("/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
-  // useImportScript("/assets/vendor/nice-select/js/jquery.nice-select.min.js");
-  // useImportScript(
-  //   "/assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"
-  // );
-  // useImportScript("/assets/vendor/slick/js/slick.js");
-  // useImportScript("/assets/vendor/odometer/js/odometer.min.js");
-  // useImportScript("/assets/vendor/viewport-js/viewport.jquery.js");
-  // useImportScript("/assets/vendor/owl-carousel/js/owl.carousel.min.js");
-  // useImportScript("/assets/vendor/wow/wow.min.js");
-  // useImportScript("/assets/js/plugin.js");
-  // useImportScript("/assets/js/main.js");
-
   const dispatch = useDispatch();
   const userActions = bindActionCreators(actionCreaters, dispatch);
 
@@ -66,23 +50,16 @@ export default function Login() {
         id: id,
         name: fname + lname,
       });
-      // navigate("/");
       window.location.href = "/";
       action.resetForm();
-      // console.log(message);
-      // setSubmitMessage(message);
-      // setSubmit("success");
-      // setLoading(false);
     } catch (err) {
       console.log(err);
       if (err?.response?.status === 401) {
         setSubmitMessage("Username or Password is invalid");
         setSubmit("danger");
-        // setLoading(false);
       } else {
         setSubmitMessage("Something went wrong, try again");
         setSubmit("danger");
-        // setLoading(false);
       }
     }
   };
@@ -107,10 +84,6 @@ export default function Login() {
 
       {/* <!-- ==== banner section start ==== --> */}
       <section className="banner bg-img dark-overlay dark-overlay">
-        {/* <div className="Blad-image">
-          <img className="blad" src="https://res.cloudinary.com/dll4d2yu7/image/upload/v1679220124/Sehatbooking/logo_yqgytd.png" alt="Logo" />
-
-          </div> */}
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -232,7 +205,6 @@ export default function Login() {
           </div>
         </div>
       </section>
-      {/* <ToTop /> */}
       <Footer />
     </>
   );

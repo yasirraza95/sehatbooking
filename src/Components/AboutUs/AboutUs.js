@@ -1,6 +1,4 @@
 import React from "react";
-import useImportScript from "../../utils/useImportScript";
-import DonateProcess from "../DonateProcess/DonateProcess";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import TopBar from "../HomeTopBar/TopBar";
@@ -8,19 +6,6 @@ import Slider from "../Slider/Slider";
 import "./AboutUs.css";
 
 export default function AboutUs() {
-  // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
-  // useImportScript("/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
-  // useImportScript("/assets/vendor/nice-select/js/jquery.nice-select.min.js");
-  // useImportScript(
-  //   "/assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"
-  // );
-  // useImportScript("/assets/vendor/slick/js/slick.js");
-  // useImportScript("/assets/vendor/odometer/js/odometer.min.js");
-  // useImportScript("/assets/vendor/viewport-js/viewport.jquery.js");
-  // useImportScript("/assets/vendor/owl-carousel/js/owl.carousel.min.js");
-  // useImportScript("/assets/vendor/wow/wow.min.js");
-  // useImportScript("/assets/js/plugin.js");
-  // useImportScript("/assets/js/main.js");
 
   return (
     <>
@@ -411,27 +396,6 @@ export default function AboutUs() {
       </section>
       {/* <!-- ==== #call now section end ==== --> */}
 
-      {/* <!-- ==== process section start ==== --> */}
-      {/* <section className="process section-space">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="process-area">
-                <div className="section-header section-inner-space">
-                  <p className="primary neutral-ascender descender">
-                    What We Do
-                  </p>
-                  <h2 className="neutral-descender">Donation Process</h2>
-                </div>
-
-                <DonateProcess />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-      {/* <!-- ==== #process section end ==== --> */}
-
       {/* <!-- ==== team section start ==== --> */}
       <section className="team team--secondary section-space">
         <div className="container">
@@ -452,20 +416,6 @@ export default function AboutUs() {
                           src="https://res.cloudinary.com/dll4d2yu7/image/upload/v1679166695/Sehatbooking/nora_knntzw.png"
                           alt="Nora"
                         />
-                        {/* <div className="social social--secondary">
-                          <a href="https://www.facebook.com/">
-                            <i className="bi bi-facebook"></i>
-                          </a>
-                          <a href="https://www.twitter.com/">
-                            <i className="bi bi-twitter"></i>
-                          </a>
-                          <a href="https://www.instagram.com/">
-                            <i className="bi bi-instagram"></i>
-                          </a>
-                          <a href="https://www.pinterest.com/">
-                            <i className="bi bi-youtube"></i>
-                          </a>
-                        </div> */}
                       </div>
                       <h5>Nora Khaypeia</h5>
                       <p className="secondary neutral-descender">Co-Founder</p>
@@ -478,20 +428,6 @@ export default function AboutUs() {
                           src="https://res.cloudinary.com/dll4d2yu7/image/upload/v1679166695/Sehatbooking/joshi_j6s1mb.png"
                           alt="Alex Joshan Deo"
                         />
-                        {/* <div className="social social--secondary">
-                          <a href="https://www.facebook.com/">
-                            <i className="bi bi-facebook"></i>
-                          </a>
-                          <a href="https://www.twitter.com/">
-                            <i className="bi bi-twitter"></i>
-                          </a>
-                          <a href="https://www.instagram.com/">
-                            <i className="bi bi-instagram"></i>
-                          </a>
-                          <a href="https://www.youtube.com/">
-                            <i className="bi bi-youtube"></i>
-                          </a>
-                        </div> */}
                       </div>
                       <h5>Nora Khaypeia</h5>
                       <p className="secondary neutral-descender">Co-Founder</p>
@@ -507,20 +443,6 @@ export default function AboutUs() {
                           src="https://res.cloudinary.com/dll4d2yu7/image/upload/v1679166694/Sehatbooking/alex_kzyvxs.png"
                           alt="Alex Joshi Deon"
                         />
-                        {/* <div className="social social--secondary">
-                          <a href="https://www.facebook.com/">
-                            <i className="bi bi-facebook"></i>
-                          </a>
-                          <a href="https://www.twitter.com/">
-                            <i className="bi bi-twitter"></i>
-                          </a>
-                          <a href="https://www.instagram.com/">
-                            <i className="bi bi-instagram"></i>
-                          </a>
-                          <a href="https://www.pinterest.com/">
-                            <i className="bi bi-youtube"></i>
-                          </a>
-                        </div> */}
                       </div>
                       <h5>Alex Joshi Deon</h5>
                       <p className="secondary neutral-descender">Co-Founder</p>

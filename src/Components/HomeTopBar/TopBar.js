@@ -1,8 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import GeneralService from "../../services/general.service";
 import "./TopBar.css";
 function TopBar() {
+  const [marqueeTxt, setMarqueeTxt] = useState("");
+
+  const getMarquee = async () => {
+    try {
+      const response = await GeneralService.getMarquee();
+      const { data } = response;
+      const { response: res } = data;
+      let resultData;
+      resultData = res;
+      setMarqueeTxt(resultData);
+    } catch (err) {
+      setMarqueeTxt("");
+    }
+  };
+
+  useEffect(() => {
+    getMarquee();
+  }, []);
+
   return (
     <>
+      <p>
+        <marquee className="blink">{marqueeTxt}</marquee>
+      </p>
       {/* <!-- ==== topbar start ==== --> */}
       <div className="topbar overflow-hidden">
         <div className="container">
@@ -32,30 +55,6 @@ function TopBar() {
                       </ul>
                     </div>
                   </div>
-                  {/* <div className="col-lg-4">
-                                        <div className="topbar-area__right">
-                                            <p className="neutral-bottom">Follow Now</p>
-                                            <div className="social">
-                                                <a href="https://www.facebook.com/">
-                                                    <i className="fab fa-facebook-f">
-                                                    </i>
-
-                                                </a>
-                                                <a href="https://www.twitter.com/">
-                                                    <i className="bi bi-twitter"></i>
-
-                                                </a>
-                                                <a href="https://www.instagram.com/">
-                                                    <i className="bi bi-instagram"></i>
-
-                                                </a>
-                                                <a href="https://www.pinterest.com/">
-                                                    <i className="fab fa-pinterest"></i>
-
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div> */}
                 </div>
               </div>
             </div>

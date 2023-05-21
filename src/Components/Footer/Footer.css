@@ -363,7 +363,6 @@ p {
 }
 
 .footer-copy a {
-    /* font-weight: 400; */
     color: #ffffff;
 }
 
@@ -613,7 +612,6 @@ button:focus {
     align-items: center;
     gap: 8px;
     z-index: 9;
-    /* margin-right: 219px; */
 }
 input,
 textarea {
@@ -909,12 +907,6 @@ textarea:focus {
       font-size: 30px;
     }
   }
-/* @media (max-width:1024px){
-  ul.navbar-nav {
-    display: none !important;
-    padding-bottom: 10px !important;
-  }
-} */
   button.button.button--effect::before {
     left: -50%;
   }

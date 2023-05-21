@@ -1,10 +1,7 @@
 import React from "react";
 import TopBar from "../HomeTopBar/TopBar";
 import Header from "../Header/Header";
-// import ToTop from "../TopTop/ToTop";
 import Footer from "../Footer/Footer";
-import VisibleFields from "../VisibleFields/VisibleFields";
-import useImportScript from "../../utils/useImportScript";
 import "./Profile.css";
 import { useEffect } from "react";
 import GeneralService from "../../services/general.service";
@@ -15,19 +12,6 @@ import { useState } from "react";
 import swal from "sweetalert";
 import { useFormik } from "formik";
 export default function Profile() {
-  // useImportScript("/assets/vendor/jquery/jquery-3.6.0.min.js");
-  // useImportScript("/assets/vendor/bootstrap/js/bootstrap.bundle.min.js");
-  // useImportScript("/assets/vendor/nice-select/js/jquery.nice-select.min.js");
-  // useImportScript(
-  //   "/assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"
-  // );
-  // useImportScript("/assets/vendor/slick/js/slick.js");
-  // useImportScript("/assets/vendor/odometer/js/odometer.min.js");
-  // useImportScript("/assets/vendor/viewport-js/viewport.jquery.js");
-  // useImportScript("/assets/vendor/owl-carousel/js/owl.carousel.min.js");
-  // useImportScript("/assets/vendor/wow/wow.min.js");
-  // useImportScript("/assets/js/plugin.js");
-  // useImportScript("/assets/js/main.js");
 
   const dispatch = useDispatch();
   const userActions = bindActionCreators(actionCreaters, dispatch);
@@ -51,18 +35,8 @@ export default function Profile() {
 
   // FIXME
   const getProfile = async () => {
-    // setLoading(true);
     try {
       const response = await GeneralService.showProfile(accessToken);
-      // if (status == 200) {
-
-      // userActions.UpdateProfile({
-      //   accessToken: response.data.access_token,
-      //   id: response.data.id,
-      //   uName: response.data.username,
-      //   uType: response.data.user_type,
-      //   name: response.data.first_name + " " + response.data.last_name,
-      // });
       setFname(response.data.first_name);
       setLname(response.data.last_name);
       setEmail(response.data.email);
@@ -78,12 +52,6 @@ export default function Profile() {
       // }
     } catch (err) {
       console.log(err);
-      // userActions.logOut();
-
-      // setLoading(false);
-      // navigate("/");
-      // swal("", "Please login again", "danger");
-      // window.location.href = "/";
     }
   };
 
@@ -91,7 +59,7 @@ export default function Profile() {
     getProfile();
   }, []);
 
-  const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
+  const { values, errors, touched, handleChange, handleSubmit } =
     useFormik({
       enableReinitialize: true,
 
@@ -102,10 +70,8 @@ export default function Profile() {
         phone: phone,
         address: address,
       },
-      // validationSchema: contactValidation,
       onSubmit: (values, action) => {
         swal("Waiting for update");
-        // formSubmit(values, action);
       },
     });
 
@@ -115,21 +81,17 @@ export default function Profile() {
       const response = await GeneralService.contactUs(values);
       const { data } = response;
       const { response: message } = data;
-      // console.log(message);
       setSubmitMessage(message);
       setSubmit("success");
       action.resetForm();
-      // setLoading(false);
     } catch (err) {
       console.log(err);
       if (err?.response?.status === 401) {
         setSubmitMessage("Username or Password is invalid");
         setSubmit("danger");
-        // setLoading(false);
       } else {
         setSubmitMessage("Something went wrong, try again");
         setSubmit("danger");
-        // setLoading(false);
       }
     }
   };
@@ -280,10 +242,6 @@ export default function Profile() {
                               <div className="error">{errors.address}</div>
                             )}
                           </div>
-
-                          {/* <div>
-                            <VisibleFields />
-                          </div> */}
                           <div className="input registration-input-button mb-0">
                             <button
                               type="submit"

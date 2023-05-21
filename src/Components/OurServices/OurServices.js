@@ -6,10 +6,8 @@ import donorBlood from "../Images/blooddonation.webp";
 import HeartIcon from "../Images/heart.webp";
 import FirstAidIcon from "../Images/first-aid.webp";
 import TubeIcon from "../Images/tube.webp";
-import useImportScript from '../../utils/useImportScript';
 import { Link } from 'react-router-dom';
 export default function OurServices() {
-//   useImportScript("/assets/vendor/wow/wow.min.js");
 
     return (
         <>
