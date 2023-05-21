@@ -15,7 +15,7 @@ export default function PageNotFound() {
                         <h1>404</h1>
                     </div>
                     <h2>we are sorry, but the page you requested was not found</h2>
-                    <a href="#" className="home-btn">Go Home</a>
+                    <a href="/" className="home-btn">Go Home</a>
                 </div>
             </div>
             <Footer />
