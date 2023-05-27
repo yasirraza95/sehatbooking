@@ -92,7 +92,7 @@ export default function IndexOne() {
           >
             <div className="container">
               <div className="hero-slider-content">
-                <div className="intro-video">
+                {/* <div className="intro-video">
                   <div className="d-flex align-items-center">
                     <a
                       href="https://www.youtube.com/watch?v=NtETKgSE7i0"
@@ -105,7 +105,8 @@ export default function IndexOne() {
                     </a>
                     <span>Intro Video</span>
                   </div>
-                </div>
+                </div> */}
+                <h1>Sehat <span style={{ color: "#ea062b" }}>Booking</span></h1>
                 <h3>Donate blood,save life !</h3>
                 <h1>Donate Blood And Inspires Others.</h1>
                 <a href="/find-donor" className="button button--effect">
@@ -121,7 +122,7 @@ export default function IndexOne() {
           >
             <div className="container">
               <div className="hero-slider-content animation-style-two">
-                <div className="intro-video">
+                {/* <div className="intro-video">
                   <div className="d-flex align-items-center">
                     <a
                       href="https://www.youtube.com/watch?v=NtETKgSE7i0"
@@ -134,7 +135,8 @@ export default function IndexOne() {
                     </a>
                     <span>Intro Video</span>
                   </div>
-                </div>
+                </div> */}
+                <h1>Sehat <span style={{ color: "#ea062b" }}>Booking</span></h1>
                 <h3>Donate blood,save life !</h3>
                 <h1>Donate Blood And Inspires Others.</h1>
                 <a href="/find-donor" className="button button--effect">
@@ -150,7 +152,7 @@ export default function IndexOne() {
           >
             <div className="container">
               <div className="hero-slider-content animation-style-three">
-                <div className="intro-video">
+                {/* <div className="intro-video">
                   <div className="d-flex align-items-center">
                     <a
                       href="https://www.youtube.com/watch?v=NtETKgSE7i0"
@@ -163,7 +165,8 @@ export default function IndexOne() {
                     </a>
                     <span>Intro Video</span>
                   </div>
-                </div>
+                </div> */}
+                <h1>Sehat <span style={{ color: "#ea062b" }}>Booking</span></h1>
                 <h3>Donate blood,save life !</h3>
                 <h1>Donate Blood And Inspires Others.</h1>
                 <a href="/find-donor" className="button button--effect">
