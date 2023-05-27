@@ -23,9 +23,11 @@ function TopBar() {
 
   return (
     <>
-      <p>
-        <marquee className="blink">{marqueeTxt}</marquee>
-      </p>
+      {marqueeTxt && (
+        <p>
+          <marquee className="blink">{marqueeTxt}</marquee>
+        </p>
+      )}
       {/* <!-- ==== topbar start ==== --> */}
       <div className="topbar overflow-hidden">
         <div className="container">
