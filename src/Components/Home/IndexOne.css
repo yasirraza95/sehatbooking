@@ -12,6 +12,13 @@ section.donor.dark-overlay.section-space.bg-img {
     background-image: url("../Images/donorfotor.webp");
 }
 
+div#page-wrap {
+    max-height: 700px;
+    margin: 1rem auto;
+    padding: 1rem;
+    overflow-y: scroll;
+}
+
 select.select-donation-type {
     width: 100%;
     border: 0px solid transparent;

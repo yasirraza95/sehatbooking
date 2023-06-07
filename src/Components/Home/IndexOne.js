@@ -303,6 +303,7 @@ export default function IndexOne() {
                 </a>
               </div>
             </div>
+            
           </div>
         </div>
       </section> */}
@@ -316,6 +317,7 @@ export default function IndexOne() {
               <div className="appointment-area">
                 <div className="row neutral-row">
                   <div className="col-lg-6 row-item">
+                  <div id="page-wrap">
                     <div className="appointment-area__single appointment-area__content">
                       <h4 className="red">
                         <FontAwesomeIcon icon={faClockRotateLeft} /> Recent
@@ -339,7 +341,9 @@ export default function IndexOne() {
                       </ul>
                     </div>
                   </div>
+                  </div>
                   <div className="col-lg-6 row-item">
+                  <div id="page-wrap">
                     <div className="appointment-area__single appointment-area__content bg-red">
                       {/* <p>
                         <marquee className="blink">{marqueeTxt}</marquee>
@@ -364,6 +368,7 @@ export default function IndexOne() {
                         )}
                       </ul>
                     </div>
+                  </div>
                   </div>
                 </div>
               </div>
