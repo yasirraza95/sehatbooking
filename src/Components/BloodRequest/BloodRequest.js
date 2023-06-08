@@ -7,6 +7,11 @@ import TopBar from "../HomeTopBar/TopBar";
 import "./BloodRequest.css";
 import "../Includes/general.css";
 import { bloodRequest } from ".././../schema/index";
+import { Pagination, Row } from "react-bootstrap";
+import swal from "sweetalert";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMobileScreenButton } from "@fortawesome/free-solid-svg-icons";
 
 export default function BloodRequest() {
   const [submit, setSubmit] = useState("");
@@ -19,6 +24,77 @@ export default function BloodRequest() {
   const [cityLoader, setCityLoader] = useState(false);
   const [areaLoader, setAreaLoader] = useState(false);
   const [groupLoader, setGroupLoader] = useState(false);
+
+  const [loading, setLoading] = useState(false);
+  const [resultData, setResultData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalResults, setTotalResults] = useState("");
+  const [totalPages, setTotalPages] = useState("");
+  const [limit, setLimit] = useState("");
+
+  const contactDonor = (e) => {
+    getDonorResult(e);
+    // if (id !== null) {
+    // } else {
+    //   window.location.href = "/login";
+    // }
+  };
+  const changePagination = (e) => {
+    setCurrentPage(e);
+    let pageNo = e;
+    getResultData(pageNo);
+  };
+  const getResultData = async (page, city, area, group) => {
+    setLoading(true);
+
+    try {
+      const response = await GeneralService.listDonors(page, city, area, group);
+      const { data } = response;
+      const {
+        response: res,
+        records,
+        total_pages,
+        current_page,
+        per_page,
+      } = data;
+      let resultData;
+      resultData = res;
+      setResultData(resultData);
+      setCurrentPage(current_page);
+      setTotalResults(records);
+      setTotalPages(total_pages);
+      setLimit(per_page);
+      setLoading(false);
+    } catch (err) {
+      setLoading(false);
+      setResultData([]);
+      setCurrentPage(1);
+      setTotalResults(0);
+      setTotalPages(0);
+      setLimit(0);
+    }
+  };
+  const getDonorResult = async (id) => {
+    try {
+      const response = await GeneralService.getDonorById(1);
+      const { data } = response;
+      const { response: res } = data;
+      // swal(
+      //   `Name: ${res.full_name},
+      //   Phone: ${res.phone},
+      //   Group: ${res.blood_group},`
+      // );
+      swal({
+        icon: 'success',
+        title: 'Blood Details',
+        text: `Name: Test Data
+        Phone: 0934383923
+         Group: A+`,
+      })
+    } catch (err) {
+      swal(`Error fetching information`);
+    }
+  };
 
   const getStates = async () => {
     setState([]);
@@ -399,7 +475,104 @@ export default function BloodRequest() {
             </div>
           </div>
         </div>
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+
+      <div className="table-responsive">
+                <table className="table table-striped table-hover responsive">
+                  <thead>
+                    <tr>
+                      <th>
+                        <div className="wordbreak">Donor Name</div>
+                      </th>
+                      <th>
+                        <div className="wordbreak">Blood Group</div>
+                      </th>
+                      <th>
+                        <div className="wordbreak">Donor Address</div>
+                      </th>
+                      <th>
+                        <div className="wordbreak">Contact Donor</div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+              <tr>
+                          <td>
+                            <div className="wordbreak">Masood</div>
+                          </td>
+                          <td>
+                            <div className="wordbreak">AB+</div>
+                          </td>
+                          <td>
+                            <div className="wordbreak">
+                             Test Address
+                            </div>
+                          </td>
+                          <td>
+                            <Link
+                              id={Row.id}
+                              to={void 0}
+                              onClick={(e) => {
+                                contactDonor(e.currentTarget.id);
+                              }}
+                            >
+                              <FontAwesomeIcon icon={faMobileScreenButton} />
+                            </Link>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div className="wordbreak">Yasir</div>
+                          </td>
+                          <td>
+                            <div className="wordbreak">B+</div>
+                          </td>
+                          <td>
+                            <div className="wordbreak">
+                             Test Address
+                            </div>
+                          </td>
+                          <td>
+                          <Link
+                              id={Row.id}
+                              to={void 0}
+                              onClick={(e) => {
+                                contactDonor(e.currentTarget.id);
+                              }}
+                            >
+                              <FontAwesomeIcon icon={faMobileScreenButton} />
+                            </Link>
+                          </td>
+                        </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {totalResults > limit && totalPages > 1 ? (
+                <Pagination
+                  activePage={currentPage}
+                  itemsCountPerPage={parseInt(limit)}
+                  totalItemsCount={totalResults}
+                  onChange={(e) => {
+                    changePagination(e);
+                  }}
+                >
+                  <Pagination.First />
+                  <Pagination.Prev />
+
+                  <Pagination.Next />
+                  <Pagination.Last />
+                </Pagination>
+              ) : (
+                ""
+              )}
+            </div>
+          </div>
+        </div>
       </section>
+
       {/* <!-- ==== #contact form section end ==== --> */}
       <Footer />
     </>
