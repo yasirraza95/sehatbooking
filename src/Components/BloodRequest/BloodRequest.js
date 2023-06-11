@@ -21,6 +21,10 @@ export default function BloodRequest() {
   const [area, setArea] = useState([]);
   const [group, setGroup] = useState([]);
 
+  const [selectedCity, setSelectedCity] = useState("");
+  const [selectedArea, setSelectedArea] = useState("");
+  const [selectedGroup, setSelectedGroup] = useState("");
+
   const [cityLoader, setCityLoader] = useState(false);
   const [areaLoader, setAreaLoader] = useState(false);
   const [groupLoader, setGroupLoader] = useState(false);
@@ -42,7 +46,7 @@ export default function BloodRequest() {
   const changePagination = (e) => {
     setCurrentPage(e);
     let pageNo = e;
-    getResultData(pageNo);
+    getResultData(pageNo, selectedCity, selectedArea, selectedGroup);
   };
   const getResultData = async (page, city, area, group) => {
     setLoading(true);
@@ -85,12 +89,12 @@ export default function BloodRequest() {
       //   Group: ${res.blood_group},`
       // );
       swal({
-        icon: 'success',
-        title: 'Blood Details',
+        icon: "success",
+        title: "Blood Details",
         text: `Name: Test Data
         Phone: 0934383923
          Group: A+`,
-      })
+      });
     } catch (err) {
       swal(`Error fetching information`);
     }
@@ -128,7 +132,6 @@ export default function BloodRequest() {
       });
       setCity([...results]);
       setCityLoader(false);
-
     };
 
     if (e.target.value !== "") {
@@ -186,6 +189,7 @@ export default function BloodRequest() {
   useEffect(() => {
     getStates();
     // getResultData(1);
+    // getResultData(1, selectedCity, selectedArea, selectedGroup);
   }, []);
 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
@@ -211,6 +215,9 @@ export default function BloodRequest() {
     try {
       values.emergency = checkedValue(values.emergency);
       console.log(values);
+      setSelectedCity(values.city);
+      setSelectedArea(values.area);
+      setSelectedGroup(values.group);
       // values.user = "1"; //FIXME
       const response = await GeneralService.bloodRequest(values);
       const { data } = response;
@@ -218,6 +225,7 @@ export default function BloodRequest() {
       setSubmitMessage(message);
       setSubmit("success");
       action.resetForm();
+      getResultData(1, values.city, values.area, values.group);
     } catch (err) {
       setSubmitMessage("Something went wrong, try again");
       setSubmit("danger");
@@ -293,7 +301,8 @@ export default function BloodRequest() {
                           <div className="input-group-column">
                             <div className="input">
                               <select
-                                className="form-select" aria-label="Default select example"
+                                className="form-select"
+                                aria-label="Default select example"
                                 name="state"
                                 id="state"
                                 value={values.state || ""}
@@ -328,7 +337,8 @@ export default function BloodRequest() {
                                   ></span>
                                 ) : null}
                                 <select
-                                  className="form-select" aria-label="Default select example"
+                                  className="form-select"
+                                  aria-label="Default select example"
                                   name="city"
                                   id="city"
                                   value={values.city || ""}
@@ -358,7 +368,6 @@ export default function BloodRequest() {
                           <div className="input-group-column">
                             <div className="input">
                               <div className="select-leading">
-
                                 {areaLoader ? (
                                   <span
                                     className="spinner-border spinner-border-sm"
@@ -367,7 +376,8 @@ export default function BloodRequest() {
                                   ></span>
                                 ) : null}
                                 <select
-                                  className="form-select" aria-label="Default select example"
+                                  className="form-select"
+                                  aria-label="Default select example"
                                   name="area"
                                   id="area"
                                   value={values.area || ""}
@@ -402,8 +412,8 @@ export default function BloodRequest() {
                                   ></span>
                                 ) : null}
                                 <select
-                                  className="form-select" aria-label="Default select example"
-
+                                  className="form-select"
+                                  aria-label="Default select example"
                                   name="group"
                                   id="blodGroup"
                                   value={values.group || ""}
@@ -425,7 +435,10 @@ export default function BloodRequest() {
                                 )}
                               </div>
                             </div>
-                            <div className="input" style={{ marginTop: "-20px" }}>
+                            <div
+                              className="input"
+                              style={{ marginTop: "-20px" }}
+                            >
                               <input
                                 type="text"
                                 name="phone"
@@ -440,7 +453,6 @@ export default function BloodRequest() {
                                 </div>
                               )}
                             </div>
-
                           </div>
                           <div className="input alignment">
                             <div className="form-checkk">
@@ -475,39 +487,46 @@ export default function BloodRequest() {
             </div>
           </div>
         </div>
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
 
-      <div className="table-responsive">
-                <table className="table table-striped table-hover responsive">
-                  <thead>
-                    <tr>
-                      <th>
-                        <div className="wordbreak">Donor Name</div>
-                      </th>
-                      <th>
-                        <div className="wordbreak">Blood Group</div>
-                      </th>
-                      <th>
-                        <div className="wordbreak">Donor Address</div>
-                      </th>
-                      <th>
-                        <div className="wordbreak">Contact Donor</div>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-              <tr>
+        {resultData.length ? (
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="table-responsive">
+                  <table className="table table-striped table-hover responsive">
+                    <thead>
+                      <tr>
+                        <th>
+                          <div className="wordbreak">Donor Name</div>
+                        </th>
+                        <th>
+                          <div className="wordbreak">Blood Group</div>
+                        </th>
+                        <th>
+                          <div className="wordbreak">Donor Address</div>
+                        </th>
+                        <th>
+                          <div className="wordbreak">Contact Donor</div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {resultData.map((row) => (
+                        <tr
+                          key={row.id}
+                          onClick={(e) => {
+                            contactDonor(row.id);
+                          }}
+                        >
                           <td>
-                            <div className="wordbreak">Masood</div>
+                            <div className="wordbreak">{`${row.first_name} ${row.last_name}`}</div>
                           </td>
                           <td>
-                            <div className="wordbreak">AB+</div>
+                            <div className="wordbreak">{row.blood_group}</div>
                           </td>
                           <td>
                             <div className="wordbreak">
-                             Test Address
+                              {row.city_name}, {row.address}
                             </div>
                           </td>
                           <td>
@@ -522,55 +541,35 @@ export default function BloodRequest() {
                             </Link>
                           </td>
                         </tr>
-                        <tr>
-                          <td>
-                            <div className="wordbreak">Yasir</div>
-                          </td>
-                          <td>
-                            <div className="wordbreak">B+</div>
-                          </td>
-                          <td>
-                            <div className="wordbreak">
-                             Test Address
-                            </div>
-                          </td>
-                          <td>
-                          <Link
-                              id={Row.id}
-                              to={void 0}
-                              onClick={(e) => {
-                                contactDonor(e.currentTarget.id);
-                              }}
-                            >
-                              <FontAwesomeIcon icon={faMobileScreenButton} />
-                            </Link>
-                          </td>
-                        </tr>
-                  </tbody>
-                </table>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                {totalResults > limit && totalPages > 1 ? (
+                  <Pagination
+                    activePage={currentPage}
+                    itemsCountPerPage={parseInt(limit)}
+                    totalItemsCount={totalResults}
+                    onChange={(e) => {
+                      changePagination(e);
+                    }}
+                  >
+                    <Pagination.First />
+                    <Pagination.Prev />
+
+                    <Pagination.Next />
+                    <Pagination.Last />
+                  </Pagination>
+                ) : (
+                  ""
+                )}
               </div>
-
-              {totalResults > limit && totalPages > 1 ? (
-                <Pagination
-                  activePage={currentPage}
-                  itemsCountPerPage={parseInt(limit)}
-                  totalItemsCount={totalResults}
-                  onChange={(e) => {
-                    changePagination(e);
-                  }}
-                >
-                  <Pagination.First />
-                  <Pagination.Prev />
-
-                  <Pagination.Next />
-                  <Pagination.Last />
-                </Pagination>
-              ) : (
-                ""
-              )}
             </div>
           </div>
-        </div>
+        ) : (
+          ""
+        )}
       </section>
 
       {/* <!-- ==== #contact form section end ==== --> */}
