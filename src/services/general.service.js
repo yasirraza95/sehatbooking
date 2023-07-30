@@ -209,6 +209,19 @@ const getCityByState = (name) => {
   });
 };
 
+const listVolunteers = () => {
+  const headers = {
+    "Content-Type": "application/json",
+  };
+  return axios.get(
+    `${API_URL}/list-volunteers`,
+    {
+      headers: headers,
+    }
+  );
+};
+
+
 const getCityArea = (city, name) => {
   const headers = {
     "Content-Type": "application/json",
@@ -380,6 +393,7 @@ const GeneralService = {
   subscription,
   getDonorById,
   getCityArea,
+  listVolunteers,
 };
 
 export default GeneralService;

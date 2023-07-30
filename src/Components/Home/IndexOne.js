@@ -31,6 +31,7 @@ export default function IndexOne() {
 
   const [normalReq, setNormalReq] = useState([]);
   const [emergencyReq, setEmergencyReq] = useState([]);
+  const [volunteers, setVolunteers] = useState([]);
   const [marqueeTxt, setMarqueeTxt] = useState("");
 
   const getNormalData = async (page, city, area, group) => {
@@ -59,6 +60,19 @@ export default function IndexOne() {
     }
   };
 
+  const getVolunteers = async () => {
+    try {
+      const response = await GeneralService.listVolunteers();
+      const { data } = response;
+      const { response: res } = data;
+      let resultData;
+      resultData = res;
+      setVolunteers(resultData);
+    } catch (err) {
+      setVolunteers([]);
+    }
+  };
+
   const getMarquee = async () => {
     try {
       const response = await GeneralService.getMarquee();
@@ -76,6 +90,7 @@ export default function IndexOne() {
     getNormalData();
     getEmergencyData();
     getMarquee();
+    getVolunteers();
   }, []);
 
   return (
@@ -391,16 +406,22 @@ export default function IndexOne() {
                   <h2 className="neutral-descender">Meet Volunteers</h2>
                 </div>
                 <div className="row neutral-row justify-content-center">
-                  <div className="col-sm-6 col-md-6 col-lg-4 row-item align-center">
-                    <div className="team-area__single img-effect">
-                      <div className="poster">
-                        <img src={DoctorOne} alt="Nora" />
+                  {volunteers.map(
+                    (data) => (
+
+                      <div className="col-sm-6 col-md-6 col-lg-4 row-item align-center">
+                        <div className="team-area__single img-effect">
+                          <div className="poster">
+                            <img src={`https://api.sehatbooking.com/public/upload/${data.image}`} alt={data.name} />
+                          </div>
+                          <h5>{data.name}</h5>
+                          {/* <p className="secondary neutral-descender">Co-Founder</p> */}
+                        </div>
                       </div>
-                      <h5>Nora Khaypeia</h5>
-                      <p className="secondary neutral-descender">Co-Founder</p>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 col-md-6 col-lg-4 row-item align-center">
+                      )
+                  )}
+
+                  {/* <div className="col-sm-6 col-md-6 col-lg-4 row-item align-center">
                     <div className="team-area__single img-effect wow fadeInUp">
                       <div className="poster">
                         <img src={DoctorTwo} alt="Alex Joshan Deo" />
@@ -420,7 +441,7 @@ export default function IndexOne() {
                       <h5>Alex Joshi Deon</h5>
                       <p className="secondary neutral-descender">Co-Founder</p>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
