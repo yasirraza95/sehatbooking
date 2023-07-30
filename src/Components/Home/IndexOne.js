@@ -408,7 +408,6 @@ export default function IndexOne() {
                 <div className="row neutral-row justify-content-center">
                   {volunteers.map(
                     (data) => (
-
                       <div className="col-sm-6 col-md-6 col-lg-4 row-item align-center">
                         <div className="team-area__single img-effect">
                           <div className="poster">
